@@ -1,9 +1,15 @@
 <!-- style -->
   <style>
-    h1{
-      text-align: center;
-      font-weight: bold;
-    }
+    /* título */
+      h1{
+        text-align: center;
+        font-weight: bold;
+      }
+
+    /* subtítulos */
+      h3{
+        font-weight: bold;
+      }
   </style>
 
 <!---------------------------------------------------->
@@ -14,7 +20,7 @@
 <!-- modelo conceptual -->
   <h3>MODELO CONCEPTUAL</h3>
 
-  
+
 
   <hr>
 
