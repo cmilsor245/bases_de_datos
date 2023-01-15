@@ -14,12 +14,16 @@
 <!-- modelo conceptual -->
   <h3>MODELO CONCEPTUAL</h3>
 
+  
+
   <hr>
 
 <!------------------------------------------->
 
 <!-- modelo relacional -->
   <h3>MODELO RELACIONAL</h3>
+
+
 
   <hr>
 
@@ -28,12 +32,16 @@
 <!-- modelo físico -->
   <h3>MODELO FÍSICO</h3>
 
+
+
   <hr>
 
 <!------------------------------------------->
 
 <!-- inserts de ríos -->
   <h3>INSERTS DE RÍOS</h3>
+
+
 
   <hr>
 
