@@ -53,13 +53,13 @@
   - Con producto cartesiano:
 
   ```sql
-  select distinct p.p_id from p,t,tp where color='Rojo' and t.t_id = tp.t_id and p.p_id=tp.p_id;
+  
   ```
 
   - Con join:
 
   ```sql
-  select distinct p.p_id from p join tp on p.p_id=tp.p_id join t on tp.t_id=t.t_id where color='Rojo';
+  select count(distinct tp.p_id) from p join tp on p.p_id=tp.p_id join t on tp.t_id=t.t_id where t.color='Rojo';
   ```
 
   - Resultado:
