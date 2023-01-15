@@ -29,7 +29,7 @@
 <!-- modelo relacional -->
   <h3>MODELO RELACIONAL</h3>
 
-
+  <img src="img/relacional.png">
 
   <hr>
 
@@ -38,7 +38,37 @@
 <!-- modelo físico -->
   <h3>MODELO FÍSICO</h3>
 
+  ```sql
+  create database tema4_ej1;
 
+  use tema4_ej1;
+
+  create table comunidades(
+      comuni_id int primary key auto_increment,
+      comunidades_nombre varchar(255) not null,
+      comunidades_habitantes int not null
+  );
+
+  create table provincias(
+      provi_id int primary key auto_increment,
+      provincias_nombre varchar(255) not null,
+      provincias_habitantes int not null,
+      comuni_id int not null,
+      foreign key(comuni_id) references comunidades(comuni_id)
+  );
+
+  create table rios(
+      rio_id int primary key auto_increment,
+      rios_nombre varchar(255) not null,
+      rios_longitud int not null,
+      rios_ciudad varchar(255) not null,
+      rios_provincias varchar(255) not null,
+      rios_comunidades varchar(255) not null,
+      rios_km_comunidad int not null,
+      comuni_id int not null,
+      foreign key(comuni_id) references comunidades(comuni_id)
+  );
+  ```
 
   <hr>
 
@@ -47,7 +77,29 @@
 <!-- inserts de ríos -->
   <h3>INSERTS DE RÍOS</h3>
 
+  ```sql
+  insert into comunidades(comuni_id, comunidades_nombre, comunidades_habitantes) values 
+    (1, "Andalucía", 8382999),
+    (2, "Cataluña", 7555044),
+    (3, "Galicia", 2719600),
+    (4, "País Vasco", 2179000),
+    (5, "Castilla y León", 2475000);
 
+  insert into provincias(provi_id, provincias_nombre, provincias_habitantes, comuni_id) values 
+      (1, "Málaga", 1743000, 1),
+      (2, "Barcelona", 5460000, 2),
+      (3, "A Coruña", 1039000, 3),
+      (4, "Vitoria-Gasteiz", 233000, 4),
+      (5, "Valladolid", 2341000, 5);
+
+  insert into rios(rios_nombre, rios_longitud, rios_ciudad, rios_provincias, rios_comunidades, rios_km_comunidad, comuni_id) values
+      ("Ebro", 910, "Zaragoza", "Zaragoza, Tarragona, Teruel", "Aragón, Cataluña", 200, 2),
+      ("Segura", 480, "Murcia", "Murcia, Albacete, Alicante", "Murcia, Comunidad Valenciana", 150, 1),
+      ("Duero", 897, "Soria", "Soria, Burgos, Valladolid, Zamora", "Castilla y León, Castilla-La Mancha", 250, 3),
+      ("Guadiana", 1000, "Badajoz", "Badajoz, Cáceres", "Extremadura, Andalucía", 300, 4),
+      ("Minho", 330, "Vigo", "Pontevedra, Ourense", "Galicia, Portugal", 100, 5),
+      ("Bidasoa", 120, "Irun", "Guipúzcoa, Navarra", "País Vasco, Navarra", 50, 6);
+  ```
 
   <hr>
 
