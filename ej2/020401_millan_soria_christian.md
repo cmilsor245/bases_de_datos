@@ -20,7 +20,7 @@
 <!-- modelo conceptual -->
   <h3>MODELO CONCEPTUAL</h3>
 
-
+  <img src="img/conceptual.png">
 
   <hr>
 
