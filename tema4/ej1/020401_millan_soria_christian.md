@@ -20,6 +20,7 @@
         /* excepciones */
           .ex{
             border: none;
+            width: 100%;
           }
   </style>
 
@@ -212,7 +213,7 @@
   <p><b>8. Muestra el nombre del río con mayor longitud.<b></p>
 
   ```sql
-  select rios_nombre, max(rios_longitud) from rios
+  select rios_nombre, max(rios_longitud) from rios;
   ```
 
   - Resultado:
@@ -225,7 +226,7 @@
   <p><b>9. Calcula la longitud de todos los ríos ordenados alfabéticamente.</b></p>
 
   ```sql
-
+  select rios_nombre, rios_longitud from rios order by rios_nombre asc;
   ```
 
   - Resultado:
@@ -238,7 +239,7 @@
   <p><b>10. Calcula la longitud de todos los ríos ordenados de menor a mayor longitud. Muestra el nombre del río y la longitud de cada uno.</b></p>
 
   ```sql
-
+  select rios_nombre, rios_longitud from rios order by rios_longitud asc;
   ```
 
   - Resultado:
@@ -251,7 +252,7 @@
   <p><b>11. Calcula la longitud de todos los ríos que corresponden a cada provincia. Se deben mostrar de mayor a menor, teniendo en cuenta la suma de los kilómetros que cada río recorre en cada provincia.</b></p>
 
   ```sql
-
+  select rios_provincias, sum(rios_longitud) from rios group by rios_provincias order by sum(rios_longitud) desc;
   ```
 
   - Resultado:
