@@ -20,7 +20,8 @@
 ---
 
 <!-- activities -->
-  <p>1. Nombres de los proveedores que suministran la pieza T2.</p>
+  <p><b>1. Nombres de los proveedores que suministran la pieza T2.</b></p>
+    
 
 ---
 
