@@ -11,6 +11,12 @@
       width: 20%;
     }
 
+    /* tables */
+      #tables{
+        width: 100%;
+        border: none;
+      }
+
     /* apt5 */
       #apt5-img{
         height: 45px;
@@ -23,7 +29,7 @@
 <!-- database creation -->
   <p>Dadas las siguientes tablas:</p>
 
-  <img src="img/tablas.png">
+  <img id="tables" src="img/tablas.png">
 
   1. Crea la base de datos.
   2. Crea las tablas correspondientes.
@@ -176,13 +182,13 @@
   - Con producto cartesiano:
 
   ```sql
-  
+  select distinct p.nombre from p,tp,t where(p.ciudad='Málaga' or t.color='Blanco') and t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
   - Sin producto cartesiano:
 
   ```sql
-
+  select distinct p.nombre from p join tp on p.p_id=tp.p_id join t on tp.t_id=t.t_id where p.ciudad='Málaga' or t.color='Blanco';
   ```
 
   - Resultado:
@@ -197,13 +203,13 @@
   - Con producto cartesiano:
 
   ```sql
-
+  select p.nombre, t.t_id from p,tp,t where p.ciudad='Madrid' and t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
   - Sin producto cartesiano:
 
   ```sql
-
+  select p.nombre, t.t_id from p join tp on p.p_id=tp.p_id join t on tp.t_id=t.t_id where p.ciudad='Madrid';
   ```
 
   - Resultado:
@@ -218,13 +224,13 @@
   - Con producto cartesiano:
 
   ```sql
-
+  select p.ciudad, t.t_id, t.color from p,tp,t where t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
   - Sin producto cartesiano:
 
   ```sql
-
+  select p.ciudad, t.t_id, t.color from p join tp on p.p_id=tp.p_id join t on tp.t_id=t.t_id;
   ```
 
   - Resultado:
@@ -239,13 +245,13 @@
   - Con producto cartesiano:
 
   ```sql
-
+  select p.ciudad, t.t_id, t.color from p,tp,t where p.p_id='P1' and t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
   - Sin producto cartesiano:
 
   ```sql
-
+  select p.ciudad, t.t_id, t.color from p join tp on p.p_id=tp.p_id join t on tp.t_id=t.t_id where p.p_id='P1';
   ```
 
   - Resultado:
