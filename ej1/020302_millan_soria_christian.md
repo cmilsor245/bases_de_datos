@@ -8,7 +8,13 @@
   /* images */
     img{
       border: 1px solid black;
+      width: 20%;
     }
+
+    /* apt5 */
+      #apt5-img{
+        height: 45px;
+      }
 </style>
 
 <!-- title -->
@@ -35,7 +41,7 @@
   select nombre from p,t,tp where t.t_id='T2' and t.t_id = tp.t_id and p.p_id = tp.p_id;
   ```
 
-  - Con join:
+  - Sin producto cartesiano:
 
   ```sql
   select nombre from p join tp on p.p_id=tp.p_id and tp.t_id='T2' join t on tp.t_id=t.t_id;
@@ -43,7 +49,7 @@
 
   - Resultado:
 
-  <img src="img/apt1.png" style="width: 20%">
+  <img src="img/apt1.png">
 
 
 
@@ -53,10 +59,10 @@
   - Con producto cartesiano:
 
   ```sql
-  
+  select count(distinct tp.p_id) from p, tp,t where p.p_id=tp.p_id and tp.t_id=t.t_id and t.color='Rojo';
   ```
 
-  - Con join:
+  - Sin producto cartesiano:
 
   ```sql
   select count(distinct tp.p_id) from p join tp on p.p_id=tp.p_id join t on tp.t_id=t.t_id where t.color='Rojo';
@@ -64,7 +70,7 @@
 
   - Resultado:
 
-  <img src="img/apt2.png" style="width: 20%">
+  <img src="img/apt2.png">
 
 
 
@@ -74,10 +80,10 @@
   - Con producto cartesiano:
 
   ```sql
-  
+  select distinct nombre from p where not exists(select * from t where not exists (select * from tp where t.t_id=tp.t_id and tp.p_id=p.p_id));
   ```
 
-  - Con join:
+  - Sin producto cartesiano:
 
   ```sql
   select nombre from p join tp on p.p_id=tp.p_id where not exists(select 1 from t where not exists(select 1 from tp where t.t_id=tp.t_id and tp.p_id=p.p_id));
@@ -97,13 +103,23 @@
   - Con producto cartesiano:
 
   ```sql
-
+  select count(distinct p.p_id) from p, tp, t where p.p_id=tp.p_id and tp.t_id=t.t_id and p.nombre='José' and p.ciudad='Madrid';
   ```
 
-  - Con join:
+  <img src="img/apt4.png">
+
+  <p>Esta consulta muestra los proveedores llamados "José" <b>Y</b> que viven en Madrid. Para mostrar los proveedores llamados "José" <b>O</b> que vivan en Madrid, se utiliza la siguiente:</p>
 
   ```sql
+  select count(distinct p.p_id) from p where(p.nombre='José' or p.ciudad='Madrid');
+  ```
 
+  <img src="img/apt4.1.png">
+
+  - Sin producto cartesiano:
+
+  ```sql
+  select count(distinct p.p_id) from p where p.nombre='José' and p.ciudad='Madrid';
   ```
 
   - Resultado:
@@ -118,18 +134,18 @@
   - Con producto cartesiano:
 
   ```sql
-
+  select count(distinct p.p_id) , count(distinct p.ciudad) from p, tp, t where t.t_id='T2' and t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
-  - Con join:
+  - Sin producto cartesiano:
 
   ```sql
-
+  select count(distinct p.p_id) , count(distinct p.ciudad) from p join tp on p.p_id=tp.p_id join t on tp.t_id=t.t_id where t.t_id='t2';
   ```
 
   - Resultado:
 
-  <img src="img/apt5.png">
+  <img id="apt5-img" src="img/apt5.png">
 
 
 
@@ -139,13 +155,13 @@
   - Con producto cartesiano:
 
   ```sql
-
+  select t.color from t,tp,p where p.p_id='p1' and t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
-  - Con join:
+  - Sin producto cartesiano:
 
   ```sql
-
+  select t.color from t join tp on t.t_id=tp.t_id join p on tp.p_id=p.p_id where p.p_id='p1';
   ```
 
   - Resultado:
@@ -160,10 +176,10 @@
   - Con producto cartesiano:
 
   ```sql
-
+  
   ```
 
-  - Con join:
+  - Sin producto cartesiano:
 
   ```sql
 
@@ -184,7 +200,7 @@
 
   ```
 
-  - Con join:
+  - Sin producto cartesiano:
 
   ```sql
 
@@ -205,7 +221,7 @@
 
   ```
 
-  - Con join:
+  - Sin producto cartesiano:
 
   ```sql
 
@@ -226,7 +242,7 @@
 
   ```
 
-  - Con join:
+  - Sin producto cartesiano:
 
   ```sql
 
