@@ -169,11 +169,17 @@
   select count(distinct p.p_id) , count(distinct p.ciudad) from p, tp, t where t.t_id='T2' and t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
+  <p>Primero se cuentan las <b>entradas únicas</b> del campo "<b>p.p_id</b>" y del campo "<b>p.ciudad</b>".</p>
+  <p>Después, se establecen la tablas de donde se saca la información y las condiciones para que el "<b>t_id</b>" sea "<b>T2</b>" y se establecen las relaciones mediante los campos "<b>t_id</b>" y "<b>p_id</b>".</p>
+
   - Sin producto cartesiano:
 
   ```sql
   select count(distinct p.p_id) , count(distinct p.ciudad) from p join tp on p.p_id=tp.p_id join t on tp.t_id=t.t_id where t.t_id='t2';
   ```
+
+  <p>Este código realiza una consulta para contar el número de <b>elementos únicos</b> en <b>dos campos específicos</b> de las tablas relacionadas "<b>p</b>", "<b>t</b>" y "<b>tp</b>".</p>
+  <p>Utiliza "<b>join</b>" para relacionar las tablas "<b>p</b>" con "<b>tp</b>" mediante el campo "<b>p_id</b>", y "<b>tp</b>" con "<b>t</b>" mediante el campo "<b>t_id</b>" y luego se utiliza una cláusula "<b>where</b>" para filtrar los resultados con el campo "<b>t_id='t2'</b>". La consulta selecciona el número de elementos únicos en los campos "<b>p.p_id</b>" y "<b>p.ciudad</b>" y los contabiliza.</p>
 
   - Resultado:
 
