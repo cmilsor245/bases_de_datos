@@ -81,14 +81,21 @@
   select count(distinct tp.p_id) from p, tp, t where p.p_id=tp.p_id and tp.t_id=t.t_id and t.color='Rojo';
   ```
 
-  <p>La cláusula "<b>select count(distinct tp.p_id) from p, tp t</b>" muestra el número de coincidencia <b>únicas</b> (debido al "<b>distinct</b>") en el campo "<b>tp.p_id</b>" de las tablas "<b>p</b>", .</p>
-  <p></p>
+  <p>La cláusula "<b>select count(distinct tp.p_id) from p, tp t</b>" muestra el número de coincidencia <b>únicas</b> (debido al "<b>distinct</b>") en el campo "<b>tp.p_id</b>" de las tablas "<b>p</b>" y "<b>t</b>".</p>
+  <p>El "<b>where</b>" especifica que las condiciones que se deben cumplir son:</p>
 
-  - Sin producto cartesiano:
+  1. Que el campo "<b>p_id</b>" sea igual en las tablas "<b>p</b>" y "<b>tp</b>"
+  2. Que el campo "<b>t_id</b>" sea igual en las tablas "<b>tp</b>" y "<b>t</b>"
+  3. Que el campo "<b>color</b>" sea igual a "<b>Rojo</b>"
+
+- Sin producto cartesiano:
 
   ```sql
   select count(distinct tp.p_id) from p join tp on p.p_id=tp.p_id join t on tp.t_id=t.t_id where t.color='Rojo';
   ```
+
+  <p>La cláusula "<b>distinct</b>" establece que se seleccione el número de entradas <b>únicas</b> en el campo "<b>tp.p_id</b>".</p>
+  <p></p>
 
   - Resultado:
 
@@ -102,8 +109,10 @@
   - Con producto cartesiano:
 
   ```sql
-  select distinct nombre from p where not exists(select * from t where not exists (select * from tp where t.t_id=tp.t_id and tp.p_id=p.p_id));
+  select distinct nombre from p where not exists(select * from t where not exists(select * from tp where t.t_id=tp.t_id and tp.p_id=p.p_id));
   ```
+
+  <p>Esta consulta selecciona, para empezar, los nombres <b>de forma única</b>. A continuación, con la cláusula "<b>where not exists</b>" especifica que solo entrarán las entradas en la tabla "<b>p</b>" donde <b>no existen</b> entradas relacionadas en la tabla "<b>t</b>" que no tengan relación con entradas en la tabla "<b>tp</b>" utilizando el campo "<b>t_id</b>".</p>
 
   - Sin producto cartesiano:
 
@@ -111,7 +120,8 @@
   select nombre from p join tp on p.p_id=tp.p_id where not exists(select 1 from t where not exists(select 1 from tp where t.t_id=tp.t_id and tp.p_id=p.p_id));
   ```
 
-  <p>Esta consulta filtra solo los proveedores que suministran todas las piezas existentes, es decir, aquellos proveedores cuyo ID no aparece en la tabla "t" con una pieza no suministrada.</p>
+  <p>Aquí se utiliza la cláusula "<b>join</b>" para relacionar las tablas "<b>p</b>" y "<b>tp</b>" mediante el campo "<b>p_id</b>" y luego se utiliza la cláusula "<b>where not exists</b>" para filtrar los resultados de la tabla "<b>p</b>" en base a una <b>subconsulta</b>.</p>
+  <p>Esta subconsulta ("<b>(select 1 from t where not exists(select 1 from tp where t.t_id=tp.t_id and tp.p_id=p.p_id))</b>") selecciona las entradas de la tabla "<b>t</b>" donde <b>no existen</b> entradas relacionadas en la tabla "<b>tp</b>" mediante los campos "<b>t_id</b>" y "<b>p_id</b>", lo que permite seleccionar solo los proveedores que suministran todas las piezas, es decir, aquellos que están relacionados con todas las entradas de la tabla "<b>t</b>" y "<b>tp</b>".</p>
 
   - Resultado:
 
