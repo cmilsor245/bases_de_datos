@@ -196,11 +196,17 @@
   select t.color from t,tp,p where p.p_id='p1' and t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
+  <p>En esta otra consulta, primero se selecciona el campo "<b>color</b>" de la tabla "<b>t</b>".</p>
+  <p>Después de esto, se utiliza la cláusula "<b>from</b>" para establecer las tablas de la consulta, además de la cláusula "<b>where</b>" para especificar las condiciones de que el <b>ID del proveedor</b> sea igual a "<b>P1</b>" y que los campos "<b>t_id</b>" y "<b>p_id</b>" sean iguales en sus respectivas tablas.</p>
+
   - Sin producto cartesiano:
 
   ```sql
   select t.color from t join tp on t.t_id=tp.t_id join p on tp.p_id=p.p_id where p.p_id='p1';
   ```
+
+  <p>Este otro código realiza una consulta en varias tablas relacionadas para obtener una <b>lista de colores</b> de una tabla específica "<b>t</b>" en base a una condición específica en otra tabla "<b>p</b>". Utiliza "<b>joins</b>" para relacionar las tablas "<b>t</b>" y "<b>tp</b>" mediante el campo "<b>t_id</b>", las tablas "<b>tp</b>" y "<b>p</b>" mediante el campo "<b>  p_id</b>".</p>
+  <p>Para terminar, aplica una cláusula "<b>where</b>" para filtrar los resultados con el campo "<b>p.p_id='p1'</b>".</p>
 
   - Resultado:
 
