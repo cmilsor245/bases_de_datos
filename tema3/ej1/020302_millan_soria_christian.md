@@ -51,7 +51,7 @@
   - Con producto cartesiano:
 
   ```sql
-  select nombre from p,t,tp where t.t_id='T2' and t.t_id=tp.t_id and p.p_id=tp.p_id;
+  select nombre from p, t, tp where t.t_id='T2' and t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
   <p>Esta consulta busca el contenido del campo "<b>nombre</b>" de la tabla "<b>p</b>", estableciendo como condiciones que el "<b>t_id</b>" de la tabla "<b>t</b>" debe ser igual a "<b>T2</b>", además de ser igual que el campo "<b>t_id</b>" en la tabla "<b>tp</b>", y que el campo "<b>p_id</b>" de la tabla "<b>p</b>" tiene que ser igual que el campo con el mismo nombre de la tabla "<b>tp</b>".</p>
@@ -78,8 +78,11 @@
   - Con producto cartesiano:
 
   ```sql
-  select count(distinct tp.p_id) from p, tp,t where p.p_id=tp.p_id and tp.t_id=t.t_id and t.color='Rojo';
+  select count(distinct tp.p_id) from p, tp, t where p.p_id=tp.p_id and tp.t_id=t.t_id and t.color='Rojo';
   ```
+
+  <p>La cláusula "<b>select count(distinct tp.p_id) from p, tp t</b>" muestra el número de coincidencia <b>únicas</b> (debido al "<b>distinct</b>") en el campo "<b>tp.p_id</b>" de las tablas "<b>p</b>", .</p>
+  <p></p>
 
   - Sin producto cartesiano:
 
