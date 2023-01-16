@@ -5,6 +5,7 @@
       font-weight: bold;
     }
 
+
   /* images */
     img{
       border: 1px solid black;
@@ -21,6 +22,12 @@
       #apt5-img{
         height: 45px;
       }
+
+
+  /* paragraphs */
+    p{
+      text-align: justify;
+    }
 </style>
 
 <!-- title -->
@@ -47,11 +54,17 @@
   select nombre from p,t,tp where t.t_id='T2' and t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
+  <p>Esta consulta busca el contenido del campo "<b>nombre</b>" de la tabla "<b>p</b>", estableciendo como condiciones que el "<b>t_id</b>" de la tabla "<b>t</b>" debe ser igual a "<b>T2</b>", además de ser igual que el campo "<b>t_id</b>" en la tabla "<b>tp</b>", y que el campo "<b>p_id</b>" de la tabla "<b>p</b>" tiene que ser igual que el campo con el mismo nombre de la tabla "<b>tp</b>".</p>
+
   - Sin producto cartesiano:
 
   ```sql
   select nombre from p join tp on p.p_id=tp.p_id and tp.t_id='T2' join t on tp.t_id=t.t_id;
   ```
+
+  <p>Esta otra realiza <b>la misma acción</b>, pero de una forma más <b>eficiente</b>.</p>
+  <p>Para empezar selecciona el campo "nombre" de la tabla "p". Seguidamente, une la tabla "tp" con la tabla anterior ("p") estableciendo como condición en la cláusula "on" que el campo "p_id" debe ser igual en las dos tablas.</p>
+  <p>A continuación, con una cláusula "<b>and</b>" incluye una condición más, que establece que el campo "<b>t_id</b>" en la tabla "<b>tp</b>" debe ser igual a "<b>T2</b>, para después unirlo con otro "<b>join</b>" con la tabla "<b>t</b>", con la condición en el "<b>on</b>" de que el campo "<b>t_id</b>" debe ser igual en las dos tablas.</p>
 
   - Resultado:
 
