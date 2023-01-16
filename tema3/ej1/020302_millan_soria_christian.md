@@ -44,7 +44,7 @@
   - Con producto cartesiano:
 
   ```sql
-  select nombre from p,t,tp where t.t_id='T2' and t.t_id = tp.t_id and p.p_id = tp.p_id;
+  select nombre from p,t,tp where t.t_id='T2' and t.t_id=tp.t_id and p.p_id=tp.p_id;
   ```
 
   - Sin producto cartesiano:
@@ -57,7 +57,7 @@
 
   <img src="img/apt1.png">
 
-
+  <!----------------------------------->
 
   <!-- apt2 -->
   <p><b>2. Número de los proveedores que suministran al menos una pieza roja.</b></p>
@@ -78,7 +78,7 @@
 
   <img src="img/apt2.png">
 
-
+  <!----------------------------------->
 
   <!-- apt3 -->
   <p><b>3. Nombres de los proveedores que suministran todas las piezas.</b></p>
@@ -101,7 +101,7 @@
 
   <img src="img/apt3.png">
 
-
+  <!----------------------------------->
 
   <!-- apt4 -->
   <p><b>4. Número de los proveedores llamados "José" y que vivan en Madrid.</b></p>
@@ -132,7 +132,7 @@
 
   <img src="img/apt4.png">
 
-
+  <!----------------------------------->
 
   <!-- apt5 -->
   <p><b>5. Número de proveedores y ciudades que suministran la pieza "T2".</b></p>
@@ -153,7 +153,7 @@
 
   <img id="apt5-img" src="img/apt5.png">
 
-
+  <!----------------------------------->
 
   <!-- apt6 -->
   <p><b>6. Colores de las piezas de los partes de la tabla "TP" suministrados por "P1".</b></p>
@@ -174,7 +174,7 @@
 
   <img src="img/apt6.png">
 
-
+  <!----------------------------------->
 
   <!-- apt7 -->
   <p><b>7. Nombre de los proveedores de Málaga o que suministran piezas de color blanco.</b></p>
@@ -195,7 +195,7 @@
 
   <img src="img/apt7.png">
 
-
+  <!----------------------------------->
 
   <!-- apt8 -->
   <p><b>8. Nombres de los proveedores de Madrid junto a los códigos de los productos que suministran.</b></p>
@@ -216,7 +216,7 @@
 
   <img src="img/apt8.png">
 
-
+  <!----------------------------------->
 
   <!-- apt9 -->
   <p><b>9. Ciudades de los proveedores junto a los códigos de los productos que suministran y el correspondiente color.</b></p>
@@ -237,7 +237,7 @@
 
   <img src="img/apt9.png">
 
-
+  <!----------------------------------->
 
   <!-- apt10 -->
   <p><b>10. Igual que el apartado anterior pero para el proveedor "P1".</b></p>
