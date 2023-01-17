@@ -101,7 +101,7 @@
       (1, "Málaga", 1743000, 1),
       (2, "Barcelona", 5460000, 2),
       (3, "A Coruña", 1039000, 3),
-      (4, "Vitoria-Gasteiz", 233000, 4),
+      (4, "Álava", 233000, 4),
       (5, "Valladolid", 2341000, 5);
 
   insert into rios(rios_nombre, rios_longitud, rios_ciudad, rios_provincias, rios_comunidades, rios_km_comunidad, comuni_id) values

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>020401_millan_soria_christian.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<!-- style -->
+  <style>
+    /* título */
+      h1{
+        text-align: center;
+        font-weight: bold;
+      }
+
+    /* subtítulos */
+      h3{
+        font-weight: bold;
+      }
+
+      /* imágenes */
+        img{
+          border: 1px solid black;
+          width: 20%;
+        }
+
+        /* excepciones */
+          .ex{
+            border: none;
+            width: 100%;
+          }
+  </style>
+<!---------------------------------------------------->
+<!-- title -->
+  <h1>R&#xCD;OS DE ESPA&#xD1;A</h1>
+<!-- modelo conceptual -->
+  <h3>MODELO CONCEPTUAL</h3>
+  <img class="ex" src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/conceptual.png">
+  <hr>
+<!------------------------------------------->
+<!-- modelo relacional -->
+  <h3>MODELO RELACIONAL</h3>
+  <img class="ex" src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/relacional.png">
+  <hr>
+<!------------------------------------------->
+<!-- modelo físico -->
+  <h3>MODELO F&#xCD;SICO</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> tema4_ej1;
+
+<span class="hljs-keyword">use</span> tema4_ej1;
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> comunidades(
+    comuni_id <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+    comunidades_nombre <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    comunidades_habitantes <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>
+);
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> provincias(
+    provi_id <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+    provincias_nombre <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    provincias_habitantes <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    comuni_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    <span class="hljs-keyword">foreign</span> <span class="hljs-keyword">key</span>(comuni_id) <span class="hljs-keyword">references</span> comunidades(comuni_id)
+);
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> rios(
+    rio_id <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,
+    rios_nombre <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    rios_longitud <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    rios_ciudad <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    rios_provincias <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    rios_comunidades <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    rios_km_comunidad <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    comuni_id <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    <span class="hljs-keyword">foreign</span> <span class="hljs-keyword">key</span>(comuni_id) <span class="hljs-keyword">references</span> comunidades(comuni_id)
+);
+</div></code></pre>
+  <hr>
+<!------------------------------------------->
+<!-- inserts de ríos -->
+  <h3>INSERTS DE R&#xCD;OS</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> comunidades(comuni_id, comunidades_nombre, comunidades_habitantes) <span class="hljs-keyword">values</span> 
+  (<span class="hljs-number">1</span>, <span class="hljs-string">"Andalucía"</span>, <span class="hljs-number">8382999</span>),
+  (<span class="hljs-number">2</span>, <span class="hljs-string">"Cataluña"</span>, <span class="hljs-number">7555044</span>),
+  (<span class="hljs-number">3</span>, <span class="hljs-string">"Galicia"</span>, <span class="hljs-number">2719600</span>),
+  (<span class="hljs-number">4</span>, <span class="hljs-string">"País Vasco"</span>, <span class="hljs-number">2179000</span>),
+  (<span class="hljs-number">5</span>, <span class="hljs-string">"Castilla y León"</span>, <span class="hljs-number">2475000</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> provincias(provi_id, provincias_nombre, provincias_habitantes, comuni_id) <span class="hljs-keyword">values</span> 
+    (<span class="hljs-number">1</span>, <span class="hljs-string">"Málaga"</span>, <span class="hljs-number">1743000</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-number">2</span>, <span class="hljs-string">"Barcelona"</span>, <span class="hljs-number">5460000</span>, <span class="hljs-number">2</span>),
+    (<span class="hljs-number">3</span>, <span class="hljs-string">"A Coruña"</span>, <span class="hljs-number">1039000</span>, <span class="hljs-number">3</span>),
+    (<span class="hljs-number">4</span>, <span class="hljs-string">"Álava"</span>, <span class="hljs-number">233000</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-number">5</span>, <span class="hljs-string">"Valladolid"</span>, <span class="hljs-number">2341000</span>, <span class="hljs-number">5</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> rios(rios_nombre, rios_longitud, rios_ciudad, rios_provincias, rios_comunidades, rios_km_comunidad, comuni_id) <span class="hljs-keyword">values</span>
+    (<span class="hljs-string">"Ebro"</span>, <span class="hljs-number">910</span>, <span class="hljs-string">"Zaragoza"</span>, <span class="hljs-string">"Zaragoza, Tarragona, Teruel"</span>, <span class="hljs-string">"Aragón, Cataluña"</span>, <span class="hljs-number">200</span>, <span class="hljs-number">2</span>),
+    (<span class="hljs-string">"Segura"</span>, <span class="hljs-number">480</span>, <span class="hljs-string">"Murcia"</span>, <span class="hljs-string">"Murcia, Albacete, Alicante"</span>, <span class="hljs-string">"Murcia, Comunidad Valenciana"</span>, <span class="hljs-number">150</span>, <span class="hljs-number">1</span>),
+    (<span class="hljs-string">"Duero"</span>, <span class="hljs-number">897</span>, <span class="hljs-string">"Soria"</span>, <span class="hljs-string">"Soria, Burgos, Valladolid, Zamora"</span>, <span class="hljs-string">"Castilla y León, Castilla-La Mancha"</span>, <span class="hljs-number">250</span>, <span class="hljs-number">3</span>),
+    (<span class="hljs-string">"Guadiana"</span>, <span class="hljs-number">1000</span>, <span class="hljs-string">"Badajoz"</span>, <span class="hljs-string">"Badajoz, Cáceres"</span>, <span class="hljs-string">"Extremadura, Andalucía"</span>, <span class="hljs-number">300</span>, <span class="hljs-number">4</span>),
+    (<span class="hljs-string">"Minho"</span>, <span class="hljs-number">330</span>, <span class="hljs-string">"Vigo"</span>, <span class="hljs-string">"Pontevedra, Ourense"</span>, <span class="hljs-string">"Galicia, Portugal"</span>, <span class="hljs-number">100</span>, <span class="hljs-number">5</span>),
+    (<span class="hljs-string">"Bidasoa"</span>, <span class="hljs-number">120</span>, <span class="hljs-string">"Irun"</span>, <span class="hljs-string">"Guipúzcoa, Navarra"</span>, <span class="hljs-string">"País Vasco, Navarra"</span>, <span class="hljs-number">50</span>, <span class="hljs-number">6</span>);
+</div></code></pre>
+  <hr>
+<!------------------------------------------->
+<!-- ejercicios -->
+  <!-- ej1 -->
+  <p><b>1. Muestra el nombre de todos los r&#xED;os.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> rios_nombre <span class="hljs-keyword">from</span> rios;
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt1.png">
+  <!-- ej2 -->
+  <p><b>2. Muestra las provincias por las que pasa uno de los r&#xED;os.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> rios_provincias <span class="hljs-keyword">from</span> rios <span class="hljs-keyword">where</span> rios_nombre = <span class="hljs-string">'Ebro'</span>;
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt2.png">
+  <!-- ej3 -->
+  <p><b>3. Muestra las provincias por las que pasa cada uno de los r&#xED;os.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> rios_nombre, rios_provincias <span class="hljs-keyword">from</span> rios;
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt3.png">
+  <!-- ej4 -->
+  <p><b>4. Muestra las regiones por las que pasa un r&#xED;o que al menos pase por 2 comunidades aut&#xF3;nomas.</b></p>
+<pre class="hljs"><code><div>
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt4.png">
+  <!-- ej5 -->
+  <p><b>5. Muestra las regiones por las que pasa cada r&#xED;o.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> rios_nombre, rios_comunidades <span class="hljs-keyword">from</span> rios;
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt5.png">
+  <!-- ej6 -->
+  <p><b>6. Muestra los r&#xED;os que pasan por cada comunidad y provincia agrupados por las provincias.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> rios_provincias, <span class="hljs-keyword">group_concat</span>(rios_nombre) <span class="hljs-keyword">from</span> rios <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> rios_provincias;
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt6.png">
+  <!-- ej7 -->
+  <p><b>7. Muestra los r&#xED;os que pasan por cada comunidad agrupados por comunidad.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> rios_comunidades,<span class="hljs-keyword">group_concat</span>(rios_nombre) <span class="hljs-keyword">from</span> rios <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> rios_comunidades;
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt7.png">
+  <!-- ej8 -->
+  <p><b>8. Muestra el nombre del r&#xED;o con mayor longitud.<b></b></b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> rios_nombre, <span class="hljs-keyword">max</span>(rios_longitud) <span class="hljs-keyword">from</span> rios;
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt8.png">
+  <!-- ej9 -->
+  <p><b>9. Calcula la longitud de todos los r&#xED;os ordenados alfab&#xE9;ticamente.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> rios_nombre, rios_longitud <span class="hljs-keyword">from</span> rios <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> rios_nombre <span class="hljs-keyword">asc</span>;
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt9.png">
+  <!-- ej10 -->
+  <p><b>10. Calcula la longitud de todos los r&#xED;os ordenados de menor a mayor longitud. Muestra el nombre del r&#xED;o y la longitud de cada uno.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> rios_nombre, rios_longitud <span class="hljs-keyword">from</span> rios <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> rios_longitud <span class="hljs-keyword">asc</span>;
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt10.png">
+  <!-- ej11 -->
+  <p><b>11. Calcula la longitud de todos los r&#xED;os que corresponden a cada provincia. Se deben mostrar de mayor a menor, teniendo en cuenta la suma de los kil&#xF3;metros que cada r&#xED;o recorre en cada provincia.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> rios_provincias, <span class="hljs-keyword">sum</span>(rios_longitud) <span class="hljs-keyword">from</span> rios <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> rios_provincias <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">sum</span>(rios_longitud) <span class="hljs-keyword">desc</span>;
+</div></code></pre>
+<ul>
+<li>Resultado:</li>
+</ul>
+  <img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/ej1/img/apt11.png">
+  <hr>
+<!---------------------------------------------------->
+<h2><b>Anexo</b></h2>
+<pre class="hljs"><code><div><span class="hljs-comment">-- phpMyAdmin SQL Dump</span>
+<span class="hljs-comment">-- version 5.2.0</span>
+<span class="hljs-comment">-- https://www.phpmyadmin.net/</span>
+<span class="hljs-comment">--</span>
+<span class="hljs-comment">-- Host: 127.0.0.1:3306</span>
+<span class="hljs-comment">-- Generation Time: Jan 15, 2023 at 10:43 PM</span>
+<span class="hljs-comment">-- Server version: 8.0.31</span>
+<span class="hljs-comment">-- PHP Version: 8.0.26</span>
+
+<span class="hljs-keyword">SET</span> SQL_MODE = <span class="hljs-string">"NO_AUTO_VALUE_ON_ZERO"</span>;
+<span class="hljs-keyword">START</span> <span class="hljs-keyword">TRANSACTION</span>;
+<span class="hljs-keyword">SET</span> <span class="hljs-keyword">time_zone</span> = <span class="hljs-string">"+00:00"</span>;
+
+
+<span class="hljs-comment">/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */</span>;
+<span class="hljs-comment">/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */</span>;
+<span class="hljs-comment">/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */</span>;
+<span class="hljs-comment">/*!40101 SET NAMES utf8mb4 */</span>;
+
+<span class="hljs-comment">--</span>
+<span class="hljs-comment">-- Database: `tema4_ej1`</span>
+<span class="hljs-comment">--</span>
+
+<span class="hljs-comment">-- --------------------------------------------------------</span>
+
+<span class="hljs-comment">--</span>
+<span class="hljs-comment">-- Table structure for table `comunidades`</span>
+<span class="hljs-comment">--</span>
+
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> <span class="hljs-string">`comunidades`</span>;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> <span class="hljs-string">`comunidades`</span> (
+  <span class="hljs-string">`comuni_id`</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+  <span class="hljs-string">`comunidades_nombre`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`comunidades_habitantes`</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`comuni_id`</span>)
+) <span class="hljs-keyword">ENGINE</span>=MyISAM AUTO_INCREMENT=<span class="hljs-number">6</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mb4 <span class="hljs-keyword">COLLATE</span>=utf8mb4_0900_ai_ci;
+
+<span class="hljs-comment">--</span>
+<span class="hljs-comment">-- Dumping data for table `comunidades`</span>
+<span class="hljs-comment">--</span>
+
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`comunidades`</span> (<span class="hljs-string">`comuni_id`</span>, <span class="hljs-string">`comunidades_nombre`</span>, <span class="hljs-string">`comunidades_habitantes`</span>) <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">1</span>, <span class="hljs-string">'Andalucía'</span>, <span class="hljs-number">8382999</span>),
+(<span class="hljs-number">2</span>, <span class="hljs-string">'Cataluña'</span>, <span class="hljs-number">7555044</span>),
+(<span class="hljs-number">3</span>, <span class="hljs-string">'Galicia'</span>, <span class="hljs-number">2719600</span>),
+(<span class="hljs-number">4</span>, <span class="hljs-string">'País Vasco'</span>, <span class="hljs-number">2179000</span>),
+(<span class="hljs-number">5</span>, <span class="hljs-string">'Castilla y León'</span>, <span class="hljs-number">2475000</span>);
+
+<span class="hljs-comment">-- --------------------------------------------------------</span>
+
+<span class="hljs-comment">--</span>
+<span class="hljs-comment">-- Table structure for table `provincias`</span>
+<span class="hljs-comment">--</span>
+
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> <span class="hljs-string">`provincias`</span>;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> <span class="hljs-string">`provincias`</span> (
+  <span class="hljs-string">`provi_id`</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+  <span class="hljs-string">`provincias_nombre`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`provincias_habitantes`</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`comuni_id`</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`provi_id`</span>),
+  <span class="hljs-keyword">KEY</span> <span class="hljs-string">`comuni_id`</span> (<span class="hljs-string">`comuni_id`</span>)
+) <span class="hljs-keyword">ENGINE</span>=MyISAM AUTO_INCREMENT=<span class="hljs-number">6</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mb4 <span class="hljs-keyword">COLLATE</span>=utf8mb4_0900_ai_ci;
+
+<span class="hljs-comment">--</span>
+<span class="hljs-comment">-- Dumping data for table `provincias`</span>
+<span class="hljs-comment">--</span>
+
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`provincias`</span> (<span class="hljs-string">`provi_id`</span>, <span class="hljs-string">`provincias_nombre`</span>, <span class="hljs-string">`provincias_habitantes`</span>, <span class="hljs-string">`comuni_id`</span>) <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">1</span>, <span class="hljs-string">'Málaga'</span>, <span class="hljs-number">1743000</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">2</span>, <span class="hljs-string">'Barcelona'</span>, <span class="hljs-number">5460000</span>, <span class="hljs-number">2</span>),
+(<span class="hljs-number">3</span>, <span class="hljs-string">'A Coruña'</span>, <span class="hljs-number">1039000</span>, <span class="hljs-number">3</span>),
+(<span class="hljs-number">4</span>, <span class="hljs-string">'Vitoria-Gasteiz'</span>, <span class="hljs-number">233000</span>, <span class="hljs-number">4</span>),
+(<span class="hljs-number">5</span>, <span class="hljs-string">'Valladolid'</span>, <span class="hljs-number">2341000</span>, <span class="hljs-number">5</span>);
+
+<span class="hljs-comment">-- --------------------------------------------------------</span>
+
+<span class="hljs-comment">--</span>
+<span class="hljs-comment">-- Table structure for table `rios`</span>
+<span class="hljs-comment">--</span>
+
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> <span class="hljs-string">`rios`</span>;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> <span class="hljs-string">`rios`</span> (
+  <span class="hljs-string">`rio_id`</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+  <span class="hljs-string">`rios_nombre`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`rios_longitud`</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`rios_ciudad`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`rios_provincias`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`rios_comunidades`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`rios_km_comunidad`</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`comuni_id`</span> <span class="hljs-built_in">int</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`rio_id`</span>),
+  <span class="hljs-keyword">KEY</span> <span class="hljs-string">`comuni_id`</span> (<span class="hljs-string">`comuni_id`</span>)
+) <span class="hljs-keyword">ENGINE</span>=MyISAM AUTO_INCREMENT=<span class="hljs-number">7</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mb4 <span class="hljs-keyword">COLLATE</span>=utf8mb4_0900_ai_ci;
+
+<span class="hljs-comment">--</span>
+<span class="hljs-comment">-- Dumping data for table `rios`</span>
+<span class="hljs-comment">--</span>
+
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`rios`</span> (<span class="hljs-string">`rio_id`</span>, <span class="hljs-string">`rios_nombre`</span>, <span class="hljs-string">`rios_longitud`</span>, <span class="hljs-string">`rios_ciudad`</span>, <span class="hljs-string">`rios_provincias`</span>, <span class="hljs-string">`rios_comunidades`</span>, <span class="hljs-string">`rios_km_comunidad`</span>, <span class="hljs-string">`comuni_id`</span>) <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">1</span>, <span class="hljs-string">'Ebro'</span>, <span class="hljs-number">910</span>, <span class="hljs-string">'Zaragoza'</span>, <span class="hljs-string">'Zaragoza, Tarragona, Teruel'</span>, <span class="hljs-string">'Aragón, Cataluña'</span>, <span class="hljs-number">200</span>, <span class="hljs-number">2</span>),
+(<span class="hljs-number">2</span>, <span class="hljs-string">'Segura'</span>, <span class="hljs-number">480</span>, <span class="hljs-string">'Murcia'</span>, <span class="hljs-string">'Murcia, Albacete, Alicante'</span>, <span class="hljs-string">'Murcia, Comunidad \r\nValenciana'</span>, <span class="hljs-number">150</span>, <span class="hljs-number">1</span>),
+(<span class="hljs-number">3</span>, <span class="hljs-string">'Duero'</span>, <span class="hljs-number">897</span>, <span class="hljs-string">'Soria'</span>, <span class="hljs-string">'Soria, Burgos, Valladolid, Zamora'</span>, <span class="hljs-string">'Castilla y León, \r\nCastilla-La Mancha'</span>, <span class="hljs-number">250</span>, <span class="hljs-number">3</span>),
+(<span class="hljs-number">4</span>, <span class="hljs-string">'Guadiana'</span>, <span class="hljs-number">1000</span>, <span class="hljs-string">'Badajoz'</span>, <span class="hljs-string">'Badajoz, Cáceres'</span>, <span class="hljs-string">'Extremadura, Andalucía'</span>, <span class="hljs-number">300</span>, <span class="hljs-number">4</span>),
+(<span class="hljs-number">5</span>, <span class="hljs-string">'Minho'</span>, <span class="hljs-number">330</span>, <span class="hljs-string">'Vigo'</span>, <span class="hljs-string">'Pontevedra, Ourense'</span>, <span class="hljs-string">'Galicia, Portugal'</span>, <span class="hljs-number">100</span>, <span class="hljs-number">5</span>),
+(<span class="hljs-number">6</span>, <span class="hljs-string">'Bidasoa'</span>, <span class="hljs-number">120</span>, <span class="hljs-string">'Irun'</span>, <span class="hljs-string">'Guipúzcoa, Navarra'</span>, <span class="hljs-string">'País Vasco, Navarra'</span>, <span class="hljs-number">50</span>, <span class="hljs-number">6</span>);
+<span class="hljs-keyword">COMMIT</span>;
+
+<span class="hljs-comment">/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */</span>;
+<span class="hljs-comment">/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */</span>;
+<span class="hljs-comment">/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */</span>;
+
+</div></code></pre>
+
+</body>
+</html>
