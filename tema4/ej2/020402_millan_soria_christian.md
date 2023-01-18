@@ -26,6 +26,12 @@
     border: 2px solid black;
   }
 
+  .inline{
+    background-color: lightgrey;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
   .exe{
     border: none;
   }
@@ -88,7 +94,7 @@ select name, population from world where name in('Sweden', 'Norway', 'Denmark');
 
 <h6>Just the right size</h6>
 
-<p><b>3. </b></p>
+<p><b>3. Which countries are not too small and not too big? <code class="inline">between</code> allows</b></p>
 
 <hr class="line">
 
