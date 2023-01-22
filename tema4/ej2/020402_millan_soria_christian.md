@@ -367,9 +367,11 @@ select name, round(gdp/population, -3) from world where gdp>1000000000000;
 <p>Respuesta:</p>
 
 ```sql
--- La función LENGTH hay que cambiarla por LEN
+-- la función LENGTH hay que cambiarla por LEN si se utiliza Microsoft SQL (arriba a la derecha en la tuerca)
 
 select name, len(name), capital, len(capital) from world where len(name)=len(capital);
+
+
 ```
 
 <img src="img/apt2/ej11.png">
@@ -564,7 +566,7 @@ select * from nobel where yr=1970 and subject in('cookery', 'chemistry', 'litera
 <p>Corrección:</p>
 
 ```sql
--- El nombre completo de WoWoodrow Wilson no funciona, hay que quitar Thomas
+-- el nombre completo de WoWoodrow Wilson no funciona, hay que quitar Thomas
 
 select * from nobel where winner in('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack Obama');
 ```
@@ -954,9 +956,302 @@ select name from bbc where population>(select population from bbc where name='un
 <p><b>7. Select the result that would be obtained from the following code:</b></p>
 
 ```sql
-select name from bbc where population>all(select max(population) from bbc where region = 'europe') and region = 'south asia';
+select name from bbc where population>all(select max(population) from bbc where region='europe') and region='south asia';
 ```
 
 <p>Respuesta:</p>
 
 <img src="img/quiz4/ej7.png">
+
+<hr class="line2">
+
+<h3>SUM and COUNT</h3>
+
+<hr class="line">
+
+<h6>Total world population</h6>
+
+<p><b>1. Show the total population of the world.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select sum(population) from world;
+```
+
+<img src="img/apt5/ej1.png">
+
+<hr class="line">
+
+<h6>List of continents</h6>
+
+<p><b>2. List all the continents - just once each.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select distinct(continent) from world;
+```
+
+<img src="img/apt5/ej2.png">
+
+<hr class="line">
+
+<h6>GDP of Africa</h6>
+
+<p><b>3. Give the total GDP of Africa.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select sum(gdp) from world where continent='africa';
+```
+
+<img src="img/apt5/ej3.png">
+
+<hr class="line">
+
+<h6>Count the big countries</h6>
+
+<p><b>4. How many countries have an area of at least 1000000?</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select count(name) from world where area>=1000000;
+```
+
+<img src="img/apt5/ej4.png">
+
+<hr class="line">
+
+<h6>Baltic states population</h6>
+
+<p><b>5. What is the total population of ('Estonia', 'Latvia', 'Lithuania')?</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select sum(population) from world where name in('estonia', 'latvia', 'lithuania');
+```
+
+<img src="img/apt5/ej5.png">
+
+<hr class="line">
+
+<h6>Counting the countries of each continent</h6>
+
+<p><b>6. For each continent, show the continent and number of countries.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select continent, count(name) from world group by continent;
+```
+
+<img src="img/apt5/ej6.png">
+
+<hr class="line">
+
+<h6>Counting big countries in each continent</h6>
+
+<p><b>7. For each continent show the continent and number of countries with populations of at least 10 million.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select continent, count(name) from world where population>=10000000 group by continent;
+```
+
+<img src="img/apt5/ej7.png">
+
+<hr class="line">
+
+<h6>Counting big continents</h6>
+
+<p><b>8. List the continents that have a total population of at least 100 million.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select continent from world group by continent having sum(population)>100000000;
+```
+
+<img src="img/apt5/ej8.png">
+
+<hr class="line">
+
+<h5>SUM and COUNT - quiz</h5>
+
+<hr class="line">
+
+<p><b>1. Select the statement that shows the sum of population of all countries in 'Europe'.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz5/ej1.png">
+
+<p><b>2. Select the statement that shows the number of countries with population smaller than 150000.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz5/ej2.png">
+
+<p><b>3. Select the list of core SQL aggregate functions.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz5/ej3.png">
+
+<p><b>4. Select the result that would be obtained from the following code:</b></p>
+
+```sql
+select region, sum(area) from bbc where sum(area)>15000000 group by region;
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz5/ej4.png">
+
+<p><b>5. Select the statement that shows the average population of 'Poland', 'Germany' and 'Denmark'.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz5/ej5.png">
+
+<p><b>6. Select the statement that shows the medium population density of each region.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz5/ej6.png">
+
+<p><b>7. Select the statement that shows the name and population density of the country with the largest population.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz5/ej7.png">
+
+<p><b>8. Pick the result that would be obtained from the following code:</b></p>
+
+```sql
+select region, sum(area) from bbc group by region having sum(area)<=20000000;
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz5/ej7.png">
+
+<hr class="line2">
+
+<h3>JOIN</h3>
+
+<hr class="line">
+
+<p><b>1. The first example shows the goal scored by a player with the last name 'Bender'. The <code class="inline">*</code> says to list all the columns in the table - a shorter way of saying <code class="inline">matchid, teamid, player, gtime</code>.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select * from goal where player like '%bender';
+```
+
+<p>Corrección:</p>
+
+```sql
+select matchid, player from goal where teamid='ger';
+```
+
+<img src="img/apt6/ej1.png">
+
+<hr class="line">
+
+<p><b>2. From the previous query you can see that Lars Bender's scored a goal in game 1012. Now we want to know what teams were playing in that match.</b></p>
+
+<p><b>Notice in the that the column <code class="inline">matchid</code> in the <code class="inline">goal</code> table corresponds to the <code class="inline">id</code> column in the <code class="inline">game</code> table. We can look up information about game 1012 by finding that row in the game table.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select id,stadium,team1,team from game;
+```
+
+<p>Corrección:</p>
+
+```sql
+select id,stadium,team1,team2 from game where id=1012;
+```
+
+<img src="img/apt6/ej2.png">
+
+<hr class="line">
+
+<p><b>3. You can combine the two steps into a single query with a <code class="inline">JOIN</code>.</b></p>
+
+<p><b>The FROM clause says to merge data from the goal table with that from the game table. The ON says how to figure out which rows in game go with which rows in goal - the matchid from goal must match id from game. (If we wanted to be more clear/specific we could say <code class="inline">ON (game.id=goal.matchid)</code>.
+</b></p>
+
+<p><b>The code below shows the player (from the goal) and stadium name (from the game table) for every goal scored.</b></p>
+
+<p><b>Modify it to show the player, teamid, stadium and mdate for every German goal.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select player, stadium from game join goal on(id=matchid);
+```
+
+<p>Corrección:</p>
+
+```sql
+select player, teamid, stadium, mdate from game join goal on (game.id = goal.matchid and goal.teamid='ger');
+```
+
+<img src="img/apt6/ej3.png">
+
+<hr class="line">
+
+<p><b>4. Show the team1, team2 and player for every goal scored by a player called Mario <code class="inline">player LIKE 'Mario%'</code>.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select team1, team2, player from game join goal on (id=matchid and player like 'mario%');
+```
+
+<img src="img/apt6/ej4.png">
+
+<hr class="line">
+
+<p><b>5. The table <code class="inline">eteam</code> gives details of every national team including the coach. You can <code class="inline">JOIN</code> <code class="inline">goal</code> to <code class="inline">eteam</code> using the phrase goal <code class="inline">JOIN eteam on teamid=id</code>.</b></p>
+
+<p><b>Show <code class="inline">player</code>, <code class="inline">teamid</code>, <code class="inline">coach</code>, <code class="inline">gtime</code> for all goals scored in the first 10 minutes <code class="inline">gtime<=10</code>.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select player, teamid, gtime from goal where gtime<=10;
+```
+
+<p>Respuesta:</p>
+
+```sql
+select player, teamid, coach, gtime from goal join eteam on (teamid=id and gtime<=10);
+```
+
+<img src="img/apt6/ej5.png">
+
+<hr class="line">
+
+<p><b>6. To <code class="inline">JOIN</code> <code class="inline">game</code> with <code class="inline">eteam</code> you could use either <code class="inline">game JOIN eteam ON (team1=eteam.id)</code> or <code class="inline">game JOIN eteam ON (team2=eteam.id)</code>.</b></p>
+
+<p><b></b></p>
+
+<p><b>List the dates of the matches and the name of the team in which 'Fernando Santos' was the team1 coach.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select mdate, teamname from game join eteam on (team1=eteam.id and coach like '%santos');
+```
+
+<img src="img/apt6/ej6.png">
