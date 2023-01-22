@@ -668,3 +668,25 @@ select winner, yr, subject from nobel where winner like 'sir%' order by yr desc,
 ```
 
 <img src="img/apt3/ej13.png">
+
+<hr class="line">
+
+<h6>Chemistry and Physics last</h6>
+
+<p><b>14. The expression subject IN ('chemistry','physics') can be used as a value - it will be 0 or 1.</b></p>
+
+<p><b>Show the 1984 winners and subject ordered by subject and winner name; but list chemistry and physics last.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select winner, subject, subject in ('physics','chemistry') from nobel where yr=1984 order by subject,winner;
+```
+
+<p>Corrección:</p>
+
+```sql
+select winner, subject from nobel where yr=1984 order by subject in('physics', 'chemistry'), subject, winner;
+```
+
+<img src="img/apt3/ej14.png">
