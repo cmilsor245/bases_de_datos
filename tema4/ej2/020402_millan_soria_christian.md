@@ -1406,8 +1406,18 @@ select distinct teamid, mdate from goal join game on (matchid=id) where mdate = 
 
 <img src="img/quiz6/ej5.png">
 
-<p><b>6. </b></p>
+<p><b>6. Select the code which shows the player, their team and the time they scored, for players who have played in Stadion Miejski (Wroclaw) but not against Italy(ITA).</b></p>
 
 <p>Respuesta:</p>
 
 <img src="img/quiz6/ej6.png">
+
+<p><b>7. Select the result that would be obtained from this code:</b></p>
+
+```sql
+select teamname, count(*) from eteam join goal on teamid=id group by teamname having count(*)<3;
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz6/ej7.png">
