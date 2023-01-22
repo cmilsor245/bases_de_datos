@@ -1733,3 +1733,75 @@ select teacher.name, dept.name from teacher inner join dept on(teacher.dept=dept
 ```
 
 <img src="img/apt8/ej2.png">
+
+<hr class="line">
+
+<p><b>3. Use a different JOIN so that all teachers are listed.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select teacher.name, dept.name from teacher left join dept on(teacher.dept=dept.id);
+```
+
+<img src="img/apt8/ej3.png">
+
+<hr class="line">
+
+<p><b>4. Use a different JOIN so that all departments are listed.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select teacher.name, dept.name from teacher right join dept on(teacher.dept=dept.id);
+```
+
+<img src="img/apt8/ej4.png">
+
+<hr class="line">
+
+<p><b>5. Use COALESCE to print the mobile number. Use the number '07986 444 2266' if there is no number given. Show teacher name and mobile number or '07986 444 2266'.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, coalesce(mobile, '07986 444 2266') from teacher;
+```
+
+<img src="img/apt8/ej5.png">
+
+<hr class="line">
+
+<p><b>6. Use the COALESCE function and a LEFT JOIN to print the teacher name and department name. Use the string 'None' where there is no department.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select coalesce(teacher.name, 'none'), coalesce(dept.name, 'none') from teacher left join dept on(teacher.dept=dept.id);
+```
+
+<img src="img/apt8/ej6.png">
+
+<hr class="line">
+
+<p><b>7. Use COUNT to show the number of teachers and the number of mobile phones.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select count(name), count(mobile) from teacher;
+```
+
+<img src="img/apt8/ej7.png">
+
+<hr class="line">
+
+<p><b>8. Use COUNT and GROUP BY dept.name to show each department and the number of staff. Use a RIGHT JOIN to ensure that the Engineering department is listed.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select dept.name, count(teacher.name) from teacher right join dept on(teacher.dept=dept.id) group by dept.name;
+```
+
+<img src="img/apt8/ej8.png">
