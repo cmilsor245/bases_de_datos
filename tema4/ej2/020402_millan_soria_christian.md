@@ -1985,3 +1985,63 @@ select distinct a.company, a.num from route a join route b on(a.company =b.compa
 ```
 
 <img src="img/apt9/ej7.png">
+
+<hr class="line">
+
+<p><b>8. Give a list of the services which connect the stops 'Craiglockhart' and 'Tollcross'.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select distinct a.company, a.num from route a join route b on(a.num=b.num and a.company=b.company) join stops stopa on(a.stop=stopa.id) join stops stopb on(b.stop=stopb.id) where stopa.name='craiglockhart' and stopb.name='tollcross';
+```
+
+<img src="img/apt9/ej8.png">
+
+<hr class="line">
+
+<p><b>9. Give a distinct list of the stops which may be reached from 'Craiglockhart' by taking one bus, including 'Craiglockhart' itself, offered by the LRT company. Include the company and bus no. of the relevant services.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select stopa.name, a.company, a.num from route a join route b on(a.num=b.num and a.company=b.company) join stops stopa on(a.stop=stopa.id) join stops stopb on(b.stop=stopb.id) where stopb.name='craiglockhart';
+```
+
+<img src="img/apt9/ej9.png">
+
+<hr class="line">
+
+<p><b>10. Find the routes involving two buses that can go from Craiglockhart to Lochend. Show the bus no. and company for the first bus, the name of the stop for the transfer, and the bus no. and company for the second bus.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+
+```
+
+<img src="img/apt9/ej10.png">
+
+<hr class="line">
+
+<h5>Self JOIN - quiz</h5>
+
+<hr class="line">
+
+<p><b>1. Select the code that would show it is possible to get from Craiglockhart to Haymarket.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz9/ej1.png">
+
+<p><b>2. Select the code that shows the stops that are on route.num '2A' which can be reached with one bus from Haymarket?</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz9/ej2.png">
+
+<p><b>3. Select the code that shows the services available from Tollcross?</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz9/ej3.png">
