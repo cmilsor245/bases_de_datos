@@ -59,6 +59,7 @@
 </style>
 
 <h1>MANUAL LMD SQL</h1>
+
 <hr class="h1">
 
 <h3>SELECT basics</h3>
@@ -193,4 +194,47 @@ select name, area*2 from world where population=64000;
 <p>Respuesta:</p>
 
 <img src="img/quiz1/ej7.png">
+
 <hr class="line2">
+
+<h3>SELECT from world</h3>
+
+<hr class="line">
+
+<h6>Introduction</h6>
+
+<p><b>1. Observe the result of running this SQL command to show the name, continent and population of all countries.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select name, continent, population from world;
+```
+
+<p>Corrección (es lo mismo):</p>
+
+```sql
+select name, continent, population from world;
+```
+
+<img src="img/apt2/ej1.png">
+
+<hr class="line">
+
+<h6>Large Countries</h6>
+
+<p><b>2. Show the name for the countries that have a population of at least 200 million. 200 million is 200000000, there are eight zeros.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select name from world where population=64105700;
+```
+
+<p>Corrección:</p>
+
+```sql
+
+```
+
+<img src="">
