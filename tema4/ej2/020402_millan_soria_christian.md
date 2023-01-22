@@ -1551,3 +1551,71 @@ select title from movie join casting on(id=movieid and actorid=(select id from a
 ```
 
 <img src="img/apt7/ej9.png">
+
+<hr class="line">
+
+<h6>Lead actors in 1962 movies</h6>
+
+<p><b>10. List the films together with the leading star for all 1962 films.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select title, name from movie join casting on (id=movieid) join actor on (actor.id=actorid) where ord=1 and yr=1962;
+```
+
+<img src="img/apt7/ej10.png">
+
+<hr class="line">
+
+<h6>Busy years for Rock Hudson</h6>
+
+<p><b>11. Which were the busiest years for 'Rock Hudson', show the year and the number of movies he made each year for any year in which he made more than 2 movies.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select yr,count(title) from movie join casting on movie.id=movieid join actor on actorid=actor.id where name='doris day' group by yr having count(title)>1;
+```
+
+<p>Respuesta:</p>
+
+```sql
+
+```
+
+<img src="img/apt7/ej11.png">
+
+<hr class="line">
+
+<h6>Lead actor in Julie Andrews movies</h6>
+
+<p><b>12. List the film title and the leading actor for all of the films 'Julie Andrews' played in.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select movieid from casting where actorid in (select id from actor where name='julie andrews');
+```
+
+<p>Respuesta:</p>
+
+```sql
+select title, name from movie join casting x on movie.id=movieid join actor on actor.id=actorid where ord=1 and movieid in(select movieid from casting y join actor on actor.id=actorid where name='julie andrews');
+```
+
+<img src="img/apt7/ej12.png">
+
+<hr class="line">
+
+<h6>Actors with 15 leading roles</h6>
+
+<p><b>13. Obtain a list, in alphabetical order, of actors who've had at least 15 starring roles.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name from actor join casting on actor.id=casting.actorid where casting.ord=1 group by name having count(*)>=15 order by name asc;
+```
+
+<img src="img/apt7/ej13.png">
