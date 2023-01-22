@@ -1481,3 +1481,73 @@ select id from actor where name like 'Glenn Close';
 ```
 
 <img src="img/apt7/ej4.png">
+
+<hr class="line">
+
+<h6>id for Casablanca</h6>
+
+<p><b>5. What is the id of the film 'Casablanca'.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select id from movie where title='casablanca';
+```
+
+<img src="img/apt7/ej5.png">
+
+<hr class="line">
+
+<h6>Cast list for Casablanca</h6>
+
+<p><b>6. Obtain the cast list for 'Casablanca'. Use movieid=11768, (or whatever value you got from the previous question).</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name from actor, casting where id=actorid and movieid=(select id from movie where title='casablanca');
+```
+
+<img src="img/apt7/ej6.png">
+
+<hr class="line">
+
+<h6>Alien cast list</h6>
+
+<p><b>7. Obtain the cast list for the film 'Alien'.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name from actor join casting on(id=actorid and movieid=(select id from movie where title='alien'));
+```
+
+<img src="img/apt7/ej7.png">
+
+<hr class="line">
+
+<h6>Harrison Ford movies</h6>
+
+<p><b>8. List the films in which 'Harrison Ford' has appeared.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select title from movie join casting on(id=movieid and actorid=(select id from actor where name='harrison ford'));
+```
+
+<img src="img/apt7/ej8.png">
+
+<hr class="line">
+
+<h6>Harrison Ford as a supporting actor</h6>
+
+<p><b>9. List the films where 'Harrison Ford' has appeared - but not in the starring role. [Note: the ord field of casting gives the position of the actor. If ord=1 then this actor is in the starring role].</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select title from movie join casting on(id=movieid and actorid=(select id from actor where name='harrison ford') and ord!=1);
+```
+
+<img src="img/apt7/ej9.png">
