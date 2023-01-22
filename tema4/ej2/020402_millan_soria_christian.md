@@ -1232,7 +1232,7 @@ select team1, team2, player from game join goal on(id=matchid and player like 'm
 select player, teamid, gtime from goal where gtime<=10;
 ```
 
-<p>Respuesta:</p>
+<p>Corrección:</p>
 
 ```sql
 select player, teamid, coach, gtime from goal join eteam on(teamid=id and gtime<=10);
@@ -1280,7 +1280,7 @@ select player from goal join game on (id=matchid and stadium='national stadium, 
 select player, gtime from game join goal on matchid=id where(team1='ger' and team2='gre');
 ```
 
-<p>Respuesta:</p>
+<p>Corrección:</p>
 
 ```sql
 select distinct(player) from game join goal on matchid=id where((team1='ger' or team2='ger') and teamid!='ger');
@@ -1298,7 +1298,7 @@ select distinct(player) from game join goal on matchid=id where((team1='ger' or 
 select teamname, player from eteam join goal on id=teamid order by teamname;
 ```
 
-<p>Respuesta:</p>
+<p>Corrección:</p>
 
 ```sql
 select teamname, count(player) from eteam join goal on id=teamid group by teamname;
@@ -1328,10 +1328,52 @@ select stadium, count(player) as goals from game join goal on (id=matchid) group
 select matchid, mdate, team1, team2, teamid from game join goal on matchid=id where (team1='pol' or team2='pol');
 ```
 
-<p>Respuesta:</p>
+<p>Corrección:</p>
 
 ```sql
 select matchid, mdate, count(player) as goals from game join goal on(matchid=id and(team1='pol' or team2='pol')) group by matchid, mdate;
 ```
 
 <img src="img/apt6/ej11.png">
+
+<hr class="line">
+
+<p><b>12. For every match where 'GER' scored, show matchid, match date and the number of goals scored by 'GER'.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select id, mdate, count(player) from game join goal on (id=matchid and (team1 = 'ger' or team2 = 'ger') and teamid='ger') group by id, mdate;
+```
+
+<img src="img/apt6/ej12.png">
+
+<hr class="line">
+
+<p><b>13. List every match with the goals scored by each team as shown. This will use "CASE WHEN" which has not been explained in any previous exercises.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select mdate, team1, case when teamid=team1 then 1 else 0 end score1 from game join goal on matchid=id;
+```
+
+<p>Respuesta:</p>
+
+```sql
+
+```
+
+<img src="img/apt6/ej13.png">
+
+<hr class="line">
+
+<h5>JOIN - quiz</h5>
+
+<hr class="line">
+
+<p><b>1. You want to find the stadium where player 'Dimitris Salpingidis' scored. Select the JOIN condition to use:</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz6/ej1.png">
