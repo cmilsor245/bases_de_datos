@@ -1619,3 +1619,31 @@ select name from actor join casting on actor.id=casting.actorid where casting.or
 ```
 
 <img src="img/apt7/ej13.png">
+
+<hr class="line">
+
+<h6>released in the year 1978</h6>
+
+<p><b>14. List the films released in the year 1978 ordered by the number of actors in the cast, then by title.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select title, count(actorid) as cast from movie join casting on id=movieid where yr=1978 group by title order by cast desc, title;
+```
+
+<img src="img/apt7/ej14.png">
+
+<hr class="line">
+
+<h6>with 'Art Garfunkel'</h6>
+
+<p><b>15. List all the people who have worked with 'Art Garfunkel'.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select distinct name from actor join casting on id=actorid where movieid in(select movieid from casting join actor on(actorid=id and name='art garfunkel')) and name!='art garfunkel' group by name;
+```
+
+<img src="img/apt7/ej15.png">
