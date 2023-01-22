@@ -351,7 +351,7 @@ select name, round(population/1000000, 2), round(gdp/1000000000, 2) from world w
 <p>Respuesta:</p>
 
 ```sql
-
+select name, round(gdp/population, -3) from world where gdp>1000000000000;
 ```
 
 <img src="img/apt2/ej10.png">
