@@ -234,7 +234,35 @@ select name from world where population=64105700;
 <p>Corrección:</p>
 
 ```sql
-
+select name from world where population>=200000000;
 ```
 
-<img src="">
+<img src="img/apt2/ej2.png">
+
+<hr class="line">
+
+<h6>Per capita GDP</h6>
+
+<p><b>3. Give the <code class="inline">name</code> and the per capita GDP for those countries with a <code class="inline">population</code> of at least 200 million.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, gdp/population from world where population>=200000000;
+```
+
+<img src="img/apt2/ej3.png">
+
+<hr class="line">
+
+<h6>South America In millions</h6>
+
+<p><b>4. Show the <code class="inline">name</code> and <code class="inline">population</code> in millions for the countries of the <code class="inline">continent</code> 'South America'. Divide the population by 1000000 to get population in millions.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, population/1000000 from world where continent = 'South America';
+```
+
+<img src="img/apt2/ej4.png">
