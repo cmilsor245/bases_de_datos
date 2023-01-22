@@ -622,7 +622,35 @@ select * from nobel where subject not in('chemistry', 'medicine') and yr=1980;
 <p>Respuesta:</p>
 
 ```sql
-
+select * from nobel where (subject like 'medicine' and yr<1910) or (subject like 'literature' and yr>=2004);
 ```
 
 <img src="img/apt3/ej10.png">
+
+<hr class="line">
+
+<h6>Umlaut</h6>
+
+<p><b>11. Find all details of the prize won by Peter Grünberg.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select * from nobel where winner like 'Peter Grünberg';
+```
+
+<img src="img/apt3/ej11.png">
+
+<hr class="line">
+
+<h6>Apostrophe</h6>
+
+<p><b>12. Find all details of the prize won by Eugene O'Neill.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select * from nobel where winner like 'Eugene O''Neill';
+```
+
+<img src="img/apt3/ej12.png">
