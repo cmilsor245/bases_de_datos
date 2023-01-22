@@ -1805,3 +1805,27 @@ select dept.name, count(teacher.name) from teacher right join dept on(teacher.de
 ```
 
 <img src="img/apt8/ej8.png">
+
+<hr class="line">
+
+<p><b>9. Use CASE to show the name of each teacher followed by 'Sci' if the teacher is in dept 1 or 2 and 'Art' otherwise.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select teacher.name, case when dept.id=1 then 'sci' when dept.id=2 then 'sci' else 'art' end from teacher left join dept on(teacher.dept=dept.id);
+```
+
+<img src="img/apt8/ej9.png">
+
+<hr class="line">
+
+<p><b>10. Use CASE to show the name of each teacher followed by 'Sci' if the teacher is in dept 1 or 2, show 'Art' if the teacher's dept is 3 and 'None' otherwise.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select teacher.name, case when dept.id=1 then 'sci' when dept.id=2 then 'sci' when dept.id=3 then 'art' else 'none' end from teacher left join dept on(dept.id=teacher.dept);
+```
+
+<img src="img/apt8/ej10.png">
