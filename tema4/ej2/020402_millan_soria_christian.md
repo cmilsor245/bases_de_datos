@@ -68,7 +68,13 @@
 
 <p><b>1. The example uses a WHERE clause to show the population of 'France'. Modify it to show the population of Germany.</b></p>
 
-<p>Respuesta:</p>
+<p><b>Código:</b></p>
+
+```sql
+select population from world where name = 'France';
+```
+
+<p>Corrección:</p>
 
 ```sql
 select population from world where name='Germany';
@@ -82,7 +88,13 @@ select population from world where name='Germany';
 
 <p><b>2. Checking a list with the word IN allows us to check if an item is in a list. Show the name and the population for 'Sweden', 'Norway' and 'Denmark'.</b></p>
 
-<p>Respuesta:</p>
+<p><b>Código:</b></p>
+
+```sql
+select name, population from world where name in ('Brazil', 'Russia', 'India', 'China');
+```
+
+<p>Corrección:</p>
 
 ```sql
 select name, population from world where name in('Sweden', 'Norway', 'Denmark');
@@ -94,7 +106,7 @@ select name, population from world where name in('Sweden', 'Norway', 'Denmark');
 
 <h6>Just the right size</h6>
 
-<p><b>3. Which countries are not too small and not too big? <code class="inline">between</code> allows</b></p>
+<p><b>3. Which countries are not too small and not too big? <code class="inline">between</code> allows range </b></p>
 
 <hr class="line">
 
