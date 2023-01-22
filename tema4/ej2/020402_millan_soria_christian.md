@@ -328,9 +328,25 @@ select name, population, area from world where (area>3000000 and population<2500
 
 <h6>Rounding</h6>
 
-<p><b>9. Show the name and population in millions and the GDP in billions for the countries of the continent 'South America'. Use the ROUND function to show the values to two decimal places.</b></p>
+<p><b>9. Show the <code class="inline">name</code> and <code class="inline">population</code> in millions and the GDP in billions for the countries of the <code class="inline">continent</code> 'South America'. Use the ROUND function to show the values to two decimal places.</b></p>
 
 <p><b>For South America show population in millions and GDP in billions both to 2 decimal places.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, round(population/1000000, 2), round(gdp/1000000000, 2) from world where continent='South America';
+```
+
+<img src="img/apt2/ej9.png">
+
+<hr class="line">
+
+<h6>Trillion dollar economies</h6>
+
+<p><b>10. Show the <code class="inline">name</code> and per-capita GDP for those countries with a GDP of at least one trillion (1000000000000; that is 12 zeros). Round this value to the nearest 1000.</b></p>
+
+<p><b>Show per-capita GDP for the trillion dollar countries to the nearest $1000.</b></p>
 
 <p>Respuesta:</p>
 
@@ -338,4 +354,4 @@ select name, population, area from world where (area>3000000 and population<2500
 
 ```
 
-<img src="img/apt2/ej9.png">
+<img src="img/apt2/ej10.png">
