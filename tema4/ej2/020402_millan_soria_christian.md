@@ -66,7 +66,8 @@
 
 <h6>Introducing the world table of countries</h6>
 
-<p><b>1. The example uses a WHERE clause to show the population of 'France'. Modify it to show the population of Germany.</b></p>
+<p><b>1. The example uses a WHERE clause to show the population of 'France'. Note that strings (pieces of text area that are data) should be in 'single quotes'.</b></p>
+<p><b>Modify it to show the population of Germany.</b></p>
 
 <p><b>Código:</b></p>
 
@@ -86,7 +87,9 @@ select population from world where name='Germany';
 
 <h6>Scandinavia</h6>
 
-<p><b>2. Checking a list with the word IN allows us to check if an item is in a list. Show the name and the population for 'Sweden', 'Norway' and 'Denmark'.</b></p>
+<p><b>2. Checking a list with the word IN allows us to check if an item is in a list. The example shows the name and population for the countries 'Brazil', 'Russia', 'India' and 'China'.</b></p>
+
+<p><b>Show the name and the population for 'Sweden', 'Norway' and 'Denmark'.</b></p>
 
 <p><b>Código:</b></p>
 
@@ -106,7 +109,21 @@ select name, population from world where name in('Sweden', 'Norway', 'Denmark');
 
 <h6>Just the right size</h6>
 
-<p><b>3. Which countries are not too small and not too big? <code class="inline">between</code> allows range </b></p>
+<p><b>3. Which countries are not too small and not too big? <code class="inline">between</code> allows range checking (range specified is inclusive of boundary values). The example below shows countries with an area of 250,000-300,000 sq. km.</b></p>
+
+<p><b>Modify it to show the country and the area for countries with an area between 200,000 and 250,000.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select name, area from world where area between 250000 and 300000;
+```
+
+<p>Corrección:</p>
+
+```sql
+
+```
 
 <hr class="line">
 
