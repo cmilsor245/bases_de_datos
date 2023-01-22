@@ -493,3 +493,136 @@ select yr, subject, winner from nobel where yr=1950;
 
 <p><b>2. Show who won the 1962 prize for literature.</b></p>
 
+<p><b>Código:</b></p>
+
+```sql
+select winner from nobel where yr=1960 and subject='physics';
+```
+
+<p>Corrección:</p>
+
+```sql
+select winner from nobel where yr=1962 and subject='literature';
+```
+
+<img src="img/apt3/ej2.png">
+
+<hr class="line">
+
+<h6>Albert Einstein</h6>
+
+<p><b>3. Show the year and subject that won 'Albert Einstein' his prize.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select yr, subject from nobel where winner like 'Albert Einstein';
+```
+
+<img src="img/apt3/ej3.png">
+
+<hr class="line">
+
+<h6>Recent Peace Prizes</h6>
+
+<p><b>4. Give the name of the 'peace' winners since the year 2000, including 2000.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select winner from nobel where subject like 'peace' and yr>=2000;
+```
+
+<img src="img/apt3/ej4.png">
+
+<hr class="line">
+
+<h6>Literature in the 1980's</h6>
+
+<p><b>5. Show all details (yr, subject, winner) of the literature prize winners for 1980 to 1989 inclusive.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select * from nobel where subject like 'literature' and yr>=1980 and yr<=1989;
+```
+
+<img src="img/apt3/ej5.png">
+
+<hr class="line">
+
+<h6>Only Presidents</h6>
+
+<p><b>6. Show all details of the presidential winners: Theodore Roosevelt, Thomas Woodrow Wilson, Jimmy Carter and Barack Obama.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select * from nobel where yr=1970 and subject in('cookery', 'chemistry', 'literature');
+```
+
+<p>Corrección:</p>
+
+```sql
+-- El nombre completo de WoWoodrow Wilson no funciona, hay que quitar Thomas
+
+select * from nobel where winner in('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack Obama');
+```
+
+<img src="img/apt3/ej6.png">
+
+<hr class="line">
+
+<h6>John</h6>
+
+<p><b>7. Show the winners with first name John.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select winner from nobel where winner like 'John%';
+```
+
+<img src="img/apt3/ej7.png">
+
+<hr class="line">
+
+<h6>Chemistry and Physics from different years</h6>
+
+<p><b>8. Show the year, subject, and name of physics winners for 1980 together with the chemistry winners for 1984.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select * from nobel where(subject like 'physics' and yr=1980) or (subject like 'chemistry' and yr=1984);
+```
+
+<img src="img/apt3/ej8.png">
+
+<hr class="line">
+
+<h6>Exclude Chemists and Medics</h6>
+
+<p><b>9. Show the year, subject, and name of winners for 1980 excluding chemistry and medicine.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select * from nobel where subject not in('chemistry', 'medicine') and yr=1980;
+```
+
+<img src="img/apt3/ej9.png">
+
+<hr class="line">
+
+<h6>Early Medicine, Late Literature</h6>
+
+<p><b>10. Show year, subject, and name of people who won a 'Medicine' prize in an early year (before 1910, not including 1910) together with winners of a 'Literature' prize in a later year (after 2004, including 2004).</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+
+```
+
+<img src="img/apt3/ej10.png">
