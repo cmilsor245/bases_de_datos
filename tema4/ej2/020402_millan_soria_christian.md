@@ -294,3 +294,48 @@ select name from world where name like '%United%';
 ```
 
 <img src="img/apt2/ej6.png">
+
+<hr class="line">
+
+<h6>Two ways to be big</h6>
+
+<p><b>7. Two ways to be big: A country is big if it has an area of more than 3 million sq km or it has a population of more than 250 million.</b></p>
+
+<p><b>Show the countries that are big by area or big by population. Show name, population and area.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, population, area from world where area>3000000 or population>250000000;
+```
+
+<img src="img/apt2/ej7.png">
+
+<hr class="line">
+
+<h6>One or the other (but not both)</h6>
+
+<p><b>8. Exclusive OR (XOR). Show the countries that are big by area (more than 3 million) or big by population (more than 250 million) but not both. Show name, population and area.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, population, area from world where (area>3000000 and population<250000000) or (area<3000000 and population>250000000);
+```
+<img src="img/apt2/ej8.png">
+
+<hr class="line">
+
+<h6>Rounding</h6>
+
+<p><b>9. Show the name and population in millions and the GDP in billions for the countries of the continent 'South America'. Use the ROUND function to show the values to two decimal places.</b></p>
+
+<p><b>For South America show population in millions and GDP in billions both to 2 decimal places.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+
+```
+
+<img src="img/apt2/ej9.png">
