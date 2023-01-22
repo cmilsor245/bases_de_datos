@@ -1203,7 +1203,7 @@ select player, stadium from game join goal on(id=matchid);
 <p>Corrección:</p>
 
 ```sql
-select player, teamid, stadium, mdate from game join goal on (game.id = goal.matchid and goal.teamid='ger');
+select player, teamid, stadium, mdate from game join goal on(game.id = goal.matchid and goal.teamid='ger');
 ```
 
 <img src="img/apt6/ej3.png">
@@ -1215,7 +1215,7 @@ select player, teamid, stadium, mdate from game join goal on (game.id = goal.mat
 <p>Respuesta:</p>
 
 ```sql
-select team1, team2, player from game join goal on (id=matchid and player like 'mario%');
+select team1, team2, player from game join goal on(id=matchid and player like 'mario%');
 ```
 
 <img src="img/apt6/ej4.png">
@@ -1235,7 +1235,7 @@ select player, teamid, gtime from goal where gtime<=10;
 <p>Respuesta:</p>
 
 ```sql
-select player, teamid, coach, gtime from goal join eteam on (teamid=id and gtime<=10);
+select player, teamid, coach, gtime from goal join eteam on(teamid=id and gtime<=10);
 ```
 
 <img src="img/apt6/ej5.png">
@@ -1244,7 +1244,7 @@ select player, teamid, coach, gtime from goal join eteam on (teamid=id and gtime
 
 <p><b>6. To <code class="inline">JOIN</code> <code class="inline">game</code> with <code class="inline">eteam</code> you could use either <code class="inline">game JOIN eteam ON (team1=eteam.id)</code> or <code class="inline">game JOIN eteam ON (team2=eteam.id)</code>.</b></p>
 
-<p><b></b></p>
+<p><b>Notice that because <code class="inline">id</code> is a column name in both <code class="inline">game</code> and <code class="inline">eteam</code> you must specify <code class="inline">eteam.id</code> instead of just <code class="inline">id</code>.</b></p>
 
 <p><b>List the dates of the matches and the name of the team in which 'Fernando Santos' was the team1 coach.</b></p>
 
@@ -1255,3 +1255,83 @@ select mdate, teamname from game join eteam on (team1=eteam.id and coach like '%
 ```
 
 <img src="img/apt6/ej6.png">
+
+<hr class="line">
+
+<p><b>7. List the player for every goal scored in a game where the stadium was 'National Stadium, Warsaw'.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select player from goal join game on (id=matchid and stadium='national stadium, warsaw');
+```
+
+<img src="img/apt6/ej7.png">
+
+<hr class="line">
+
+<p><b>8. The example query shows all goals scored in the Germany-Greece quarterfinal.</b></p>
+
+<p><b>Instead show the name of all players who scored a goal against Germany.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select player, gtime from game join goal on matchid=id where(team1='ger' and team2='gre');
+```
+
+<p>Respuesta:</p>
+
+```sql
+select distinct(player) from game join goal on matchid=id where((team1='ger' or team2='ger') and teamid!='ger');
+```
+
+<img src="img/apt6/ej8.png">
+
+<hr class="line">
+
+<p><b>9. Show teamname and the total number of goals scored.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select teamname, player from eteam join goal on id=teamid order by teamname;
+```
+
+<p>Respuesta:</p>
+
+```sql
+select teamname, count(player) from eteam join goal on id=teamid group by teamname;
+```
+
+<img src="img/apt6/ej9.png">
+
+<hr class="line">
+
+<p><b>10. Show the stadium and the number of goals scored in each stadium.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select stadium, count(player) as goals from game join goal on (id=matchid) group by stadium;
+```
+
+<img src="img/apt6/ej10.png">
+
+<hr class="line">
+
+<p><b>11. For every match involving 'POL', show the matchid, date and the number of goals scored.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select matchid, mdate, team1, team2, teamid from game join goal on matchid=id where (team1='pol' or team2='pol');
+```
+
+<p>Respuesta:</p>
+
+```sql
+select matchid, mdate, count(player) as goals from game join goal on(matchid=id and(team1='pol' or team2='pol')) group by matchid, mdate;
+```
+
+<img src="img/apt6/ej11.png">
