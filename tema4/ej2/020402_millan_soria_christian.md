@@ -775,7 +775,7 @@ select name from world where population>(select population from world where name
 
 <h6>Richer than UK</h6>
 
-<p><b>2. </b></p>
+<p><b>2. Show the countries in Europe with a per capita GDP greater than 'United Kingdom'.</b></p>
 
 <p>Respuesta:</p>
 
@@ -784,3 +784,179 @@ select name from world where gdp/population>(select gdp/population from world wh
 ```
 
 <img src="img/apt4/ej2.png">
+
+<hr class="line">
+
+<h6>Neighbours of Argentina and Australia</h6>
+
+<p><b>3. List the name and continent of countries in the continents containing either Argentina or Australia. Order by name of the country.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, continent from world where continent in(select continent from world where name in('argentina', 'australia')) order by name;
+```
+
+<img src="img/apt4/ej3.png">
+
+<hr class="line">
+
+<h6>Between Canada and Poland</h6>
+
+<p><b>4. Which country has a population that is more than United Kingdom but less than Germany? Show the name and the population.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, population from world where population>(select population from world where name='united kingdom') and population<(select population from world where name='germany');
+```
+
+<img src="img/apt4/ej4.png">
+
+<hr class="line">
+
+<h6>Percentages of Germany</h6>
+
+<p><b>5. Germany (population 80 million) has the largest population of the countries in Europe. Austria (population 8.5 million) has 11% of the population of Germany.</b></p>
+
+<p><b>Show the name and the population of each country in Europe. Show the population as a percentage of the population of Germany.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+
+```
+
+<img src="img/apt4/ej5.png">
+
+<hr class="line">
+
+<h6>Bigger than every country in Europe</h6>
+
+<p><b>6. Which countries have a GDP greater than every country in Europe? [Give the name only.] (Some countries may have NULL gdp values).</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name from world where gdp>=all(select gdp from world where gdp>=0 and continent='europe') and continent!='europe';
+```
+
+<img src="img/apt4/ej6.png">
+
+<hr class="line">
+
+<h6>Largest in each continent</h6>
+
+<p><b>7. Find the largest country (by area) in each continent, show the continent, the name and the area:</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select continent, name, population from world x where population>=all(select population from world y where y.continent=x.continent and population>0);
+```
+
+<p>Corrección:</p>
+
+```sql
+select continent, name, area from world x where area >= all(select area from world y where y.continent=x.continent and area>0);
+```
+
+<img src="img/apt4/ej7.png">
+
+<hr class="line">
+
+<h6>First country of each continent (alphabetically)</h6>
+
+<p><b>8. List each continent and the name of the country that comes first alphabetically.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select continent, name from world x where name <= all(select name from world y where y.continent = x.continent);
+```
+
+<img src="img/apt4/ej8.png">
+
+<hr class="line">
+
+<h6>Difficult Questions That Utilize Techniques Not Covered In Prior Sections</h6>
+
+<p><b>9. Find the continents where all countries have a population <= 25000000. Then find the names of the countries associated with these continents. Show name, continent and population.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, continent, population from world x where 25000000  > all(select population from world y where x.continent = y.continent and y.population > 0);
+```
+
+<img src="img/apt4/ej9.png">
+
+<hr class="line">
+
+<h6>Three time bigger</h6>
+
+<p><b>10. Some countries have populations more than three times that of all of their neighbours (in the same continent). Give the countries and continents.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, continent from world x where population > all(select population*3 from world y where x.continent = y.continent and population > 0 and y.name != x.name);
+```
+
+<img src="img/apt4/ej10.png">
+
+<hr class="line">
+
+<h5>SELECT in SELECT - quiz</h5>
+
+<hr class="line">
+
+<p><b>1. Select the code that shows the name, region and population of the smallest country in each region.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz4/ej1.png">
+
+<p><b>2. Select the code that shows the countries belonging to regions with all populations over 50000.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz4/ej2.png">
+
+<p><b>3. Select the code that shows the countries with a less than a third of the population of the countries around it.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz4/ej3.png">
+
+<p><b>4. Select the result that would be obtained from the following code:</b></p>
+
+```sql
+select name from bbc where population>(select population from bbc where name='united kingdom') and region in(select region from bbc where name='united kingdom');
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz4/ej4.png">
+
+<p><b>5. Select the code that would show the countries with a greater GDP than any country in Africa (some countries may have NULL gdp values).</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz4/ej5.png">
+
+<p><b>6. Select the code that shows the countries with population smaller than Russia but bigger than Denmark.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz4/ej6.png">
+
+<p><b>7. Select the result that would be obtained from the following code:</b></p>
+
+```sql
+select name from bbc where population>all(select max(population) from bbc where region = 'europe') and region = 'south asia';
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz4/ej7.png">
