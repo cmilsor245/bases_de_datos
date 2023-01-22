@@ -654,3 +654,17 @@ select * from nobel where winner like 'Eugene O''Neill';
 ```
 
 <img src="img/apt3/ej12.png">
+
+<hr class="line">
+
+<h6>Knights of the realm</h6>
+
+<p><b>13. List the winners, year and subject where the winner starts with Sir. Show the the most recent first, then by name order.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select winner, yr, subject from nobel where winner like 'sir%' order by yr desc, winner;
+```
+
+<img src="img/apt3/ej13.png">
