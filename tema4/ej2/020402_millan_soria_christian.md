@@ -355,3 +355,94 @@ select name, round(gdp/population, -3) from world where gdp>1000000000000;
 ```
 
 <img src="img/apt2/ej10.png">
+
+<hr class="line">
+
+<h6>Name and capital have the same length</h6>
+
+<p><b>11. Greece has capital Athens. Each of the strings 'Greece', and 'Athens' has 6 characters.</b></p>
+
+<p><b>Show the name and capital where the name and the capital have the same number of characters.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+-- La función LENGTH hay que cambiarla por LEN
+
+select name, len(name), capital, len(capital) from world where len(name)=len(capital);
+```
+
+<img src="img/apt2/ej11.png">
+
+<hr class="line">
+
+<h6>Matching name and capital</h6>
+
+<p><b>12. The capital of Sweden is Stockholm. Both words start with the letter 'S'.</b></p>
+
+<p><b>Show the name and the capital where the first letters of each match. Don't include countries where the name and the capital are the same word.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, capital from world where left(name, 1)=left(capital, 1) and name<>capital;
+```
+
+<img src="img/apt2/ej12.png">
+
+<hr class="line">
+
+<h6>All the vowels</h6>
+
+<p><b>13. Equatorial Guinea and Dominican Republic have all of the vowels (a e i o u) in the name. They don't count because they have more than one word in the name.</b></p>
+
+<p><b>Find the country that has all the vowels and no spaces in its name.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name from world where name not like '% %' and name like '%a%' and name like '%e%' and name like '%i%' and name like '%o%' and name like '%u%';
+```
+
+<img src="img/apt2/ej13.png">
+
+<hr class="line">
+
+<h5>SELECT from world - quiz</h5>
+
+<hr class="line">
+
+<p><b>1. Select the code which gives the name of countries beginning with U.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz2/ej1.png">
+
+<p><b>2. Select the code which shows just the population of United Kingdom.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz2/ej2.png">
+
+<p><b>3. Select the answer which shows the problem with this SQL code - the intended result should be the continent of France:</b></p>
+
+```sql
+select continent from world where 'name'='France';
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz2/ej3.png">
+
+<p><b>4. Select the result that would be obtained from the following code:</b></p>
+
+```sql
+select name, population/10 from world where population<10000;
+```
+<img src="img/quiz2/ej4.png">
+
+<p><b>5. Select the code which would reveal the name and population of countries in Europe and Asia.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz2/ej5.png">
