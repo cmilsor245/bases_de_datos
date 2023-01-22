@@ -262,7 +262,35 @@ select name, gdp/population from world where population>=200000000;
 <p>Respuesta:</p>
 
 ```sql
-select name, population/1000000 from world where continent = 'South America';
+select name, population/1000000 from world where continent='South America';
 ```
 
 <img src="img/apt2/ej4.png">
+
+<hr class="line">
+
+<h6>France, Germany, Italy</h6>
+
+<p><b>5. Show the <code class="inline">name</code> and <code class="inline">population</code> for France, Germany, Italy.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name, population from world where name in('France', 'Germany', 'Italy');
+```
+
+<img src="img/apt2/ej5.png">
+
+<hr class="line">
+
+<h6>United</h6>
+
+<p><b>6. Show the countries which have a <code class="inline">name</code> that includes the word 'United'.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name from world where name like '%United%';
+```
+
+<img src="img/apt2/ej6.png">
