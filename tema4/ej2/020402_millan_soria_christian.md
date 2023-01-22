@@ -1647,3 +1647,59 @@ select distinct name from actor join casting on id=actorid where movieid in(sele
 ```
 
 <img src="img/apt7/ej15.png">
+
+<hr class="line">
+
+<h5>More JOIN - quiz</h5>
+
+<hr class="line">
+
+<p><b>1. Select the statement which lists the unfortunate directors of the movies which have caused financial loses (gross < budget).</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz7/ej1.png">
+
+<p><b>2. Select the correct example of JOINing three tables.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz7/ej2.png">
+
+<p><b>3. Select the statement that shows the list of actors called 'John' by order of number of movies in which they acted.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz7/ej3.png">
+
+<p><b>4. Select the result that would be obtained from the following code:</b></p>
+
+```sql
+select title from movie join casting on(movieid=movie.id) join actor on(actorid=actor.id) where name='paul hogan' and ord=1;
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz7/ej4.png">
+
+<p><b>5. Select the statement that lists all the actors that starred in movies directed by Ridley Scott who has id 351.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz7/ej5.png">
+
+<p><b>6. There are two sensible ways to connect movie and actor. They are:</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz7/ej6.png">
+
+<p><b>7. Select the result that would be obtained from the following code:</b></p>
+
+```sql
+select title, yr from movie, casting, actor  where name='robert de niro' and movieid=movie.id and actorid=actor.id and ord=3;
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz7/ej7.png">
