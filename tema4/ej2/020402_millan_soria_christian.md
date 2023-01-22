@@ -1377,3 +1377,37 @@ select mdate, team1, case when teamid=team1 then 1 else 0 end score1 from game j
 <p>Respuesta:</p>
 
 <img src="img/quiz6/ej1.png">
+
+<p><b>2. You JOIN the tables goal and eteam in an SQL statement. Indicate the list of column names that may be used in the SELECT line:</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz6/ej2.png">
+
+<p><b>3. Select the code which shows players, their team and the amount of goals they scored against Greece(GRE).</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz6/ej3.png">
+
+<p><b>4. Select the result that would be obtained from this code:</b></p>
+
+```sql
+select distinct teamid, mdate from goal join game on (matchid=id) where mdate = '9 june 2012';
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz6/ej4.png">
+
+<p><b>5. Select the code which would show the player and their team for those who have scored against Poland(POL) in National Stadium, Warsaw.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz6/ej5.png">
+
+<p><b>6. </b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz6/ej6.png">
