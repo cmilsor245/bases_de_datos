@@ -1421,3 +1421,63 @@ select teamname, count(*) from eteam join goal on teamid=id group by teamname ha
 <p>Respuesta:</p>
 
 <img src="img/quiz6/ej7.png">
+
+<hr class="line2">
+
+<h3>More JOIN</h3>
+
+<hr class="line">
+
+<h6>1962 movies</h6>
+
+<p><b>1. List the films where the yr is 1962 [Show id, title].</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select id, title from movie where yr=1962;
+```
+
+<img src="img/apt7/ej1.png">
+
+<hr class="line">
+
+<h6>When was Citizen Kane released?</h6>
+
+<p><b>2. Give year of 'Citizen Kane'.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select yr from movie where title='citizen kane';
+```
+
+<img src="img/apt7/ej2.png">
+
+<hr class="line">
+
+<h6>Star Trek movies</h6>
+
+<p><b>3. List all of the Star Trek movies, include the id, title and yr (all of these movies include the words Star Trek in the title). Order results by year.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select id, title, yr from movie where title like '%star trek%' order by yr;
+```
+
+<img src="img/apt7/ej3.png">
+
+<hr class="line">
+
+<h6>id for actor Glenn Close</h6>
+
+<p><b>4. What id number does the actor 'Glenn Close' have?</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select id from actor where name like 'Glenn Close';
+```
+
+<img src="img/apt7/ej4.png">
