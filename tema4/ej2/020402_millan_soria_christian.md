@@ -1703,3 +1703,33 @@ select title, yr from movie, casting, actor  where name='robert de niro' and mov
 <p>Respuesta:</p>
 
 <img src="img/quiz7/ej7.png">
+
+<hr class="line2">
+
+<h3>Using NULL</h3>
+
+<hr class="line">
+
+<h6>NULL, INNER JOIN, LEFT JOIN, RIGHT JOIN</h6>
+
+<p><b>1. List the teachers who have NULL for their department.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name from teacher where dept is null;
+```
+
+<img src="img/apt8/ej1.png">
+
+<hr class="line">
+
+<p><b>2. Note the INNER JOIN misses the teachers with no department and the departments with no teacher.</b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select teacher.name, dept.name from teacher inner join dept on(teacher.dept=dept.id);
+```
+
+<img src="img/apt8/ej2.png">
