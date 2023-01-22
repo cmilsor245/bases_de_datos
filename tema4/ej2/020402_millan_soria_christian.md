@@ -690,3 +690,97 @@ select winner, subject from nobel where yr=1984 order by subject in('physics', '
 ```
 
 <img src="img/apt3/ej14.png">
+
+<hr class="line">
+
+<h5>SELECT from nobel - quiz</h5>
+
+<hr class="line">
+
+<p><b>1. Pick the code which shows the name of winner's names beginning with C and ending in n.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz3/ej1.png">
+
+<p><b>2. Select the code that shows how many Chemistry awards were given between 1950 and 1960.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz3/ej2.png">
+
+<p><b>3. Pick the code that shows the amount of years where no Medicine awards were given.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz3/ej3.png">
+
+<p><b>4. Select the result that would be obtained from the following code:</b></p>
+
+```sql
+select subject, winner from nobel where winner like 'sir%' and yr like '196%';
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz3/ej4.png">
+
+<p><b>5. Select the code which would show the year when neither a Physics or Chemistry award was given.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz3/ej5.png">
+
+<p><b>6. Select the code which shows the years when a Medicine award was given but no Peace or Literature award was.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz3/ej6.png">
+
+<p><b>7. Pick the result that would be obtained from the following code:</b></p>
+
+```sql
+select subject, count(subject) from nobel where yr ='1960' group by subject;
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz3/ej7.png">
+
+<hr class="line2">
+
+<h3>SELECT in SELECT</h3>
+
+<hr class="line">
+
+<h6>Bigger than Russia</h6>
+
+<p><b>1. List each country name where the population is larger than that of 'Russia'.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select name from world where population>(select population from world where name='romania');
+```
+
+<p>Corrección:</p>
+
+```sql
+select name from world where population>(select population from world where name='russia');
+```
+
+<img src="img/apt4/ej1.png">
+
+<hr class="line">
+
+<h6>Richer than UK</h6>
+
+<p><b>2. </b></p>
+
+<p>Respuesta:</p>
+
+```sql
+select name from world where gdp/population>(select gdp/population from world where name='united kingdom') and continent='europe';
+```
+
+<img src="img/apt4/ej2.png">
