@@ -1829,3 +1829,53 @@ select teacher.name, case when dept.id=1 then 'sci' when dept.id=2 then 'sci' wh
 ```
 
 <img src="img/apt8/ej10.png">
+
+<hr class="line">
+
+<h5>Using NULL - quiz</h5>
+
+<hr class="line">
+
+<p><b>1. Select the code which uses an outer join correctly.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz8/ej1.png">
+
+<p><b>2. Select the correct statement that shows the name of department which employs Cutflower.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz8/ej2.png">
+
+<p><b>3. Select out of following the code which uses a JOIN to show a list of all the departments and number of employed teachers.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz8/ej3.png">
+
+<p><b>4. Using <code class="inline">SELECT name, dept, COALESCE(dept, 0) AS result FROM teacher</code> on <code class="inline">teacher</code> table will:</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz8/ej4.png">
+
+<p><b>5. Query:</b></p>
+
+```sql
+select name, case when phone=2752 then 'two' when phone=2753 then 'three' when phone=2754 then 'four' end as digit from teacher;
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz8/ej5.png">
+
+<p><b>6. Select the result that would be obtained from the following code:</b></p>
+
+```sql
+select name, case when dept in(1) then 'computing' else 'other' end from teacher;
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz8/ej6.png">
