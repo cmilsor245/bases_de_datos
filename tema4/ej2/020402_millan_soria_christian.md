@@ -446,3 +446,50 @@ select name, population/10 from world where population<10000;
 <p>Respuesta:</p>
 
 <img src="img/quiz2/ej5.png">
+
+<p><b>6. Select the code which would give two rows.</b></p>
+
+<p>Respuesta:</p>
+
+<img src="img/quiz2/ej6.png">
+
+<p><b>7. Select the result that would be obtained from this code:</b></p>
+
+```sql
+select name from world where continent='South America' and population>40000000;
+```
+
+<p>Respuesta:</p>
+
+<img src="img/quiz2/ej7.png">
+
+<hr class="line2">
+
+<h3>SELECT from nobel</h3>
+
+<hr class="line">
+
+<h6>Winners from 1950</h6>
+
+<p><b>1. Change the query shown so that it displays Nobel prizes for 1950.</b></p>
+
+<p><b>Código:</b></p>
+
+```sql
+select yr, subject, winner from nobel where yr=1960;
+```
+
+<p>Corrección:</p>
+
+```sql
+select yr, subject, winner from nobel where yr=1950;
+```
+
+<img src="img/apt3/ej1.png">
+
+<hr class="line">
+
+<h6>1962 Literature</h6>
+
+<p><b>2. Show who won the 1962 prize for literature.</b></p>
+
