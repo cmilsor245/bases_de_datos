@@ -62,6 +62,7 @@
 <hr class="h1">
 
 <h3>SELECT basics</h3>
+
 <hr class="line">
 
 <h6>Introducing the world table of countries</h6>
@@ -122,12 +123,15 @@ select name, area from world where area between 250000 and 300000;
 <p>Corrección:</p>
 
 ```sql
-
+select name, area from world where area between 200000 and 250000;
 ```
+
+<img src="img/apt1/ej3.png">
 
 <hr class="line">
 
 <h5>SELECT basics - quiz</h5>
+
 <hr class="line">
 
 <p><b>1. Select the code which produces this table:</b></p>
