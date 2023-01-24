@@ -175,6 +175,8 @@ Muestra el nombre y la población de aquellos países cuyo nombre empiece por "A
 
 <img src="img/quiz1/ej3.png">
 
+Muestra el nombre de los países cuyo nombre termina por "a" o por "l".
+
 <p><b>4. Pick the result from the query:</b></p>
 
 ```sql
@@ -184,6 +186,8 @@ select name, length(name) from world where length(name)=5 and region='Europe';
 <p><b>Respuesta:</b></p>
 
 <img src="img/quiz1/ej4.png">
+
+Muestra el nombre y la longitud del nombre para aquellos países cuyo nombre tenga una longitud de 5 caracteres y correspondan a la región de "Europa".
 
 <p><b>5. Here are the first few rows of the world table:</b></p>
 
@@ -199,17 +203,23 @@ select name, area*2 from world where population=64000;
 
 <img src="img/quiz1/ej5.png">
 
+Muestra el nombre y el area (multiplicada por 2) de aquellos países cuya población sea igual a 64000.
+
 <p><b>6. Select the code that would show the countries with an area larger than 50000 and a population smaller than 10000000.</b></p>
 
 <p>Respuesta:</p>
 
 <img src="img/quiz1/ej6.png">
 
+Muestra el nombre, el área y la población de aquellos países cuyo área sea mayor que 50000 y su población sea menor que 10000000.
+
 <p><b>7. Select the code that shows the population density of Chine, Australia, Nigeria and France.</b></p>
 
 <p>Respuesta:</p>
 
 <img src="img/quiz1/ej7.png">
+
+Muestra el nombre y la densidad de población (población/área) de aquellos países cuyo nombre coincida con "China", "Nigeria", "Francia" o "Australia" en el campo "name".
 
 <hr class="line2">
 
@@ -224,6 +234,8 @@ select name, area*2 from world where population=64000;
 <p><b>Código:</b></p>
 
 ```sql
+-- muestra el nombre, el continente y la población de todos los países de la tabla
+
 select name, continent, population from world;
 ```
 
@@ -244,12 +256,16 @@ select name, continent, population from world;
 <p><b>Código:</b></p>
 
 ```sql
+-- muestra el nombre de aquellos países cuya población sea igual a 64105700
+
 select name from world where population=64105700;
 ```
 
 <p>Corrección:</p>
 
 ```sql
+-- muestra el nombre de aquellos países cuya población sea mayor o igual a 200000000
+
 select name from world where population>=200000000;
 ```
 
@@ -264,6 +280,8 @@ select name from world where population>=200000000;
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre y el per capita de aquellos países cuya población sea mayor o igual a 200000000
+
 select name, gdp/population from world where population>=200000000;
 ```
 
@@ -278,6 +296,8 @@ select name, gdp/population from world where population>=200000000;
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre y la población (en millones) para cada país perteneciente al continente "sudamérica"
+
 select name, population/1000000 from world where continent='South America';
 ```
 
@@ -292,6 +312,8 @@ select name, population/1000000 from world where continent='South America';
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre y la población de cada país que coincide en nombre con "francia", "alemania" o "italia" en el campo "name"
+
 select name, population from world where name in('France', 'Germany', 'Italy');
 ```
 
@@ -306,6 +328,8 @@ select name, population from world where name in('France', 'Germany', 'Italy');
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre de todos los países cuyo nombre contenga "united" en alguna parte de su nombre
+
 select name from world where name like '%United%';
 ```
 
@@ -322,6 +346,8 @@ select name from world where name like '%United%';
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre, la población y el área de los países con un área mayor que 3000000 o una población mayor que 250000000
+
 select name, population, area from world where area>3000000 or population>250000000;
 ```
 
@@ -336,6 +362,12 @@ select name, population, area from world where area>3000000 or population>250000
 <p>Respuesta:</p>
 
 ```sql
+/*
+  muestra el nombre, la población y el área de los países que cumplan una de estas dos condiciones:
+    - que su area sea mayor que 3000000 y su población menor que 250000000
+    - que su area sea menor que 3000000 y su población mayor que 250000000
+*/
+
 select name, population, area from world where (area>3000000 and population<250000000) or (area<3000000 and population>250000000);
 ```
 <img src="img/apt2/ej8.png">
@@ -351,6 +383,8 @@ select name, population, area from world where (area>3000000 and population<2500
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre, la población (en millones y redondeada a 2 decimales) y el gdp (en billones y con 2 decimales) para los países que tengan como continente "sudamérica"
+
 select name, round(population/1000000, 2), round(gdp/1000000000, 2) from world where continent='South America';
 ```
 
@@ -367,6 +401,8 @@ select name, round(population/1000000, 2), round(gdp/1000000000, 2) from world w
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre y el per capita (el gdp entre la población, redondeado a los miles) de los países con un gdp más cercano a 1000000000000
+
 select name, round(gdp/population, -3) from world where gdp>1000000000000;
 ```
 
