@@ -421,9 +421,9 @@ select name, round(gdp/population, -3) from world where gdp>1000000000000;
 ```sql
 -- la función LENGTH hay que cambiarla por LEN si se utiliza Microsoft SQL (arriba a la derecha en la tuerca)
 
+-- muestra el nombre, la longitud del nombre, la capital y la longitud de la capital de los países cuyo nombre y capital sean iguales en longitud
+
 select name, len(name), capital, len(capital) from world where len(name)=len(capital);
-
-
 ```
 
 <img src="img/apt2/ej11.png">
@@ -439,6 +439,8 @@ select name, len(name), capital, len(capital) from world where len(name)=len(cap
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre y la capital de los países cuyo nombre y capital empiezan por la misma letra, y que además el nombre y la capital no son la misma palabra
+
 select name, capital from world where left(name, 1)=left(capital, 1) and name<>capital;
 ```
 
@@ -455,6 +457,8 @@ select name, capital from world where left(name, 1)=left(capital, 1) and name<>c
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre de los países cuyo nombre solo tiene una palabra, es decir, no tiene espacios, y además contiene todas las vocales individualmente
+
 select name from world where name not like '% %' and name like '%a%' and name like '%e%' and name like '%i%' and name like '%o%' and name like '%u%';
 ```
 
@@ -471,6 +475,8 @@ select name from world where name not like '% %' and name like '%a%' and name li
 <p>Respuesta:</p>
 
 <img src="img/quiz2/ej1.png">
+
+
 
 <p><b>2. Select the code which shows just the population of United Kingdom.</b></p>
 
