@@ -830,7 +830,7 @@ select winner, subject from nobel where yr=1984 order by subject in('physics', '
 
 <img src="img/quiz3/ej1.png">
 
-Muestra los ganadores cuyo nombre comience por "C" y acaben por "n".
+<p>Muestra los ganadores cuyo nombre comience por "C" y acaben por "n".</p>
 
 <p><b>2. Select the code that shows how many Chemistry awards were given between 1950 and 1960.</b></p>
 
@@ -838,7 +838,7 @@ Muestra los ganadores cuyo nombre comience por "C" y acaben por "n".
 
 <img src="img/quiz3/ej2.png">
 
-Muestra el número total de materias que coinciden con "chemistry" y cuyo año está entre el 1950 y el 1960.
+<p>Muestra el número total de materias que coinciden con "chemistry" y cuyo año está entre el 1950 y el 1960.</p>
 
 <p><b>3. Pick the code that shows the amount of years where no Medicine awards were given.</b></p>
 
@@ -846,7 +846,11 @@ Muestra el número total de materias que coinciden con "chemistry" y cuyo año e
 
 <img src="img/quiz3/ej3.png">
 
-Muestra el número de años (sin repetirse)
+<p>Muestra el número de años (sin repetirse) donde se cumple la siguiente condición:</p>
+
+<ul>
+<li>en el registro, el año (sin repetirse) no debe aparecer cuando la materia es "medicine"</li>
+</ul>
 
 <p><b>4. Select the result that would be obtained from the following code:</b></p>
 
@@ -858,17 +862,23 @@ select subject, winner from nobel where winner like 'sir%' and yr like '196%';
 
 <img src="img/quiz3/ej4.png">
 
+<p>Muestra la materia y el ganador de los registros cuyo nombre g¡de ganador comienza por "Sir" y cuyo año pertenece a la década de los 60 (1960 inclusive).</p>
+
 <p><b>5. Select the code which would show the year when neither a Physics or Chemistry award was given.</b></p>
 
 <p>Respuesta:</p>
 
 <img src="img/quiz3/ej5.png">
 
+<p>El SELECT anidado muestra el año de los registros cuya materia es "chemistry" o "physics". De esta forma se puede establecer que lo que salga de esta subconsulta no debe aparecer en la consulta real.</p>
+
 <p><b>6. Select the code which shows the years when a Medicine award was given but no Peace or Literature award was.</b></p>
 
 <p>Respuesta:</p>
 
 <img src="img/quiz3/ej6.png">
+
+<p>La primera consulta anidada saca el año de los registros cuya materia es "literature". La segunda consulta anidada hace lo mismo con la materia "peace". Por último, la consulta principal muestra el año de los registros cuya materia es "medicine", eliminando los años que aparecen en las subconsultas.</p>
 
 <p><b>7. Pick the result that would be obtained from the following code:</b></p>
 
@@ -879,6 +889,8 @@ select subject, count(subject) from nobel where yr ='1960' group by subject;
 <p>Respuesta:</p>
 
 <img src="img/quiz3/ej7.png">
+
+<p>Muestra la materia y el número de materias cuyo año pertenece a la década de los 60 (1960 inclusive) y los agrupa por la materia.</p>
 
 <hr class="line2">
 
@@ -893,12 +905,16 @@ select subject, count(subject) from nobel where yr ='1960' group by subject;
 <p><b>Código:</b></p>
 
 ```sql
+-- muestra el nombre de los países cuya población es superior a la población que sale de la subconsulta, la cual saca la población del país cuyo nombre es "romania"
+
 select name from world where population>(select population from world where name='romania');
 ```
 
 <p>Corrección:</p>
 
 ```sql
+-- hace lo mismo pero con el país "russia"
+
 select name from world where population>(select population from world where name='russia');
 ```
 
@@ -913,6 +929,8 @@ select name from world where population>(select population from world where name
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre 
+
 select name from world where gdp/population>(select gdp/population from world where name='united kingdom') and continent='europe';
 ```
 
