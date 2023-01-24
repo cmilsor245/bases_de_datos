@@ -155,7 +155,7 @@ select name, area from world where area between 200000 and 250000;
 
 <img src="img/quiz1/ej1.png">
 
-Muestra el nombre y la población de aquellos países cuya población esté entre 1000000 y 1250000.
+<p>Muestra el nombre y la población de aquellos países cuya población esté entre 1000000 y 1250000.</p>
 
 <p><b>2. Pick the result you would obtain from this code:</b></p>
 
@@ -167,7 +167,7 @@ select name, population from world where name like "Al%"
 
 <img src="img/quiz1/ej2.png">
 
-Muestra el nombre y la población de aquellos países cuyo nombre empiece por "Al".
+<p>Muestra el nombre y la población de aquellos países cuyo nombre empiece por "Al".</p>
 
 <p><b>3. Select the code which shows the countries that end in A or L.</b></p>
 
@@ -175,7 +175,7 @@ Muestra el nombre y la población de aquellos países cuyo nombre empiece por "A
 
 <img src="img/quiz1/ej3.png">
 
-Muestra el nombre de los países cuyo nombre termina por "a" o por "l".
+<p>Muestra el nombre de los países cuyo nombre termina por "a" o por "l".</p>
 
 <p><b>4. Pick the result from the query:</b></p>
 
@@ -187,7 +187,7 @@ select name, length(name) from world where length(name)=5 and region='Europe';
 
 <img src="img/quiz1/ej4.png">
 
-Muestra el nombre y la longitud del nombre para aquellos países cuyo nombre tenga una longitud de 5 caracteres y correspondan a la región de "Europa".
+<p>Muestra el nombre y la longitud del nombre para aquellos países cuyo nombre tenga una longitud de 5 caracteres y correspondan a la región de "Europa".</p>
 
 <p><b>5. Here are the first few rows of the world table:</b></p>
 
@@ -203,7 +203,7 @@ select name, area*2 from world where population=64000;
 
 <img src="img/quiz1/ej5.png">
 
-Muestra el nombre y el area (multiplicada por 2) de aquellos países cuya población sea igual a 64000.
+<p>Muestra el nombre y el area (multiplicada por 2) de aquellos países cuya población sea igual a 64000.</p>
 
 <p><b>6. Select the code that would show the countries with an area larger than 50000 and a population smaller than 10000000.</b></p>
 
@@ -211,7 +211,7 @@ Muestra el nombre y el area (multiplicada por 2) de aquellos países cuya poblac
 
 <img src="img/quiz1/ej6.png">
 
-Muestra el nombre, el área y la población de aquellos países cuyo área sea mayor que 50000 y su población sea menor que 10000000.
+<p>Muestra el nombre, el área y la población de aquellos países cuyo área sea mayor que 50000 y su población sea menor que 10000000.</p>
 
 <p><b>7. Select the code that shows the population density of Chine, Australia, Nigeria and France.</b></p>
 
@@ -219,7 +219,7 @@ Muestra el nombre, el área y la población de aquellos países cuyo área sea m
 
 <img src="img/quiz1/ej7.png">
 
-Muestra el nombre y la densidad de población (población/área) de aquellos países cuyo nombre coincida con "China", "Nigeria", "Francia" o "Australia" en el campo "name".
+<p>Muestra el nombre y la densidad de población (población/área) de aquellos países cuyo nombre coincida con "China", "Nigeria", "Francia" o "Australia" en el campo "name".</p>
 
 <hr class="line2">
 
@@ -363,9 +363,9 @@ select name, population, area from world where area>3000000 or population>250000
 
 ```sql
 /*
-  muestra el nombre, la población y el área de los países que cumplan una de estas dos condiciones:
-    - que su area sea mayor que 3000000 y su población menor que 250000000
-    - que su area sea menor que 3000000 y su población mayor que 250000000
+muestra el nombre, la población y el área de los países que cumplan una de estas dos condiciones:
+  - que su area sea mayor que 3000000 y su población menor que 250000000
+  - que su area sea menor que 3000000 y su población mayor que 250000000
 */
 
 select name, population, area from world where (area>3000000 and population<250000000) or (area<3000000 and population>250000000);
@@ -476,13 +476,15 @@ select name from world where name not like '% %' and name like '%a%' and name li
 
 <img src="img/quiz2/ej1.png">
 
-
+<p>Muestra el nombre de aquellos países cuyo nombre empieza por "U".</p>
 
 <p><b>2. Select the code which shows just the population of United Kingdom.</b></p>
 
 <p>Respuesta:</p>
 
 <img src="img/quiz2/ej2.png">
+
+<p>Muestra la población de aquellos países cuyo nombre coincida con "Reino Unido".</p>
 
 <p><b>3. Select the answer which shows the problem with this SQL code - the intended result should be the continent of France:</b></p>
 
@@ -494,6 +496,8 @@ select continent from world where 'name'='France';
 
 <img src="img/quiz2/ej3.png">
 
+<p>Muestra el continente de cada país cuyo nombre sea "Francia".</p>
+
 <p><b>4. Select the result that would be obtained from the following code:</b></p>
 
 ```sql
@@ -501,17 +505,23 @@ select name, population/10 from world where population<10000;
 ```
 <img src="img/quiz2/ej4.png">
 
+<p>Muestra el nombre y la población (dividida entre 10) cuya población sea menor que 10000.</p>
+
 <p><b>5. Select the code which would reveal the name and population of countries in Europe and Asia.</b></p>
 
 <p>Respuesta:</p>
 
 <img src="img/quiz2/ej5.png">
 
+<p>Muestra el nombre y la población de los países cuyo campo "continent" coincida con "Europe" o "Asia".<></p>
+
 <p><b>6. Select the code which would give two rows.</b></p>
 
 <p>Respuesta:</p>
 
 <img src="img/quiz2/ej6.png">
+
+<p>Muestra el nombre de aquellos países cuyo campo "name" coincida con "Cuba" o "Togo".</p>
 
 <p><b>7. Select the result that would be obtained from this code:</b></p>
 
@@ -522,6 +532,13 @@ select name from world where continent='South America' and population>40000000;
 <p>Respuesta:</p>
 
 <img src="img/quiz2/ej7.png">
+
+<p>Muestra el nombre de los países que cumplen estas dos condiciones:</p>
+
+<ul>
+<li>que su continente sea "South America"</li>
+<li>que su población sea mayor que 40000000</li>
+</ul>
 
 <hr class="line2">
 
@@ -536,12 +553,16 @@ select name from world where continent='South America' and population>40000000;
 <p><b>Código:</b></p>
 
 ```sql
+-- muestra el año, la materia y el ganador del año 1960
+
 select yr, subject, winner from nobel where yr=1960;
 ```
 
 <p>Corrección:</p>
 
 ```sql
+-- muestra el año, la materia y el ganador del año 1950
+
 select yr, subject, winner from nobel where yr=1950;
 ```
 
@@ -556,12 +577,16 @@ select yr, subject, winner from nobel where yr=1950;
 <p><b>Código:</b></p>
 
 ```sql
+-- muestra el ganador del año 1960, cuya materia coincide con "physics"
+
 select winner from nobel where yr=1960 and subject='physics';
 ```
 
 <p>Corrección:</p>
 
 ```sql
+-- muestra el ganador del año 1962, cuya materia coincide con "literature"
+
 select winner from nobel where yr=1962 and subject='literature';
 ```
 
@@ -576,6 +601,8 @@ select winner from nobel where yr=1962 and subject='literature';
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el año y la materia del ganador "Albert Einstein"
+
 select yr, subject from nobel where winner like 'Albert Einstein';
 ```
 
@@ -590,6 +617,8 @@ select yr, subject from nobel where winner like 'Albert Einstein';
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el ganador cuya materia coincide con "peace" y cuyo año coincide con el 2000 o un año posterior
+
 select winner from nobel where subject like 'peace' and yr>=2000;
 ```
 
@@ -604,6 +633,8 @@ select winner from nobel where subject like 'peace' and yr>=2000;
 <p>Respuesta:</p>
 
 ```sql
+-- muestra todos los datos de los registros cuya materia coincida con "literature" y su año se sitúe entre el 1980 y el 1989, ambos inclusive
+
 select * from nobel where subject like 'literature' and yr>=1980 and yr<=1989;
 ```
 
@@ -618,13 +649,17 @@ select * from nobel where subject like 'literature' and yr>=1980 and yr<=1989;
 <p><b>Código:</b></p>
 
 ```sql
+-- muestra todos los datos de los registros cuyo año sea el 1970 y cuya materia coincida con "cookery", "chemistry" o "literature"
+
 select * from nobel where yr=1970 and subject in('cookery', 'chemistry', 'literature');
 ```
 
 <p>Corrección:</p>
 
 ```sql
--- el nombre completo de WoWoodrow Wilson no funciona, hay que quitar Thomas
+-- el nombre completo de WoWoodrow Wilson no funciona, hay que quitar "Thomas"
+
+-- muestra todos los datos de los registros cuyo campo "winner" sea igual a "Theodore Roosevelt", "Woodrow Wilson", "Jimmy Carter" o "Barack Obama"
 
 select * from nobel where winner in('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack Obama');
 ```
@@ -640,6 +675,8 @@ select * from nobel where winner in('Theodore Roosevelt', 'Woodrow Wilson', 'Jim
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el ganador cuyo nombre (campo "winner") comienza por "John"
+
 select winner from nobel where winner like 'John%';
 ```
 
@@ -654,6 +691,12 @@ select winner from nobel where winner like 'John%';
 <p>Respuesta:</p>
 
 ```sql
+/*
+muestra todos los datos de los registros que cumplen solo una de estas condiciones:
+  - que la materia del registro sea "physics" y el año sea el 1980
+  - que la materia del registro sea "chemistry" y el año sea el 1984
+*/
+
 select * from nobel where(subject like 'physics' and yr=1980) or (subject like 'chemistry' and yr=1984);
 ```
 
@@ -668,6 +711,8 @@ select * from nobel where(subject like 'physics' and yr=1980) or (subject like '
 <p>Respuesta:</p>
 
 ```sql
+-- muestra todos los datos de los registros donde la materia no coincide con "chemistry" ni con "medicine", y además el año sea el 1980
+
 select * from nobel where subject not in('chemistry', 'medicine') and yr=1980;
 ```
 
@@ -682,6 +727,12 @@ select * from nobel where subject not in('chemistry', 'medicine') and yr=1980;
 <p>Respuesta:</p>
 
 ```sql
+/*
+muestra todos los datos de los registros que cumplen solo una de estas condiciones:
+  - que su materia sea "medicine" y su año sea anterior al 1910
+  - que su materia sea "literature" y su año el 2004 o posterior
+*/
+
 select * from nobel where (subject like 'medicine' and yr<1910) or (subject like 'literature' and yr>=2004);
 ```
 
@@ -696,6 +747,8 @@ select * from nobel where (subject like 'medicine' and yr<1910) or (subject like
 <p>Respuesta:</p>
 
 ```sql
+-- muestra todos los datos de los registros que tienen como ganador a "Peter Grünberg"
+
 select * from nobel where winner like 'Peter Grünberg';
 ```
 
