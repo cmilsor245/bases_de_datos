@@ -74,12 +74,16 @@
 <p><b>Código:</b></p>
 
 ```sql
-select population from world where name = 'France';
+-- muestra la población en francia
+
+select population from world where name='France';
 ```
 
 <p>Corrección:</p>
 
 ```sql
+-- muestra la población en alemania
+
 select population from world where name='Germany';
 ```
 
@@ -96,12 +100,16 @@ select population from world where name='Germany';
 <p><b>Código:</b></p>
 
 ```sql
-select name, population from world where name in ('Brazil', 'Russia', 'India', 'China');
+-- muestra el nombre del país y la población del campo "name" donde coincida con "brasil", "rusia", "india" y "china"
+
+select name, population from world where name in('Brazil', 'Russia', 'India', 'China');
 ```
 
 <p>Corrección:</p>
 
 ```sql
+-- muestra el nombre del país y la población del campo "name" donde coincida con "suecia", "noruega" y "dinamarca"
+
 select name, population from world where name in('Sweden', 'Norway', 'Denmark');
 ```
 
@@ -118,12 +126,16 @@ select name, population from world where name in('Sweden', 'Norway', 'Denmark');
 <p><b>Código:</b></p>
 
 ```sql
+-- muestra el nombre de los países cuyo área esté entre 250000 y 300000
+
 select name, area from world where area between 250000 and 300000;
 ```
 
 <p>Corrección:</p>
 
 ```sql
+-- muestra el nombre de los países cuyo área esté entre 200000 y 250000
+
 select name, area from world where area between 200000 and 250000;
 ```
 
@@ -143,6 +155,8 @@ select name, area from world where area between 200000 and 250000;
 
 <img src="img/quiz1/ej1.png">
 
+Muestra el nombre y la población de aquellos países cuya población esté entre 1000000 y 1250000.
+
 <p><b>2. Pick the result you would obtain from this code:</b></p>
 
 ```sql
@@ -152,6 +166,8 @@ select name, population from world where name like "Al%"
 <p>Respuesta:</p>
 
 <img src="img/quiz1/ej2.png">
+
+Muestra el nombre y la población de aquellos países cuyo nombre empiece por "Al".
 
 <p><b>3. Select the code which shows the countries that end in A or L.</b></p>
 
