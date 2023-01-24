@@ -763,6 +763,10 @@ select * from nobel where winner like 'Peter Grünberg';
 <p>Respuesta:</p>
 
 ```sql
+-- para poder poner un "'" en la consulta esta se duplica
+
+-- muestra todos los datos de los registros cuyo ganador es "Eugene O'Neill"
+
 select * from nobel where winner like 'Eugene O''Neill';
 ```
 
@@ -777,6 +781,8 @@ select * from nobel where winner like 'Eugene O''Neill';
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el ganador, el año y la materia de los registros cuyo nombre de ganador comienza por "Sir" y los ordena primero por el año de forma descendente, y después por el nombre del ganador
+
 select winner, yr, subject from nobel where winner like 'sir%' order by yr desc, winner;
 ```
 
@@ -793,12 +799,20 @@ select winner, yr, subject from nobel where winner like 'sir%' order by yr desc,
 <p><b>Código:</b></p>
 
 ```sql
-select winner, subject, subject in ('physics','chemistry') from nobel where yr=1984 order by subject,winner;
+-- la expresión "subject in('physics', 'chemistry')" devuelve un valor boolean
+
+-- muestra el ganador, la materia y el valor boolean (que es 1 si la materia del registro es una de las dos, y 0 si no es ninguna de las 2) de los registros cuyo año es el 1984 y los ordena primero por la materia y después por el ganador
+
+select winner, subject, subject in('physics','chemistry') from nobel where yr=1984 order by subject,winner;
 ```
 
 <p>Corrección:</p>
 
 ```sql
+--! no sé por qué no funciona
+
+-- muestra el ganador y la materia de los registros cuyo año es el 1984 y los ordena primero utilizando el boolean de la expresión "subject in('physics', 'chemistry')", después los ordena por la materia y, por último, los ordena por el ganador
+
 select winner, subject from nobel where yr=1984 order by subject in('physics', 'chemistry'), subject, winner;
 ```
 
@@ -816,17 +830,23 @@ select winner, subject from nobel where yr=1984 order by subject in('physics', '
 
 <img src="img/quiz3/ej1.png">
 
+Muestra los ganadores cuyo nombre comience por "C" y acaben por "n".
+
 <p><b>2. Select the code that shows how many Chemistry awards were given between 1950 and 1960.</b></p>
 
 <p>Respuesta:</p>
 
 <img src="img/quiz3/ej2.png">
 
+Muestra el número total de materias que coinciden con "chemistry" y cuyo año está entre el 1950 y el 1960.
+
 <p><b>3. Pick the code that shows the amount of years where no Medicine awards were given.</b></p>
 
 <p>Respuesta:</p>
 
 <img src="img/quiz3/ej3.png">
+
+Muestra el número de años (sin repetirse)
 
 <p><b>4. Select the result that would be obtained from the following code:</b></p>
 
