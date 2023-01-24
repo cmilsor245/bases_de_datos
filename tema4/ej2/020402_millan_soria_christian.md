@@ -929,7 +929,7 @@ select name from world where population>(select population from world where name
 <p>Respuesta:</p>
 
 ```sql
--- muestra el nombre 
+-- muestra el nombre de los países cuyo per capita es mayor que el per capita obtenido de la subconsulta, la cual obtiene el per capita del país "united kingdom". además, solo muestra los países que tienen como continente "europe"
 
 select name from world where gdp/population>(select gdp/population from world where name='united kingdom') and continent='europe';
 ```
@@ -945,6 +945,8 @@ select name from world where gdp/population>(select gdp/population from world wh
 <p>Respuesta:</p>
 
 ```sql
+-- muestra el nombre y el continente de los registros cuyo campo "continent" está en los resultados obtenidos de la subconsulta, la cual obtiene el continente de los países con nombre "argentina" y "australia". por último, los ordena por el nombre
+
 select name, continent from world where continent in(select continent from world where name in('argentina', 'australia')) order by name;
 ```
 
@@ -959,6 +961,12 @@ select name, continent from world where continent in(select continent from world
 <p>Respuesta:</p>
 
 ```sql
+/*
+muestra el nombre y la población que cumplen las siguientes condiciones a la vez:
+  - que su población sea mayor que la población obtenida en la primera subconsulta, la cual obtiene la población del país "united kingdom"
+  - que su población sea menor que la población obtenida en la segunda subconsulta, la cual obtiene la población del país "germany"
+*/
+
 select name, population from world where population>(select population from world where name='united kingdom') and population<(select population from world where name='germany');
 ```
 
@@ -989,6 +997,8 @@ select name, population from world where population>(select population from worl
 <p>Respuesta:</p>
 
 ```sql
+-- la subconsulta selecciona el gdp de los países cuyo gdp sea mayor o igual a 0 y cuyo continente es "europe". la condición de la consulta principal establece que, de los gdp obtenidos en la subconsulta, se seleccionan solo los países cuyo gdp sea mayor o igual al mayor gdp obtenido de la subconsulta, además de seleccionar solo los países cuyo continente no sea igual a "europe"
+
 select name from world where gdp>=all(select gdp from world where gdp>=0 and continent='europe') and continent!='europe';
 ```
 
