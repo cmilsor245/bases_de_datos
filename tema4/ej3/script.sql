@@ -1,4 +1,4 @@
-CREATE DATABASE relacion1;
+CREATE DATABASE tema4_relacion1;
 USE EMPRESA ;
 
 CREATE TABLE tcentr(
