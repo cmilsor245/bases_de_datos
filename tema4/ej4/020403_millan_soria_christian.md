@@ -76,7 +76,9 @@ select sum((salar+comis)*14) as 'Masa salarial' from temple;
 <p>UNION:</p>
 
 ```sql
+-- 
 
+select nomem as 'Nombre', masa as 'Masa salarial' from(select nomem, salar as 'masa' from temple union select nomem, comis as 'masa' from temple) as temp_salarios group by nomem;
 ```
 
 <img src="img/ej5.png">
