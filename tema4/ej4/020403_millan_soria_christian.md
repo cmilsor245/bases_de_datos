@@ -64,12 +64,46 @@ select count(distinct nomde)as 'Nº de departamentos', round(sum(presu)/count(di
 <p><b>4. Hallar la masa salarial anual (salario más comisión) de la empresa (se suponen 14 pagas anuales).</b></p>
 
 ```sql
--- 
+-- selecciona la masa salarial total sumándolas todas y la multiplica por 14 (nº de pagos anuales)
 
-
+select sum((salar+comis)*14) as 'Masa salarial' from temple;
 ```
 
 <img src="img/ej4.png">
+
+<p><b>5. Hallar la masa salarial anual de cada empleado. Hacer el ejercicio de diferentes maneras: con el operador UNION, con la función IFNULL, con la función IF y con la expresión CASE.</b></p>
+
+<p>UNION:</p>
+
+```sql
+
+```
+
+<img src="img/ej5.png">
+
+<p>IFNULL:</p>
+
+```sql
+
+```
+
+<img src="img/ej5-2.png">
+
+<p>IF:</p>
+
+```sql
+
+```
+
+<img src="img/ej5-3.png">
+
+<p>CASE:</p>
+
+```sql
+
+```
+
+<img src="img/ej5-4.png">
 
 <hr>
 
