@@ -27,10 +27,10 @@
 <p><b>1. Hallar el nombre de los empleados que no tienen comisión, clasificados de manera que aparezcan primero aquellos nombres que son más cortos.</b></p>
 
 ```sql
-
+select nomem from temple where comis is null order by length(nomem), 1;
 ```
 
-
+<img src="img>
 
 <hr>
 
