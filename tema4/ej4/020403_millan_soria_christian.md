@@ -27,9 +27,9 @@
 <p><b>1. Hallar el nombre de los empleados que no tienen comisión, clasificados de manera que aparezcan primero aquellos nombres que son más cortos.</b></p>
 
 ```sql
--- muestra el nombre de todos los empleados cuyo campo "comis" sea nulo y los ordena utilizando la longitud de los nombres
+-- selecciona el nombre de todos los empleados cuyo campo "comis" sea nulo y los ordena utilizando la longitud de los nombres
 
-select nomem from temple where comis is null order by length(nomem), 1;
+select nomem as 'Empleados sin comisión' from temple where comis is null order by length(nomem), 1;
 ```
 
 <img src="img/ej1.png">
@@ -37,7 +37,7 @@ select nomem from temple where comis is null order by length(nomem), 1;
 <p><b>2. Hallar, por orden alfabético, los nombres de los empleados suprimiendo las dos últimas letras. Mirar en la ayuda el funcionamiento de las funciones escalares de manejo de cadena: substring y length.</b></p>
 
 ```sql
--- muestra una columna con una cabecera personalizada donde aparecen los nombres de los empledaos sin las últimas 2 letras
+-- selecciona una columna donde aparecen los nombres de los empledaos sin las últimas 2 letras
 
 /*
 la función "substring" tiene la siguiente sintaxis:
@@ -51,7 +51,25 @@ select substring(nomem, 1, length(nomem)-2) as 'Nombre recortado' from temple or
 
 <img src="img/ej2.png">
 
-<p><b>3. Hallar cuántos</b></p>
+<p><b>3. Hallar cuántos departamentos hay y el presupuesto anual medio de ellos.</b></p>
+
+```sql
+-- selecciona el número de departamentos existentes y la media de todos sus presupuestos: se suman todos los presupuestos, se dividen entre el número de departamentos existentes y, para terminar, se redondea a dos decimales
+
+select count(distinct nomde)as 'Nº de departamentos', round(sum(presu)/count(distinct nomde), 2) as 'Presupuesto anual medio' from tdepto;
+```
+
+<img src="img/ej3.png">
+
+<p><b>4. Hallar la masa salarial anual (salario más comisión) de la empresa (se suponen 14 pagas anuales).</b></p>
+
+```sql
+-- 
+
+
+```
+
+<img src="img/ej4.png">
 
 <hr>
 
