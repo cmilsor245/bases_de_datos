@@ -76,7 +76,9 @@ select sum((salar+comis)*14) as 'Masa salarial' from temple;
 <p>UNION:</p>
 
 ```sql
--- 
+--! este apartado no lo entiendo bien. no veo como se combinan los datos de "salar" y "comis" en una misma columna
+
+-- selecciona el nombre y la masa salarial de cada empleado. los datos los obtiene de una subconsulta que une los campos "nomem", y "salar" y "comis" (estos dos últimos en una misma columna, aplicándoles el mismo alias a los dos). estos datos se generan en una tabla temporal "temp_salarios", que se elimina al terminar la consulta. por último, se agrupan los datos por el nombre del empleado, ya que si no se hace esto aparecen los nombres duplicados y los datos de "salar" y "comis" separados
 
 select nomem as 'Nombre', masa as 'Masa salarial' from(select nomem, salar as 'masa' from temple union select nomem, comis as 'masa' from temple) as temp_salarios group by nomem;
 ```
@@ -94,7 +96,9 @@ select nomem as 'Nombre', masa as 'Masa salarial' from(select nomem, salar as 'm
 <p>IF:</p>
 
 ```sql
+--! 
 
+select nomem as 'Nombre', (salar+if(comis is null, 0, comis))*14 as 'Masa salarial' from temple order by 1;
 ```
 
 <img src="img/ej5-3.png">
