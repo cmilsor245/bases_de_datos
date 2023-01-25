@@ -71,7 +71,7 @@ select sum((salar+comis)*14) as 'Masa salarial' from temple;
 
 <img src="img/ej4.png">
 
-<p><b>5. Hallar la masa salarial anual de cada empleado. Hacer el ejercicio de diferentes maneras: con el operador UNION, con la función IFNULL, con la función IF y con la expresión CASE.</b></p>
+<p><b>5. Hallar la masa salarial anual de cada empleado. Hacer el ejercicio de diferentes maneras: con el operador "union", con la función "ifnull", con la función "if" y con la expresión "case".</b></p>
 
 <p>UNION:</p>
 
@@ -88,7 +88,7 @@ select nomem as 'Nombre', masa as 'Masa salarial' from(select nomem, salar as 'm
 <p>IFNULL:</p>
 
 ```sql
-
+select nomem as 'Nombre', (salar+ifnull(comis, 0)*14) as 'Masa salarial' from temple order by 1;
 ```
 
 <img src="img/ej5-2.png">
@@ -96,7 +96,7 @@ select nomem as 'Nombre', masa as 'Masa salarial' from(select nomem, salar as 'm
 <p>IF:</p>
 
 ```sql
---! 
+-- selecciona el nombre y la masa salarial de cada registro. en caso de que la comisión del registro sea null, la función "if" la transforma en 0
 
 select nomem as 'Nombre', (salar+if(comis is null, 0, comis))*14 as 'Masa salarial' from temple order by 1;
 ```
@@ -106,7 +106,9 @@ select nomem as 'Nombre', (salar+if(comis is null, 0, comis))*14 as 'Masa salari
 <p>CASE:</p>
 
 ```sql
+-- selecciona 
 
+select nomem, case when comis is null then salar*14 else(salar+comis)*14 end as 'Salario anual' from temple order by 1;
 ```
 
 <img src="img/ej5-4.png">
