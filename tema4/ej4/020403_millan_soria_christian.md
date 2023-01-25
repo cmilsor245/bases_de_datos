@@ -24,7 +24,13 @@
 
 <hr>
 
-<p><b></b></p>
+<p><b>1. Hallar el nombre de los empleados que no tienen comisión, clasificados de manera que aparezcan primero aquellos nombres que son más cortos.</b></p>
+
+```sql
+
+```
+
+
 
 <hr>
 
