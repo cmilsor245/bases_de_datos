@@ -130,6 +130,16 @@ select count(distinct nomem) as 'Nº de empleados este año' from temple where y
 
 <img src="img/ej6.png">
 
+<p>También se puede obtener el año actual según la fecha del sistema donde se ejecuta la base de datos, en este caso mi propio ordenador, por lo que la fecha actual es 2023. El resultado es este:</p>
+
+```sql
+-- la función "year(now())" obtiene el año actual según la fecha del sistemas
+
+select count(distinct nomem) as 'Nº de empleados este año' from temple where year(fecin)=year(now());
+```
+
+<img src="img/ej6-2.png">
+
 <p><b>7. Hallar la diferencia entre el salario más alto y el salario más bajo.</b></p>
 
 ```sql
