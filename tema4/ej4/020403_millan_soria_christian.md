@@ -106,12 +106,35 @@ select nomem as 'Nombre', (salar+if(comis is null, 0, comis))*14 as 'Masa salari
 <p>CASE:</p>
 
 ```sql
--- selecciona 
+/*
+selecciona la columna del nombre y la de la masa salarial, la cual se calcula de la siguiente forma:
+  - la cláusula "case" comprueba si la condición "comis is null" se cumple
+    - si se cumple el resultado de la columna es "salar*14"
+    - si no se cumple el resultado de la columna es "(salar+comis)*14"
 
-select nomem, case when comis is null then salar*14 else(salar+comis)*14 end as 'Salario anual' from temple order by 1;
+por último se ordena por los nombres
+*/
+
+select nomem as 'Nombre', case when comis is null then salar*14 else(salar+comis)*14 end as 'Masa salarial' from temple order by 1;
 ```
 
 <img src="img/ej5-4.png">
+
+<p><b>6. Hallar cuántos empleados han ingresado en el año actual. Utiliza la función "year".</b></p>
+
+```sql
+
+```
+
+<img src="img/ej6.png">
+
+<p><b>7. Hallar la diferencia entre el salario más alto y el salario más bajo.</b></p>
+
+```sql
+
+```
+
+<img src="img/ej7.png">
 
 <hr>
 
