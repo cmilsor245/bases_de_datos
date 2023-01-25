@@ -1,5 +1,5 @@
-CREATE DATABASE tema4_relacion1;
-USE tema4_relacion1;
+CREATE DATABASE tema4_empresa_relaciones;
+USE tema4_empresa_relaciones;
 
 CREATE TABLE tcentr(
   NUMCE INT NOT NULL,
