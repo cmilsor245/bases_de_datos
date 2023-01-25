@@ -27,10 +27,31 @@
 <p><b>1. Hallar el nombre de los empleados que no tienen comisión, clasificados de manera que aparezcan primero aquellos nombres que son más cortos.</b></p>
 
 ```sql
+-- muestra el nombre de todos los empleados cuyo campo "comis" sea nulo y los ordena utilizando la longitud de los nombres
+
 select nomem from temple where comis is null order by length(nomem), 1;
 ```
 
-<img src="img>
+<img src="img/ej1.png">
+
+<p><b>2. Hallar, por orden alfabético, los nombres de los empleados suprimiendo las dos últimas letras. Mirar en la ayuda el funcionamiento de las funciones escalares de manejo de cadena: substring y length.</b></p>
+
+```sql
+-- muestra una columna con una cabecera personalizada donde aparecen los nombres de los empledaos sin las últimas 2 letras
+
+/*
+la función "substring" tiene la siguiente sintaxis:
+  - campo que se va a recortar
+  - posición inicial
+  - longitud del campo (en este caso, la longitud total menos 2)
+*/
+
+select substring(nomem, 1, length(nomem)-2) as 'Nombre recortado' from temple order by 1;
+```
+
+<img src="img/ej2.png">
+
+<p><b>3. Hallar cuántos</b></p>
 
 <hr>
 
