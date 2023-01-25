@@ -123,7 +123,9 @@ select nomem as 'Nombre', case when comis is null then salar*14 else(salar+comis
 <p><b>6. Hallar cuántos empleados han ingresado en el año actual. Utiliza la función "year".</b></p>
 
 ```sql
+-- suponiendo que el año actual es el 2022, esta consulta selecciona el conteo de empleados (sin repetirse) cuyo año de inicio (obtenido con la función "year", la cual extrae el año de un campo de tipo fecha, del campo "fecin") sea igual a 2022
 
+select count(distinct nomem) as 'Nº de empleados este año' from temple where year(fecin)=2022;
 ```
 
 <img src="img/ej6.png">
@@ -131,7 +133,9 @@ select nomem as 'Nombre', case when comis is null then salar*14 else(salar+comis
 <p><b>7. Hallar la diferencia entre el salario más alto y el salario más bajo.</b></p>
 
 ```sql
+-- selecciona la diferencia del valor máximo dentro del campo "salar" (obtenido con "max") y le resta el valor mínimo del mismo campo (obtenido con "min")
 
+select max(salar)-min(salar) as 'Diferencia' from temple;
 ```
 
 <img src="img/ej7.png">
