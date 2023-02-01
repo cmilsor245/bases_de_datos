@@ -61,7 +61,12 @@ create table provincias(
 
 <img src="img/importado_prov.png">
 
+<p>Por último, se importa la tabla "municipios":</p>
+
+<img src="img/import_municipios.png">
+
 <hr class="slim-line">
 
 <h3>EJERCICIOS</h3>
 
+<p><b>1. ¿Cuántos municipios tiene la provincia de Málaga?</b></p>
