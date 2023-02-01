@@ -92,3 +92,83 @@ select count(*) from municipios where provincia="murcia";
 ```
 
 <img src="img/ej3.png">
+
+<p><b>4. ¿Cuántos municipios tiene la provincia de Pontevedra?</b></p>
+
+```sql
+select count(*) from municipios where provincia="pontevedra";
+```
+
+<img src="img/ej4.png">
+
+<p><b>5. ¿Cuántos municipios tiene la provincia de La Rioja?</b></p>
+
+```sql
+select count(*) from municipios where provincia="la rioja";
+```
+
+<img src="img/ej5.png">
+
+<p><b>6. ¿Cuántos municipios tiene la provincia de Burgos?</b></p>
+
+```sql
+select count(*) from municipios where provincia="burgos";
+```
+
+<img src="img/ej6.png">
+
+<p><b>7. ¿Cuántos municipios tiene la provincia de Teruel?</b></p>
+
+```sql
+select count(*) from municipios where provincia="teruel";
+```
+
+<img src="img/ej7.png">
+
+<p><b>8. ¿Cuántos municipios tiene la provincia de Madrid?</b></p>
+
+```sql
+select count(*) from municipios where provincia="madrid";
+```
+
+<img src="img/ej8.png">
+
+<p><b>9. ¿Cuántos municipios tiene la provincia de Valencia?</b></p>
+
+```sql
+select count(*) from municipios where provincia="valència/valencia";
+```
+
+<img src="img/ej9.png">
+
+<p><b>10. ¿Cuántos municipios tiene la provincia de Albacete?</b></p>
+
+```sql
+select count(*) from municipios where provincia="albacete";
+```
+
+<img src="img/ej10.png">
+
+<p><b>11. Lista los municipios que tienen la provincia de Málaga que comienzan por la letra "A".</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="málaga" and nombre_actual like "a%";
+```
+
+<img src="img/ej11.png">
+
+<p><b>12. Lista los municipios que tienen la provincia de Málaga que comienzan por la letra "B".</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="málaga" and nombre_actual like "b%";
+```
+
+<img src="img/ej12.png">
+
+<p><b>13. Lista los municipios que tienen la provincia de Málaga que comienzan por la letra "C".</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="málaga" and nombre_actual like "c%";
+```
+
+<img src="img/ej13.png">
