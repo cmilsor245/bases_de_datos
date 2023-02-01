@@ -352,3 +352,112 @@ select nombre_actual, provincia from municipios where nombre_actual like "san%"
 ```
 
 <img src="img/ej22-14.png">
+
+<p><b>o. Santi</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%santi%"
+```
+
+<img src="img/ej22-15.png">
+
+<p><b>p. María</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%maría%"
+```
+
+<img src="img/ej22-16.png">
+
+<p><b>q. Zapa</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%zapa%"
+```
+
+<img src="img/ej22-17.png">
+
+<p><b>r. Haba</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%haba%"
+```
+
+<img src="img/ej22-18.png">
+
+<p><b>s. León</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%león%"
+```
+
+<img src="img/ej22-19.png">
+
+<p><b>t. Torre</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%torre%"
+```
+
+<img src="img/ej22-20.png">
+
+<p><b>u. Mata</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%mata%"
+```
+
+<img src="img/ej22-21.png">
+
+<p><b>v. Verde</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%verde%"
+```
+
+<img src="img/ej22-22.png">
+
+<p><b>w. Oliva</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%oliva%"
+```
+
+<img src="img/ej22-23.png">
+
+<p><b>x. Puebla</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%puebla%"
+```
+
+<img src="img/ej22-24.png">
+
+<p><b>y. Higuera</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%higuera%"
+```
+
+<img src="img/ej22-25.png">
+
+<p><b>z. Feria</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%feria%"
+```
+
+<img src="img/ej22-26.png">
+
+<p><b>23. ¿Cuántos municipios hay que contengan las palabras que se indican? Haz una consulta para cada uno. Haz una consulta para cada una de las palabras que pone a continuación.</b></p>
+
+<p><b>a. Jerez</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%jerez%";
+```
+
+<img src="img/ej23-1.png">
+
+<p><b>24. ¿Cuál es el municipio con mayor extensión de España?</b></p>
+
