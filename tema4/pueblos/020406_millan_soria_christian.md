@@ -20,6 +20,10 @@
     color: black;
     background-color: black;
   }
+
+  h3{
+    font-weight: bold;
+  }
 </style>
 
 <h1>PUEBLOS DE ESPAÑA</h1>
@@ -59,5 +63,5 @@ create table provincias(
 
 <hr class="slim-line">
 
-<h4>Ejercicios</h4>
+<h3>EJERCICIOS</h3>
 
