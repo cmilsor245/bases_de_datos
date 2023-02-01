@@ -679,3 +679,8 @@ select nombre_actual, provincia, superficie from municipios order by 3 desc limi
 
 <p><b>a. Almería</b></p>
 
+```sql
+
+```
+
+<img src="img/ej25-1.png">
