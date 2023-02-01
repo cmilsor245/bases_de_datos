@@ -224,7 +224,7 @@ select nombre_actual from municipios where nombre_actual like "bena%";
 <p><b>20. ¿Cuántos municipios en España comienzan por "Bena"?</b></p>
 
 ```sql
-select count(*) from municipios where nombre_actual like "bena%";
+select count(*) from municipios where nombre_actual like "h%";
 ```
 
 <img src="img/ej20.png">
