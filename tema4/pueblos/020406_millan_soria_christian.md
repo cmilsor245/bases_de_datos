@@ -236,3 +236,119 @@ select nombre_actual, provincia from municipios where nombre_actual like "%puert
 ```
 
 <img src="img/ej21.png">
+
+<p>* Terminé de importar las 3 tablas restantes.</p>
+
+<p><b>22. Haz una consulta para cada una de las palabras que pone a continuación de manera que incluyan dentro del nombre del municipio la palabra "xx" incluyendo su provincia.</b></p>
+
+<p><b>a. Jerez</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%jerez%"
+```
+
+<img src="img/ej22-1.png">
+
+<p><b>b. Frontera</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%frontera%"
+```
+
+<img src="img/ej22-2.png">
+
+<p><b>c. Marquesado</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%marquesado%"
+```
+
+<img src="img/ej22-3.png">
+
+<p><b>d. Santa</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%santa%"
+```
+
+<img src="img/ej22-4.png">
+
+<p><b>e. Casa</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%casa%"
+```
+
+<img src="img/ej22-5.png">
+
+<p><b>f. Villa</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%villa%"
+```
+
+<img src="img/ej22-6.png">
+
+<p><b>g. Cabeza</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%cabeza%"
+```
+
+<img src="img/ej22-7.png">
+
+<p><b>h. Cuevas</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%cuevas%"
+```
+
+<img src="img/ej22-8.png">
+
+<p><b>i. Dios</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%dios%"
+```
+
+<img src="img/ej22-9.png">
+
+<p><b>j. Barco</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%barco%"
+```
+
+<img src="img/ej22-10.png">
+
+<p><b>k. Pepe</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%pepe%"
+```
+
+<img src="img/ej22-11.png">
+
+<p><b>l. Naval</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%naval%"
+```
+
+<img src="img/ej22-12.png">
+
+<p><b>m. Pajares</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%pajares%"
+```
+
+<img src="img/ej22-13.png">
+
+<p><b>n. Empiece por "San"</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "san%"
+```
+
+<img src="img/ej22-14.png">
