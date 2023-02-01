@@ -680,7 +680,87 @@ select nombre_actual, provincia, superficie from municipios order by 3 desc limi
 <p><b>a. Almería</b></p>
 
 ```sql
-
+select nombre_actual, provincia, superficie from municipios where provincia="almeria" order by 3 desc limit 1;
 ```
 
 <img src="img/ej25-1.png">
+
+<p><b>b. Granada</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="granada" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-2.png">
+
+<p><b>c. Jaén</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="jaén" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-3.png">
+
+<p><b>d. Córdoba</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="córdoba" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-4.png">
+
+<p><b>e. Sevilla</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="sevilla" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-5.png">
+
+<p><b>f. Huelva</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="huelva" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-6.png">
+
+<p><b>g. Cádiz</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="cádiz" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-7.png">
+
+<p><b>h. Málaga</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="málaga" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-8.png">
+
+<p><b>i. Madrid</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="madrid" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-9.png">
+
+<p><b>j. Barcelona</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="barcelona" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-10.png">
+
+<p><b>k. Huesca</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="huesca" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-11.png">
