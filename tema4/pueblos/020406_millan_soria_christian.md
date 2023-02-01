@@ -181,7 +181,7 @@ select nombre_actual from municipios where provincia="málaga" and nombre_actual
 
 <img src="img/ej14.png">
 
-<p><b>15. Lista los municipios que tienen la provincia de Málaga que comienzan por la letra "Al".</b></p>
+<p><b>15. Lista los municipios que tienen la provincia de Málaga que comienzan por "Al".</b></p>
 
 ```sql
 select nombre_actual from municipios where provincia="málaga" and nombre_actual like "al%";
@@ -189,7 +189,7 @@ select nombre_actual from municipios where provincia="málaga" and nombre_actual
 
 <img src="img/ej15.png">
 
-<p><b>16. Lista los municipios que tienen la provincia de Málaga que comienzan por la letra "Bena".</b></p>
+<p><b>16. Lista los municipios que tienen la provincia de Málaga que comienzan por "Bena".</b></p>
 
 ```sql
 select nombre_actual from municipios where provincia="málaga" and nombre_actual like "bena%";
@@ -197,3 +197,26 @@ select nombre_actual from municipios where provincia="málaga" and nombre_actual
 
 <img src="img/ej16.png">
 
+<p><b>17. Lista los municipios que comienzan por "Al".</b></p>
+
+```sql
+select nombre_actual from municipios where nombre_actual like "al%";
+```
+
+<img src="img/ej17.png">
+
+<p><b>18. ¿Cuántos municipios en España comienzan por "Al"?</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "al%";
+```
+
+<img src="img/ej18.png">
+
+<p><b>19. Lista los municipios que comienzan por "Bena".</b></p>
+
+```sql
+select nombre_actual from municipios where nombre_actual like "bena%";
+```
+
+<img src="img/ej19.png">
