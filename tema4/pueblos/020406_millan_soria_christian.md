@@ -461,3 +461,16 @@ select count(*) from municipios where nombre_actual like "%jerez%";
 
 <p><b>24. ¿Cuál es el municipio con mayor extensión de España?</b></p>
 
+<p>Lo primero es cambiar el tipo de dato del campo "superficie", ya que es texto, y debe ser decimal.</p>
+
+```sql
+alter table `tema4_ej6`.`municipios` change column `superficie` `superficie` decimal(12, 2) null default null;
+```
+
+<p>Ahora se puede obtener el resultado correctamente:</p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios order by 3 desc;
+```
+
+<img src="img/ej24.png">
