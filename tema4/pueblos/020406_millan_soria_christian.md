@@ -13,6 +13,13 @@
   p{
     text-align: justify;
   }
+
+  .slim-line{
+    border: none;
+    height: 1px;
+    color: black;
+    background-color: black;
+  }
 </style>
 
 <h1>PUEBLOS DE ESPAÑA</h1>
@@ -39,3 +46,18 @@ create table provincias(
   primary key(cod_prov)
 );
 ```
+
+<img src="img/tabla_provincias.png">
+
+<p>Se importan los datos en esta tabla desde el archivo csv que nos hemos descargado. Debido a errores con este paso, decidimos eliminar la tabla y crearla a la hora de importar, pero utilizando MySQL Workbench.</p>
+
+<img src="img/import_provincias.png">
+
+<p>Hay que tener en cuenta el tipo de codificación de los campos para admitir tildes, "ñ", etc. En mi caso, no he podido hacerlo de otra manera que no sea quitar absolutamente todos los caracteres que pudieran interferir del archivo csv.</p>
+
+<img src="img/importado_prov.png">
+
+<hr class="slim-line">
+
+<h4>Ejercicios</h4>
+
