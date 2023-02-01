@@ -459,6 +459,206 @@ select count(*) from municipios where nombre_actual like "%jerez%";
 
 <img src="img/ej23-1.png">
 
+<p><b>b. Frontera</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%frontera%";
+```
+
+<img src="img/ej23-2.png">
+
+<p><b>c. Marquesado</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%marquesado%";
+```
+
+<img src="img/ej23-3.png">
+
+<p><b>d. Santa</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%santa%";
+```
+
+<img src="img/ej23-4.png">
+
+<p><b>e. Casa</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%casa%";
+```
+
+<img src="img/ej23-5.png">
+
+<p><b>f. Villa</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%villa%";
+```
+
+<img src="img/ej23-6.png">
+
+<p><b>g. Cabeza</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%cabeza%";
+```
+
+<img src="img/ej23-7.png">
+
+<p><b>h. Cuevas</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%cuevas%";
+```
+
+<img src="img/ej23-8.png">
+
+<p><b>i. Dios</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%dios%";
+```
+
+<img src="img/ej23-9.png">
+
+<p><b>j. Barco</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%barco%";
+```
+
+<img src="img/ej23-10.png">
+
+<p><b>k. Pepe</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%pepe%";
+```
+
+<img src="img/ej23-11.png">
+
+<p><b>l. Naval</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%naval%";
+```
+
+<img src="img/ej23-12.png">
+
+<p><b>m. Pajares</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%pajares%";
+```
+
+<img src="img/ej23-13.png">
+
+<p><b>n. Empiece por "San"</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "san%";
+```
+
+<img src="img/ej23-14.png">
+
+<p><b>o. Santi</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%santi%";
+```
+
+<img src="img/ej23-15.png">
+
+<p><b>p. María</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%maría%";
+```
+
+<img src="img/ej23-16.png">
+
+<p><b>q. Zapa</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%zapa%";
+```
+
+<img src="img/ej23-17.png">
+
+<p><b>r. Haba</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%haba%";
+```
+
+<img src="img/ej23-18.png">
+
+<p><b>s. León</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%león%";
+```
+
+<img src="img/ej23-19.png">
+
+<p><b>t. Torre</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%torre%";
+```
+
+<img src="img/ej23-20.png">
+
+<p><b>u. Mata</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%mata%";
+```
+
+<img src="img/ej23-21.png">
+
+<p><b>v. Verde</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%verde%";
+```
+
+<img src="img/ej23-22.png">
+
+<p><b>w. Vallès</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%vallès%";
+```
+
+<img src="img/ej23-23.png">
+
+<p><b>x. Higuera</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%higuera%";
+```
+
+<img src="img/ej23-24.png">
+
+<p><b>y. Puebla</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%puebla%";
+```
+
+<img src="img/ej23-25.png">
+
+<p><b>z. Peña</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "%peña%";
+```
+
+<img src="img/ej23-26.png">
+
 <p><b>24. ¿Cuál es el municipio con mayor extensión de España?</b></p>
 
 <p>Lo primero es cambiar el tipo de dato del campo "superficie", ya que es texto, y debe ser decimal.</p>
@@ -470,7 +670,12 @@ alter table `tema4_ej6`.`municipios` change column `superficie` `superficie` dec
 <p>Ahora se puede obtener el resultado correctamente:</p>
 
 ```sql
-select nombre_actual, provincia, superficie from municipios order by 3 desc;
+select nombre_actual, provincia, superficie from municipios order by 3 desc limit 1;
 ```
 
 <img src="img/ej24.png">
+
+<p><b>25. Haz una consulta para cada una de las provincias. Debes indicar el nombre del municipio, provincia y superficie. ¿Cuál es el municipio de mayor extensión de cada una de estas provincias?</b></p>
+
+<p><b>a. Almería</b></p>
+
