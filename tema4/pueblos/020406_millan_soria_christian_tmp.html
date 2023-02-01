@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>020406_millan_soria_christian.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<style>
+  h1{
+    border: none;
+    margin-bottom: 0px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  img{
+    border: 2px solid black;
+  }
+
+  p{
+    text-align: justify;
+  }
+
+  .slim-line{
+    border: none;
+    height: 1px;
+    color: black;
+    background-color: black;
+  }
+
+  h3{
+    font-weight: bold;
+  }
+</style>
+<h1>PUEBLOS DE ESPA&#xD1;A</h1>
+<hr>
+<p>Lo primero es crear la base de datos:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> tema4_ej6;
+
+<span class="hljs-keyword">use</span> tema4_ej6;
+</div></code></pre>
+<p>Una vez seleccionada la base de datos, se crea la tabla &quot;provincias&quot;.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> provincias(
+	cod_prov <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">unique</span>,
+  provincia <span class="hljs-built_in">varchar</span>(<span class="hljs-number">45</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+  cod_ca <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+  comunidad_autonoma <span class="hljs-built_in">varchar</span>(<span class="hljs-number">35</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+  capital <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+  primary <span class="hljs-keyword">key</span>(cod_prov)
+);
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/tabla_provincias.png">
+<p>Se importan los datos en esta tabla desde el archivo csv que nos hemos descargado. Debido a errores con este paso, decidimos eliminar la tabla y crearla a la hora de importar, pero utilizando MySQL Workbench.</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/import_provincias.png">
+<p>Hay que tener en cuenta el tipo de codificaci&#xF3;n de los campos para admitir tildes, &quot;&#xF1;&quot;, etc. En mi caso, no he podido hacerlo de otra manera que no sea quitar absolutamente todos los caracteres que pudieran interferir del archivo csv.</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/importado_prov.png">
+<p>Por &#xFA;ltimo, se importa la tabla &quot;municipios&quot;:</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/import_municipios.png">
+<hr class="slim-line">
+<h3>EJERCICIOS</h3>
+<p><b>1. &#xBF;Cu&#xE1;ntos municipios tiene la provincia de M&#xE1;laga?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"málaga"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej1.png">
+<p><b>2. &#xBF;Cu&#xE1;ntos municipios tiene la provincia de C&#xE1;diz?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"cádiz"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej2.png">
+<p><b>3. &#xBF;Cu&#xE1;ntos municipios tiene la provincia de Murcia?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"murcia"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej3.png">
+<p><b>4. &#xBF;Cu&#xE1;ntos municipios tiene la provincia de Pontevedra?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"pontevedra"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej4.png">
+<p><b>5. &#xBF;Cu&#xE1;ntos municipios tiene la provincia de La Rioja?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"la rioja"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej5.png">
+<p><b>6. &#xBF;Cu&#xE1;ntos municipios tiene la provincia de Burgos?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"burgos"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej6.png">
+<p><b>7. &#xBF;Cu&#xE1;ntos municipios tiene la provincia de Teruel?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"teruel"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej7.png">
+<p><b>8. &#xBF;Cu&#xE1;ntos municipios tiene la provincia de Madrid?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"madrid"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej8.png">
+<p><b>9. &#xBF;Cu&#xE1;ntos municipios tiene la provincia de Valencia?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"valència/valencia"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej9.png">
+<p><b>10. &#xBF;Cu&#xE1;ntos municipios tiene la provincia de Albacete?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"albacete"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej10.png">
+<p><b>11. Lista los municipios que tienen la provincia de M&#xE1;laga que comienzan por la letra &quot;A&quot;.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"málaga"</span> <span class="hljs-keyword">and</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"a%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej11.png">
+<p><b>12. Lista los municipios que tienen la provincia de M&#xE1;laga que comienzan por la letra &quot;B&quot;.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"málaga"</span> <span class="hljs-keyword">and</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"b%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej12.png">
+<p><b>13. Lista los municipios que tienen la provincia de M&#xE1;laga que comienzan por la letra &quot;C&quot;.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"málaga"</span> <span class="hljs-keyword">and</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"c%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej13.png">
+<p><b>14. Lista los municipios que tienen la provincia de M&#xE1;laga que comienzan por la letra &quot;M&quot;.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"málaga"</span> <span class="hljs-keyword">and</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"m%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej14.png">
+<p><b>15. Lista los municipios que tienen la provincia de M&#xE1;laga que comienzan por &quot;Al&quot;.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"málaga"</span> <span class="hljs-keyword">and</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"al%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej15.png">
+<p><b>16. Lista los municipios que tienen la provincia de M&#xE1;laga que comienzan por &quot;Bena&quot;.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"málaga"</span> <span class="hljs-keyword">and</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"bena%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej16.png">
+<p><b>17. Lista los municipios que comienzan por &quot;Al&quot;.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"al%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej17.png">
+<p><b>18. &#xBF;Cu&#xE1;ntos municipios en Espa&#xF1;a comienzan por &quot;Al&quot;?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"al%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej18.png">
+<p><b>19. Lista los municipios que comienzan por &quot;Bena&quot;.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"bena%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej19.png">
+<p><b>20. &#xBF;Cu&#xE1;ntos municipios en Espa&#xF1;a comienzan por &quot;Bena&quot;?</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"h%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej20.png">
+<p><b>21. Lista los municipios que contienen la palabra &quot;puerto&quot; por orden descendente, incluyendo su provincia.</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%puerto%"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">1</span> <span class="hljs-keyword">desc</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej21.png">
+<p>* Termin&#xE9; de importar las 3 tablas restantes.</p>
+<p><b>22. Haz una consulta para cada una de las palabras que pone a continuaci&#xF3;n de manera que incluyan dentro del nombre del municipio la palabra &quot;xx&quot; incluyendo su provincia.</b></p>
+<p><b>a. Jerez</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%jerez%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-1.png">
+<p><b>b. Frontera</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%frontera%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-2.png">
+<p><b>c. Marquesado</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%marquesado%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-3.png">
+<p><b>d. Santa</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%santa%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-4.png">
+<p><b>e. Casa</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%casa%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-5.png">
+<p><b>f. Villa</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%villa%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-6.png">
+<p><b>g. Cabeza</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%cabeza%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-7.png">
+<p><b>h. Cuevas</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%cuevas%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-8.png">
+<p><b>i. Dios</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%dios%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-9.png">
+<p><b>j. Barco</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%barco%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-10.png">
+<p><b>k. Pepe</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%pepe%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-11.png">
+<p><b>l. Naval</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%naval%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-12.png">
+<p><b>m. Pajares</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%pajares%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-13.png">
+<p><b>n. Empiece por &quot;San&quot;</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"san%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-14.png">
+<p><b>o. Santi</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%santi%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-15.png">
+<p><b>p. Mar&#xED;a</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%maría%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-16.png">
+<p><b>q. Zapa</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%zapa%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-17.png">
+<p><b>r. Haba</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%haba%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-18.png">
+<p><b>s. Le&#xF3;n</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%león%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-19.png">
+<p><b>t. Torre</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%torre%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-20.png">
+<p><b>u. Mata</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%mata%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-21.png">
+<p><b>v. Verde</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%verde%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-22.png">
+<p><b>w. Oliva</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%oliva%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-23.png">
+<p><b>x. Puebla</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%puebla%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-24.png">
+<p><b>y. Higuera</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%higuera%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-25.png">
+<p><b>z. Feria</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%feria%"</span>
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej22-26.png">
+<p><b>23. &#xBF;Cu&#xE1;ntos municipios hay que contengan las palabras que se indican? Haz una consulta para cada uno. Haz una consulta para cada una de las palabras que pone a continuaci&#xF3;n.</b></p>
+<p><b>a. Jerez</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%jerez%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-1.png">
+<p><b>b. Frontera</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%frontera%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-2.png">
+<p><b>c. Marquesado</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%marquesado%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-3.png">
+<p><b>d. Santa</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%santa%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-4.png">
+<p><b>e. Casa</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%casa%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-5.png">
+<p><b>f. Villa</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%villa%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-6.png">
+<p><b>g. Cabeza</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%cabeza%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-7.png">
+<p><b>h. Cuevas</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%cuevas%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-8.png">
+<p><b>i. Dios</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%dios%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-9.png">
+<p><b>j. Barco</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%barco%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-10.png">
+<p><b>k. Pepe</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%pepe%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-11.png">
+<p><b>l. Naval</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%naval%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-12.png">
+<p><b>m. Pajares</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%pajares%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-13.png">
+<p><b>n. Empiece por &quot;San&quot;</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"san%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-14.png">
+<p><b>o. Santi</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%santi%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-15.png">
+<p><b>p. Mar&#xED;a</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%maría%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-16.png">
+<p><b>q. Zapa</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%zapa%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-17.png">
+<p><b>r. Haba</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%haba%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-18.png">
+<p><b>s. Le&#xF3;n</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%león%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-19.png">
+<p><b>t. Torre</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%torre%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-20.png">
+<p><b>u. Mata</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%mata%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-21.png">
+<p><b>v. Verde</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%verde%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-22.png">
+<p><b>w. Vall&#xE8;s</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%vallès%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-23.png">
+<p><b>x. Higuera</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%higuera%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-24.png">
+<p><b>y. Puebla</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%puebla%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-25.png">
+<p><b>z. Pe&#xF1;a</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> nombre_actual <span class="hljs-keyword">like</span> <span class="hljs-string">"%peña%"</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej23-26.png">
+<p><b>24. &#xBF;Cu&#xE1;l es el municipio con mayor extensi&#xF3;n de Espa&#xF1;a?</b></p>
+<p>Lo primero es cambiar el tipo de dato del campo &quot;superficie&quot;, ya que es texto, y debe ser decimal.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> <span class="hljs-string">`tema4_ej6`</span>.<span class="hljs-string">`municipios`</span> <span class="hljs-keyword">change</span> <span class="hljs-keyword">column</span> <span class="hljs-string">`superficie`</span> <span class="hljs-string">`superficie`</span> <span class="hljs-built_in">decimal</span>(<span class="hljs-number">12</span>, <span class="hljs-number">2</span>) <span class="hljs-literal">null</span> <span class="hljs-keyword">default</span> <span class="hljs-literal">null</span>;
+</div></code></pre>
+<p>Ahora se puede obtener el resultado correctamente:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej24.png">
+<p><b>25. Haz una consulta para cada una de las provincias. Debes indicar el nombre del municipio, provincia y superficie. &#xBF;Cu&#xE1;l es el municipio de mayor extensi&#xF3;n de cada una de estas provincias?</b></p>
+<p><b>a. Almer&#xED;a</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"almeria"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-1.png">
+<p><b>b. Granada</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"granada"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-2.png">
+<p><b>c. Ja&#xE9;n</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"jaén"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-3.png">
+<p><b>d. C&#xF3;rdoba</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"córdoba"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-4.png">
+<p><b>e. Sevilla</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"sevilla"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-5.png">
+<p><b>f. Huelva</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"huelva"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-6.png">
+<p><b>g. C&#xE1;diz</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"cádiz"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-7.png">
+<p><b>h. M&#xE1;laga</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"málaga"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-8.png">
+<p><b>i. Madrid</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"madrid"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-9.png">
+<p><b>j. Barcelona</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"barcelona"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-10.png">
+<p><b>k. Huesca</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"huesca"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-11.png">
+<p><b>l. Le&#xF3;n</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"león"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-12.png">
+<p><b>m. Albacete</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"albacete"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-13.png">
+<p><b>n. Girona</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"girona"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-14.png">
+<p><b>o. Islas Baleares</b></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nombre_actual, provincia, superficie <span class="hljs-keyword">from</span> municipios <span class="hljs-keyword">where</span> provincia=<span class="hljs-string">"illes balears"</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-number">3</span> <span class="hljs-keyword">desc</span> <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema4/pueblos/img/ej25-15.png">
+</body>
+</html>
