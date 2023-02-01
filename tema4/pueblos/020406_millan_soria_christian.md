@@ -70,3 +70,25 @@ create table provincias(
 <h3>EJERCICIOS</h3>
 
 <p><b>1. ¿Cuántos municipios tiene la provincia de Málaga?</b></p>
+
+```sql
+select count(*) from municipios where provincia="málaga";
+```
+
+<img src="img/ej1.png">
+
+<p><b>2. ¿Cuántos municipios tiene la provincia de Cádiz?</b></p>
+
+```sql
+select count(*) from municipios where provincia="cádiz";
+```
+
+<img src="img/ej2.png">
+
+<p><b>3. ¿Cuántos municipios tiene la provincia de Murcia?</b></p>
+
+```sql
+select count(*) from municipios where provincia="murcia";
+```
+
+<img src="img/ej3.png">
