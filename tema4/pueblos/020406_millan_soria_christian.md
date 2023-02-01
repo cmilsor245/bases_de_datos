@@ -188,3 +188,12 @@ select nombre_actual from municipios where provincia="málaga" and nombre_actual
 ```
 
 <img src="img/ej15.png">
+
+<p><b>16. Lista los municipios que tienen la provincia de Málaga que comienzan por la letra "Bena".</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="málaga" and nombre_actual like "bena%";
+```
+
+<img src="img/ej16.png">
+
