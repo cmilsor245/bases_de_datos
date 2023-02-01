@@ -764,3 +764,35 @@ select nombre_actual, provincia, superficie from municipios where provincia="hue
 ```
 
 <img src="img/ej25-11.png">
+
+<p><b>l. León</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="león" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-12.png">
+
+<p><b>m. Albacete</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="albacete" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-13.png">
+
+<p><b>n. Girona</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="girona" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-14.png">
+
+<p><b>o. Islas Baleares</b></p>
+
+```sql
+select nombre_actual, provincia, superficie from municipios where provincia="illes balears" order by 3 desc limit 1;
+```
+
+<img src="img/ej25-15.png">
