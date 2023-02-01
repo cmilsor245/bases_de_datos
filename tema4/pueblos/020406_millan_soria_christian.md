@@ -172,3 +172,19 @@ select nombre_actual from municipios where provincia="málaga" and nombre_actual
 ```
 
 <img src="img/ej13.png">
+
+<p><b>14. Lista los municipios que tienen la provincia de Málaga que comienzan por la letra "M".</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="málaga" and nombre_actual like "m%";
+```
+
+<img src="img/ej14.png">
+
+<p><b>15. Lista los municipios que tienen la provincia de Málaga que comienzan por la letra "Al".</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="málaga" and nombre_actual like "al%";
+```
+
+<img src="img/ej15.png">
