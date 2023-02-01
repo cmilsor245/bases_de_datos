@@ -220,3 +220,19 @@ select nombre_actual from municipios where nombre_actual like "bena%";
 ```
 
 <img src="img/ej19.png">
+
+<p><b>20. ¿Cuántos municipios en España comienzan por "Bena"?</b></p>
+
+```sql
+select count(*) from municipios where nombre_actual like "bena%";
+```
+
+<img src="img/ej20.png">
+
+<p><b>21. Lista los municipios que contienen la palabra "puerto" por orden descendente, incluyendo su provincia.</b></p>
+
+```sql
+select nombre_actual, provincia from municipios where nombre_actual like "%puerto%" order by 1 desc;
+```
+
+<img src="img/ej21.png">
