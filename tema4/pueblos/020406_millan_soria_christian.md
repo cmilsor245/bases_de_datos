@@ -1292,3 +1292,11 @@ select count(nombre_actual), provincia from municipios where provincia="illes ba
 ```
 
 <img src="img/ej30-15.png">
+
+<p><b>31. Calcula la superficie de la provincia de Murcia.</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="murcia";
+```
+
+<img src="img/ej31.png">
