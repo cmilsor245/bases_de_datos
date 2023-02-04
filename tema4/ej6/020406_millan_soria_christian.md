@@ -1537,4 +1537,6 @@ select provincia, avg(altitud) as 'altura media' from municipios where provincia
 
 <img src="img/ej40.png">
 
-<p><b>41. ¿Cuál</b></p>
+<p><b>41. ¿Cuál es la altitud media de cada provincia en cada una de las siguientes comunidades? Ordenar descendentemenete por altitud.</b></p>
+
+<p><b>a. </b></p>
