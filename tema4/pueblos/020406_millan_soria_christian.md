@@ -1438,3 +1438,45 @@ select count(distinct nombre_actual), provincia from municipios group by provinc
 ```
 
 <img src="img/ej36.png">
+
+<p><b>37. ¿Cuál es el pueblo que se encuentra a mayor altitud de cada una de las siguientes provincias?</b></p>
+
+<p><b>a. Málaga</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="málaga" order by altitud desc limit 1;
+```
+
+<img src="img/ej37-1.png">
+
+<p><b>b. Granada</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="granada" order by altitud desc limit 1;
+```
+
+<img src="img/ej37-2.png">
+
+<p><b>c. Cádiz</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="cádiz" order by altitud desc limit 1;
+```
+
+<img src="img/ej37-3.png">
+
+<p><b>d. Vizcaya</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="vizcaya" order by altitud desc limit 1;
+```
+
+<img src="img/ej37-4.png">
+
+<p><b>e. Barcelona</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="Barcelona" order by altitud desc limit 1;
+```
+
+<img src="img/ej37-5.png">
