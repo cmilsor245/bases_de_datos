@@ -1300,3 +1300,21 @@ select sum(superficie) from municipios where provincia="murcia";
 ```
 
 <img src="img/ej31.png">
+
+<p><b>32. Calcula la superficie de cada una de las siguientes provincias:</b></p>
+
+<p><b>a. Araba/Álava</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="araba/álava";
+```
+
+<img src="img/ej32-1.png">
+
+<p><b>b. Alacant/Alicante</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="alacant/alicante";
+```
+
+<img src="img/ej32-1.png">
