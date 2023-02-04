@@ -1165,3 +1165,130 @@ select nombre_actual, provincia, poblacion_muni from municipios where provincia=
 
 <p><b>29. La legislación española considera municipios con capacidad de autogestión de todos los servicios a partir de 20 000 habitantes. Para los de menor población depende algunos de os servicios de las diputaciones provinciales. Lista, para una de las provincias anteriores, las poblaciones que tengan una población mayor a partir de 20 000 habitantes, ordenadas ascendentemente por la población del municipio.</b></p>
 
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="málaga" and poblacion_muni>=20000 order by 3 asc;
+```
+
+<img src="img/ej29.png">
+
+<p><b>30. ¿Cuántos municipios están bajo el paraguas de las diputaciones para cada provincia?</b></p>
+
+<p><b>a. Almería</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="almería" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-1.png">
+
+<p><b>b. Granada</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="granada" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-2.png">
+
+<p><b>c. Jaén</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="jaén" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-3.png">
+
+<p><b>d. Córdoba</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="córdoba" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-4.png">
+
+<p><b>e. Sevilla</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="sevilla" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-5.png">
+
+<p><b>f. Huelva</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="huelva" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-6.png">
+
+<p><b>g. Cádiz</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="cádiz" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-7.png">
+
+<p><b>h. Málaga</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="málaga" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-8.png">
+
+<p><b>i. Madrid</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="madrid" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-9.png">
+
+<p><b>j. Barcelona</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="barcelona" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-10.png">
+
+<p><b>k. Huesca</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="huesca" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-11.png">
+
+<p><b>l. León</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="león" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-12.png">
+
+<p><b>m. Albacete</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="albacete" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-13.png">
+
+<p><b>n. Girona</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="girona" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-14.png">
+
+<p><b>o. Islas Baleares</b></p>
+
+```sql
+select count(nombre_actual), provincia from municipios where provincia="illes balears" and poblacion_muni<20000;
+```
+
+<img src="img/ej30-15.png">
