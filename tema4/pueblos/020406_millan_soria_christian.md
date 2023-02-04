@@ -1162,3 +1162,6 @@ select nombre_actual, provincia, poblacion_muni from municipios where provincia=
 ```
 
 <img src="img/ej27-15.png">
+
+<p><b>29. La legislación española considera municipios con capacidad de autogestión de todos los servicios a partir de 20 000 habitantes. Para los de menor población depende algunos de os servicios de las diputaciones provinciales. Lista, para una de las provincias anteriores, las poblaciones que tengan una población mayor a partir de 20 000 habitantes, ordenadas ascendentemente por la población del municipio.</b></p>
+
