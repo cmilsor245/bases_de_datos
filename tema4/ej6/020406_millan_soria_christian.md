@@ -1512,3 +1512,29 @@ select nombre_actual from municipios where provincia="valladolid" order by altit
 ```
 
 <img src="img/ej37-9.png">
+
+<p><b>38. ¿Cuál es el nombre de la provincia que tiene el pueblo con menor altitud?</b></p>
+
+```sql
+select provincia from municipios order by altitud asc limit 1;
+```
+
+<img src="img/ej38.png">
+
+<p><b>39. ¿Cuál es la altitud media de cada provincia? Ordenar descendentemente por altitud.</b></p>
+
+```sql
+select provincia, avg(altitud) as 'altura media' from municipios group by provincia order by 2 desc;
+```
+
+<img src="img/ej39.png">
+
+<p><b>40. ¿Cuál es la altitud media de cada provincia en Andalucía? Ordenar descendentemente por altitud. incluir provincias manualmente.</b></p>
+
+```sql
+select provincia, avg(altitud) as 'altura media' from municipios where provincia in('almería', 'cádiz', 'córdoba', 'granada', 'huelva', 'jaén', 'málaga', 'sevilla') group by provincia order by 2 desc;
+```
+
+<img src="img/ej40.png">
+
+<p><b>41. ¿Cuál</b></p>
