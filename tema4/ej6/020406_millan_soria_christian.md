@@ -1546,3 +1546,43 @@ select provincia, avg(altitud) as 'altura media' from municipios where provincia
 ```
 
 <img src="img/ej41-1.png">
+
+<p><b>b. Comunidad Valenciana</b></p>
+
+```sql
+
+```
+
+<img src="img/ej41-2.png">
+
+<p><b>c. Aragón</b></p>
+
+```sql
+
+```
+
+<img src="img/ej41-3.png">
+
+<p><b>d. País Vasco</b></p>
+
+```sql
+
+```
+
+<img src="img/ej41-4.png">
+
+<p><b>e. Canarias</b></p>
+
+```sql
+
+```
+
+<img src="img/ej41-5.png">
+
+<p><b>42. ¿Cuál es la altitud media de cada provincia? Ordenar descendentemente por altitud.</b></p>
+
+```sql
+
+```
+
+<img src="img/ej42.png">
