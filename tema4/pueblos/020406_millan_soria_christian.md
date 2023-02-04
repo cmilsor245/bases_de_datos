@@ -1317,4 +1317,12 @@ select sum(superficie) from municipios where provincia="araba/álava";
 select sum(superficie) from municipios where provincia="alacant/alicante";
 ```
 
-<img src="img/ej32-1.png">
+<img src="img/ej32-2.png">
+
+<p><b>c. Almería</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="almería";
+```
+
+<img src="img/ej32-3.png">
