@@ -1415,4 +1415,13 @@ select distinct provincia from municipios;
 
 <img src="img/ej33.png">
 
-<p><b>34. </b></p>
+<p><b>34. Muestra la población total de todas las provincias.</b></p>
+
+```sql
+select distinct provincia, sum(poblacion_muni) from municipios group by provincia;
+```
+
+<img src="img/ej34.png">
+
+<p><b>35. Muestra la superficie total de cada una de las provincias en la misma tabla ordenadas de manera descendente.</b></p>
+
