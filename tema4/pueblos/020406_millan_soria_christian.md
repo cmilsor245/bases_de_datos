@@ -1425,3 +1425,16 @@ select distinct provincia, sum(poblacion_muni) from municipios group by provinci
 
 <p><b>35. Muestra la superficie total de cada una de las provincias en la misma tabla ordenadas de manera descendente.</b></p>
 
+```sql
+select distinct provincia, sum(poblacion_muni) from municipios group by provincia order by 1 desc;
+```
+
+<img src="img/ej35.png">
+
+<p><b>36. Muestra el número total de municipios de cada una de las provincias en la misma tabla ordenadas de manera ascendente.</b></p>
+
+```sql
+select count(distinct nombre_actual), provincia from municipios group by provincia order by 1 asc;
+```
+
+<img src="img/ej36.png">
