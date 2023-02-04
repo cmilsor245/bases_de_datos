@@ -1326,3 +1326,83 @@ select sum(superficie) from municipios where provincia="almería";
 ```
 
 <img src="img/ej32-3.png">
+
+<p><b>d. Illes Balears</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="illes balears";
+```
+
+<img src="img/ej32-4.png">
+
+<p><b>e. Cáceres</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="cáceres";
+```
+
+<img src="img/ej32-5.png">
+
+<p><b>f. Castelló/Castellón</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="castelló/castellón";
+```
+
+<img src="img/ej32-6.png">
+
+<p><b>g. Ciudad Real</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="ciudad real";
+```
+
+<img src="img/ej32-7.png">
+
+<p><b>h. A Coruña</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="a coruña";
+```
+
+<img src="img/ej32-8.png">
+
+<p><b>i. Girona</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="girona";
+```
+
+<img src="img/ej32-9.png">
+
+<p><b>j. Granada</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="granada";
+```
+
+<img src="img/ej32-10.png">
+
+<p><b>k. Guadalajara</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="guadalajara";
+```
+
+<img src="img/ej32-11.png">
+
+<p><b>l. Gipuzkoa</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="gipuzkoa";
+```
+
+<img src="img/ej32-12.png">
+
+<p><b>m. Lleida</b></p>
+
+```sql
+select sum(superficie) from municipios where provincia="lleida";
+```
+
+<img src="img/ej32-13.png">
