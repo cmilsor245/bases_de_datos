@@ -918,3 +918,247 @@ select nombre_actual, provincia, superficie from municipios where provincia="ill
 ```
 
 <img src="img/ej26-15.png">
+
+<p><b>27. Busca la de mayor población en cada una de las provincias de la cuestión 25.</b></p>
+
+<p><b>a. Almería</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="almeria" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-1.png">
+
+<p><b>b. Granada</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="granada" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-2.png">
+
+<p><b>c. Jaén</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="jaén" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-3.png">
+
+<p><b>d. Córdoba</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="córdoba" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-4.png">
+
+<p><b>e. Sevilla</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="sevilla" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-5.png">
+
+<p><b>f. Huelva</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="huelva" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-6.png">
+
+<p><b>g. Cádiz</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="cádiz" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-7.png">
+
+<p><b>h. Málaga</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="málaga" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-8.png">
+
+<p><b>i. Madrid</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="madrid" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-9.png">
+
+<p><b>j. Barcelona</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="barcelona" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-10.png">
+
+<p><b>k. Huesca</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="huesca" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-11.png">
+
+<p><b>l. León</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="león" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-12.png">
+
+<p><b>m. Albacete</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="albacete" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-13.png">
+
+<p><b>n. Girona</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="girona" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-14.png">
+
+<p><b>o. Islas Baleares</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="illes balears" order by 3 desc limit 1;
+```
+
+<img src="img/ej27-15.png">
+
+<p><b>28. ¿Cuál sería la de menor población en cada una de esas provincias?</b></p>
+
+<p><b>a. Almería</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="almeria" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-1.png">
+
+<p><b>b. Granada</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="granada" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-2.png">
+
+<p><b>c. Jaén</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="jaén" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-3.png">
+
+<p><b>d. Córdoba</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="córdoba" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-4.png">
+
+<p><b>e. Sevilla</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="sevilla" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-5.png">
+
+<p><b>f. Huelva</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="huelva" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-6.png">
+
+<p><b>g. Cádiz</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="cádiz" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-7.png">
+
+<p><b>h. Málaga</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="málaga" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-8.png">
+
+<p><b>i. Madrid</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="madrid" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-9.png">
+
+<p><b>j. Barcelona</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="barcelona" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-10.png">
+
+<p><b>k. Huesca</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="huesca" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-11.png">
+
+<p><b>l. León</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="león" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-12.png">
+
+<p><b>m. Albacete</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="albacete" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-13.png">
+
+<p><b>n. Girona</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="girona" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-14.png">
+
+<p><b>o. Islas Baleares</b></p>
+
+```sql
+select nombre_actual, provincia, poblacion_muni from municipios where provincia="illes balears" order by 3 asc limit 1;
+```
+
+<img src="img/ej27-15.png">
