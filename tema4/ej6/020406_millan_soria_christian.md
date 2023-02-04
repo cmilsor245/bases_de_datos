@@ -1539,4 +1539,10 @@ select provincia, avg(altitud) as 'altura media' from municipios where provincia
 
 <p><b>41. ¿Cuál es la altitud media de cada provincia en cada una de las siguientes comunidades? Ordenar descendentemenete por altitud.</b></p>
 
-<p><b>a. </b></p>
+<p><b>a. Cataluña</b></p>
+
+```sql
+
+```
+
+<img src="img/ej41-1.png">
