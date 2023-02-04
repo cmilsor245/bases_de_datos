@@ -1406,3 +1406,13 @@ select sum(superficie) from municipios where provincia="lleida";
 ```
 
 <img src="img/ej32-13.png">
+
+<p><b>33. Muestra el nombre de todas las provincias.</b></p>
+
+```sql
+select distinct provincia from municipios;
+```
+
+<img src="img/ej33.png">
+
+<p><b>34. </b></p>
