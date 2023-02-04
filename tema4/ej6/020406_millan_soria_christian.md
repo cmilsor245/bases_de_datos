@@ -1480,3 +1480,35 @@ select nombre_actual from municipios where provincia="Barcelona" order by altitu
 ```
 
 <img src="img/ej37-5.png">
+
+<p><b>f. Castellón</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="castelló/castellón" order by altitud desc limit 1;
+```
+
+<img src="img/ej37-6.png">
+
+<p><b>g. Gerona</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="girona" order by altitud desc limit 1;
+```
+
+<img src="img/ej37-7.png">
+
+<p><b>h. Lugo</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="lugo" order by altitud desc limit 1;
+```
+
+<img src="img/ej37-8.png">
+
+<p><b>i. Valladolid</b></p>
+
+```sql
+select nombre_actual from municipios where provincia="valladolid" order by altitud desc limit 1;
+```
+
+<img src="img/ej37-9.png">
