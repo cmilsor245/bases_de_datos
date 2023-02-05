@@ -1400,7 +1400,6 @@ select sum(superficie) from municipios where provincia="gipuzkoa";
 <img src="img/ej32-12.png">
 
 <p><b>m. Lleida</b></p>
-
 ```sql
 select sum(superficie) from municipios where provincia="lleida";
 ```
