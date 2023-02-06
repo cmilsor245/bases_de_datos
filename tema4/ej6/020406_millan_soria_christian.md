@@ -1541,7 +1541,7 @@ select provincia, avg(altitud) as 'altura media' from municipios where provincia
 <p><b>a. Cataluña</b></p>
 
 ```sql
-
+select provincia, avg(altitud) as 'altura media' from municipios where provincia in('barcelona', 'girona', 'lleida', 'tarragona') group by provincia order by 2 desc;
 ```
 
 <img src="img/ej41-1.png">
@@ -1549,7 +1549,7 @@ select provincia, avg(altitud) as 'altura media' from municipios where provincia
 <p><b>b. Comunidad Valenciana</b></p>
 
 ```sql
-
+select provincia, avg(altitud) as 'altura media' from municipios where provincia in('alicant/alicante', 'castello/castellon', 'valencia/valencia') group by provincia order by 2 desc;
 ```
 
 <img src="img/ej41-2.png">
@@ -1557,7 +1557,7 @@ select provincia, avg(altitud) as 'altura media' from municipios where provincia
 <p><b>c. Aragón</b></p>
 
 ```sql
-
+select provincia, avg(altitud) as 'altura media' from municipios where provincia in('huesca', 'teruel', 'zaragoza') group by provincia order by 2 desc;
 ```
 
 <img src="img/ej41-3.png">
@@ -1565,7 +1565,7 @@ select provincia, avg(altitud) as 'altura media' from municipios where provincia
 <p><b>d. País Vasco</b></p>
 
 ```sql
-
+select provincia, avg(altitud) as 'altura media' from municipios where provincia in('araba/alava', 'gipuzkoa', 'bizkaia') group by provincia order by 2 desc;
 ```
 
 <img src="img/ej41-4.png">
@@ -1573,7 +1573,7 @@ select provincia, avg(altitud) as 'altura media' from municipios where provincia
 <p><b>e. Canarias</b></p>
 
 ```sql
-
+select provincia, avg(altitud) as 'altura media' from municipios where provincia in('las palmas', 'santa cruz de tenerife') group by provincia order by 2 desc;
 ```
 
 <img src="img/ej41-5.png">
