@@ -1581,7 +1581,7 @@ select provincia, avg(altitud) as 'altura media' from municipios where provincia
 <p><b>42. ¿Cuál es la altitud media de cada provincia? Ordenar descendentemente por altitud.</b></p>
 
 ```sql
-
+select provincia, avg(altitud) as 'altura media' from municipios group by provincia order by 2 desc;
 ```
 
 <img src="img/ej42.png">
