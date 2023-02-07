@@ -114,7 +114,7 @@ select * from malaga where poblacion>50000 order by poblacion desc;
 <p><b>7. Vamos a incluir el campo de superficie.</b></p>
 
 ```sql
-alter table malaga add column superficie int;
+alter table malaga add column superficie double(10, 4);
 ```
 
 <img src="img/7.png">
@@ -122,7 +122,9 @@ alter table malaga add column superficie int;
 <p><b>9. Introduce los valores de superficie en km<sup>2</sup>.</b></p>
 
 ```sql
-update malaga set superficie=floor(rand()*(100-1)+1);
+--! NO FUNCIONA
+
+INSERT INTO `malaga`(`nombre_muni`,`superficie`) SELECT nombre_actual, superficie FROM municipios WHERE provincia="málaga" AND nombre_actual NOT IN (SELECT nombre_muni FROM malaga);
 ```
 
 <img src="img/9.png">
@@ -150,3 +152,11 @@ alter table malaga add column altitud int default 1;
 ```
 
 <img src="img/12.png">
+
+<p><b>13. Lista los 10 municipios de Málaga con menor altitud.</b></p>
+
+```sql
+
+```
+
+<img src="img/13.png">
