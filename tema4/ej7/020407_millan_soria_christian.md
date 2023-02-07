@@ -134,3 +134,19 @@ alter table `tema4_ej6`.`malaga` change column `superficie` `superficie` decimal
 ```
 
 <img src="img/10.png">
+
+<p><b>11. Añade en la tabla el campo "altitud" con valor 1 por defecto.</b></p>
+
+```sql
+alter table malaga add column altitud int default 1;
+```
+
+<img src="img/11.png">
+
+<p><b>12. Inserta los datos de altitud de cada uno de los municipios.</b></p>
+
+```sql
+
+```
+
+<img src="img/12.png">
