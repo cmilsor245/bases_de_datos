@@ -86,3 +86,51 @@ select * from malaga where poblacion between 5000 and 10000 order by poblacion d
 ```
 
 <img src="img/6.3.png">
+
+<p><b>d. entre 10000 y 20000</b></p>
+
+```sql
+select * from malaga where poblacion between 10000 and 20000 order by poblacion desc;
+```
+
+<img src="img/6.4.png">
+
+<p><b>e. entre 20000 y 50000</b></p>
+
+```sql
+select * from malaga where poblacion between 20000 and 50000 order by poblacion desc;
+```
+
+<img src="img/6.5.png">
+
+<p><b>e. mayores de 50000</b></p>
+
+```sql
+select * from malaga where poblacion>50000 order by poblacion desc;
+```
+
+<img src="img/6.6.png">
+
+<p><b>7. Vamos a incluir el campo no nulo de superficie.</b></p>
+
+```sql
+alter table malaga add column superficie int not null;
+```
+
+<img src="img/7.png">
+
+<p><b>8. Vamos a incluir primero el campo superficie, pero con valores nulos.</b></p>
+
+```sql
+alter table malaga add column superficie int;
+```
+
+<p>No se puede incluir este campo de nuevo porque ya existe otro con el mismo nombre.</p>
+
+<img src="img/8.png">
+
+<p><b>9. Introduce los valores de superficie en km<sup>2</sup>.</b></p>
+
+```sql
+
+```
