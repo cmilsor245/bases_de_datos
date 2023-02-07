@@ -111,26 +111,16 @@ select * from malaga where poblacion>50000 order by poblacion desc;
 
 <img src="img/6.6.png">
 
-<p><b>7. Vamos a incluir el campo no nulo de superficie.</b></p>
-
-```sql
-alter table malaga add column superficie int not null;
-```
-
-<img src="img/7.png">
-
-<p><b>8. Vamos a incluir primero el campo superficie, pero con valores nulos.</b></p>
+<p><b>7. Vamos a incluir el campo de superficie.</b></p>
 
 ```sql
 alter table malaga add column superficie int;
 ```
 
-<p>No se puede incluir este campo de nuevo porque ya existe otro con el mismo nombre.</p>
-
-<img src="img/8.png">
+<img src="img/7.png">
 
 <p><b>9. Introduce los valores de superficie en km<sup>2</sup>.</b></p>
 
 ```sql
-
+update malaga set superficie=floor(rand()*(100-1)+1);
 ```
