@@ -124,3 +124,13 @@ alter table malaga add column superficie int;
 ```sql
 update malaga set superficie=floor(rand()*(100-1)+1);
 ```
+
+<img src="img/9.png">
+
+<p><b>10. Cambia a no nulo el campo "superficie".</b></p>
+
+```sql
+alter table `tema4_ej6`.`malaga` change column `superficie` `superficie` decimal(10, 4) not null;
+```
+
+<img src="img/10.png">
