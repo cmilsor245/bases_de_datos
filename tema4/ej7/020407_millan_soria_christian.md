@@ -7,7 +7,7 @@
   }
 
   p{
-    text-align: center;
+    text-align: justify;
   }
 
   img{
@@ -52,3 +52,37 @@ insert into `malaga`(`nombre_muni`, `poblacion`) select nombre_actual, poblacion
 ```
 
 <img src="img/4.png">
+
+<p><b>5. Saca un listado por orden descendente de población.</b></p>
+
+```sql
+select * from malaga order by poblacion desc;
+```
+
+<img src="img/5.png">
+
+<p><b>6. Saca un listado por orden descendente de población de los municipios:</b></p>
+
+<p><b>a. menores de 1000</b></p>
+
+```sql
+select * from malaga where poblacion<1000 order by poblacion desc;
+```
+
+<img src="img/6.1.png">
+
+<p><b>b. entre 1000 y 5000</b></p>
+
+```sql
+select * from malaga where poblacion between 1000 and 5000 order by poblacion desc;
+```
+
+<img src="img/6.2.png">
+
+<p><b>c. entre 5000 y 10000</b></p>
+
+```sql
+select * from malaga where poblacion between 5000 and 10000 order by poblacion desc;
+```
+
+<img src="img/6.3.png">
