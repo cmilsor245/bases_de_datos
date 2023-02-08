@@ -122,9 +122,7 @@ alter table malaga add column superficie double(10, 4);
 <p><b>9. Introduce los valores de superficie en km<sup>2</sup>.</b></p>
 
 ```sql
---! NO FUNCIONA
-
-INSERT INTO `malaga`(`nombre_muni`,`superficie`) SELECT nombre_actual, superficie FROM municipios WHERE provincia="málaga" AND nombre_actual NOT IN (SELECT nombre_muni FROM malaga);
+update `malaga` set superficie=(select superficie from municipios) where provincia="málaga";
 ```
 
 <img src="img/9.png">
