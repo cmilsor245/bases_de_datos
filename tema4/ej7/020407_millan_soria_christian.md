@@ -202,7 +202,97 @@ select nombre_muni, poblacion from malaga order by altitud desc limit 12;
 <p><b>19. Calcula altitud media de los 10 municipios de mayor altitud.</b></p>
 
 ```sql
-
+select avg(altitud) from(select altitud from malaga order by 1 desc limit 10) malaga;
 ```
 
 <img src="img/19.png">
+
+<p><b>20. Indica la población total de los 10 municipios de mayor altitud.</b></p>
+
+```sql
+select sum(poblacion) from(select poblacion from malaga order by altitud desc limit 10) malaga;
+```
+
+<img src="img/20.png">
+
+<p><b>21. ¿Cuál es la altitud media de la provincia?</b></p>
+
+```sql
+select avg(altitud) from malaga;
+```
+
+<img src="img/21.png">
+
+<p><b>22. ¿Cuál es la media poblacional de la provincia?</b></p>
+
+```sql
+select avg(poblacion) from malaga;
+```
+
+<img src="img/22.png">
+
+<p><b>23. Lista los pueblos de la provincia que estén por debajo de los 100 metros de altitud.</b></p>
+
+```sql
+select nombre_muni from malaga where altitud<100;
+```
+
+<img src="img/23.png">
+
+<p><b>24. Lista los pueblos de la provincia que estén por encima de los 100 metros de altitud.</b></p>
+
+```sql
+select nombre_muni from malaga where altitud>100;
+```
+
+<img src="img/24.png">
+
+<p><b>25. Lista los pueblos entre 10 metros y 50 metros de altitud.</b></p>
+
+```sql
+select nombre_muni from malaga where altitud between 10 and 50;
+```
+
+<img src="img/25.png">
+
+<p><b>26. ¿Cuál es la media de población de los pueblos de la provincia?</b></p>
+
+```sql
+select avg(poblacion) from malaga;
+```
+
+<img src="img/26.png">
+
+<p><b>27. Lista los 5 pueblos de mayor extensión de la provincia de Málaga.</b></p>
+
+```sql
+select nombre_muni from malaga order by superficie desc limit 5;
+```
+
+<img src="img/27.png">
+
+<p><b>28. Mostrar la lista de bases de datos.</b></p>
+
+```sql
+show databases;
+```
+
+<img src="img/28.png">
+
+<p><b>29. Mostrar las tablas de la base de datos.</b></p>
+
+```sql
+use tema4_ej6;
+
+show tables;
+```
+
+<img src="img/29.png">
+
+<p><b>30. Haz una descripción de la tabla "tema4_ej6".</b></p>
+
+```sql
+
+```
+
+<img src="img/30.png">
