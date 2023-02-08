@@ -122,7 +122,7 @@ alter table malaga add column superficie double(10, 4);
 <p><b>9. Introduce los valores de superficie en km<sup>2</sup>.</b></p>
 
 ```sql
-
+update malaga set superficie=(select superficie from municipios where malaga.nombre_muni=municipios.nombre_actual) where nombre_muni<>"";
 ```
 
 <img src="img/9.png">
@@ -146,7 +146,7 @@ alter table malaga add column altitud int default 1;
 <p><b>12. Inserta los datos de altitud de cada uno de los municipios.</b></p>
 
 ```sql
-
+update malaga set altitud=(select altitud from municipios where malaga.nombre_muni=municipios.nombre_actual) where nombre_muni<>"";
 ```
 
 <img src="img/12.png">
