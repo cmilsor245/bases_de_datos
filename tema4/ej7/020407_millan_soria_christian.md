@@ -130,7 +130,7 @@ alter table malaga add column superficie double(10, 4);
 <p><b>10. Cambia a no nulo el campo "superficie".</b></p>
 
 ```sql
-alter table `tema4_ej6`.`malaga` change column `superficie` `superficie` decimal(10, 4) not null;
+alter table malaga change column superficie superficie decimal(10, 4) not null;
 ```
 
 <img src="img/10.png">
