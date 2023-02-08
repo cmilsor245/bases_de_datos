@@ -111,13 +111,13 @@ select * from malaga where poblacion>50000 order by poblacion desc;
 
 <img src="img/6.6.png">
 
-<p><b>7. Vamos a incluir el campo de superficie.</b></p>
+<p><b>8. Vamos a incluir el campo de superficie.</b></p>
 
 ```sql
 alter table malaga add column superficie double(10, 4);
 ```
 
-<img src="img/7.png">
+<img src="img/8.png">
 
 <p><b>9. Introduce los valores de superficie en km<sup>2</sup>.</b></p>
 
