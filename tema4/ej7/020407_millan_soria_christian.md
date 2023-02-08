@@ -258,7 +258,7 @@ select nombre_muni from malaga where altitud between 10 and 50;
 <p><b>26. ¿Cuál es la media de población de los pueblos de la provincia?</b></p>
 
 ```sql
-select avg(poblacion) from malaga;
+select avg(poblacion) from malaga where poblacion<10000;
 ```
 
 <img src="img/26.png">
@@ -292,7 +292,7 @@ show tables;
 <p><b>30. Haz una descripción de la tabla "tema4_ej6".</b></p>
 
 ```sql
-
+describe "tema4_ej6.municipios";
 ```
 
 <img src="img/30.png">
