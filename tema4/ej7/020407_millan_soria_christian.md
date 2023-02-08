@@ -122,7 +122,7 @@ alter table malaga add column superficie double(10, 4);
 <p><b>9. Introduce los valores de superficie en km<sup>2</sup>.</b></p>
 
 ```sql
-update malaga set superficie=(select superficie from municipios where malaga.nombre_muni=municipios.nombre_actual) where nombre_muni<>"";
+update malaga set superficie=(select superficie/100 from municipios where malaga.nombre_muni=municipios.nombre_actual) where nombre_muni<>"";
 ```
 
 <img src="img/9.png">
@@ -154,7 +154,17 @@ update malaga set altitud=(select altitud from municipios where malaga.nombre_mu
 <p><b>13. Lista los 10 municipios de Málaga con menor altitud.</b></p>
 
 ```sql
-
+select nombre_muni, altitud from malaga order by 2 asc limit 10;
 ```
 
 <img src="img/13.png">
+
+<p><b>14. Lista la población de los 10 municipios de Málaga con menor altitud.</b></p>
+
+```sql
+select nombre_muni, poblacion from malaga order by altitud asc limit 10;
+```
+
+<img src="img/14.png">
+
+<p><b>15. Calcula la altitud</b></p>
