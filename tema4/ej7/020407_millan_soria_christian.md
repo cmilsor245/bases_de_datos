@@ -167,4 +167,42 @@ select nombre_muni, poblacion from malaga order by altitud asc limit 10;
 
 <img src="img/14.png">
 
-<p><b>15. Calcula la altitud</b></p>
+<p><b>15. Calcula la altitud media de los 5 municipios de menor altitud.</b></p>
+
+```sql
+select avg(altitud) from(select altitud from malaga order by 1 asc limit 5) malaga;
+```
+
+<img src="img/15.png">
+
+<p><b>16. Indica la población total de los 3 municipios de menor altitud.</b></p>
+
+```sql
+select sum(poblacion) from(select poblacion from malaga order by altitud asc limit 3) malaga;
+```
+
+<img src="img/16.png">
+
+<p><b>17. Lista los 10 municipios de Málaga con mayor altitud.</b></p>
+
+```sql
+select nombre_muni from malaga order by altitud desc limit 10;
+```
+
+<img src="img/17.png">
+
+<p><b>18. Lista la población de los 12 municipios de Málaga con mayor altitud.</b></p>
+
+```sql
+select nombre_muni, poblacion from malaga order by altitud desc limit 12;
+```
+
+<img src="img/18.png">
+
+<p><b>19. Calcula altitud media de los 10 municipios de mayor altitud.</b></p>
+
+```sql
+
+```
+
+<img src="img/19.png">
