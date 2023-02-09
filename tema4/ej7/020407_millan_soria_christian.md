@@ -289,10 +289,41 @@ show tables;
 
 <img src="img/29.png">
 
-<p><b>30. Haz una descripción de la tabla "tema4_ej6".</b></p>
+<p><b>30. Haz una descripción de la tabla "municipios".</b></p>
+
+<p>Este comando no me funciona en phpMyAdmin ni en MySQL Workbench.</p>
 
 ```sql
 describe "tema4_ej6.municipios";
 ```
 
-<img src="img/30.png">
+<p><b>31. Haz una descripción de la tabla "malaga".</b></p>
+
+```sql
+describe "tema4_ej6.malaga";
+```
+
+<p><b>32. Modifica el campo "poblacion" para que verifique que todos los municipios tienen más de 1 habitante.</b></p>
+
+```sql
+alter table malaga add constraint poblacion_minima check(poblacion>=1);
+```
+
+<img src="img/32.png">
+
+<p><b>33. Modifica el campo "altitud" para que verifique que todos los municipios están entre 1 y 4000 metros.</b></p>
+
+```sql
+alter table malaga add constraint altitud_entre check(altitud between 1 and 4000);
+```
+
+<img src="img/33.png">
+
+<p><b>34. Lista todos los pueblos que no comiencen ni por la "B", ni la "A", ni la "M".</b></p>
+
+```sql
+select nombre_muni from malaga where poblacion<10000 and nombre_muni not like 'B%' and nombre_muni not like 'A%' and nombre_muni not like 'M%';
+```
+
+<img src="img/34.png">
+
