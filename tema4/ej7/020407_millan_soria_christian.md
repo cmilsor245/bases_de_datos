@@ -322,8 +322,56 @@ alter table malaga add constraint altitud_entre check(altitud between 1 and 4000
 <p><b>34. Lista todos los pueblos que no comiencen ni por la "B", ni la "A", ni la "M".</b></p>
 
 ```sql
-select nombre_muni from malaga where poblacion<10000 and nombre_muni not like 'B%' and nombre_muni not like 'A%' and nombre_muni not like 'M%';
+select nombre_muni from malaga where poblacion<10000 and nombre_muni not like 'b%' and nombre_muni not like 'a%' and nombre_muni not like 'm%';
 ```
 
 <img src="img/34.png">
 
+<p><b>35. ¿Cuántos pueblos hay que no comiencen por la "M" ni por la "A".</b></p>
+
+```sql
+select count(distinct nombre_muni) from malaga where poblacion<10000 and nombre_muni not like 'm%' and nombre_muni not like 'A%';
+```
+
+<img src="img/35.png">
+
+<p><b>36. Haz un listado con los 10 pueblos con mayor densidad poblacional de la provincia.</b></p>
+
+```sql
+select nombre_muni from malaga where poblacion<10000 order by poblacion/superficie desc limit 10;
+```
+
+<img src="img/36.png">
+
+<p><b>37. ¿Cuáles son los 5 pueblos con menor densidad poblacional de la provincia?</b></p>
+
+```sql
+select nombre_muni from malaga where poblacion<10000 order by poblacion/superficie asc limit 5;
+```
+
+<img src="img/37.png">
+
+<p><b>38. ¿Cuántos pueblos comienzan por "M"?</b></p>
+
+```sql
+select count(distinct nombre_muni) from malaga where poblacion<10000 and nombre_muni like 'm%';
+```
+
+<img src="img/38.png">
+```
+
+<p><b>39. ¿Cuántos pueblos comienzan por "A"?</b></p>
+
+```sql
+select count(distinct nombre_muni) from malaga where poblacion<10000 and nombre_muni like 'a%';
+```
+
+<img src="img/39.png">
+
+<p><b>40. Pon en la misma tabla, el número de pueblos que comienzan por "A", "B", "C", "M", "T" y el número de cada uno.</b></p>
+
+```sql
+
+```
+
+<img src="img/40.png">
