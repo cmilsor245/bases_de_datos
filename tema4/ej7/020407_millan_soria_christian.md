@@ -371,7 +371,7 @@ select count(distinct nombre_muni) from malaga where poblacion<10000 and nombre_
 <p><b>40. Pon en la misma tabla, el número de pueblos que comienzan por "A", "B", "C", "M", "T" y el número de cada uno.</b></p>
 
 ```sql
-
+select left(nombre_muni,1),count(*) from malaga where poblacion<10000 and (nombre_muni like 'A%' or nombre_muni like 'B%' or nombre_muni like 'C%' or nombre_muni like 'M%' or nombre_muni like 'T%') group by 1;
 ```
 
 <img src="img/40.png">
