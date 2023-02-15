@@ -90,3 +90,27 @@ select altitud from municipios where nombre_actual="real sitio de san ildefonso"
 ```
 
 <img src="img/9.png">
+
+<p><b>10. ¿Cuál es el nombre del pueblo con mayor población en la provincia de Almería?</b></p>
+
+```sql
+select nombre_actual as "nombre del pueblo" from municipios where provincia="almeria" order by poblacion_muni desc limit 1;
+```
+
+<img src="img/10.png">
+
+<p><b>11. ¿Cuál es la superficie aproximada del pueblo de Calahorra, en la provincia de Lar Rioja?</b></p>
+
+```sql
+select superficie as "superficie aproximada" from municipios where nombre_actual="calahorra" and provincia="la rioja";
+```
+
+<img src="img/11.png">
+
+<p><b>12. ¿Qué provincia alberga al pueblo de Haro con mayor altura sobr eel nivel del mar?</b></p>
+
+```sql
+
+```
+
+<img src="img/12.png">
