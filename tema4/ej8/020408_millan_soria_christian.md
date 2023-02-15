@@ -154,3 +154,27 @@ select provincia from municipios where provincia="galicia" order by altitud desc
 ```
 
 <img src="img/17.png">
+
+<p><b>18. ¿Cuántos habitantes tiene el pueblo de Girona?</b></p>
+
+```sql
+select poblacion_muni as "población girona" from municipios where nombre_actual="girona";
+```
+
+<img src="img/18.png">
+
+<p><b>19. ¿Qué altura alcanza el pueblo de Ávila?</b></p>
+
+```sql
+select altitud as "altitud ávila" from municipios where nombre_actual="avila";
+```
+
+<img src="img/19.png">
+
+<p><b>20. ¿Cuál es el nombre del pueblo con mayor población en la provincia de Alicante?</b></p>
+
+```sql
+select nombre_actual as "pueblo con mayor población de alicante" from municipios where provincia="alicante";
+```
+
+<img src="img/20.png">
