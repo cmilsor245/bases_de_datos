@@ -134,7 +134,23 @@ select altitud as "altitud peñafiel" from municipios where nombre_actual="peña
 <p><b>15. ¿Cuál es el nombre del pueblo con mayor superficie en la provincia de Zaragoza?</b></p>
 
 ```sql
-
+select nombre_actual as "pueblo con mayor superficie de zaragoza" from municipios where provincia="zaragoza" order by superficie desc limit 1;
 ```
 
 <img src="img/15.png">
+
+<p><b>16. ¿Cuál es la población aproximada del pueblo de Santander? Indica la provincia.</b></p>
+
+```sql
+select poblacion_muni as "población aproximada de santander", provincia from municipios where nombre_actual="santander";
+```
+
+<img src="img/16.png">
+
+<p><b>17. ¿Qué provincia alberga al pueblo de Galicia con mayor altura sobre el nivel del mar?</b></p>
+
+```sql
+select provincia from municipios where provincia="galicia" order by altitud desc limit 1;
+```
+
+<img src="img/17.png">
