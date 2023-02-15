@@ -288,7 +288,7 @@ select count(*) as "nº de pueblos de alicante con más de 10,000 habitantes" fr
 <p><b>34. ¿Cuáles son los 2 pueblos más pequeños en términos de superficie en la provincia de La Rioja?</b></p>
 
 ```sql
-select nombre_actual as "2 pueblos más pequeños de la rioja" from municipios where provincia="la rioja" order by superficie desc limit 2;
+select nombre_actual as "2 pueblos más pequeños de la rioja" from municipios where provincia="la rioja" order by superficie asc limit 2;
 ```
 
 <img src="img/34.png">
@@ -309,4 +309,26 @@ select count(*) as "nª de pueblos en asturias con más de 600 metros de altura"
 
 <img src="img/36.png">
 
-<p><b>37. </b></p>
+<p><b>37. ¿Cuáles son los 3 pueblos con mayor población en la provincia de Teruel?</b></p>
+
+```sql
+select nombre_actual as "3 pueblos con mayor población de teruel" from municipios where provincia="teruel" order by poblacion_muni desc limit 3;
+```
+
+<img src="img/37.png">
+
+<p><b>38. ¿Qué pueblo en la provincia de Cáceres tiene la menor altura sobre el nivel del mar?</b></p>
+
+```sql
+select nombre_actual as "pueblo de cáceres más bajo" from municipios where provincia="caceres" order by altitud asc limit 1;
+```
+
+<img src="img/38.png">
+
+<p><b>39. ¿Cuántos pueblos en la provincia de Jaén tienen una superficie mayor a 75 km<sup>2</sup>?</b></p>
+
+```sql
+
+```
+
+<img src="img/39.png">
