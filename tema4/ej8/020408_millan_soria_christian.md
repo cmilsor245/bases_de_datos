@@ -150,7 +150,7 @@ select poblacion_muni as "población aproximada de santander", provincia from mu
 <p><b>17. ¿Qué provincia alberga al pueblo de Galicia con mayor altura sobre el nivel del mar?</b></p>
 
 ```sql
-select provincia from municipios where provincia="galicia" order by altitud desc limit 1;
+select provincia from municipios where provincia in("la coruña", "lugo", "orense", "pontevedra") order by altitud desc limit 1;
 ```
 
 <img src="img/17.png">
@@ -212,3 +212,11 @@ select sum(poblacion_muni) as "suma de la población de los 5 pueblos más habit
 ```
 
 <img src="img/24.png">
+
+<p><b>25. ¿Qué pueblo en Andalucía tiene la mayor altura sobre el nivel del mar?</b></p>
+
+```sql
+select nombre_actual as "pueblo más alto de andalucía" from municipios where provincia in("almeria", "granada", "malaga", "jaen", "cordoba", "sevilla", "cadiz", "huelva") order by altitud desc limit 1;
+```
+
+<img src="img/25.png">
