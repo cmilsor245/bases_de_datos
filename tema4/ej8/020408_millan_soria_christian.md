@@ -182,7 +182,23 @@ select nombre_actual as "pueblo con mayor población de alicante" from municipio
 <p><b>21. ¿Cuáles son los 5 pueblos más grandes en términos de población en la provincia de Valencia?</b></p>
 
 ```sql
-
+select nombre_actual as "5 pueblos con mayor población de valencia" from municipios where provincia="valencia/valencia" order by poblacion_muni desc limit 5;
 ```
 
 <img src="img/21.png">
+
+<p><b>22. ¿Cuáles son los 3 pueblos más altos sobre el nivel del mar en la provincia de Madrid?</b></p>
+
+```sql
+select nombre_actual as "3 pueblos más altos de madrid" from municipios where provincia="madrid" order by altitud desc limit 3;
+```
+
+<img src="img/22.png">
+
+<p><b>23. ¿Qué pueblo tiene la menor superficie en la provincia de Barcelona?</b></p>
+
+```sql
+
+```
+
+<img src="img/23.png">
