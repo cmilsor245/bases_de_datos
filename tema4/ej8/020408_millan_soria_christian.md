@@ -232,7 +232,15 @@ select count(nombre_actual) as "nº de pueblos de castilla y león con más de 1
 <p><b>27. ¿Cuáles son los 2 pueblos más grandes en términos de población en la provincia de Alicante?</b></p>
 
 ```sql
-
+select nombre_actual as "2 pueblos más poblados de alicante" from municipios where provincia="alacant/alicante" order by poblacion_muni desc limit 2;
 ```
 
 <img src="img/27.png">
+
+<p><b>28. ¿Qué porcentaje de la población de la provincia de Zaragoza vive en pueblos con una superficie menor a 50 km<sup>2</sup>?</b></p>
+
+```sql
+
+```
+
+<img src="img/28.png">
