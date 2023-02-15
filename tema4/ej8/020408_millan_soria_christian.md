@@ -198,7 +198,17 @@ select nombre_actual as "3 pueblos más altos de madrid" from municipios where p
 <p><b>23. ¿Qué pueblo tiene la menor superficie en la provincia de Barcelona?</b></p>
 
 ```sql
-
+select nombre_actual as "pueblo con menor superficie de barcelona" from municipios where provincia="barcelona" order by superficie asc limit 1;
 ```
 
 <img src="img/23.png">
+
+<p><b>24. ¿Cuál es la suma de la población de los pueblos de La Rioja con mayor número de habitantes?</b></p>
+
+```sql
+-- he tomado como "los pueblos de La Rioja con mayo número de habitantes" los 5 pueblos con mayor población
+
+select sum(poblacion_muni) as "suma de la población de los 5 pueblos más habitados de la rioja" from municipios where provincia="la rioja" order by poblacion_muni desc limit 5;
+```
+
+<img src="img/24.png">
