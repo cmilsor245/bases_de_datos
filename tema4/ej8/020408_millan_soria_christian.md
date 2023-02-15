@@ -107,10 +107,34 @@ select superficie as "superficie aproximada" from municipios where nombre_actual
 
 <img src="img/11.png">
 
-<p><b>12. ¿Qué provincia alberga al pueblo de Haro con mayor altura sobr eel nivel del mar?</b></p>
+<p><b>12. ¿Qué provincia alberga al pueblo de Haro con mayor altura sobre el nivel del mar?</b></p>
+
+```sql
+select provincia from municipios where nombre_actual="haro" order by altitud desc limit 1;
+```
+
+<img src="img/12.png">
+
+<p><b>13. ¿Cuántos habitantes tiene Cádiz?</b></p>
+
+```sql
+select sum(poblacion_muni) as "población cádiz" from municipios where provincia="cadiz";
+```
+
+<img src="img/13.png">
+
+<p><b>14. ¿Qué altura alcanza el pueblo de Peñafiel, en la provincia de Valladolid?</b></p>
+
+```sql
+select altitud as "altitud peñafiel" from municipios where nombre_actual="peñafiel" and provincia="valladolid";
+```
+
+<img src="img/14.png">
+
+<p><b>15. ¿Cuál es el nombre del pueblo con mayor superficie en la provincia de Zaragoza?</b></p>
 
 ```sql
 
 ```
 
-<img src="img/12.png">
+<img src="img/15.png">
