@@ -174,7 +174,15 @@ select altitud as "altitud ávila" from municipios where nombre_actual="avila";
 <p><b>20. ¿Cuál es el nombre del pueblo con mayor población en la provincia de Alicante?</b></p>
 
 ```sql
-select nombre_actual as "pueblo con mayor población de alicante" from municipios where provincia="alicante";
+select nombre_actual as "pueblo con mayor población de alicante" from municipios where provincia="alacant/alicante" order by poblacion_muni desc limit 1;
 ```
 
 <img src="img/20.png">
+
+<p><b>21. ¿Cuáles son los 5 pueblos más grandes en términos de población en la provincia de Valencia?</b></p>
+
+```sql
+
+```
+
+<img src="img/21.png">
