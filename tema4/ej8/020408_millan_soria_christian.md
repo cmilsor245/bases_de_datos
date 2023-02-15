@@ -256,7 +256,57 @@ select count(*) as "nº de pueblos de galicia por encima de los 800 metros" from
 <p><b>30. ¿Qué pueblo en Cantabria tiene la menor población?</b></p>
 
 ```sql
-
+select nombre_actual as "pueblo con menor población de cantabria" from municipios where provincia="cantabria" order by poblacion_muni desc limit 1;
 ```
 
 <img src="img/30.png">
+
+<p><b>31. ¿Cuáles son los 3 pueblos con mayor superficie en la provincia de Girona?</b></p>
+
+```sql
+select nombre_actual as "3 pueblos con mayor superficie de girona" from municipios where provincia="girona" order by superficie desc limit 3;
+```
+
+<img src="img/31.png">
+
+<p><b>32. ¿Qué pueblo en la provincia de Ávila tiene la mayor altura sobre el nivel del mar?</b></p>
+
+```sql
+select nombre_actual as "pueblo con mayor altura de ávila" from municipios where provincia="avila" order by altitud desc limit 1;
+```
+
+<img src="img/32.png">
+
+<p><b>33. ¿Cuántos pueblos en la provincia de Alicante tienen una población mayor a 10,000 habitantes?</b></p>
+
+```sql
+select count(*) as "nº de pueblos de alicante con más de 10,000 habitantes" from municipios where provincia="alacant/alicante" and poblacion_muni>10000;
+```
+
+<img src="img/33.png">
+
+<p><b>34. ¿Cuáles son los 2 pueblos más pequeños en términos de superficie en la provincia de La Rioja?</b></p>
+
+```sql
+select nombre_actual as "2 pueblos más pequeños de la rioja" from municipios where provincia="la rioja" order by superficie desc limit 2;
+```
+
+<img src="img/34.png">
+
+<p><b>35. ¿Qué porcentaje de la superficie total de la provincia de Valladolid es ocupado por pueblos con una población menor a 5,000 habitantes?</b></p>
+
+```sql
+
+```
+
+<img src="img/35.png">
+
+<p><b>36. ¿Cuántos pueblos en Asturias tienen una altura sobre el nivel del mar mayor a 600 metros?</b></p>
+
+```sql
+select count(*) as "nª de pueblos en asturias con más de 600 metros de altura" from municipios where provincia="asturias" and altitud>600;
+```
+
+<img src="img/36.png">
+
+<p><b>37. </b></p>
