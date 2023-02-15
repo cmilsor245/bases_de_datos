@@ -220,3 +220,19 @@ select nombre_actual as "pueblo más alto de andalucía" from municipios where p
 ```
 
 <img src="img/25.png">
+
+<p><b>26. ¿Cuántos pueblos en Castilla y León tienen una superficie mayor a 100 km<sup>2</sup>?</b></p>
+
+```sql
+select count(nombre_actual) as "nº de pueblos de castilla y león con más de 100 km cuadrados" from municipios where provincia in("araba/alava", "burgos", "leon", "palencia", "salamanca", "segovia", "soria", "valladolid", "zamora") and superficie>100;
+```
+
+<img src="img/26.png">
+
+<p><b>27. ¿Cuáles son los 2 pueblos más grandes en términos de población en la provincia de Alicante?</b></p>
+
+```sql
+
+```
+
+<img src="img/27.png">
