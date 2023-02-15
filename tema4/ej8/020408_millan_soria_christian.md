@@ -54,7 +54,39 @@ select superficie as "superficie cazorla" from municipios where nombre_actual="c
 <p><b>5. ¿Qué provincia alberga al pueblo de Cuenca con mayor superficie?</b></p>
 
 ```sql
-select provincia from municipios order by superficie desc limit 1;
+select provincia from municipios where provincia="cuenca" order by superficie desc limit 1;
 ```
 
 <img src="img/5.png">
+
+<p><b>6. ¿Cuál es la altura en metros sobre el nivel del mar del pueblo de Albarracín, en Teruel?</b></p>
+
+```sql
+select altitud as "altura en metros" from municipios where nombre_actual="albarracin";
+```
+
+<img src="img/6.png">
+
+<p><b>7. ¿En qué provincia se encuentra el pueblo de Güéjar Sierra?</b></p>
+
+```sql
+select provincia from municipios where nombre_actual="guejar sierra";
+```
+
+<img src="img/7.png">
+
+<p><b>8. ¿Cuál es la superficie aproximada del pueblo de Estepona?</b></p>
+
+```sql
+select superficie from municipios where nombre_actual="estepona";
+```
+
+<img src="img/8.png">
+
+<p><b>9. ¿Qué altura alcanza el pueblo de La Granja de San Ildefonso, en Segovia?</b></p>
+
+```sql
+select altitud from municipios where nombre_actual="real sitio de san ildefonso";
+```
+
+<img src="img/9.png">
