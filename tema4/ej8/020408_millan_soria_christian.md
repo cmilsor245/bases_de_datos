@@ -328,7 +328,15 @@ select nombre_actual as "pueblo de cáceres más bajo" from municipios where pro
 <p><b>39. ¿Cuántos pueblos en la provincia de Jaén tienen una superficie mayor a 75 km<sup>2</sup>?</b></p>
 
 ```sql
-
+select count(*) as "nº de pueblos de jaén con más de 75 km cuadrados" from municipios where provincia="jaen" and superficie>75;
 ```
 
 <img src="img/39.png">
+
+<p><b>40. ¿Qué porcentaje de la población total de la provincia de Cantabria vive en pueblos con una superficie menor a 50 km<sup>2</sup>?</b></p>
+
+```sql
+
+```
+
+<img src="img/40.png">
