@@ -244,3 +244,19 @@ select nombre_actual as "2 pueblos más poblados de alicante" from municipios wh
 ```
 
 <img src="img/28.png">
+
+<p><b>29. ¿Cuántos pueblos en Galicia tienen una altura sobre el nivel del mar mayor a 800 metros?</b></p>
+
+```sql
+select count(*) as "nº de pueblos de galicia por encima de los 800 metros" from municipios where provincia in("la coruña", "lugo", "orense", "pontevedra") and altitud>800;
+```
+
+<img src="img/29.png">
+
+<p><b>30. ¿Qué pueblo en Cantabria tiene la menor población?</b></p>
+
+```sql
+
+```
+
+<img src="img/30.png">
