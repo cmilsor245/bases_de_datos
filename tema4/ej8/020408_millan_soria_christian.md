@@ -51,10 +51,10 @@ select superficie as "superficie cazorla" from municipios where nombre_actual="c
 
 <img src="img/4.png">
 
-<p><b>5. ¿Qué provincia alberga al pueblo de Cuenca con mayor superficie?</b></p>
+<p><b>5. ¿Qué pueblo de Cuenca tiene mayor superficie?</b></p>
 
 ```sql
-select provincia from municipios where provincia="cuenca" order by superficie desc limit 1;
+select nombre_actual as "pueblo más grande de cuenca" from municipios where provincia="cuenca" order by superficie desc limit 1;
 ```
 
 <img src="img/5.png">
@@ -240,7 +240,7 @@ select nombre_actual as "2 pueblos más poblados de alicante" from municipios wh
 <p><b>28. ¿Qué porcentaje de la población de la provincia de Zaragoza vive en pueblos con una superficie menor a 50 km<sup>2</sup>?</b></p>
 
 ```sql
-
+select (sum(poblacion_muni)/(select sum(poblacion_muni) from municipios where provincia="zaragoza"))*100 as "porcentaje de población" from (select poblacion_muni from municipios where provincia="zaragoza" order by 1 desc) t1;
 ```
 
 <img src="img/28.png">
