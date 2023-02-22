@@ -86,7 +86,8 @@ select nombre_actual as 'pueblo', poblacion_muni as 'población', superficie fro
 <p><b>9. ¿Qué porcentaje del número de municipios de la provincia de Zaragoza vive en pueblos con una superficie menor a 50 km<sup>2</sup> y una población menor a 15000 habitantes?</b></p>
 
 ```sql
-select round(count(*)*100.0/(select count(*) from municipios where cod_prov='50'), 2) as 'porcentaje' from municipios where cod_prov='50' and poblacion_muni<15000 AND superficie<50;
+SELECT 
+round(count(case when poblacion_muni<15000 and superficie<50 then 1 else null end)*100.0/count(*), 2) as 'porcentaje' from municipios where provincia='zaragoza';
 ```
 
 <img src="img/9.png">
@@ -106,3 +107,67 @@ select nombre_actual as 'pueblo', poblacion_muni as 'población', superficie fro
 ```
 
 <img src="img/11.png">
+
+<p><b>12. ¿Cuáles son los 3 pueblos con mayor superficie y una población mayor a 10000 habitantes en la provincia de Girona?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', poblacion_muni as 'población', superficie  from municipios  where provincia='girona' and poblacion_muni>10000 and superficie>25  order by superficie desc limit 3;
+```
+
+<img src="img/12.png">
+
+<p><b>13. ¿Qué pueblo en la provincia de León tiene la mayor altura sobre el nivel del mar y una población mayor a 2000 habitantes?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', altitud from municipios where provincia='león' and poblacion_muni>2000 and superficie>0 and altitud>0 order by altitud desc limit 1;
+```
+
+<img src="img/13.png">
+
+<p><b>14. ¿Cuántos pueblos en la provincia de Málaga tienen una población mayor a 10000 habitantes y una superficie mayor a 50 km<sup>2</sup>?</b></p>
+
+```sql
+select count(*) as 'nº de pueblos' from municipios where provincia='málaga' and poblacion_muni>10000 and superficie>50;
+```
+
+<img src="img/14.png">
+
+<p><b>15. ¿Cuáles son los 2 pueblos más pequeños en términos de superficie y con una población menor a 2000 habitantes en la provincia de Sevilla?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', poblacion_muni as 'población', superficie from municipios where provincia='sevilla' and poblacion_muni<2000 order by superficie asc limit 2;
+```
+
+<img src="img/15.png">
+
+<p><b>16. ¿Qué porcentaje de la superficie total de la provincia de Valladolid es ocupado por pueblos con una población menor a 5000 habitantes y una superficie menor a 25 km<sup>2</sup>?</b></p>
+
+```sql
+select round(sum(case when poblacion_muni<5000 and superficie<25 then superficie else 0 end)*100.0/sum(superficie), 2) as 'porcentaje' from municipios where provincia='valladolid';
+```
+
+<img src="img/16.png">
+
+<p><b>17. ¿Cuántos pueblos en Asturias tienen una altura sobre el nivel del mar mayor a 600 metros y una población mayor a 5000 habitantes?</b></p>
+
+```sql
+select count(*) as 'nº de pueblos' from municipios where provincia='asturias' and altitud>600 and poblacion_muni>5000;
+```
+
+<img src="img/17.png">
+
+<p><b>18. ¿Cuáles son los 3 pueblos con mayor población y una superficie mayor a 30 km<sup>2</sup> en la provincia de Huesca?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', poblacion_muni as 'poblacion', superficie from municipios where provincia='huesca' and superficie>30 and poblacion_muni>0 order by poblacion_muni desc limit 3;
+```
+
+<img src="img/18.png">
+
+<p><b>19. ¿Qué pueblo en la provincia de Cuenca tiene la menor superficie y una población mayor a 2000 habitantes?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', poblacion_muni as 'población', superficie from municipios where provincia='cuenca' and poblacion_muni>2000 order by superficie asc limit 1;
+```
+
+<img src="img/19.png">
