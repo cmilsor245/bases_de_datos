@@ -59,4 +59,18 @@ select sum(poblacion_muni) as 'suma de población'from municipios where provinci
 
 <img src="img/5.png">
 
-<p><b>6. </b></p>
+<p><b>6. ¿Qué pueblo en Andalucía tiene la mayor altura sobre el nivel del mar y una población mayor a 20000 habitantes?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', altitud from municipios where provincia in('málaga', 'cádiz', 'sevilla', 'huelva', 'córdoba', 'jaén', 'granada', 'almería') and poblacion_muni>20000 order by altitud desc limit 1;
+```
+
+<img src="img/6.png">
+
+<p><b>7. ¿Cuántos pueblos en Castilla y León tienen una superficie mayor a 100 km<sup>2</sup> y una población mayor a 5000 habitantes?</b></p>
+
+```sql
+
+```
+
+<img src="img/7.png">
