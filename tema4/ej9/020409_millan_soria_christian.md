@@ -43,4 +43,20 @@ select nombre_actual as 'pueblo', poblacion_muni as 'población', superficie fro
 
 <img src="img/3.png">
 
-<p><b>4. </b></p>
+<p><b>4. ¿Cuál es la suma de la población de los 10 municipios con mayor número de habitantes de la comunidad de Madrid?</b></p>
+
+```sql
+select sum(poblacion_muni) as 'población total' from municipios where provincia='madrid' order by poblacion_muni desc limit 10;
+```
+
+<img src="img/4.png">
+
+<p><b>5. ¿Cuál es la suma de la población de los 10 municipios con mayor número de habitantes de la comunidad de Barcelona?</b></p>
+
+```sql
+select sum(poblacion_muni) as 'suma de población'from municipios where provincia='barcelona' order by poblacion_muni desc limit 10;
+```
+
+<img src="img/5.png">
+
+<p><b>6. </b></p>
