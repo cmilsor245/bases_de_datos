@@ -183,7 +183,15 @@ select count(*) as 'nº de pueblos' from municipios where provincia='navarra' an
 <p><b>21. ¿Cuál es el pueblo con la mayor superficie y la mayor altura sobre el nivel del mar en la provincia de Soria?</b></p>
 
 ```sql
-select nombre_actual as 'pueblo', superficie, altitud from municipios where provincia='soria' and superficie=(select max(superficie) from municipios where provincia='soria')and altitud=(select max(altitud) from municipios where provincia='soria') limit 1;
+select nombre_actual as 'pueblo', superficie, altitud from municipios where provincia='soria' and superficie=(select max(superficie) from municipios where provincia='soria') and altitud=(select max(altitud) from municipios where provincia='soria') limit 1;
 ```
 
 <img src="img/21.png">
+
+<p><b>22. ¿Cuáles son los 5 pueblos más grandes en términos d epoblación en la provincia de Valencia y tienen una altura sobre el nivel del mar mayor a 500 metros?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', poblacion_muni as 'población', altitud from municipios where provincia='valencia/valencia' and altitud>500 order by poblacion_muni desc limit 5;
+```
+
+<img src="img/22.png">
