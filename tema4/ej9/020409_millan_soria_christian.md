@@ -38,5 +38,9 @@ select nombre_actual as 'pueblos', altitud from municipios where provincia='madr
 <p><b>3. ¿Qué pueblo tiene la menor superficie y población en la provincia de Barcelona?</b></p>
 
 ```sql
-
+select nombre_actual as 'pueblo', poblacion_muni as 'población', superficie from municipios where provincia='barcelona' order by poblacion_muni asc, superficie asc limit 1;
 ```
+
+<img src="img/3.png">
+
+<p><b>4. </b></p>
