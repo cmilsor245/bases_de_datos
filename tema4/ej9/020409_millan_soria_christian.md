@@ -171,3 +171,19 @@ select nombre_actual as 'pueblo', poblacion_muni as 'población', superficie fro
 ```
 
 <img src="img/19.png">
+
+<p><b>20. ¿Cuántos pueblos en Navarra tienen una población mayor a 5000 habitantes y una superficie mayor a 50 km<sup>2</sup>?</b></p>
+
+```sql
+select count(*) as 'nº de pueblos' from municipios where provincia='navarra' and poblacion_muni>5000 and superficie>50;
+```
+
+<img src="img/20.png">
+
+<p><b>21. ¿Cuál es el pueblo con la mayor superficie y la mayor altura sobre el nivel del mar en la provincia de Soria?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', superficie, altitud from municipios where provincia='soria' and superficie=(select max(superficie) from municipios where provincia='soria')and altitud=(select max(altitud) from municipios where provincia='soria') limit 1;
+```
+
+<img src="img/21.png">
