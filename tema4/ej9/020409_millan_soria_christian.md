@@ -251,3 +251,11 @@ select round(sum(case when poblacion_muni<5000 and altitud>800 then superficie e
 ```
 
 <img src="img/29.png">
+
+<p><b>30. ¿Cuántos pueblos en Asturias tienen una altura sobre el nivel del mar mayor a 600 metros y una población menor a 5000 habitantes?</b></p>
+
+```sql
+select count(*) as 'nº de pueblos' from municipios where provincia='asturias' and altitud>600 and poblacion_muni<5000;
+```
+
+<img src="img/30.png">
