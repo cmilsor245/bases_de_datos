@@ -259,3 +259,83 @@ select count(*) as 'nº de pueblos' from municipios where provincia='asturias' a
 ```
 
 <img src="img/30.png">
+
+<p><b>31. ¿Qué pueblo en la provincia de Cáceres tiene la menor altura sobre el nivel del mar y una población mayor a 10000 habitantes?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', altitud from municipios where provincia = 'cáceres' and poblacion_muni>10000 order by altitud asc  limit 1;
+```
+
+<img src="img/31.png">
+
+<p><b>32. ¿Cuántos pueblos en la provincia de Jaén tienen una superficie mayor a 75 km<sup>2</sup> y una población mayor a 10000 habitantes?</b></p>
+
+```sql
+select count(*) as 'nº de pueblos' from municipios where provincia='jaén' and poblacion_muni>10000 and superficie>75;
+```
+
+<img src="img/32.png">
+
+<p><b>33. ¿Qué porcentaje de la población total de la provincia de Cantabria vive en pueblos con una superficie menor a 50 km<sup>2</sup> y una altura sobre el nivel del mar mayor a 400 metros?</b></p>
+
+```sql
+select 100*sum(case when altitud>400 and superficie<50 then poblacion_muni else 0 end)/sum(poblacion_muni) as 'porcentaje de población en pueblos con altura > 400 y superficie < 50' from municipios where provincia='cantabria';
+```
+
+<img src="img/33.png">
+
+<p><b>34. ¿Cuáles son los 5 pueblos más grandes en términos de población en la provincia de Valencia y su altitud está por debajo de los 100 metros?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', poblacion_muni as 'población', altitud from municipios where provincia='valencia/valencia' and altitud<100 order by poblacion_muni desc limit 5;
+```
+
+<img src="img/34.png">
+
+<p><b>35. ¿Cuáles son los 3 pueblos más altos sobre el nivel del mar y con una población mayor a 10000 habitantes en l provincia de Madrid?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', altitud from municipios where provincia='madrid' and poblacion_muni>10000 order by altitud desc limit 3;
+```
+
+<img src="img/35.png">
+
+<p><b>36. ¿Cuál es la densidad poblacional de Madrid?</b></p>
+
+```sql
+select sum(poblacion_muni)/sum(superficie) as 'densidad poblacional' from municipios where provincia='madrid';
+```
+
+<img src="img/36.png">
+
+<p><b>37. ¿Cuál es la densidad poblacional de Murcia?</b></p>
+
+```sql
+select sum(poblacion_muni)/sum(superficie) as 'densidad poblacional' from municipios where provincia='murcia';
+```
+
+<img src="img/37.png">
+
+<p><b>38. ¿Cuál es la densidad poblacional de Barcelona?</b></p>
+
+```sql
+select sum(poblacion_muni)/sum(superficie) as 'densidad poblacional' from municipios where provincia='barcelona';
+```
+
+<img src="img/38.png">
+
+<p><b>39. ¿Cuál es la densidad poblacional de las Islas Baleares?</b></p>
+
+```sql
+select sum(poblacion_muni)/sum(superficie) as 'densidad poblacional' from municipios where provincia='illes balears';
+```
+
+<img src="img/39.png">
+
+<p><b>40. ¿Cuál es la densidad poblacional de Comunidad Valenciana?</b></p>
+
+```sql
+select sum(poblacion_muni)/sum(superficie) as 'densidad poblacional' from municipios where provincia='valencia/valencia';
+```
+
+<img src="img/40.png">
