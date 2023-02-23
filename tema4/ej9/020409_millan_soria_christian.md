@@ -244,4 +244,10 @@ select nombre_actual as 'pueblo', poblacion_muni 'población', superficie from m
 
 <img src="img/28.png">
 
-<p><b>29. </b></p>
+<p><b>29. ¿Qué porcentaje de la superficie total de la provincia de Toledo es ocupado por pueblos con una población menor a 5000 habitantes y una altura sobre el nivel del mar mayor a 800 metros?</b></p>
+
+```sql
+select round(sum(case when poblacion_muni<5000 and altitud>800 then superficie else 0 end)*100.0/(select sum(superficie) from municipios where provincia='toledo'), 2) as 'porcentaje' from municipios where provincia='toledo';
+```
+
+<img src="img/29.png">
