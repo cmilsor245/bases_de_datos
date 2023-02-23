@@ -219,3 +219,11 @@ select nombre_actual as 'pueblos', superficie, altitud from municipios where pro
 ```
 
 <img src="img/25.png">
+
+<p><b>26. ¿Cuántos pueblos en la provincia de Málaga tienen una población mayor a 10000 habitantes y una superficie menor a 50 km<sup>2</sup>?</b></p>
+
+```sql
+select count(*) as 'cantidad de pueblos' from municipios where provincia='málaga' and poblacion_muni>10000 and superficie<50;
+```
+
+<img src="img/26.png">
