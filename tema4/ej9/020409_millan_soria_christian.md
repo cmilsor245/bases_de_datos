@@ -227,3 +227,21 @@ select count(*) as 'cantidad de pueblos' from municipios where provincia='málag
 ```
 
 <img src="img/26.png">
+
+<p><b>27. ¿Qué pueblo en la provincia de Teruel tiene la mayor altura sobre el nivel del mar y una población menor a 5000 habitantes?</b></p>
+
+```sql
+select nombre_actual as 'pueblo con mayor altitud', altitud from municipios where provincia='teruel' and poblacion_muni<5000 order by altitud desc limit 1;
+```
+
+<img src="img/27.png">
+
+<p><b>28. ¿Cuáles son los 2 pueblos más pequeños en términos de superficie en la provincia de Orense y tienen una población mayor a 5000 habitantes?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', poblacion_muni 'población', superficie from municipios where provincia='ourense' and poblacion_muni>5000 order by superficie limit 2;
+```
+
+<img src="img/28.png">
+
+<p><b>29. </b></p>
