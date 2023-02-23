@@ -195,3 +195,27 @@ select nombre_actual as 'pueblo', poblacion_muni as 'población', altitud from m
 ```
 
 <img src="img/22.png">
+
+<p><b>23. ¿Cuál es el pueblo con la menor superficie en al provincia de Barcelona y tiene una población mayor a 10000 habitantes?</b></p>
+
+```sql
+select nombre_actual as 'pueblo', poblacion_muni as 'población', superficie as 'superficie' from municipios where provincia='barcelona' and poblacion_muni>10000 order by superficie asc limit 1;
+```
+
+<img src="img/23.png">
+
+<p><b>24. ¿Qué pueblo en Andalucía tiene la mayor altura sobre el nivel del mar y una población menor a 5000 habitantes?</b></p>
+
+```sql
+select nombre_actual as 'pueblo con mayor altitud', altitud from municipios  where provincia in('almería', 'cádiz', 'córdoba', 'granada', 'huelva', 'jaén', 'málaga', 'sevilla') and poblacion_muni<5000 order by altitud desc limit 1;
+```
+
+<img src="img/24.png">
+
+<p><b>25. ¿Cuáles son los 3 pueblos con mayor superficie de la provincia de Girona y tienen una altura sibre el nivel del mar mayor a 700 metros?</b></p>
+
+```sql
+select nombre_actual as 'pueblos', superficie, altitud from municipios where provincia='girona' and altitud>700 order by superficie desc limit 3;
+```
+
+<img src="img/25.png">
