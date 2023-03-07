@@ -86,8 +86,7 @@ select nombre_actual as 'pueblo', poblacion_muni as 'población', superficie fro
 <p><b>9. ¿Qué porcentaje del número de municipios de la provincia de Zaragoza vive en pueblos con una superficie menor a 50 km<sup>2</sup> y una población menor a 15000 habitantes?</b></p>
 
 ```sql
-SELECT 
-round(count(case when poblacion_muni<15000 and superficie<50 then 1 else null end)*100.0/count(*), 2) as 'porcentaje' from municipios where provincia='zaragoza';
+select round(count(case when poblacion_muni<15000 and superficie<50 then 1 else null end)*100.0/count(*), 2) as 'porcentaje' from municipios where provincia='zaragoza';
 ```
 
 <img src="img/9.png">
