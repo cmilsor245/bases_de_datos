@@ -24,7 +24,7 @@
 <p><b>1. ¿Cuántos centros educativos tiene Andalucía?</b></p>
 
 ```sql
-select count(*) from da_centros where `col 10` in('almería', 'cádiz', 'córdoba', 'granada', 'huelva', 'jaén', 'málaga', 'sevilla');
+select count(*) as "nº de centros educativos" from da_centros where `col 10` in('almería', 'cádiz', 'córdoba', 'granada', 'huelva', 'jaén', 'málaga', 'sevilla');
 ```
 
 <img src="img/1.png">
@@ -32,5 +32,15 @@ select count(*) from da_centros where `col 10` in('almería', 'cádiz', 'córdob
 <p><b>2. ¿Cuántos centros tiene cada una de las provincias?</b></p>
 
 ```sql
-select `col 10` as provincia, count(*) as cantidad_centros from da_centros group by provincia;
+select `col 10` as "provincia", count(*) as "cantidad de centros" from da_centros group by provincia;
 ```
+
+<img src="img/2.png">
+
+<p><b>3. ¿Cuántos centros hay de "Educación Infantil Primaria"?</b></p>
+
+```sql
+
+```
+
+<img src="img/3.png">
