@@ -37,10 +37,18 @@ select `col 10` as "provincia", count(*) as "cantidad de centros" from da_centro
 
 <img src="img/2.png">
 
-<p><b>3. ¿Cuántos centros hay de "Educación Infantil Primaria"?</b></p>
+<p><b>3. ¿Cuántos centros hay de "Educación Infantil y Primaria"?</b></p>
+
+```sql
+select count(*) as "centros de educación infantil y primaria" from da_centros where `col 3`='colegio de educación infantil y primaria';
+```
+
+<img src="img/3.png">
+
+<p><b>4. ¿Cuántos centros rurales existen?</b></p>
 
 ```sql
 
 ```
 
-<img src="img/3.png">
+<img src="img/4.png">
