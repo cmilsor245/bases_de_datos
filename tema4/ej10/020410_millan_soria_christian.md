@@ -127,8 +127,26 @@ select `col 3` from da_centros group by 1;
 
 <p><b>14. Modifica los nombres de los campos para que coincidan con los del 1<sup>er</sup> registro.</b></p>
 
+<p><b>*Solo los 15 primeros.</b></p>
+
 ```sql
 alter table da_centros change column `col 1` `curso` varchar(5) not null;
 ```
 
 <img src="img/14.png">
+
+<p><b>15. ¿Cuántos centros educativos hay en la localidad de Málaga?</b></p>
+
+```sql
+select count(*) from da_centros where d_localidad like "málaga";
+```
+
+<img src="img/15.png">
+
+<p><b>16. Haz un listado del número de cada centro organizado por tipo en Málaga.</b></p>
+
+```sql
+
+```
+
+<img src="img/16.png">
