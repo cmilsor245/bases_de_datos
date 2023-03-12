@@ -187,8 +187,18 @@ select d_especifica as "nombre", codigo as "código" from da_centros order by 2 
 
 <p><b>20. ¿Qué diferencia de escuelas infantiles y primarias hay entre las provincias de Jaén y Sevilla?</b></p>
 
-```sql
+<p>Jaén:</p>
 
+```sql
+select count(*) as "nº en jaén" from da_centros where d_localidad like "jaén" and d_denomina like "colegio de educación infantil y primaria";
 ```
 
-<img src="img/20.png">
+<img src="img/20.1.png">
+
+<p>Sevilla:</p>
+
+```sql
+select count(*) as "nº en sevilla" from da_centros where d_localidad like "sevilla" and d_denomina like "colegio de educación infantil y primaria";
+```
+
+<img src="img/20.2.png">
