@@ -120,7 +120,15 @@ select count(*) as "nº de conservatorios superiores de música" from da_centros
 <p><b>13. Saca un listado con los diferentes tipos de escuelas, y cuántas hay en Andalucía.</b></p>
 
 ```sql
-
+select `col 3` from da_centros group by 1;
 ```
 
-<img src="img/13.png2>
+<img src="img/13.png">
+
+<p><b>14. Modifica los nombres de los campos para que coincidan con los del 1<sup>er</sup> registro.</b></p>
+
+```sql
+alter table da_centros change column `col 1` `curso` varchar(5) not null;
+```
+
+<img src="img/14.png">
