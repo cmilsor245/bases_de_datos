@@ -138,7 +138,7 @@ alter table da_centros change column `col 1` `curso` varchar(5) not null;
 <p><b>15. ¿Cuántos centros educativos hay en la localidad de Málaga?</b></p>
 
 ```sql
-select count(*) from da_centros where d_localidad like "málaga";
+select count(*) as "centros educativos en málaga" from da_centros where d_localidad like "málaga";
 ```
 
 <img src="img/15.png">
@@ -146,7 +146,23 @@ select count(*) from da_centros where d_localidad like "málaga";
 <p><b>16. Haz un listado del número de cada centro organizado por tipo en Málaga.</b></p>
 
 ```sql
-
+select codigo as "código", d_denomina as "tipo" from da_centros where d_localidad like "málaga" group by d_denomina;
 ```
 
 <img src="img/16.png">
+
+<p><b>17. Saca el listado de IES de Málaga.</b></p>
+
+```sql
+select codigo as "código", d_denomina as "tipo" from da_centros where d_localidad like "málaga" and d_denomina like "instituto de educación secundaria";
+```
+
+<img src="img/17.png">
+
+<p><b>18. Ordena por número de IES, de mayor número a menor, en cada una de las capitales de Andalucía.</b></p>
+
+```sql
+
+```
+
+<img src="img/18.png">
