@@ -80,7 +80,31 @@ select count(*) as "nº de escuelas elementales de música" from da_centros wher
 <p><b>8. ¿Cuántos centros autorizados de enseñanzas deportivas existen?</b></p>
 
 ```sql
-
+select count(*) as "nº de centros autorizados de enseñanzas deportivas" from da_centros where `col 3` like "centro autorizado de enseñanzas deportivas";
 ```
 
 <img src="img/8.png">
+
+<p><b>9. ¿Cuántas secciones de educación permanente existen?</b></p>
+
+```sql
+select count(*) as "nº de secciones de educación" from da_centros where `col 3` like "sección de educación permanente";
+```
+
+<img src="img/9.png">
+
+<p><b>10. ¿Cuántas EOI existen?</b></p>
+
+```sql
+select count(*) as "nº de eoi" from da_centros where `col 3` like "escuela oficial de idiomas";
+```
+
+<img src="img/10.png">
+
+<p><b>11. ¿Cuántas escuelas de arte existen?</b></p>
+
+```sql
+
+```
+
+<img src="img/11.png">
