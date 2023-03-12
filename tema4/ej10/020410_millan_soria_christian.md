@@ -184,3 +184,11 @@ select d_especifica as "nombre", codigo as "código" from da_centros order by 2 
 ```
 
 <img src="img/19.png">
+
+<p><b>20. ¿Qué diferencia de escuelas infantiles y primarias hay entre las provincias de Jaén y Sevilla?</b></p>
+
+```sql
+
+```
+
+<img src="img/20.png">
