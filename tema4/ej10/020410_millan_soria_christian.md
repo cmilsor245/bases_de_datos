@@ -104,7 +104,23 @@ select count(*) as "nº de eoi" from da_centros where `col 3` like "escuela ofic
 <p><b>11. ¿Cuántas escuelas de arte existen?</b></p>
 
 ```sql
-
+select count(*) as "nº de escuelas de arte" from da_centros where `col 3` like "escuela de arte";
 ```
 
 <img src="img/11.png">
+
+<p><b>12. ¿Cuántas escuelas de conservatorio superior de música existen?</b></p>
+
+```sql
+select count(*) as "nº de conservatorios superiores de música" from da_centros where `col 3` like "conservatorio superior de música";
+```
+
+<img src="img/12.png">
+
+<p><b>13. Saca un listado con los diferentes tipos de escuelas, y cuántas hay en Andalucía.</b></p>
+
+```sql
+
+```
+
+<img src="img/13.png2>
