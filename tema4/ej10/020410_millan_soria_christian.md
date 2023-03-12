@@ -180,7 +180,7 @@ select d_especifica as "nombre", d_denomina as "tipo" from da_centros where d_pr
 <p><b>19. Ordena por número de IES, de mayor a menor, agrupados por provincias.</b></p>
 
 ```sql
-
+select d_especifica as "nombre", codigo as "código" from da_centros order by 2 desc;
 ```
 
 <img src="img/19.png">
