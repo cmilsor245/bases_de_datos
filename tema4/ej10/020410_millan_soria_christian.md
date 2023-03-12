@@ -146,7 +146,7 @@ select count(*) as "centros educativos en málaga" from da_centros where d_local
 <p><b>16. Haz un listado del número de cada centro organizado por tipo en Málaga.</b></p>
 
 ```sql
-select codigo as "código", d_denomina as "tipo" from da_centros where d_localidad like "málaga" group by d_denomina;
+select codigo as "código", d_denomina as "tipo" from da_centros where d_provincia like "málaga" group by d_denomina;
 ```
 
 <img src="img/16.png">
@@ -154,7 +154,7 @@ select codigo as "código", d_denomina as "tipo" from da_centros where d_localid
 <p><b>17. Saca el listado de IES de Málaga.</b></p>
 
 ```sql
-select codigo as "código", d_denomina as "tipo" from da_centros where d_localidad like "málaga" and d_denomina like "instituto de educación secundaria";
+select d_especifica as "nombre", d_denomina as "tipo" from da_centros where d_provincia like "málaga" and d_denomina like "instituto de educación secundaria";
 ```
 
 <img src="img/17.png">
@@ -162,7 +162,25 @@ select codigo as "código", d_denomina as "tipo" from da_centros where d_localid
 <p><b>18. Ordena por número de IES, de mayor número a menor, en cada una de las capitales de Andalucía.</b></p>
 
 ```sql
+-- si el ejercicio se refiere al código de centro
+  select codigo as "código", d_provincia as "capital" from da_centros order by 1 desc;
+
+-- si el ejercicio se refiere al número de teléfono de centro
+  select n_telefono as "nº de teléfono", d_provincia as "capital" from da_centros order by 1 desc;
+```
+
+<p>Primera:</p>
+
+<img src="img/18.1.png">
+
+<p>Segunda:</p>
+
+<img src="img/18.2.png">
+
+<p><b>19. Ordena por número de IES, de mayor a menor, agrupados por provincias.</b></p>
+
+```sql
 
 ```
 
-<img src="img/18.png">
+<img src="img/19.png">
