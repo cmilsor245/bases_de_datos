@@ -267,3 +267,19 @@ select d_especifica as "centro", d_provincia as "provincia", d_localidad as "loc
 ```
 
 <img src="img/28.png">
+
+<p><b>29. Agrupa el número de centros de tipo privado por provincia, ordenados por orden descendente del número de centro.</b></p>
+
+```sql
+
+```
+
+<img src="img/29.png">
+
+<p><b>30. Saca el número de centros privados existentes en Andalucía, organizados por su denominación y ordenados descendentemente por su número.</b></p>
+
+```sql
+
+```
+
+<img src="img/30.png">
