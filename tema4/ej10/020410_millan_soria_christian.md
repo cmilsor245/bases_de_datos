@@ -279,7 +279,7 @@ select count(*) as "nº de centros privados", d_provincia as "provincia" from da
 <p><b>30. Saca el número de centros privados existentes en Andalucía, organizados por su denominación y ordenados descendentemente por su número.</b></p>
 
 ```sql
-
+select count(*) as "nº de centros privados", d_denomina as "denominación" from da_centros group by d_denomina order by codigo desc;
 ```
 
 <img src="img/30.png">
