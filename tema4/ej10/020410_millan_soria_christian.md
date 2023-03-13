@@ -263,7 +263,7 @@ select d_especifica as "centro" from da_centros where d_especifica like "%chocol
 <p><b>28. Lista los centros que contengan en su nombre la palabra "carmen", ordenados ascendentemente por el nombre, ascendentemente por la provincia y descendentemente por la localidad,</b></p>
 
 ```sql
-
+select d_especifica as "centro", d_provincia as "provincia", d_localidad as "localidad" from da_centros where d_especifica like "%carmen%" order by 1 asc, d_provincia asc, d_localidad desc;
 ```
 
 <img src="img/28.png">
