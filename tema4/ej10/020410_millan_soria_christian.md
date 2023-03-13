@@ -202,3 +202,19 @@ select count(*) as "nº en sevilla" from da_centros where d_localidad like "sevi
 ```
 
 <img src="img/20.2.png">
+
+<p><b>21. ¿Cuántos centros públicos de educación primaria tiene cada uno de los minucipios de la provincia de Málaga?</b></p>
+
+```sql
+select count(*) as "nº de centros de primaria en málaga", d_municipio as "municipio" from da_centros where d_provincia like "málaga" group by d_municipio;
+```
+
+<img src="img/21.png">
+
+<p><b>22. Lista de menor a mayor el número de IES de los municipios de la provincia de Málaga.</b></p>
+
+```sql
+
+```
+
+<img src="img/22.png">
