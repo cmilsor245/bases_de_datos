@@ -271,7 +271,7 @@ select d_especifica as "centro", d_provincia as "provincia", d_localidad as "loc
 <p><b>29. Agrupa el número de centros de tipo privado por provincia, ordenados por orden descendente del número de centro.</b></p>
 
 ```sql
-
+select count(*) as "nº de centros privados", d_provincia as "provincia" from da_centros where d_denomina like "%privado%" group by 2 order by codigo desc;
 ```
 
 <img src="img/29.png">
