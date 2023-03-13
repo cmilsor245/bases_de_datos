@@ -227,3 +227,43 @@ select codigo as "código", d_especifica as "centro" from da_centros where d_pro
 ```
 
 <img src="img/23.png">
+
+<p><b>24. Lista los 5 municipios con mayor número de escuelas de infantil de Andalucía.</b></p>
+
+```sql
+select d_municipio as "municipio", count(*) as "nº de escuelas de infantil" from da_centros where d_denomina like "centro de educación infantil" group by 1 limit 5;
+```
+
+<img src="img/24.png">
+
+<p><b>25. Lista los centros cuyo domicilio contenga la palabra "estrella".</b></p>
+
+```sql
+select d_especifica as "centro", d_domicilio as "domicilio" from da_centros where d_domicilio like "%estrella%";
+```
+
+<img src="img/25.png">
+
+<p><b>26. Lista los centros de infantil y primaria que haya en tu localidad de nacimiento.</b></p>
+
+```sql
+select d_especifica as "centro" from da_centros where d_localidad like "málaga" and d_denomina like "colegio de educación infantil y primaria";
+```
+
+<img src="img/26.png">
+
+<p><b>27. Lista los centros que contengan en su nombre la palabra "chocolate".</b></p>
+
+```sql
+select d_especifica as "centro" from da_centros where d_especifica like "%chocolate%";
+```
+
+<img src="img/27.png">
+
+<p><b>28. Lista los centros que contengan en su nombre la palabra "carmen", ordenados ascendentemente por el nombre, ascendentemente por la provincia y descendentemente por la localidad,</b></p>
+
+```sql
+
+```
+
+<img src="img/28.png">
