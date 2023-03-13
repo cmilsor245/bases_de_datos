@@ -214,7 +214,15 @@ select count(*) as "nº de centros de primaria en málaga", d_municipio as "muni
 <p><b>22. Lista de menor a mayor el número de IES de los municipios de la provincia de Málaga.</b></p>
 
 ```sql
-
+select codigo as "código", d_especifica as "centro" from da_centros where d_provincia like "málaga" order by 1 asc;
 ```
 
 <img src="img/22.png">
+
+<p><b>23. Lista el nombre y ubicación de las escuelas de MEDAC.</b></p>
+
+```sql
+
+```
+
+<img src="img/23.png">
