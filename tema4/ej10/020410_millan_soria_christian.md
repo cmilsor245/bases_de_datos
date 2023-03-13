@@ -222,7 +222,8 @@ select codigo as "código", d_especifica as "centro" from da_centros where d_pro
 <p><b>23. Lista el nombre y ubicación de las escuelas de MEDAC.</b></p>
 
 ```sql
-
+-- este está mal, no se que es medac
+  select d_especifica as "nombre", d_provincia as "provincia" from da_centros where d_denomina like "centro público integrado de formación profesional";
 ```
 
 <img src="img/23.png">
