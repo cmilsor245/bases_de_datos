@@ -70,7 +70,13 @@ create index indice_poblacion on malaga(poblacion);
 <p><b>6. Saca un listado de todos los municipios de la provincia de Málaga, la población, y el número de centros educativos.</b></p>
 
 ```sql
-
+select d_municipio as "municipios" from da_centros where d_provincia="málaga";
 ```
 
-<img src="img/6.png">
+<img src="img/6.1.png">
+
+```sql
+select count(codigo) as "nº de centros educativos" from da_centros where d_provincia="málaga";
+```
+
+<img src="img/6.3.png">
