@@ -76,7 +76,21 @@ select d_municipio as "municipios" from da_centros where d_provincia="málaga";
 <img src="img/6.1.png">
 
 ```sql
+select sum(poblacion) as "población" from malaga;
+```
+
+<img src="img/6.2.png">
+
+```sql
 select count(codigo) as "nº de centros educativos" from da_centros where d_provincia="málaga";
 ```
 
 <img src="img/6.3.png">
+
+<p><b>7. De los municipios que tienen centros educativos, saca la densidad (población/número de centros).</b></p>
+
+```sql
+
+```
+
+<img src="img/7.png">
