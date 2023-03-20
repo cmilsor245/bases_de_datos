@@ -50,7 +50,11 @@ select count(*) as "nº de centros en cada municipio de málaga", d_municipio as
 <p><b>4. Crea una tabla con todos los centros de Málaga que contenga hasta la columna "correo_e".</b></p>
 
 ```sql
+-- primero creo la tabla y las columnas
+  create table tabla_ejercicio(`curso` varchar(5) not null, `codigo` varchar(8) not null, `d_denomina` varchar(70) not null, `d_especifica` varchar(89) not null, `d_tipo` varchar(7) not null, `d_domicilio` varchar(76) not null, `d_localidad` varchar(35) not null, `cod_municipio` varchar(13) not null, `d_municipio` varchar(32) not null, `d_provincia` varchar(11) not null, `c_postal` varchar(8) not null, `n_telefono` varchar(10) not null, `correo_e` varchar(70) not null, primary key(`codigo`));
 
+-- ahora inserto los valores desde la tabla "da_centros"
+  
 ```
 
 <img src="img/4.png">
