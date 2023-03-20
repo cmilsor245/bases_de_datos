@@ -34,7 +34,7 @@ select count(*) as "nº de centros educativos en málaga" from da_centros where 
 <p><b>2. ¿Cuántos centros educativos públicos tiene la provincia de Málaga?</b></p>
 
 ```sql
-select count(*) as "nº de centros educativos en málaga" from da_centros where d_provincia="málaga" and d_denomina in("colegio público rural", "centro público integrado de formación profesional");
+select count(*) as "nº de centros educativos públicos en málaga" from da_centros where d_provincia="málaga" and d_denomina in("colegio público rural", "centro público integrado de formación profesional");
 ```
 
 <img src="img/2.png">
@@ -42,7 +42,15 @@ select count(*) as "nº de centros educativos en málaga" from da_centros where 
 <p><b>3. ¿Cuántos centros educativos tiene la provincia de Málaga en cada municipio?</b></p>
 
 ```sql
-
+select count(*) as "nº de centros en cada municipio de málaga", d_municipio as "municipio" from da_centros where d_provincia="málaga" group by d_municipio;
 ```
 
 <img src="img/3.png">
+
+<p><b>4. Crea una tabla con todos los centros de Málaga que contenga hasta la columna "correo_e".</b></p>
+
+```sql
+
+```
+
+<img src="img/4.png">
