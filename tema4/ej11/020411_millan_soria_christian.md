@@ -58,3 +58,19 @@ select count(*) as "nº de centros en cada municipio de málaga", d_municipio as
 ```
 
 <img src="img/4.png">
+
+<p><b>5. Crea un índice en la tabla que contiene los datos de población de la provincia de Málaga.</b></p>
+
+```sql
+create index indice_poblacion on malaga(poblacion);
+```
+
+<img src="img/5.png">
+
+<p><b>6. Saca un listado de todos los municipios de la provincia de Málaga, la población, y el número de centros educativos.</b></p>
+
+```sql
+
+```
+
+<img src="img/6.png">
