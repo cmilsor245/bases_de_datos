@@ -106,15 +106,15 @@ select count(codigo) as "nº de centros educativos" from da_centros where d_prov
 <p><b>9. Saca el listado de municipios que no tienen ningún centro educativo.</b></p>
 
 ```sql
-
+select distinct d_municipio from da_centros as c1 where not exists (select * from da_centros as c2 where c1.d_municipio=c2.d_municipio);
 ```
 
 <img src="img/9.png">
 
-<p><b>10. Saca el listado de municipios que no tienen un IES..</b></p>
+<p><b>10. Saca el listado de municipios que no tienen un IES.</b></p>
 
 ```sql
-
+select d_municipio as "municipio" from da_centros group by cod_municipio having count(case when d_denomina="instituto de educación secundaria" then 1 else null end)=0;
 ```
 
 <img src="img/10.png">
