@@ -122,7 +122,7 @@ select d_municipio as "municipio" from da_centros group by cod_municipio having 
 <p><b>11. ¿Cuántos municipios de la provincia de Málaga no tienen un IES?</b></p>
 
 ```sql
-
+select count(*) as "nº de municipios son ies's" from da_centros where d_provincia="málaga" and d_denomina<>"instituto de educación secundaria";
 ```
 
 <img src="img/11.png">
