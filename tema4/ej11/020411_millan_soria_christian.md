@@ -94,3 +94,35 @@ select count(codigo) as "nº de centros educativos" from da_centros where d_prov
 ```
 
 <img src="img/7.png">
+
+<p><b>8. ¿Cuál es la densidad de IES's públicos en cada municipio de la provincia de Málaga?</b></p>
+
+```sql
+
+```
+
+<img src="img/8.png">
+
+<p><b>9. Saca el listado de municipios que no tienen ningún centro educativo.</b></p>
+
+```sql
+
+```
+
+<img src="img/9.png">
+
+<p><b>10. Saca el listado de municipios que no tienen un IES..</b></p>
+
+```sql
+
+```
+
+<img src="img/10.png">
+
+<p><b>11. ¿Cuántos municipios de la provincia de Málaga no tienen un IES?</b></p>
+
+```sql
+
+```
+
+<img src="img/11.png">
