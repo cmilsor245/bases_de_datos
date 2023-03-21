@@ -19,7 +19,7 @@
   }
 </style>
 
-<h1>CENTROS ESCOLARES</h1>
+<h1>CENTROS ESCOLARES - P2</h1>
 
 <hr>
 
