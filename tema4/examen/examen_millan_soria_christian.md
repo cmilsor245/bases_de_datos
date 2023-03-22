@@ -160,7 +160,7 @@ select cms.d_municipio as municipio, pu.poblacion as poblacion, count(cms.codigo
 <p><b>9. Pon una tabla con el número de pueblos que comienzan por "A", "B" y "S" en la provincia de Sevilla.</b></p>
 
 ```sql
-select sum(*) from pu_cms inner join provin on provin.cod_prov=pu_cms.cod_prov where(pu_cms.nombre_actual like 'A%' or pu_cms.nombre_actual like 'B%' or pu_cms.nombre_actual like 'S%') and pu_cms.cod_prov=41;
+select sum(*) from pu_cms inner join provin on provin.cod_prov=pu_cms.cod_prov where(pu_cms.nombre_cms like 'A%' or `pu_cms`.nombre_cms like 'B%' or `pu_cms`.nombre_cms like 'S%') and pu_cms.cod_prov=41;
 ```
 
 <img src="img/17.png">
@@ -168,7 +168,7 @@ select sum(*) from pu_cms inner join provin on provin.cod_prov=pu_cms.cod_prov w
 <p><b>10. ¿Cuáles son los pueblos con menor densidad poblacional de Teruel?</b></p>
 
 ```sql
-
+select nombre_cms as "pueblos", poblacion/superficie as "densidad" from pu_cms where cod_prov=44;
 ```
 
 <img src="img/18.png">
@@ -176,7 +176,7 @@ select sum(*) from pu_cms inner join provin on provin.cod_prov=pu_cms.cod_prov w
 <p><b>11. Indicar los 10 municipios de España con mayor densidad poblacional, además del nombre del municipio, mostrar la provincia a la que pertenecen y la población, ordenados de mayor a menor por número de habitantes.</b></p>
 
 ```sql
-
+select pu_cms.nombre_cms as "nombre", provin.provincia as "provincia", pu_cms.poblacion from pu_cms inner join provin on provin.cod_prov=pu_cms.cod_prov order by poblacion/superficie desc limit 10;
 ```
 
 <img src="img/19.png">
@@ -184,7 +184,7 @@ select sum(*) from pu_cms inner join provin on provin.cod_prov=pu_cms.cod_prov w
 <p><b>12. ¿Cuál es la suma de la población de los 10 municipios con mayor número de habitantes de la Comunidad de Madrid?</b></p>
 
 ```sql
-
+select sum(poblacion) as "suma" from pu_cms inner join provin on provin.cod_prov=pu_cms.cod_prov where pu_cms.cod_prov=28 limit 10;
 ```
 
 <img src="img/20.png">
@@ -192,7 +192,7 @@ select sum(*) from pu_cms inner join provin on provin.cod_prov=pu_cms.cod_prov w
 <p><b>13. ¿Qué pueblo en Andalucía tiene la mayor altura sobre el nivel del mar y una población mayor a 20 000 habitantes?</b></p>
 
 ```sql
-
+select nombre_cms as "pueblo" from pu_cms where cod_prov in(4, 18, 29, 14, 23, 11, 21) and poblacion>20000 order by altitud desc limit 1;
 ```
 
 <img src="img/21.png">
