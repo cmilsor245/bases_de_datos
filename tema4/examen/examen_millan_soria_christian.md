@@ -152,7 +152,7 @@ select * from cms_centros where d_localidad="málaga" order by d_especifica asc;
 <p><b>8. Saca un listado de todos los municipios de la provincia de Sevilla, la población, y el número de centros educativos.</b></p>
 
 ```sql
-select 
+select cms.d_municipio as municipio, pu.poblacion as poblacion, count(cms.codigo) as num_centros from cms_centros as cms inner join pu_cms as pu on cms.cod_municipio=pu.id_pub inner join provin as prov on prov.cod_prov=pu.cod_prov where prov.provincia='sevilla' group by cms.d_municipio, pu.poblacion order by cms.d_municipio asc;
 ```
 
 <img src="img/16.png">
@@ -160,7 +160,7 @@ select
 <p><b>9. Pon una tabla con el número de pueblos que comienzan por "A", "B" y "S" en la provincia de Sevilla.</b></p>
 
 ```sql
-
+select sum(*) from pu_cms inner join provin on provin.cod_prov=pu_cms.cod_prov where(pu_cms.nombre_actual like 'A%' or pu_cms.nombre_actual like 'B%' or pu_cms.nombre_actual like 'S%') and pu_cms.cod_prov=41;
 ```
 
 <img src="img/17.png">
@@ -228,11 +228,3 @@ select
 ```
 
 <img src="img/25.png">
-
-<hr>
-
-<h1>EXPORTACIÓN</h1>
-
-```sql
-
-```
