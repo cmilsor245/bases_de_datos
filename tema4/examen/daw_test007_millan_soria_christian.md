@@ -152,7 +152,7 @@ select * from cms_centros where d_localidad="málaga" order by d_especifica asc;
 <p><b>8. Saca un listado de todos los municipios de la provincia de Sevilla, la población, y el número de centros educativos.</b></p>
 
 ```sql
-select cms.d_municipio as municipio, pu.poblacion as poblacion, count(cms.codigo) as num_centros from cms_centros as cms inner join pu_cms as pu on cms.cod_municipio=pu.id_pub inner join provin as prov on prov.cod_prov=pu.cod_prov where prov.provincia='sevilla' group by cms.d_municipio, pu.poblacion order by cms.d_municipio asc;
+select pu_cms.nombre_cms as "nombre", pu_cms.poblacion as "poblacion" from pu_cms inner join provin on provin.cod_prov=pu_cms.cod_prov where pu_cms.cod_prov=44;
 ```
 
 <img src="img/16.png">
@@ -221,7 +221,7 @@ select sum(pu_cms.poblacion/pu_cms.superficie) as "densidad" from pu_cms right j
 
 <img src="img/24.png">
 
-<p><b>Saca un listado de cada tipo de centro educativo y en 2 columnas diferentes. Diferenciar si es pública o privada y cuantos existen de cada. En caso de tener valor nulo, poner un 0.</b></p>
+<p><b>17. Saca un listado de cada tipo de centro educativo y en 2 columnas diferentes. Diferenciar si es pública o privada y cuantos existen de cada. En caso de tener valor nulo, poner un 0.</b></p>
 
 ```sql
 
