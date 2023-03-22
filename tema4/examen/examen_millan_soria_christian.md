@@ -200,7 +200,7 @@ select nombre_cms as "pueblo" from pu_cms where cod_prov in(4, 18, 29, 14, 23, 1
 <p><b>14. Lista los pueblos en la Comunidad Valenciana que tienen una altura sobre el nivel del mar menor a 200 metros y una población mayor a 5 000 habitantes, en orden descendente de número de habitantes (mostrar número de habitantes y altitud).</b></p>
 
 ```sql
-
+select pu_cms.nombre_cms as "pueblos", pu_cms.poblacion "nº habitantes", pu_cms.altitud from pu_cms right join provin on provin.comunidad_autonoma="comunitat valenciana" where pu_cms.altitud<200 and pu_cms.poblacion>5000 order by poblacion desc;
 ```
 
 <img src="img/22.png">
@@ -216,7 +216,7 @@ select nombre_cms as "pueblo" from pu_cms where cod_prov in(4, 18, 29, 14, 23, 1
 <p><b>16. ¿Cuál es la densidad poblacional de la Comunidad Valenciana?</b></p>
 
 ```sql
-
+select sum(pu_cms.poblacion/pu_cms.superficie) as "densidad" from pu_cms right join provin on provin.comunidad_autonoma="comunitat valenciana";
 ```
 
 <img src="img/24.png">
