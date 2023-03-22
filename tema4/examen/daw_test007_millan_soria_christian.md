@@ -118,7 +118,7 @@ create table muni_sevi_cms(`id_pub` int, `cod_prov` int, `nombre_cms` text, `pob
 <p>Ahora inserto los datos de los municipios de Sevilla.</p>
 
 ```sql
-insert into `muni_sevi_cms`(id_pub, cod_prov, nombre_cms, poblacion, superficie, perimetro, cod_ine_capital, capital, poblacion_capital, longitud_etrs89, latitud_erts89, altitud) select * from pu_cms inner join provin on pu_cms.cod_prov=provin.cod_prov where id_pub=41;
+insert into `muni_sevi_cms`(id_pub, cod_prov, nombre_cms, poblacion, superficie, perimetro, cod_ine_capital, capital, poblacion_capital, longitud_etrs89, latitud_erts89, altitud) select * from pu_cms inner join provin on pu_cms.cod_prov=provin.cod_prov where pu_cms.cod_prov=41;
 ```
 
 <img src="img/12.png">
