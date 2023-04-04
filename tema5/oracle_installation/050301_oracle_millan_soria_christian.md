@@ -32,3 +32,17 @@
 <p>Una vez descargado, descomprimimos el archivo.</p>
 
 <img src="img/2.png">
+
+<p>Entre otros archivos, vemos un ".exe". Lo ejecutamos.</p>
+
+<img src="img/3.png">
+
+<p>Esto abre el instalador de Oracle.</p>
+
+<img src="img/4.png">
+
+<p>Avanzamos unos pasos aceptando la licencia del software y estableciendo la ubicación de instalación del mismo (dejamos la ubicación predeterminada) y añadimos una contraseña ("root") para la base de datos.</p>
+
+<img src="img/5.png">
+
+<p>Hacemos clic en "Instalar".</p>
