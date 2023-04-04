@@ -50,3 +50,7 @@
 <p>El proceso puede tardar un poco. Al terminar aparece el último aviso:</p>
 
 <img src="img/6.png">
+
+<p>Una vez instalado, podemos visitar la url "<a href="https://localhost:5500/em">https://localhost:5500/em</a>" para acceder a Oracle.</p>
+
+<img src="img/7.png">
