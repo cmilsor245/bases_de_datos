@@ -46,3 +46,7 @@
 <img src="img/5.png">
 
 <p>Hacemos clic en "Instalar".</p>
+
+<p>El proceso puede tardar un poco. Al terminar aparece el último aviso:</p>
+
+<img src="img/6.png">
