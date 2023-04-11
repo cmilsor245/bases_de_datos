@@ -68,3 +68,7 @@
 <p>Nos redirige al formulario de inicio de sesión con la cuentas de Oracle. En mi caso, debo crear una nueva.</p>
 
 <img src="img/10.png">
+
+<p>Relleno los datos y confirmo el correo electrónico.</p>
+
+<img src="img/11.png">
