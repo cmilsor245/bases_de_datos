@@ -88,3 +88,19 @@
 <p>Se nos abre un cuadro donde debemos especificar la ruta de instalación de nuestro JDK.</p>
 
 <img src="img/15.png">
+
+<p>Comienza la instalación:</p>
+
+<img src="img/16.png">
+
+<p>Una vez termina podemos entrar al entorno gráfico.</p>
+
+<img src="img/17.png">
+
+<p>Creamos una nueva conexión.</p>
+
+<img src="img/18.png">
+
+<img src="img/19.png">
+
+<img src="img/20.png">
