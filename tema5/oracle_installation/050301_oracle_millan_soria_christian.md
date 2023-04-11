@@ -54,3 +54,13 @@
 <p>Una vez instalado, podemos visitar la url "<a href="https://localhost:5500/em">https://localhost:5500/em</a>" para acceder a Oracle.</p>
 
 <img src="img/7.png">
+
+<p>Para iniciar sesión la primera vez se puede hacer con el usuario "system" y la contraseña que establecimos anteriormente.</p>
+
+<img src="img/8.png">
+
+<p>Lo siguiente es instalar el SQL Developer desde <a href="https://www.oracle.com/database/sqldeveloper/technologies/download/">este enlace</a>.</p>
+
+<p>Se descarga el segundo archivo, al menos en mi caso, ya que ya tengo instalado JDK.</p>
+
+<img src="img/9.png">
