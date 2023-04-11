@@ -64,3 +64,7 @@
 <p>Se descarga el segundo archivo, al menos en mi caso, ya que ya tengo instalado JDK.</p>
 
 <img src="img/9.png">
+
+<p>Nos redirige al formulario de inicio de sesión con la cuentas de Oracle. En mi caso, debo crear una nueva.</p>
+
+<img src="img/10.png">
