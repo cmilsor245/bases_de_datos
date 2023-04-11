@@ -72,3 +72,5 @@
 <p>Relleno los datos y confirmo el correo electrónico.</p>
 
 <img src="img/11.png">
+
+<p>Ahora sí, volvemos al <a href="https://www.oracle.com/database/sqldeveloper/technologies/download/">enlace</a> y volvemos a darle al mismo archivo, solo que esta vez iniciamos sesión y no creamos una cuenta.</p>
