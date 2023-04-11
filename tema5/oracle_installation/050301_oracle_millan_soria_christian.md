@@ -74,3 +74,17 @@
 <img src="img/11.png">
 
 <p>Ahora sí, volvemos al <a href="https://www.oracle.com/database/sqldeveloper/technologies/download/">enlace</a> y volvemos a darle al mismo archivo, solo que esta vez iniciamos sesión y no creamos una cuenta.</p>
+
+<img src="img/12.png">
+
+<p>Volvemos a descomprimir el nuevo archivo:</p>
+
+<img src="img/13.png">
+
+<p>Ejecutamos el archivo "sqldeveloper.exe".</p>
+
+<img src="img/14.png">
+
+<p>Se nos abre un cuadro donde debemos especificar la ruta de instalación de nuestro JDK.</p>
+
+<img src="img/15.png">
