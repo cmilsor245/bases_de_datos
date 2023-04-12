@@ -94,8 +94,15 @@ alter user usuario_christian default role "RESOURCE";
 
 <img src="img/9.png">
 
-<p>Una vez creado y configurado el usuario, genero la conexión en el entorno gráfico.</p>
+```bash
+grant create tablespace to usuario_christian;
+```
 
 <img src="img/10.png">
 
-<p>Ahora paso a la creación de </p>
+<p>Una vez creado y configurado el usuario, genero la conexión en el entorno gráfico.</p>
+
+<img src="img/11.png">
+
+<p>Ahora paso a la creación de tabla de Pokémon.</p>
+
