@@ -104,7 +104,7 @@ grant create tablespace to usuario_christian;
 
 <img src="img/11.png">
 
-<p>Ahora paso a la creación de tabla de Pokémon.</p>
+<p>Ahora paso a la creación de tablas de Pokémon.</p>
 
 ```sql
 create table especie(cod_esp int not null, altura int not null, nombre_esp varchar(45) not null, peso int not null);
@@ -124,3 +124,18 @@ create table movimiento(cod_mov int not null, descripcion varchar(100) not null)
 
 <img src="img/14.png">
 
+<p>Altero las tablas para establecer la clave primaria de cada una de ellas.</p>
+
+```sql
+alter table especie add primary key (cod_esp);
+alter table especies_has_movimiento add primary key (especies_has_cod_esp, movimiento_cod_mov);
+alter table movimiento add primary key (cod_mov);
+```
+
+<img src="img/15.png">
+
+<img src="img/16.png">
+
+<img src="img/17.png">
+
+<p></p>
