@@ -124,6 +124,12 @@ create table especies_has_movimiento(especie_has_cod_esp int not null, movimient
 
 <img src="img/14.png">
 
+<p>Añado las claves foráneas.</p>
+
+<img src="img/15.png">
+
+<img src="img/16.png">
+
 
 <p>Paso a insertar 3 Pokémons.</p>
 
@@ -175,4 +181,4 @@ insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) va
 
 ```
 
-<img src="img/19.png">
+<img src="img/18.png">
