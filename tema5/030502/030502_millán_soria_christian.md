@@ -113,7 +113,7 @@ create table especie(cod_esp int not null, altura int not null, nombre_esp varch
 <img src="img/12.png">
 
 ```sql
-create table especies_has_movimiento(especies_has_cod_esp int not null, movimiento_cod_mov int not null);
+create table especies_has_movimiento(especie_has_cod_esp int not null, movimiento_cod_mov int not null, primary key (especie_has_cod_esp, movimiento_cod_mov));
 ```
 
 <img src="img/13.png">
@@ -127,14 +127,11 @@ create table movimiento(cod_mov int not null, descripcion varchar(100) not null)
 <p>Altero las tablas para establecer la clave primaria de cada una de ellas.</p>
 
 ```sql
-alter table especie add primary key (cod_esp);
-alter table especies_has_movimiento add primary key (especies_has_cod_esp, movimiento_cod_mov);
-alter table movimiento add primary key (cod_mov);
+alter table especie add primary key(cod_esp);
+alter table movimiento add primary key(cod_mov);
 ```
 
 <img src="img/15.png">
-
-<img src="img/16.png">
 
 <img src="img/17.png">
 
