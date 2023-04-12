@@ -182,4 +182,10 @@ insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) va
 
 <img src="img/18.png">
 
-<p></p>
+<p>Lista de los tipos de Pokémons.</p>
+
+```sql
+
+```
+
+<img src="img/19.png">
