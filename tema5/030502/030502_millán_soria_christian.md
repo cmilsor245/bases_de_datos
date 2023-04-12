@@ -107,33 +107,23 @@ grant create tablespace to usuario_christian;
 <p>Ahora paso a la creación de tablas de Pokémon.</p>
 
 ```sql
-create table especie(cod_esp int not null, altura int not null, nombre_esp varchar(45) not null, peso int not null);
+create table especie(cod_esp int not null, altura int not null, nombre_esp varchar(45) not null, peso int not null, primary key (cod_esp));
 ```
 
 <img src="img/12.png">
 
 ```sql
-create table especies_has_movimiento(especie_has_cod_esp int not null, movimiento_cod_mov int not null, primary key (especie_has_cod_esp, movimiento_cod_mov));
+create table movimiento(cod_mov int not null, descripcion varchar(100) not null, primary key(cod_mov));
 ```
 
 <img src="img/13.png">
 
 ```sql
-create table movimiento(cod_mov int not null, descripcion varchar(100) not null);
+create table especies_has_movimiento(especie_has_cod_esp int not null, movimiento_cod_mov int not null, primary key (especie_has_cod_esp, movimiento_cod_mov));
 ```
 
 <img src="img/14.png">
 
-<p>Altero las tablas para establecer la clave primaria de cada una de ellas.</p>
-
-```sql
-alter table especie add primary key(cod_esp);
-alter table movimiento add primary key(cod_mov);
-```
-
-<img src="img/15.png">
-
-<img src="img/17.png">
 
 <p>Paso a insertar 3 Pokémons.</p>
 
@@ -149,7 +139,7 @@ insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) va
 insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) values(1, 2);
 ```
 
-<img src="img/18.png">
+<img src="img/17.png">
 
 <li>Pokémon 2</li>
 
@@ -163,7 +153,7 @@ insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) va
 insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) values(2, 4);
 ```
 
-<img src="img/18.png">
+<img src="img/17.png">
 
 <li>Pokémon 3</li>
 
@@ -177,7 +167,7 @@ insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) va
 insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) values(3, 6);
 ```
 
-<img src="img/18.png">
+<img src="img/17.png">
 
 <p>Lista de los tipos de Pokémons.</p>
 
