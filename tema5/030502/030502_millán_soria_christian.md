@@ -64,3 +64,32 @@ temporary tablespace "TEMP";
 ```
 
 <img src="img/5.png">
+
+<p>Lo siguiente es darle privilegios/permisos al usuario nuevo.</p>
+
+```bash
+alter user usuario_christian quota unlimited on USERS;
+```
+<img src="img/6.png">
+
+<p>Modifico la accesibilidad del usuario.</p>
+
+```bash
+grant create session to usuario_christian;
+```
+
+<img src="img/7.png">
+
+<p>Establecemos algunas configuraciones adicionales:</p>
+
+```bash
+
+```
+
+<img src="img/8.png">
+
+```bash
+
+```
+
+<img src="img/9.png">
