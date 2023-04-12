@@ -83,13 +83,13 @@ grant create session to usuario_christian;
 <p>Establecemos algunas configuraciones adicionales:</p>
 
 ```bash
-
+grant "RESOURCE" to usuario_christian;
 ```
 
 <img src="img/8.png">
 
 ```bash
-
+alter user usuario_christian default role "RESOURCE";
 ```
 
 <img src="img/9.png">
