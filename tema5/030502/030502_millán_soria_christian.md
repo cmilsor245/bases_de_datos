@@ -138,4 +138,48 @@ alter table movimiento add primary key (cod_mov);
 
 <img src="img/17.png">
 
+<p>Paso a insertar 3 Pokémons.</p>
+
+<li>Pokémon 1</li>
+
+```sql
+insert into especie(cod_esp, altura, nombre_esp, peso) values(1, 0.6, 'Charmander', 8.5);
+
+insert into movimiento(cod_mov, descripcion) values(1, 'Ascuas');
+insert into movimiento(cod_mov, descripcion) values(2, 'Garra Dragón');
+
+insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) values(1, 1);
+insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) values(1, 2);
+```
+
+<img src="img/18.png">
+
+<li>Pokémon 2</li>
+
+```sql
+insert into especie(cod_esp, altura, nombre_esp, peso) values(2, 1.1, 'Squirtle', 9.0);
+
+insert into movimiento(cod_mov, descripcion) values(3, 'Pistola Agua');
+insert into movimiento(cod_mov, descripcion) values(4, 'Mordisco');
+
+insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) values(2, 3);
+insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) values(2, 4);
+```
+
+<img src="img/18.png">
+
+<li>Pokémon 3</li>
+
+```sql
+insert into especie(cod_esp, altura, nombre_esp, peso) values(3, 0.4, 'Pikachu', 6.0);
+
+insert into movimiento(cod_mov, descripcion) values(5, 'Impactrueno');
+insert into movimiento(cod_mov, descripcion) values(6, 'Bola Voltio');
+
+insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) values(3, 5);
+insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) values(3, 6);
+```
+
+<img src="img/18.png">
+
 <p></p>
