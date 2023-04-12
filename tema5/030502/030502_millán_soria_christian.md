@@ -97,4 +97,3 @@ alter user usuario_christian default role "RESOURCE";
 <p>Una vez creado y configurado el usuario, genero la conexión en el entorno gráfico.</p>
 
 <img src="img/10.png">
-
