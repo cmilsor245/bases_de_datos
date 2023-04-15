@@ -200,7 +200,7 @@ select * from movimiento;
 <p>Lista un movimiento y cuáles de los Pokémons lo usan.</p>
 
 ```sql
-
+select especie.nombre_esp, movimiento.descripcion from especie join especies_has_movimiento on especie.cod_esp=especies_has_movimiento.especies_has_cod_esp join movimiento on especies_has_movimiento.movimiento_cod_mov=movimiento.cod_mov where movimiento.descripcion='asquas';
 ```
 
 <img src="img/22.png">
