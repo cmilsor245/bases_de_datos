@@ -175,10 +175,32 @@ insert into especies_has_movimiento(especies_has_cod_esp, movimiento_cod_mov) va
 
 <img src="img/17.png">
 
+<p>*Las especies y los movimientos se me insertan correctamente, pero al intentar insertar un registro en la tabla con las claves foráneas se me produce el siguiente error siempre. No he conseguido arreglarlo después de probar muchas opciones diferentes, por lo que no puedo realizar la última consulta de esta tarea:</p>
+
+<img src="img/18.png">
+
+<img src="img/19.png">
+
 <p>Lista de los tipos de Pokémons.</p>
+
+```sql
+select * from especie;
+```
+
+<img src="img/20.png">
+
+<p>Lista de los tipos de movimientos.</p>
+
+```sql
+select * from movimiento;
+```
+
+<img src="img/21.png">
+
+<p>Lista un movimiento y cuáles de los Pokémons lo usan.</p>
 
 ```sql
 
 ```
 
-<img src="img/18.png">
+<img src="img/22.png">
