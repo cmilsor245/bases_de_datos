@@ -63,3 +63,45 @@ grant create view to repaso_cms;
 
 <p><b>b. Crea una conexión a la base de datos con nombre "cn_< usuario >".</b></p>
 
+<img src="img/5.png">
+
+<p><b>c. Revisa que no tienes tablas desde ese perfil.</b></p>
+
+<img src="img/6.png">
+
+<p><b>d. Cierra la conexión que tienes abierta con el SYS.</b></p>
+
+<p>No tengo ninguna conexión abierta con el SYS.</p>
+
+<p><b>e. Importa los archivos CSV, necesarios para la práctica ("municipios", "centros", "provincias").</b></p>
+
+<img src="img/7.png">
+
+<p>*Establezco que el delimitador en los 3 archivos es ";".</p>
+
+```sql
+alter table muni rename to pueblo_cms;
+```
+
+<img src="img/8.png">
+
+<p><b>2. Nuestro centro no se encuentra en el listado, ya que es el curso pasado, añádelo.</b></p>
+
+<p><b>Datos:</b></p>
+
+<li><b>Curso 22</b></li>
+
+<li><b>Código: 29020231</b></li>
+
+<li><b>Denominación: Centro Público Integrado de Formación Profesional</b></li>
+
+<li><b>Especifica: Nuevo (desglose IES Campanillas)</b></li>
+
+<li><b>Tipo: Público</b></li>
+
+<li><b>Cod. municipio: 29067</b></li>
+
+<li><b>Tlf. y email: 911 22 33 44 y nuevocampanillas@gmail.com</b></li>
+
+<li><b>Dirección: C. Frederik Terman, 3, 29590, Málaga</b></li>
+
