@@ -105,3 +105,28 @@ alter table muni rename to pueblo_cms;
 
 <li><b>Dirección: C. Frederik Terman, 3, 29590, Málaga</b></li>
 
+```sql
+insert into centros(curso, codigo, d_denomina, d_especifica, d_tipo, d_domicilio, d_localidad, cod_municipio, d_municipio, d_provincia, c_postal, n_telefono, correo_e) values(22, 29020231, 'Centro Público Integrado de Formación Profesional', 'Nuevo (desglose IES Campanillas)', 'Público', 'C. Frederik Terman, 3, 29590, Málaga', 'Málaga', 29067, 'Campanillas', 'Málaga', 29590, 911223344, 'nuevocampanillas@gmail.com');
+```
+
+<p><b>3. Crea una tabla independiente, "centro_mal", que contenga todos los centros educativos de la provincia de Málaga.</b></p>
+
+```sql
+create table centro_mal(curso number, codigo number, cms_denomina varchar(60), d_especifica varchar(60), d_tipo varchar(60), d_domicilio varchar(60), d_localidad varchar(60), cod_municipio number, d_municipio varchar(60), d_provincia varchar(60), c_postal number, n_telefono number, correo_e varchar(60), primary key(codigo));
+```
+
+```sql
+insert into centro_mal(curso, codigo, cms_denomina, d_especifica, d_tipo, d_domicilio, d_localidad, cod_municipio, d_municipio, d_provincia, c_postal, n_telefono, correo_e) select centros.* from centros where d_provincia="málaga";
+```
+
+<img src="img/9.png">
+
+<p><b>4. Crea una tabla independiente con los datos de los municipios de Sevilla, pasa la superficie a km<sup>2</sup> sin perder información y modifica el campo "altitud" para que cumpla que todos estén entre 1 y 4000 m de altitud.</b></p>
+
+```sql
+create table muni_sevi_cms as select cod_prov, nombre_actual, poblacion, superficie/100 as km2, perimetro, cod_ine_capital, capital, poblacion_capital, longitud_etrs89, latitud_etrs89, altitud from pueblo_cms where pueblo_cms.cod_prov=41;
+```
+
+<img src="img/10.png">
+
+<p><b>5. </b></p>
