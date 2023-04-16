@@ -129,4 +129,26 @@ create table muni_sevi_cms as select cod_prov, nombre_actual, poblacion, superfi
 
 <img src="img/10.png">
 
-<p><b>5. </b></p>
+<p><b>5. Crear una vista.</b></p>
+
+```sql
+create view nombre_valle as(select * from pueblo_cms where nombre_actual like '%valle%');
+```
+
+<img src="img/11.png">
+
+<p><b>6. Ordena por número de IES, de mayor número a menor, agrupados por provincias.</b></p>
+
+```sql
+select * from centros group by d_provincia order by codigo desc;
+```
+
+<img src="img/12.png">
+
+<p><b>7. Lista los centros educativos que haya en tu localidad de nacimiento, ordenados ascendentemente por nombre del centro.</b></p>
+
+```sql
+
+```
+
+<img src="img/13.png">
