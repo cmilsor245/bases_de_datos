@@ -172,7 +172,7 @@ select sum(*) from pueblo_cms inner join provin on provin.cod_prov=pueblo_cms.co
 <p><b>10. ¿Cuáles son los pueblos con menor densidad poblacional de la provincia de Teruel?</b></p>
 
 ```sql
-
+select nombre_actual as "pueblos", poblacion/superficie as "densidad" from pueblo_cms where cod_prov=44;
 ```
 
 <img src="img/16.png">
