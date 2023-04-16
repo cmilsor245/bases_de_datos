@@ -176,3 +176,60 @@ select nombre_actual as "pueblos", poblacion/superficie as "densidad" from puebl
 ```
 
 <img src="img/16.png">
+
+<p><b>11. Indicar los 10 municipios de España con mayor densidad poblacional. Además del nombre del municipio, mostrar la provincia a la que pertenece y la población, ordenados de mayor a menor por número de habitantes.</b></p>
+
+```sql
+select pueblo_cms.nombre_actual as "nombre", provin.provincia as "provincia", pueblo_cms.poblacion from pueblo_cms inner join provin on provin.cod_prov=pueblo_cms.cod_prov order by poblacion/superficie desc fetch first 10 rows only;
+```
+
+<img src="img/17.png">
+
+<p><b>12. ¿Cuál es la suma dela población de los 10 municipios con mayor número de habitantes de la comunidad de Madrid?</b></p>
+
+```sql
+select sum(poblacion) as "suma" from pueblo_cms inner join provin on provin.cod_prov=pueblo_cms.cod_prov where pueblo_cms.cod_prov=28 fetch first 10 rows only;
+```
+
+<img src="img/18.png">
+
+<p><b>13. ¿Qué pueblo de Andalucía tiene la mayor altura sobre el nivel del mar y una población mayor a 20000 habitantes?</b></p>
+
+```sql
+select nombre_actual as "pueblo" from pueblo_cms where cod_prov in(4, 18, 29, 14, 23, 11, 21) and poblacion>20000 order by altitud desc fetch first 1 rows only;
+```
+
+<img src="img/19.png">
+
+<p><b>14. Lista los pueblos en la Comunidad Valenciana que tienen una altura sobre el nivel del amr menor a 200 metros y una población mayor a 5000 habitantes, en orden descendente de número de habitantes (mostrar número de habitantes y altitud).</b></p>
+
+```sql
+select pueblo_cms.nombre_actual as "pueblos", pueblo_cms.poblacion "nº habitantes", pueblo_cms.altitud from pueblo_cms right join provin on provin.comunidad_autonoma="comunitat valenciana" where pueblo_cms.altitud<200 and pueblo_cms.poblacion>5000 order by poblacion desc;
+```
+
+<img src="img/20.png">
+
+<p><b>15. ¿Qué porcentaje de la población total de Navarra vive en pueblos con una superficie menor a 50 km<sup>2</sup> y una altura sobre el nivel del mar mayor a 400 metros?</b></p>
+
+```sql
+
+```
+
+<img src="img/21.png">
+
+<p><b>16. ¿Cuál es la densidad poblacional de la Comunidad Valenciana?</b></p>
+
+```sql
+select sum(pueblo_cms.poblacion/pueblo_cms.superficie) as "densidad" from pueblo_cms right join provin on provin.comunidad_autonoma="comunitat valenciana";
+```
+
+<img src="img/22.png">
+
+<p><b>17. Saca un listado de cada tipo de centro educativo y en 2 columnas diferentes, diferenciar si es pública y privada y cuantos existen de cada. En caso de tener valor NULO, poner un 0.</b></p>
+
+```sql
+
+
+```
+
+<img src="img/23.png">
