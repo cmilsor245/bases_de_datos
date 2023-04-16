@@ -148,7 +148,31 @@ select * from centros group by d_provincia order by codigo desc;
 <p><b>7. Lista los centros educativos que haya en tu localidad de nacimiento, ordenados ascendentemente por nombre del centro.</b></p>
 
 ```sql
-
+select * from centros where d_localidad="málaga" order by d_especifica asc;
 ```
 
 <img src="img/13.png">
+
+<p><b>8. Saca un listado de todos los municipios de la provincia de Sevilla, la población y el número de centros educativos.</b></p>
+
+```sql
+select pueblo_cms.nombre_actual as "nombre", pueblo_cms.poblacion as "poblacion" from pueblo_cms inner join provin on provin.cod_prov=pueblo_cms.cod_prov where pueblo_cms.cod_prov=44;
+```
+
+<img src="img/14.png">
+
+<p><b>9. Pon en una tabla el número de pueblos que ne la provincia de Sevilla comienzan por "A", "B" y "S".</b></p>
+
+```sql
+select sum(*) from pueblo_cms inner join provin on provin.cod_prov=pueblo_cms.cod_prov where(pueblo_cms.nombre_actual like 'A%' or pueblo_cms.nombre_actual like 'B%' or pueblo_cms.nombre_actual like 'S%') and pueblo_cms.cod_prov=41;
+```
+
+<img src="img/15.png">
+
+<p><b>10. ¿Cuáles son los pueblos con menor densidad poblacional de la provincia de Teruel?</b></p>
+
+```sql
+
+```
+
+<img src="img/16.png">
