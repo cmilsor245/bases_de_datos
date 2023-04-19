@@ -360,3 +360,25 @@ Para opciones adicionales dentro de un bucle WHILE, puede usar las palabras clav
 <img src="img/6.png">
 
 <p>Finalmente podemos iniciar sesión en la máquina.</p>
+
+<p>Lo primero que debemos hacer es abrir el entorno de trabajo donde vamos a ejecutar las sentencias.</p>
+
+<img src="img/7.png">
+
+<p>Adicionalmente, cambiamos el idioma de entrada del teclado en la barra de tareas al idioma deseado:</p>
+
+<img src="img/8.png">
+
+<img src="img/9.png">
+
+<p>Una vez dentro del entorno de trabajo, hacemos doble clic en la opción "AdventureWorks".</p>
+
+<img src="img/10.png">
+
+<p>*Puede que primero sea necesario darle un único clic y cuando se ponga en verde, dar los dos clics.</p>
+
+<p>Se abre una pestaña como la siguiente, en la que debemos entrar en la opción "New Query":</p>
+
+<img src="img/11.png">
+
+<p>Ahora sí, tenemos el lugar donde vamos a ejecutar las sentencias una a una.</p>
