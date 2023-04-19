@@ -339,4 +339,24 @@ Para opciones adicionales dentro de un bucle WHILE, puede usar las palabras clav
 
 <hr>
 
-<p></p>
+<h2>EJERCICIO</h2>
+
+<p>En el siguiente apartado se realiza un ejercicio de prueba para poner a prueba estos conocimientos.</p>
+
+<p>Hacemos clic en "Iniciar laboratorio" para poner en marcha la máquina virtual con la que vamos a trabajar en este ejercicio</p>
+
+<img src="img/3.png">
+
+<p>Esto inicia un proceso de creación de la máquina. Cuando termina hacemos clic de nuevo en el botón y se nos abre una ventana donde trabajaremos en este ejercicio.</p>
+
+<img src="img/4.png">
+
+<p>Una vez se carga la máquina, vemos una interfaz como la siguiente:</p>
+
+<img src="img/5.png">
+
+<p>Vemos que en la columna de la derecha aparecen unas credenciales para iniciar sesión. Primero debemos situar el cursor en el cuadro donde se debe introducir la contraseña y después pulsamos la "T" que aparece al lado de la contraseña en la columna de la derecha.</p>
+
+<img src="img/6.png">
+
+<p>Finalmente podemos iniciar sesión en la máquina.</p>
