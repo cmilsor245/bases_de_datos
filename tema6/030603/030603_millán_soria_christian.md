@@ -382,3 +382,9 @@ Para opciones adicionales dentro de un bucle WHILE, puede usar las palabras clav
 <img src="img/11.png">
 
 <p>Ahora sí, tenemos el lugar donde vamos a ejecutar las sentencias una a una.</p>
+
+<p>Como podemos ver en la columna de la derecha de la pantalla (de donde sacamos la contraseña para iniciar sesión anteriormente), bajando un poco nos encontramos con las sentencias que vamos a ejecutar en este ejercicio.</p>
+
+<p>Vamos a ir ejecutándolas una a una y obteniendo el resultado (estas sentencias también tienen el botón con la "T" para que se escriban automáticamente en el lugar donde tengamos el cursor en el entorno de trabajo).</p>
+
+<h3></h3>
