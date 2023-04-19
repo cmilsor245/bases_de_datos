@@ -412,3 +412,23 @@ select @num1 + @num2 as totalnum;
 ```
 
 <img src="img/13.png">
+
+<hr>
+
+<h3>USE VARIABLES WITH BATCHES</h3>
+
+<p>2.</p>
+
+```sql
+declare
+@empname nvarchar(30),
+@empid int;
+
+set @empid=5;
+
+set @empname=(select firstname+n' '+lastname from saleslt.customer where customerid=@empid)
+
+select @empname as employee;
+```
+
+<img src="img/14.png">
