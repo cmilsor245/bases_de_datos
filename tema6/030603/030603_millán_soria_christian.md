@@ -387,4 +387,28 @@ Para opciones adicionales dentro de un bucle WHILE, puede usar las palabras clav
 
 <p>Vamos a ir ejecutándolas una a una y obteniendo el resultado (estas sentencias también tienen el botón con la "T" para que se escriban automáticamente en el lugar donde tengamos el cursor en el entorno de trabajo).</p>
 
-<h3></h3>
+<h3>DECLARE VARIABLES AND RETRIEVE VALUES</h3>
+
+<p>5.</p>
+
+```sql
+declare @num int=5;
+select @num as mynumber;
+```
+
+<img src="img/12.png">
+
+<p>8.</p>
+
+```sql
+declare
+@num1 int, 
+@num2 int;
+
+set @num1=4;
+set @num2=6;
+
+select @num1 + @num2 as totalnum;
+```
+
+<img src="img/13.png">
