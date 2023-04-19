@@ -426,9 +426,10 @@ declare
 
 set @empid=5;
 
-set @empname=(select firstname+n' '+lastname from saleslt.customer where customerid=@empid)
+set @empname=(select FirstName+N' '+LastName from SalesLT.Customer where CustomerID=@empid)
 
 select @empname as employee;
 ```
 
 <img src="img/14.png">
+
