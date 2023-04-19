@@ -433,3 +433,8 @@ select @empname as employee;
 
 <img src="img/14.png">
 
+<p>6.</p>
+
+```sql
+select @empname as employee;
+```

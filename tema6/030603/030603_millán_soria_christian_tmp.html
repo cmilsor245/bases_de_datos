@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>030603_millán_soria_christian.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<style>
+  h1, h4, h2, h3{
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 0px;
+  }
+
+  p{
+    text-align: justify;
+  }
+
+  img{
+    border: 2px solid black;
+  }
+
+  #ex{
+    border: none;
+  }
+</style>
+<h1>PRIMER CURSO</h1>
+<h4>CHRISTIAN MILL&#xC1;N SORIA</h4>
+<hr>
+<p>Comenzamos entrando en <a href="https://learn.microsoft.com/es-es/training/modules/get-started-transact-sql-programming/">este enlace</a>.</p>
+<p>Iniciamos sesi&#xF3;n con una cuenta de Hotmail.</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/1.png">
+<p>Una vez tenemos una cuenta, bajamos y encontramos una serie de apartados. Entramos en el primero.</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/2.png">
+<hr>
+<h2>INTRODUCCI&#xD3;N</h2>
+<p>Contenido de &quot;Introducci&#xF3;n&quot;:</p>
+<pre class="hljs"><code><div>Transact-SQL (T-SQL) proporciona un lenguaje de programación sólido con características que permiten almacenar temporalmente valores en variables, aplicar la ejecución condicional de comandos, pasar parámetros a procedimientos almacenados y controlar el flujo de los programas.
+
+En este módulo, aprenderá a mejorar el código T-SQL con elementos de programación.
+
+Después de completar este módulo, podrá:
+
+· Describir los elementos de lenguaje de T-SQL para tareas de programación sencillas.
+· Describir los lotes y cómo se controlan mediante SQL Server.
+· Declarar y asignar variables y sinónimos.
+· Usar bloques IF y WHILE para controlar el flujo del programa.
+</div></code></pre>
+<hr>
+<h2>DESCRIPCI&#xD3;N DE T-SQL PARA LA PROGRAMACI&#xD3;N</h2>
+<p>Pasamos al siguiente apartado. Contenido de &quot;Descripci&#xF3;n de T-SQL para la programaci&#xF3;n&quot;:</p>
+<pre class="hljs"><code><div>Transact-SQL (T-SQL) es una extensión propietaria del estándar abierto Lenguaje de consulta estructurado (SQL). Admite variables declaradas, procesamiento de cadenas y datos, control de errores y excepciones y control de transacciones. Aunque SQL es un lenguaje de programación, T-SQL añade compatibilidad con la programación de procedimientos y el uso de variables locales.
+
+Un programa T-SQL normalmente comenzará con una instrucción BEGIN y finalizará con una instrucción END, con las instrucciones que quiera ejecutar entre ambas.
+
+A medida que pase de ejecutar objetos de código a crearlos, deberá comprender cómo interactúan varias instrucciones con el servidor durante la ejecución. A medida que desarrolle programas, deberá almacenar temporalmente los valores. Por ejemplo, es posible que tenga que almacenar temporalmente valores que se usarán como parámetros en procedimientos almacenados.
+
+Por último, es posible que quiera crear alias o punteros a objetos para que pueda hacer referencia a ellos con un nombre diferente o desde una ubicación distinta de donde se definen.
+
+Estas son algunas de las estructuras de programación de T-SQL compatibles:
+
+· IF...ELSE: instrucción condicional que permite decidir qué aspectos del código se ejecutarán.
+· WHILE: instrucción de bucle que es ideal para ejecutar iteraciones de instrucciones T-SQL.
+· DECLARE: lo usará para definir variables.
+· SET: una de las maneras en las que asignará valores a las variables.
+· BATCHES: serie de instrucciones T-SQL que se ejecutan como una unidad.
+</div></code></pre>
+<hr>
+<h2>DESCRIPCI&#xD3;N DE LOTES</h2>
+<p>Pasamos al siguiente apartado. Contenido de &quot;Descripci&#xF3;n de lotes&quot;:</p>
+<pre class="hljs"><code><div>Los lotes T-SQL son colecciones de una o varias instrucciones T-SQL que el cliente envía a SQL Server como una sola unidad. SQL Server se ejecuta en todas las instrucciones de un lote al mismo tiempo al analizar, optimizar y ejecutar el código.
+
+Si es un escritor de informes que normalmente escribe consultas mediante instrucciones SELECT y no procedimientos, sigue siendo importante comprender los límites del lote. Estos límites afectarán al trabajo con variables y parámetros en procedimientos almacenados y otras rutinas. Por ejemplo, una variable debe declararse en el mismo lote en el que se le hace referencia. Por lo tanto, es importante reconocer lo que contiene un lote.
+
+La aplicación cliente delimita los lotes. La forma de marcar el final de un lote depende de la configuración del cliente. Para los clientes de Microsoft, incluidos SQL Server Management Studio (SSMS), Azure Data Studio y SQLCMD, la palabra clave es GO.
+
+En este ejemplo, hay dos lotes distintos terminados cada uno en GO:
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">NEW</span> &lt;view_name&gt;
+<span class="hljs-keyword">AS</span> ...
+<span class="hljs-keyword">GO</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">PROCEDURE</span> &lt;procedure_name&gt;
+<span class="hljs-keyword">AS</span> ...
+<span class="hljs-keyword">GO</span>
+</div></code></pre>
+<pre class="hljs"><code><div>El terminador de lotes GO no es una palabra clave de T-SQL, pero SSMS la reconoce para indicar el final de un lote.
+
+Al trabajar con lotes T-SQL, hay dos consideraciones importantes que se deben tener en cuenta:
+
+· Los lotes son límites para el ámbito de variable, lo que significa que solo otro código del mismo lote puede hacer referencia a una variable definida en un lote.
+· Es posible que algunas instrucciones, normalmente instrucciones de definición de datos como CREATE VIEW, CREATE FUNCTION y CREATE PROCEDURE, no se combinen con otras del mismo lote.
+</div></code></pre>
+<h3>TRABAJO CON LOTES</h3>
+<p>Siguiente sub-apartado (en el mismo apartado). Contenido de &quot;Trabajo con lotes&quot;:</p>
+<pre class="hljs"><code><div>Un lote es una colección de instrucciones T-SQL enviadas a SQL Server para su análisis y ejecución. Comprender cómo se analizan los lotes será útil para identificar los mensajes de error y el comportamiento. Cuando un cliente envía un lote, como al presionar el botón Ejecutar en SSMS, el motor de SQL Server analiza el lote en busca de errores de sintaxis. Los errores encontrados harán que se rechace todo el lote; no habrá ninguna ejecución parcial de instrucciones dentro del lote.
+
+Si el lote pasa la comprobación de sintaxis, SQL Server ejecuta otros pasos, resuelve nombres de objeto, comprueba permisos y optimiza el código para su ejecución. Una vez que se completa este proceso y se inicia la ejecución, las instrucciones se completan correctamente o se produce un error individualmente. Esto es un contraste importante con la comprobación de sintaxis. Cuando se produce un error en el tiempo de ejecución de una línea, se puede ejecutar la siguiente, a menos que se haya agregado el control de errores al código.
+
+Por ejemplo, el siguiente lote contiene un error de sintaxis:
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> dbo.t1 <span class="hljs-keyword">VALUE</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,N<span class="hljs-string">'abc'</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> dbo.t1 <span class="hljs-keyword">VALUES</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,N<span class="hljs-string">'def'</span>);
+GO
+</div></code></pre>
+<pre class="hljs"><code><div>Muestra este mensaje de error:
+</div></code></pre>
+<pre class="hljs"><code><div>Msg 102, Level 15, State 1, Line 1
+Incorrect syntax near 'VALUE'.
+</div></code></pre>
+<pre class="hljs"><code><div>El error se produjo en la línea 1, pero se rechaza todo el lote y la ejecución no continúa con la línea 2. Aunque se invirtiera cada una de las instrucciones INSERT y se produjese el error de sintaxis en la segunda línea, la primera línea no se ejecutaría porque se rechazaría todo el lote.
+
+Con el ejemplo anterior, este lote no contiene ningún error:
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> dbo.t1 <span class="hljs-keyword">VALUES</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,N<span class="hljs-string">'abc'</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> dbo.t1 <span class="hljs-keyword">VALUES</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,N<span class="hljs-string">'def'</span>);
+GO
+</div></code></pre>
+<pre class="hljs"><code><div>En los ejemplos anteriores, hemos usado instrucciones INSERT en lugar de SELECT porque es más común que las instrucciones de modificación se agrupen en lotes que en instrucciones SELECT.
+</div></code></pre>
+<hr>
+<h2>DECLARACI&#xD3;N Y ASIGNACI&#xD3;N DE VARIABLES Y SIN&#xD3;NIMOS</h2>
+<p>Pasamos al siguiente apartado. Contenido de &quot;Declaraci&#xF3;n y asignaci&#xF3;n de variables y sin&#xF3;nimos&quot;:</p>
+<pre class="hljs"><code><div>En T-SQL, al igual que con otros lenguajes de programación, las variables son objetos que permiten el almacenamiento temporal de un valor para su uso posterior. Ya ha visto variables cuando las ha usado para pasar valores de parámetro a procedimientos almacenados y funciones.
+
+En T-SQL, las variables se deben declarar para poderlas usar. Cuando se declaran, se les puede asignar un valor o inicializarlas. Declarar una variable incluye proporcionar un nombre y un tipo de datos, como se muestra a continuación. Para declarar una variable, debe usar la instrucción DECLARE.
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">--Declare and initialize the variables.</span>
+<span class="hljs-keyword">DECLARE</span> @numrows <span class="hljs-built_in">INT</span> = <span class="hljs-number">3</span>, @catid <span class="hljs-built_in">INT</span> = <span class="hljs-number">2</span>;
+<span class="hljs-comment">--Use variables to pass the parameters to the procedure.</span>
+EXEC Production.ProdsByCategory @numrows = @numrows, @catid = @catid;
+GO
+</div></code></pre>
+<pre class="hljs"><code><div>Las variables se deben declarar en el mismo lote en el que se hace referencia a ellas. En otras palabras, todas las variables T-SQL son locales en el ámbito del lote, tanto en visibilidad como en duración. Solo otras instrucciones del mismo lote pueden ver una variable declarada en el lote. Una variable se destruye automáticamente cuando finaliza el lote.
+</div></code></pre>
+<h3>TRABAJO CON VARIABLES</h3>
+<p>Siguiente sub-apartado (en el mismo apartado). Contenido de &quot;Trabajo con variables&quot;:</p>
+<pre class="hljs"><code><div>Una vez que haya declarado una variable, debe inicializarla o asignarle un valor. Lo puede hacer de tres maneras:
+
+· En SQL Server 2008 o posterior, puede inicializar una variable mediante la instrucción DECLARE.
+· En cualquier versión de SQL Server, puede asignar un valor único (escalar) mediante la instrucción SET.
+· En cualquier versión de SQL Server, puede asignar un valor a una variable mediante la instrucción SELECT. Asegúrese de que la instrucción SELECT devuelve exactamente una fila. Si no hay ningún resultado, la variable mantendrá su valor original. Si hay más de un resultado se devolverá el último.
+
+En el ejemplo siguiente se muestran las tres maneras de declarar y asignar valores a variables:
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">DECLARE</span> @var1 <span class="hljs-keyword">AS</span> <span class="hljs-built_in">INT</span> = <span class="hljs-number">99</span>;
+<span class="hljs-keyword">DECLARE</span> @var2 <span class="hljs-keyword">AS</span> <span class="hljs-keyword">NVARCHAR</span>(<span class="hljs-number">255</span>);
+<span class="hljs-keyword">SET</span> @var2 = N<span class="hljs-string">'string'</span>;
+<span class="hljs-keyword">DECLARE</span> @var3 <span class="hljs-keyword">AS</span> <span class="hljs-keyword">NVARCHAR</span>(<span class="hljs-number">20</span>);
+<span class="hljs-keyword">SELECT</span> @var3 = lastname <span class="hljs-keyword">FROM</span> HR.Employees <span class="hljs-keyword">WHERE</span> empid=<span class="hljs-number">1</span>;
+<span class="hljs-keyword">SELECT</span> @var1 <span class="hljs-keyword">AS</span> var1, @var2 <span class="hljs-keyword">AS</span> var2, @var3 <span class="hljs-keyword">AS</span> var3;
+GO
+</div></code></pre>
+<pre class="hljs"><code><div>Esto genera los resultados siguientes.
+
+var1                   var2                   var3
+99                     string                 Davis
+</div></code></pre>
+<h3>TRABAJO CON SIN&#xD3;NIMOS</h3>
+<p>Siguiente sub-apartado (en el mismo apartado). Contenido de &quot;Trabajo con sin&#xF3;nimos&quot;:</p>
+<pre class="hljs"><code><div>En SQL Server, los sinónimos proporcionan un método para crear un vínculo, o alias, a un objeto almacenado en la misma base de datos o incluso en otra instancia de SQL Server. Los objetos que pueden tener sinónimos definidos para ellos incluyen tablas, vistas, procedimientos almacenados y funciones definidas por el usuario.
+
+Los sinónimos se pueden usar para que un objeto remoto parezca local o para proporcionar un nombre alternativo para un objeto local. Por ejemplo, se pueden usar sinónimos para proporcionar una capa de abstracción entre el código de cliente y los objetos de la base de datos reales utilizados por el código. El código hace referencia a objetos por sus alias, independientemente del nombre real del objeto.
+
+Para administrar sinónimos, use los comandos del lenguaje de definición de datos (DDL) CREATE SYNONYM, ALTER SYNONYM y DROP SYNONYM, como en el ejemplo siguiente:
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">SYNONYM</span> dbo.ProdsByCategory <span class="hljs-keyword">FOR</span> TSQL.Production.ProdsByCategory;
+GO
+EXEC dbo.ProdsByCategory @numrows = 3, @catid = 2;
+</div></code></pre>
+<pre class="hljs"><code><div>Para crear un sinónimo, debe tener el permiso &quot;CREATE SYNONYM&quot;, así como el permiso para modificar el esquema en el que se almacenará el sinónimo.
+
+Un sinónimo es un objeto &quot;vacío&quot; que se resuelve en el objeto de origen cuando se hace referencia a él en tiempo de ejecución.
+</div></code></pre>
+<hr>
+<h2>USO DE BLOQUES IF Y WHILE PARA CONTROLAR EL FLUJO DEL PROGRAMA</h2>
+<p>Pasamos al siguiente apartado. Contenido de &quot;Uso de bloques IF y WHILE para controlar el flujo del programa&quot;:</p>
+<pre class="hljs"><code><div>Todos los lenguajes de programación incluyen elementos que le ayudan a determinar el flujo del programa o el orden en el que se ejecutan las instrucciones. Aunque no es tan destacado como lenguajes como C#, T-SQL proporciona un conjunto de palabras clave de control de flujo que puede usar para realizar pruebas lógicas y crear bucles que contengan las instrucciones de manipulación de datos de T-SQL. En esta lección, aprenderá a usar las palabras clave IF y WHILE de T-SQL.
+</div></code></pre>
+<h3>COMPRENSI&#xD3;N DEL CONTROL T-SQL DEL LENGUAJE DE FLUJO</h3>
+<p>Siguiente sub-apartado (en el mismo apartado). Contenido de &quot;Comprensi&#xF3;n del control T-SQL del lenguaje de flujo&quot;:</p>
+<pre class="hljs"><code><div>SQL Server proporciona elementos de lenguaje que controlan el flujo de ejecución del programa dentro de lotes de T-SQL, procedimientos almacenados y funciones de múltiples instrucciones definidas por el usuario. Estos elementos de control de flujo significan que puede determinar mediante programación si se deben ejecutar instrucciones y el orden en el que se deben ejecutar.
+
+Estos elementos incluyen, entre otros:
+
+· IF...ELSE, que ejecuta código basado en expresiones booleanas.
+· WHILE, que crea un bucle que se ejecuta si la condición es verdadera.
+· BEGIN...END, que define una serie de instrucciones T-SQL que se deben ejecutar juntas.
+· Otras palabras clave, por ejemplo, BREAK, CONTINUE, WAITFOR y RETURN, que se usan para admitir operaciones de control de flujo de T-SQL.
+
+Este es un ejemplo de una instrucción IF:
+</div></code></pre>
+<pre class="hljs"><code><div>IF OBJECT_ID('dbo.tl') IS NOT NULL
+    <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> dbo.tl
+<span class="hljs-keyword">GO</span>
+</div></code></pre>
+<h3>USO DE L&#xD3;GICA CONDICIONAL EN LOS PROGRAMAS MEDIANTE IF...ELSE</h3>
+<p>Siguiente sub-apartado (en el mismo apartado). Contenido de &quot;Uso de l&#xF3;gica condicional en los programas mediante IF...ELSE&quot;:</p>
+<pre class="hljs"><code><div>La estructura IF...ELSE se usa en T-SQL para ejecutar condicionalmente un bloque de código basado en un predicado. La instrucción IF determina si se ejecuta la instrucción o el bloque siguiente (si se usa BEGIN...END). Si el predicado se determina como TRUE, se ejecuta el código del bloque. Cuando el predicado se determina como FALSE o UNKNOWN, el bloque no se ejecuta a menos que se utilice la palabra clave opcional ELSE para identificar otro bloque de código.
+
+En la siguiente instrucción IF, se pregunta a la base de datos si la OBJECT_ID aparece como NULL (nula) y, si es así, devuelve la instrucción PRINT (imprimir). En este ejemplo, el objeto NO es null (nulo) y por lo tanto FALSE (falso), lo que significa que no se ejecutará el código BEGIN/END. La instrucción PRINT solo se ejecutará si el objeto no existe en la base de datos.
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">USE</span> TSQL;
+GO
+IF OBJECT_ID('HR.Employees') IS NULL <span class="hljs-comment">--this object does exist in the sample database</span>
+<span class="hljs-keyword">BEGIN</span>
+    PRINT <span class="hljs-string">'The specified object does not exist'</span>;
+<span class="hljs-keyword">END</span>;
+</div></code></pre>
+<pre class="hljs"><code><div>Debido a las limitaciones del código anterior con solo una instrucción IF, esto puede resultar confuso. La combinación de IF y ELSE proporciona más flexibilidad con la lógica del código y puede usar varias instrucciones ELSE. Con el uso de ELSE, tiene otra opción de ejecución cuando el predicado IF se determina como FALSE o UNKNOWN, como en el ejemplo siguiente:
+</div></code></pre>
+<pre class="hljs"><code><div>IF OBJECT_ID('HR.Employees') IS NULL <span class="hljs-comment">--this object does exist in the sample database</span>
+<span class="hljs-keyword">BEGIN</span>
+    PRINT <span class="hljs-string">'The specified object does not exist'</span>;
+<span class="hljs-keyword">END</span>
+<span class="hljs-keyword">ELSE</span>
+<span class="hljs-keyword">BEGIN</span>
+    PRINT <span class="hljs-string">'The specified object exists'</span>;
+<span class="hljs-keyword">END</span>;
+</div></code></pre>
+<pre class="hljs"><code><div>Dentro de las operaciones de manipulación de datos, el uso de IF con la palabra clave EXISTS puede ser una herramienta útil para comprobaciones de existencia eficaces, como en el ejemplo siguiente:
+</div></code></pre>
+<pre class="hljs"><code><div>IF EXISTS (<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> Sales.EmpOrders <span class="hljs-keyword">WHERE</span> empid =<span class="hljs-number">5</span>)
+<span class="hljs-keyword">BEGIN</span>
+    PRINT <span class="hljs-string">'Employee has associated orders'</span>;
+<span class="hljs-keyword">END</span>;
+</div></code></pre>
+<h3>COMPRENSI&#xD3;N DEL BUCLE MEDIANTE INSTRUCCIONES WHILE</h3>
+<p>Siguiente sub-apartado (en el mismo apartado). Contenido de &quot;Comprensi&#xF3;n del bucle mediante instrucciones WHILE&quot;:</p>
+<pre class="hljs"><code><div>La instrucción WHILE se usa para ejecutar código en un bucle basado en un predicado. Del mismo modo que la instrucción IF, la instrucción WHILE determina si se ejecuta la instrucción o el bloque siguientes (si se usa BEGIN...END). El bucle continúa en ejecución siempre que la condición se evalúe como TRUE. Normalmente, el bucle se controla con una variable probada por el predicado y manipulada en el cuerpo del propio bucle.
+
+En el ejemplo siguiente se usa la variable @empid en el predicado y se cambia su valor en el bloque BEGIN...END:
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">DECLARE</span> @empid <span class="hljs-keyword">AS</span> <span class="hljs-built_in">INT</span> = <span class="hljs-number">1</span>, @lname <span class="hljs-keyword">AS</span> <span class="hljs-keyword">NVARCHAR</span>(<span class="hljs-number">20</span>);
+WHILE @empid &lt;=5
+   <span class="hljs-keyword">BEGIN</span>
+	<span class="hljs-keyword">SELECT</span> @lname = lastname <span class="hljs-keyword">FROM</span> HR.Employees
+		<span class="hljs-keyword">WHERE</span> empid = @empid;
+	PRINT @lname;
+	<span class="hljs-keyword">SET</span> @empid += <span class="hljs-number">1</span>;
+   <span class="hljs-keyword">END</span>;
+</div></code></pre>
+<pre class="hljs"><code><div>Para opciones adicionales dentro de un bucle WHILE, puede usar las palabras clave CONTINUE y BREAK para controlar el flujo.
+</div></code></pre>
+<hr>
+<h2>EJERCICIO</h2>
+<p>En el siguiente apartado se realiza un ejercicio de prueba para poner a prueba estos conocimientos.</p>
+<p>Hacemos clic en &quot;Iniciar laboratorio&quot; para poner en marcha la m&#xE1;quina virtual con la que vamos a trabajar en este ejercicio</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/3.png">
+<p>Esto inicia un proceso de creaci&#xF3;n de la m&#xE1;quina. Cuando termina hacemos clic de nuevo en el bot&#xF3;n y se nos abre una ventana donde trabajaremos en este ejercicio.</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/4.png">
+<p>Una vez se carga la m&#xE1;quina, vemos una interfaz como la siguiente:</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/5.png">
+<p>Vemos que en la columna de la derecha aparecen unas credenciales para iniciar sesi&#xF3;n. Primero debemos situar el cursor en el cuadro donde se debe introducir la contrase&#xF1;a y despu&#xE9;s pulsamos la &quot;T&quot; que aparece al lado de la contrase&#xF1;a en la columna de la derecha.</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/6.png">
+<p>Finalmente podemos iniciar sesi&#xF3;n en la m&#xE1;quina.</p>
+<p>Lo primero que debemos hacer es abrir el entorno de trabajo donde vamos a ejecutar las sentencias.</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/7.png">
+<p>Adicionalmente, cambiamos el idioma de entrada del teclado en la barra de tareas al idioma deseado:</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/8.png">
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/9.png">
+<p>Una vez dentro del entorno de trabajo, hacemos doble clic en la opci&#xF3;n &quot;AdventureWorks&quot;.</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/10.png">
+<p>*Puede que primero sea necesario darle un &#xFA;nico clic y cuando se ponga en verde, dar los dos clics.</p>
+<p>Se abre una pesta&#xF1;a como la siguiente, en la que debemos entrar en la opci&#xF3;n &quot;New Query&quot;:</p>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/11.png">
+<p>Ahora s&#xED;, tenemos el lugar donde vamos a ejecutar las sentencias una a una.</p>
+<p>Como podemos ver en la columna de la derecha de la pantalla (de donde sacamos la contrase&#xF1;a para iniciar sesi&#xF3;n anteriormente), bajando un poco nos encontramos con las sentencias que vamos a ejecutar en este ejercicio.</p>
+<p>Vamos a ir ejecut&#xE1;ndolas una a una y obteniendo el resultado (estas sentencias tambi&#xE9;n tienen el bot&#xF3;n con la &quot;T&quot; para que se escriban autom&#xE1;ticamente en el lugar donde tengamos el cursor en el entorno de trabajo).</p>
+<h3>DECLARE VARIABLES AND RETRIEVE VALUES</h3>
+<p>5.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">declare</span> @<span class="hljs-keyword">num</span> <span class="hljs-built_in">int</span>=<span class="hljs-number">5</span>;
+<span class="hljs-keyword">select</span> @<span class="hljs-keyword">num</span> <span class="hljs-keyword">as</span> mynumber;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/12.png">
+<p>8.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">declare</span>
+@num1 <span class="hljs-built_in">int</span>, 
+@num2 <span class="hljs-built_in">int</span>;
+
+<span class="hljs-keyword">set</span> @num1=<span class="hljs-number">4</span>;
+<span class="hljs-keyword">set</span> @num2=<span class="hljs-number">6</span>;
+
+<span class="hljs-keyword">select</span> @num1 + @num2 <span class="hljs-keyword">as</span> totalnum;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/13.png">
+<hr>
+<h3>USE VARIABLES WITH BATCHES</h3>
+<p>2.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">declare</span>
+@empname <span class="hljs-keyword">nvarchar</span>(<span class="hljs-number">30</span>),
+@empid <span class="hljs-built_in">int</span>;
+
+<span class="hljs-keyword">set</span> @empid=<span class="hljs-number">5</span>;
+
+<span class="hljs-keyword">set</span> @empname=(<span class="hljs-keyword">select</span> FirstName+N<span class="hljs-string">' '</span>+LastName <span class="hljs-keyword">from</span> SalesLT.Customer <span class="hljs-keyword">where</span> CustomerID=@empid)
+
+<span class="hljs-keyword">select</span> @empname <span class="hljs-keyword">as</span> employee;
+</div></code></pre>
+<img src="file:///c:/Users/chris/Documents/DAW/bases_de_datos/tema6/030603/img/14.png">
+<p>6.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> @empname <span class="hljs-keyword">as</span> employee;
+</div></code></pre>
+
+</body>
+</html>
