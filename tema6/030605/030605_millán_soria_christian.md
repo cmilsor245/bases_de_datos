@@ -143,7 +143,7 @@ RAISERROR (N'%s %d', -- Message text,
 Cuando se desencadena, devuelve:
 ```
 
-```
+```sql
 Custom error message number 2
 ```
 
@@ -155,4 +155,77 @@ En el ejemplo anterior, %d es un marcador de posición de un número y %s es un 
 
 ```
 La instrucción THROW ofrece un método más sencillo de generar errores en el código. Los errores deben tener un número de error mínimo de 50000.
+```
+
+<h3>THROW</h3>
+
+```
+THROW se diferencia de RAISERROR de varias maneras:
+
+· Los errores generados por THROW siempre son de gravedad 16.
+· Los mensajes devueltos por THROW no están relacionados con ninguna entrada de sys.sysmessages.
+· Los errores generados por THROW solo provocan la anulación de transacciones cuando se usan junto con SET XACT_ABORT ON y la sesión se termina.
+```
+
+```sql
+THROW 50001, 'An Error Occured',0
+```
+
+<h3>CAPTURA DE CÓDIGOS DE ERROR CON @@ERROR</h3>
+
+```
+El código de control de errores más tradicional de las aplicaciones de SQL Server se ha creado mediante @@ERROR. El control estructurado de excepciones se introdujo en SQL Server 2005 y proporciona una muy buena alternativa al uso de @@ERROR. Este tema se tratará en la lección siguiente. Una gran cantidad del código de control de errores de SQL Server existente se basa en @@ERROR, por lo que es importante comprender cómo usarlo.
+```
+
+<h3>@@ERROR</h3>
+
+```
+@@ERROR es una variable del sistema que contiene el número del último error que se ha producido. Un problema importante con @@ERROR es que el valor que contiene se restablece rápidamente a medida que se ejecuta cada instrucción adicional.
+
+Por ejemplo, considere el siguiente código:
+```
+
+```sql
+RAISERROR(N'Message', 16, 1);
+IF @@ERROR <> 0
+PRINT 'Error=' + CAST(@@ERROR AS VARCHAR(8));
+GO
+```
+
+```
+Cabría esperar que, cuando se ejecute el código, el número de error se devuelva en una cadena impresa. Sin embargo, cuando se ejecuta el código, se devuelve:
+```
+
+```sql
+Msg 50000, Level 16, State 1, Line 1
+Message
+Error=0
+```
+
+```
+El error se ha generado, pero le mensaje impreso ha sido "Error=0". En la primera línea de la salida, puede ver que, como se esperaba, el error era realmente 50000, con un mensaje pasado a RAISERROR. Esto se debe a que la instrucción IF que sigue a la instrucción RAISERROR se ha ejecutado correctamente y ha provocado el restablecimiento del valor @@ERROR. Por este motivo, al trabajar con @@ERROR, es importante capturar el número de error en una variable tan pronto como se genere y, luego, continuar el procesamiento con la variable.
+
+El código siguiente muestra este escenario:
+```
+
+```sql
+DECLARE @ErrorValue int;
+RAISERROR(N'Message', 16, 1);
+SET @ErrorValue = @@ERROR;
+IF @ErrorValue <> 0
+PRINT 'Error=' + CAST(@ErrorValue AS VARCHAR(8));
+```
+
+```
+Cuando se ejecuta este código, se devuelve la salida siguiente:
+```
+
+```sql
+Msg 50000, Level 16, State 1, Line 2
+Message
+Error=50000
+```
+
+```
+El número de error se notifica ahora correctamente.
 ```
