@@ -186,3 +186,91 @@ Por ejemplo, cuando el estado de SET XACT_ABORT es OFF, una transacción tiene t
 
 Como no siempre está claro si la transacción se confirma o se revierte, es esencial agregar el control de errores a las transacciones.
 ```
+
+<hr>
+
+<h2>CONTROL DE ERRORES EN LAS TRANSACCIONES</h2>
+
+```
+El control estructurado de excepciones usa la construcción TRY/CATCH para comprobar si hay errores y, si los hay, controlarlos. Cuando usa el control de excepciones con transacciones, es importante colocar las palabras clave COMMIT o ROLLBACK en el lugar correcto en relación con los bloques TRY/CATCH.
+```
+
+<h3>CONFIRMACIÓN DE TRANSACCIONES</h3>
+
+```
+Cuando use transacciones con control estructurado de excepciones, coloque la palabra clave COMMIT de la transacción dentro del bloque TRY, como se muestra en el ejemplo de código siguiente:
+```
+
+```sql
+BEGIN TRY
+ BEGIN TRANSACTION
+ 	INSERT INTO dbo.Orders(custid, empid, orderdate)
+	VALUES (68,9,'2006-07-12');
+	INSERT INTO dbo.OrderDetails(orderid,productid,unitprice,qty)
+	VALUES (1, 2,15.20,20);
+ COMMIT TRANSACTION
+END TRY
+```
+
+<h3>REVERSIÓN DE TRANSACCIÓN</h3>
+
+```
+Cuando use transacciones con control estructurado de excepciones, coloque la palabra clave ROLLBACK de la transacción dentro del bloque CATCH, como se muestra en el ejemplo de código siguiente:
+```
+
+```sql
+BEGIN TRY
+ BEGIN TRANSACTION;
+ 	INSERT INTO dbo.Orders(custid, empid, orderdate)
+	VALUES (68,9,'2006-07-12');
+	INSERT INTO dbo.OrderDetails(orderid,productid,unitprice,qty)
+	VALUES (1, 2,15.20,20);
+ COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+	SELECT ERROR_NUMBER() AS ErrNum, ERROR_MESSAGE() AS ErrMsg;
+	ROLLBACK TRANSACTION;
+END CATCH;
+```
+
+<h3>XACT_STATE</h3>
+
+```
+Para evitar la reversión de una transacción activa, use la función XACT_STATE. XACT_STATE devuelve estos valores:
+
+Valor devuelto                              Significado
+1                                           La solicitud actual tiene una transacción de usuario activa y confirmable.
+0                                           No hay ninguna transacción activa.
+-1                                          La solicitud actual tiene una transacción de usuario activa, pero se ha producido un error por el cual la transacción se clasificó como no confirmable.
+
+XACT_State se puede usar antes del comando ROLLBACK para comprobar si la transacción está activa.
+
+En el código siguiente se muestra la función XACT_STATE que se usa dentro del bloque CATCH, de manera que la transacción solo se revierte si hay una transacción de usuario activa.
+```
+
+```sql
+BEGIN TRY
+ BEGIN TRANSACTION;
+ 	INSERT INTO dbo.SimpleOrders(custid, empid, orderdate) 
+	VALUES (68,9,'2006-07-12');
+	INSERT INTO dbo.SimpleOrderDetails(orderid,productid,unitprice,qty) 
+	VALUES (1, 2,15.20,20);
+ COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+	SELECT ERROR_NUMBER() AS ErrNum, ERROR_MESSAGE() AS ErrMsg;
+	IF (XACT_STATE()) <> 0
+    	BEGIN
+        ROLLBACK TRANSACTION;
+    	END;
+	ELSE .... -- provide for other outcomes of XACT_STATE()
+END CATCH;
+```
+
+<hr>
+
+<h2>DESCRIPCIÓN DE LA SIMULTANEIDAD</h2>
+
+```
+
+```
