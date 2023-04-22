@@ -249,3 +249,115 @@ Se pueden crear alertas para mensajes de error específicos. El servicio de aler
 
 Hay dos maneras de que un error genere una alerta: puede usar la opción WITH LOG al generar el error o se puede alterar el mensaje para que se registre ejecutando sp_altermessage. La opción WITH LOG solo afecta a la instrucción actual. El uso de sp_altermessage cambia el comportamiento del error en todo el uso futuro. La modificación de errores del sistema mediante sp_altermessage solo es posible desde SQL Server 2005 SP3 o SQL Server 2008 SP1 en adelante.
 ```
+
+<hr>
+
+<h2>IMPLEMENTACIÓN DEL CONTROL ESTRUCTURADO DE ESCEPCIONES</h2>
+
+```
+Ahora que conoce la naturaleza de los errores y el control de errores básico en T-SQL, es el momento de ver una forma más avanzada de control de errores. El control estructurado de excepciones se introdujo en SQL Server 2005.
+
+Aquí verá cómo usarlo y evaluar sus ventajas y limitaciones. Se describe el bloque TRY CATCH, el rol de las funciones de control de errores y la diferencia entre los errores detectables y no detectables. Por último, verá cómo se pueden administrar y mostrar los errores cuando sea necesario.
+```
+
+<h3>QUÉ ES LA PROGRAMACIÓN DE BLOQUES TRY/CATCH</h3>
+
+```
+El control estructurado de excepciones es más eficaz que el control de errores basado en la variable del sistema @@ERROR. Impide que el código quede plagado de código de control de errores y permite centralizar este. La centralización del código de control de errores también significa que puede centrarse más en el propósito del código que en el control de errores que contiene.
+```
+
+<h3>BLOQUE TRY Y BLOQUE CATCH</h3>
+
+```
+Cuando se usa el control estructurado de excepciones, el código que podría generar un error se coloca dentro de un bloque TRY. Los bloques TRY están encerrados entre instrucciones BEGIN TRY y END TRY.
+
+Si se produce un error detectable (la mayoría de los errores se pueden detectar), el control de ejecución se mueve al bloque CATCH. El bloque CATCH es una serie de instrucciones T-SQL encerradas entre instrucciones BEGIN CATCH y END CATCH.
+```
+
+<h3>LIMITACIONES ACTUALES</h3>
+
+```
+Los lenguajes de alto nivel suelen ofrecer una construcción try/catch/finally, y a menudo se usan para liberar recursos implícitamente. No hay ningún bloque FINALLY equivalente en T-SQL.
+```
+
+<h3>DIFERENCIA ENTRE LOS ERRORES DETECTABLES Y NO DETECTABLES</h3>
+
+```
+Es importante tener en cuenta que, aunque los bloques TRY/CATCH le permiten detectar una gama mucho más amplia de errores que @@ERROR, no se pueden detectar todos los tipos.
+```
+
+<h3>ERRORES DETECTABLES FRENTE A ERRORES NO DETECTABLES</h3>
+
+```
+Los bloques TRY/CATCH no pueden detectar todos los errores dentro del mismo ámbito donde existe el bloque TRY/CATCH. Con frecuencia, los errores que no se pueden detectar en el mismo ámbito se pueden detectar en un ámbito circundante. Por ejemplo, es posible que no pueda detectar un error en el procedimiento almacenado que contiene el bloque TRY/CATCH. Sin embargo, es probable que pueda detectarlo en un bloque TRY/CATCH en el código que llamó al procedimiento almacenado donde se produjo el error.
+```
+
+<h3>ERRORES COMUNES QUE NO SE PUEDEN DETECTAR</h3>
+
+```
+Algunos ejemplos comunes de errores que no se pueden detectar son:
+
+· Errores de compilación, como errores de sintaxis que impiden que un lote se compile.
+· Problemas de recompilación de nivel de instrucción que suelen estar relacionados con la resolución de nombres diferida. Por ejemplo, podría crear un procedimiento almacenado que haga referencia a una tabla desconocida. Solo se produce un error cuando el procedimiento intenta resolver el nombre de la tabla en un elemento objectid.
+```
+
+<h3>CÓMO VOLVER A PRODUCIR ERRORES MEDIANTE THROW</h3>
+
+```
+Si la instrucción THROW se usa en un bloque CATCH sin parámetros, volverá a producir el error que provocó que el código entrara en el bloque CATCH. Puede usar esta técnica para implementar el registro de errores en la base de datos; para ello, se detectan los errores y se registran sus detalles y, luego, se produce el error original en la aplicación cliente, para que se pueda controlar allí.
+
+Este es un ejemplo de cómo volver a producir un error.
+```
+
+```sql
+BEGIN TRY
+    -- code to be executed
+END TRY
+BEGIN CATCH
+    PRINT ERROR_MESSAGE0.
+    THROW
+END CATCH
+```
+
+```
+En algunas de las versiones anteriores de SQL Server, no había ningún método para producir un error del sistema. Aunque THROW no puede especificar que se genere un error del sistema, cuando este bloque se usa sin parámetros en un bloque CATCH, se volverán a producir los errores del sistema y del usuario.
+```
+
+<h3>¿QUÉ SON LAS FUNCIONES DE CONTROL DE ERRORES?</h3>
+
+```
+Los bloques CATCH hacen que la información relacionada con los errores esté disponible mientras dura el bloque. Esto incluye los subámbitos, como los procedimientos almacenados, que se ejecutan desde el bloque CATCH.
+```
+
+<h3>FUNCIONES DE CONTROL DE ERRORES</h3>
+
+```
+Debe recordar que, al programar con @@ERROR, el valor mantenido por la variable del sistema @@ERROR se ha restablecido en cuanto se ha ejecutado la instrucción siguiente.
+
+Otra ventaja importante del control estructurado de excepciones en T-SQL es que se ha proporcionado una serie de funciones de control de errores que mantienen sus valores en todo el bloque CATCH. Distintas funciones proporcionan cada una de las propiedades de los errores que se han generado.
+
+Esto significa que puede escribir procedimientos almacenados genéricos de control de errores que todavía pueden acceder a la información relacionada con el error.
+
+· Los bloques CATCH hacen que la información relacionada con los errores esté disponible mientras dura el bloque.
+· @@ERROR se restablece cuando se ejecuta la instrucción siguiente.
+```
+
+<h3>ADMINISTRACIÓN DE ERRORES EN EL CÓDIGO</h3>
+
+```
+La integración de CLR de SQL permite la ejecución de código administrado dentro de SQL Server. Los lenguajes .NET de alto nivel, como C# y VB, cuentan con un control detallado de excepciones. Los errores se pueden detectar mediante bloques try/catch/finally estándar de .NET.
+```
+
+<h3>ERRORES EN EL CÓDIGO ADMINISTRADO</h3>
+
+```
+En general, es posible que desee detectar los errores dentro del código administrado lo más posible. Sin embargo, es importante tener en cuenta que los errores que no se controlan en el código administrado se pasan al código T-SQL de llamada. Siempre que cualquier error que ocurra en el código administrado se devuelva a SQL Server, aparecerá como un error 6522. Los errores se pueden anidar y ese error concreto encerrará la causa real del error.
+
+Otra causa poco frecuente, pero posible, de errores en el código administrado sería que el código pudiera ejecutar una instrucción T-SQL RAISERROR a través de un objeto SqlCommand.
+```
+
+<hr>
+
+<h2>EJERCICIO</h2>
+
+<h3></h3>
