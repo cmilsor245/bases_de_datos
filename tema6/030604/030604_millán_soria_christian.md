@@ -486,3 +486,46 @@ SCHEMABINDING se elimina si se produce alguna de las circunstancias siguientes:
 
 <h2>EJERCICIO</h2>
 
+<h3>CREATE AND EXECUTE STORED PROCEDURES</h3>
+
+<p><b>4.</b></p>
+
+```sql
+create procedure SalesLT.TopProducts as
+select top(10) name, listprice
+  from SalesLT.Product
+  group by name, listprice
+  order by listprice desc;
+```
+
+<img src="img/4.png">
+
+<p><b>6.</b></p>
+
+```sql
+execute SalesLT.TopProducts;
+```
+
+<img src="img/5.png">
+
+<p><b>8.</b></p>
+
+```sql
+alter procedure SalesLT.TopProducts @ProductCategoryID int
+as
+select top(10) name, listprice
+  from SalesLT.Product
+  where ProductCategoryID=@ProductCategoryID 
+  group by name, listprice
+  order by listprice desc; 
+```
+
+<img src="img/6.png">
+
+<p><b>9.</b></p>
+
+```sql
+execute SalesLT.TopProducts @ProductCategoryID=18;
+```
+
+<img src="img/7.png">
