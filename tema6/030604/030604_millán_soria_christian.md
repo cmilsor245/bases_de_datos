@@ -285,3 +285,75 @@ Como alternativa, use DROP PROCEDURE 'procedure_name', como en el código siguie
 ```sql
 DROP PROCEDURE myProcedure;
 ```
+
+<hr>
+
+<h2>USO DE SQL DINÁMICO EN EXEC Y SP-EXECUTE-SQL</h2>
+
+```
+SQL dinámico permite crear una cadena de caracteres que se puede ejecutar como T-SQL como alternativa a los procedimientos almacenados. SQL dinámico es útil cuando no se conocen determinados valores hasta el tiempo de ejecución.
+
+Hay dos maneras de crear SQL dinámico, ya sea mediante:
+
+· Las palabras clave EXECUTE o EXEC.
+· El procedimiento almacenado del sistema sp_executesql.
+```
+
+<h3>SQL DINÁMICO MEDIANTE EXECUTE O EXEC</h3>
+
+```
+Para escribir una instrucción SQL dinámica con EXECUTE o EXEC, la sintaxis es la siguiente:
+
+EXEC (@string_variable);
+
+En el ejemplo siguiente, declaramos una variable denominada @sqlstring de tipo VARCHAR y, a continuación, le asignamos una cadena.
+```
+
+```sql
+DECLARE @sqlstring AS VARCHAR(1000);
+    SET @sqlstring='SELECT customerid, companyname, firstname, lastname 
+    FROM SalesLT.Customer;'
+EXEC(@sqlstring);
+GO
+```
+
+<h3>SQL DINÁMICO MEDIANTE SP_EXECUTESQL</h3>
+
+```
+Sp_executesql permite ejecutar una instrucción T-SQL con parámetros. sp_executesql se puede usar en lugar de los procedimientos almacenados cuando se quiere pasar un valor diferente a la instrucción. La instrucción T-SQL sigue igual y solo cambian los valores de parámetros. Al igual que los procedimientos almacenados, que es probable que el optimizador de consultas de SQL Server reutilice el plan de ejecución.
+
+Sp_executesql toma una instrucción T-SQL como argumento, que puede ser una constante Unicode o una variable Unicode. Por ejemplo, ambos ejemplos de código son válidos:
+```
+
+```sql
+DECLARE @sqlstring1 NVARCHAR(1000);
+SET @SqlString1 =
+    N'SELECT TOP(10) name, listprice
+    FROM SalesLT.Product
+    GROUP BY name, listprice
+    ORDER BY listprice DESC;'
+EXECUTE sp_executesql @SqlString1;
+
+OR
+
+EXECUTE sp_executesql N'SELECT TOP(10) name, listprice
+    FROM SalesLT.Product
+    GROUP BY name, listprice
+    ORDER BY listprice DESC;
+```
+
+```
+En este ejemplo, se pasa un parámetro a la instrucción T-SQL:
+```
+
+```sql
+EXECUTE sp_executesql   
+          N'SELECT * FROM SalesLT.Customer   
+          WHERE CompanyName = @company',  
+          N'@company nvarchar(128)',  
+          @company = "Sharp Bikes";
+```
+
+<hr>
+
+<h2></h2>
