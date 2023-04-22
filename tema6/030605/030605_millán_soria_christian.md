@@ -360,4 +360,144 @@ Otra causa poco frecuente, pero posible, de errores en el código administrado s
 
 <h2>EJERCICIO</h2>
 
-<h3></h3>
+<h3>WRITE A BASIC TRY/CATCH CONSTRUCT</h3>
+
+<p><b>5.</b></p>
+
+```sql
+select cast(N'Some text' as int);
+```
+
+<p>Se produce el siguiente error:</p>
+
+<img src="img/3.png">
+
+<p><b>8.</b></p>
+
+```sql
+begin try
+  select cast(N'Some text' as int);
+end try
+begin catch
+  print 'Error';
+end catch;
+```
+
+<img src="img/4.png">
+
+<h3>DISPLAY AN ERROR NUMBER AND AN ERROR MESSAGE</h3>
+
+<p><b>2.</b></p>
+
+```sql
+declare @num varchar(20)='0';
+
+begin try
+  print 5./cast(@num as numeric(10,4));
+end try
+begin catch
+
+end catch;
+```
+
+<img src="img/5.png">
+
+<p><b>4.</b></p>
+
+```sql
+declare @num varchar(20)='0';
+
+begin try
+  print 5./cast(@num as numeric(10,4));
+end try
+begin catch
+  print 'Error Number: '+cast(error_number() as varchar(10));
+  print 'Error Message: '+error_message();
+end catch;
+```
+
+<img src="img/6.png">
+
+<p><b>6.</b></p>
+
+<p>Sin borrar lo anterior...</p>
+
+```sql
+declare @num varchar(20)='A';
+```
+
+<p>Se produce el siguiente error.</p>
+
+<img src="img/7.png">
+
+<p><b>8.</b></p>
+
+<p>Cambio la anterior sentencia.</p>
+
+```sql
+declare @num varchar(20)=' 1000000000';
+```
+
+<img src="img/8.png">
+
+<h3>ADD CONDITIONAL LOGIC TO A CATCH BLOCK</h3>
+
+<p><b>1.</b></p>
+
+```sql
+declare @num varchar(20)='A';
+
+begin try
+  print 5./cast(@num as numeric(10,4));
+end try
+begin catch
+  if ERROR_NUMBER() in (245, 8114)
+  begin
+    print 'Handling conversion error...'
+  end
+  else
+  begin 
+    print 'Handling non-conversion error...';
+  end;
+
+  print 'Error Number: ' + cast(ERROR_NUMBER() as varchar(10));
+  print 'Error Message: ' + ERROR_MESSAGE();
+end catch;
+```
+
+<img src="img/9.png">
+
+<p><b>3.</b></p>
+
+<p>Cambio el valor de la variable "num".</p>
+
+```sql
+declare @num varchar(20)='0';
+
+begin try
+  print 5./cast(@num as numeric(10,4));
+end try
+begin catch
+  if ERROR_NUMBER() in (245, 8114)
+  begin
+    print 'Handling conversion error...'
+  end
+  else
+  begin 
+    print 'Handling non-conversion error...';
+  end;
+
+  print 'Error Number: ' + cast(ERROR_NUMBER() as varchar(10));
+  print 'Error Message: ' + ERROR_MESSAGE();
+end catch;
+```
+
+<img src="img/10.png">
+
+<h3>CREATE A STORED PROCEDURE TO DISPLAY AN ERROR MESSAGE</h3>
+
+<p><b>2.</b></p>
+
+```sql
+
+```
