@@ -243,4 +243,45 @@ A continuación, los valores se asignan a los parámetros OUTPUT en el cuerpo de
 
 <hr>
 
-<h2></h2>
+<h2>CREACIÓN DE UN PROCEDIMIENTO ALMACENADO</h2>
+
+```
+Los procedimientos almacenados se crean con las palabras clave CREATE PROCEDURE. Para crear un procedimiento almacenado, necesitará los siguientes permisos:
+
+· Permiso CREATE PROCEDURE en la base de datos.
+· Permiso ALTER en el esquema en el que se crea el procedimiento.
+
+Escriba y pruebe primero la instrucción SELECT y, cuando compruebe satisfecho que funciona correctamente, agregue las palabras clave CREATE PROCEDURE antes del nombre del procedimiento y esquema.
+
+Por ejemplo, el código siguiente creará un procedimiento almacenado denominado TopProducts en el esquema SalesLT.
+```
+
+```sql
+CREATE PROCEDURE SalesLT.TopProducts AS
+SELECT TOP(10) name, listprice
+    FROM SalesLT.Product
+    GROUP BY name, listprice
+    ORDER BY listprice DESC;
+```
+
+```
+Para modificar un procedimiento almacenado, use las palabras clave ALTER PROCEDURE. Por ejemplo, el código siguiente modificará el procedimiento almacenado TopProducts para devolver los 100 productos principales.
+```
+
+```sql
+ALTER PROCEDURE SalesLT.TopProducts AS
+    SELECT TOP(100) name, listprice
+    FROM SalesLT.Product
+    GROUP BY name, listprice
+    ORDER BY listprice DESC;
+```
+
+```
+Al modificar un procedimiento almacenado mediante las palabras clave ALTER PROCEDURE, se conservan los permisos de seguridad asignados al procedimiento almacenado. Después del desarrollo inicial, normalmente es preferible quitar y volver a crear el procedimiento almacenado.
+
+Como alternativa, use DROP PROCEDURE 'procedure_name', como en el código siguiente:
+```
+
+```sql
+DROP PROCEDURE myProcedure;
+```
