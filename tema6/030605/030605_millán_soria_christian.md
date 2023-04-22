@@ -542,3 +542,37 @@ end catch;
 ```
 
 <img src="img/13.png">
+
+<h3>ADD AN ERROR HANDLING ROUTINE</h3>
+
+<p><b>1.</b></p>
+
+```sql
+declare @num varchar(20)='A';
+
+begin try
+  print 5./cast(@num as numeric(10,4));
+end try
+begin catch
+  execute dbo.GetErrorInfo;
+
+  if ERROR_NUMBER()=8134
+  begin
+    print 'Handling devision by zero...';
+  end
+  else 
+  begin
+    print 'Throwing original error';
+    throw;
+  end;
+
+end catch;
+```
+
+<img src="img/14.png">
+
+<hr>
+
+<h2>COMPROBACIÓN DE CONOCIMIENTO</h2>
+
+<img src="img/15.png">
