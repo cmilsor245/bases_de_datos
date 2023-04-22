@@ -205,5 +205,42 @@ Puede consultar una vista de catálogo del sistema como sys.parameters para recu
 <h3>VALORES PREDETERMINADOS</h3>
 
 ```
+Si un parámetro se declaró con un valor predeterminado, no tiene que pasar el valor al ejecutarse el procedimiento almacenado. Si se pasa un valor, se usará, pero si no se pasa ningún valor, se usa el valor predeterminado.
+
+Cuando se crea el procedimiento almacenado, los parámetros reciben valores predeterminados mediante el operador = , como:
+```
+
+```sql
+CREATE PROCEDURE Sales.SalesYTD  
+    -- Set NULL as the default value
+    @SalesPerson nvarchar(50) = NULL 
+    AS ...
+```
+
+<h3>PARÁMETROS DE SALIDA</h3>
 
 ```
+Ha visto cómo pasar un valor a un procedimiento almacenado, conocido como parámetro de entrada.
+
+Sin embargo, también puede devolver un valor al programa que realiza la llamada. Esto se conoce como parámetro OUTPUT. Use la palabra clave OUTPUT o OUT para especificar un parámetro de salida en la instrucción CREATE PROCEDURE. El procedimiento devuelve el valor actual del parámetro de salida al programa de llamada cuando se abandona el procedimiento.
+
+El programa de llamada también debe usar la palabra clave OUTPUT al ejecutar el procedimiento, a fin de guardar el valor del parámetro en una variable que se pueda usar en el programa de llamada.
+
+En el siguiente fragmento de código de T-SQL, dos parámetros se definen como parámetros OUTPUT, @ComparePrice y @ListPrice.
+```
+
+```sql
+CREATE PROCEDURE Production.uspGetList @Product varchar(40)
+    , @MaxPrice money   
+    , @ComparePrice money OUTPUT  
+    , @ListPrice money OUT  
+AS
+```
+
+```
+A continuación, los valores se asignan a los parámetros OUTPUT en el cuerpo del procedimiento almacenado, por ejemplo, SET @ComparePrice = @MaxPrice;.
+```
+
+<hr>
+
+<h2></h2>
