@@ -516,3 +516,25 @@ select @result as result;
 ```
 
 <img src="img/18.png">
+
+<hr>
+
+<h3>EXECUTE LOOPS WITH WHILE STATEMENTS</h3>
+
+<p><b>2.</b></p>
+
+```sql
+declare @i int=1;
+
+while @i<=10
+begin
+  print @i;
+  set @i=@i+1;
+end;
+```
+
+<img src="img/19.png">
+
+<hr>
+
+<h2></h2>
