@@ -327,4 +327,208 @@ Si se modificó la base de datos para activar la instantánea de lectura confirm
 
 <h2>EJERCICIO</h2>
 
-<h3></h3>
+<h3>INSERT DATA WITHOUT TRANSACTIONS</h3>
+
+<p><b>4.</b></p>
+
+```sql
+insert into SalesLT.Customer(NameStyle, FirstName, LastName, EmailAddress, PasswordHash, PasswordSalt,    rowguid, ModifiedDate)
+values(0,  'Norman','Newcustomer','norman0@adventure-works.com','U1/CrPqSzwLTtwgBehfpIl7f1LHSFpZw1qnG1sMzFjo=','QhHP+y8=',NEWID(), GETDATE());
+
+insert into SalesLT.Address(AddressLine1, City, StateProvince, CountryRegion, PostalCode, rowguid,    ModifiedDate)
+values('6388 Lake City Way', 'Burnaby','British Columbia','Canada','V5A 3A6',NEWID(), GETDATE());
+
+insert into SalesLT.CustomerAddress(CustomerID, AddressID, AddressType, rowguid, ModifiedDate)
+values(IDENT_CURRENT('SalesLT.Customer'), IDENT_CURRENT('SalesLT.Address'), 'Home', NEWID(), '12-1-20212');
+```
+
+<img src="img/4.png">
+
+<p><b>8.</b></p>
+
+```sql
+select * from SalesLT.Customer order by ModifiedDate desc;
+```
+
+<img src="img/5.png">
+
+<p><b>10.</b></p>
+
+```sql
+delete SalesLT.Customer
+where CustomerID=IDENT_CURRENT('SalesLT.Customer');
+
+delete SalesLT.Address
+where AddressID=IDENT_CURRENT('SalesLT.Address');
+```
+
+<img src="img/6.png">
+
+<h3>INSERT DATA AS USING A TRANSACTION</h3>
+
+<p><b>1.</b></p>
+
+```sql
+begin transaction;
+
+  insert into SalesLT.Customer (NameStyle, FirstName, LastName, EmailAddress, PasswordHash, PasswordSalt,    rowguid, ModifiedDate) 
+  values(0,  'Norman','Newcustomer','norman0@adventure-works.com','U1/CrPqSzwLTtwgBehfpIl7f1LHSFpZw1qnG1sMzFjo=','QhHP+y8=', NEWID(), GETDATE());
+
+  insert into SalesLT.Address (AddressLine1, City, StateProvince, CountryRegion, PostalCode, rowguid,    ModifiedDate) 
+  values('6388 Lake City Way', 'Burnaby','British Columbia','Canada','V5A 3A6', NEWID(), GETDATE());
+
+  insert into SalesLT.CustomerAddress (CustomerID, AddressID, AddressType, rowguid, ModifiedDate)
+  values(IDENT_CURRENT('SalesLT.Customer'), IDENT_CURRENT('SalesLT.Address'), 'Home', NEWID(), '12-1-20212');
+
+commit transaction;
+```
+
+<img src="img/7.png">
+
+<h3>HANDLE ERRORS AND EXPLICITLY ROLLBACK TRANSACTIONS</h3>
+
+<p><b>1.</b></p>
+
+```sql
+begin transaction;
+
+  insert into SalesLT.Customer (NameStyle, FirstName, LastName, EmailAddress, PasswordHash, PasswordSalt,    rowguid, ModifiedDate) 
+  values(0,  'Norman','Newcustomer','norman0@adventure-works.com','U1/CrPqSzwLTtwgBehfpIl7f1LHSFpZw1qnG1sMzFjo=','QhHP+y8=', NEWID(), GETDATE());
+
+  insert into SalesLT.Address (AddressLine1, City, StateProvince, CountryRegion, PostalCode, rowguid,    ModifiedDate) 
+  values('6388 Lake City Way', 'Burnaby','British Columbia','Canada','V5A 3A6', NEWID(), GETDATE());
+
+  insert into SalesLT.CustomerAddress (CustomerID, AddressID, AddressType, rowguid, ModifiedDate)
+  values(IDENT_CURRENT('SalesLT.Customer'), IDENT_CURRENT('SalesLT.Address'), 'Home', '16765338-dbe4-4421-b5e9-3836b9278e63', GETDATE());
+
+commit transaction;
+```
+
+<img src="img/8.png">
+
+<p><b>5.</b></p>
+
+```sql
+begin try
+begin transaction;
+
+  insert into SalesLT.Customer (NameStyle, FirstName, LastName, EmailAddress, PasswordHash, PasswordSalt,    rowguid, ModifiedDate) 
+  values(0,  'Norman','Newcustomer','norman0@adventure-works.com','U1/CrPqSzwLTtwgBehfpIl7f1LHSFpZw1qnG1sMzFjo=','QhHP+y8=',NEWID(), GETDATE());
+
+  insert into SalesLT.Address (AddressLine1, City, StateProvince, CountryRegion, PostalCode, rowguid,    ModifiedDate) 
+  values('6388 Lake City Way', 'Burnaby','British Columbia','Canada','V5A 3A6',NEWID(), GETDATE());
+
+  insert into SalesLT.CustomerAddress (CustomerID, AddressID, AddressType, rowguid, ModifiedDate)
+  values(IDENT_CURRENT('SalesLT.Customer'), IDENT_CURRENT('SalesLT.Address'), 'Home', '16765338-dbe4-4421-b5e9-3836b9278e63', GETDATE());
+
+commit transaction;
+print 'Transaction committed.';
+
+end try
+begin catch
+  rollback transaction;
+  print 'Transaction rolled back.';
+end catch;
+```
+
+<img src="img/9.png">
+
+<h3>CHECK THE TRANSACTION STATE BEFORE ROLLING BACK</h3>
+
+<p><b>1.</b></p>
+
+```sql
+begin try
+begin transaction;
+
+  insert into SalesLT.Customer (NameStyle, FirstName, LastName, EmailAddress, PasswordHash, PasswordSalt, rowguid, ModifiedDate) 
+  values(0, 'Norman','Newcustomer','norman0@adventure-works.com','U1/CrPqSzwLTtwgBehfpIl7f1LHSFpZw1qnG1sMzFjo=','QhHP+y8=',NEWID(), GETDATE());
+
+  insert into SalesLT.Address (AddressLine1, City, StateProvince, CountryRegion, PostalCode, rowguid,  ModifiedDate) 
+  values('6388 Lake City Way', 'Burnaby','British Columbia','Canada','V5A 3A6',NEWID(), GETDATE());
+
+  insert into SalesLT.CustomerAddress (CustomerID, AddressID, AddressType, rowguid, ModifiedDate)
+  values(IDENT_CURRENT('SalesLT.Customer'), IDENT_CURRENT('SalesLT.Address'), 'Home', '16765338-dbe4-4421-b5e9-3836b9278e63', GETDATE());
+
+commit transaction;
+print 'Transaction committed.';
+
+end try
+begin catch
+  print 'An error occurred.'
+  if (XACT_STATE()) <> 0
+  begin
+    print 'Transaction in process.'
+    rollback transaction;
+    print 'Transaction rolled back.';
+  end;
+end catch
+```
+
+<img src="img/10.png">
+
+<p><b>3.</b></p>
+
+```sql
+begin try
+begin transaction;
+
+  insert into SalesLT.Customer (NameStyle, FirstName, LastName, EmailAddress, PasswordHash, PasswordSalt, rowguid, ModifiedDate) 
+  values(0, 'Norman','Newcustomer','norman0@adventure-works.com','U1/CrPqSzwLTtwgBehfpIl7f1LHSFpZw1qnG1sMzFjo=','QhHP+y8=',NEWID(), GETDATE());
+
+  insert into SalesLT.Address (AddressLine1, City, StateProvince, CountryRegion, PostalCode, rowguid,  ModifiedDate) 
+  values('6388 Lake City Way', 'Burnaby','British Columbia','Canada','V5A 3A6',NEWID(), GETDATE());
+
+  insert into SalesLT.CustomerAddress (CustomerID, AddressID, AddressType, ModifiedDate)
+  values(IDENT_CURRENT('SalesLT.Customer'), IDENT_CURRENT('SalesLT.Address'), 'Home', GETDATE());
+
+commit transaction;
+print 'Transaction committed.';
+end try
+begin catch
+  print 'An error occurred.'
+  if (XACT_STATE()) <> 0
+  begin
+    print 'Transaction in process.'
+    rollback transaction;
+    print 'Transaction rolled back.';
+  end;
+end catch
+```
+
+<img src="img/11.png">
+
+<p><b>6.</b></p>
+
+```sql
+begin try
+begin transaction;
+
+  insert into SalesLT.Customer (NameStyle, FirstName, LastName, EmailAddress, PasswordHash, PasswordSalt, rowguid, ModifiedDate)
+  values(0, 'Ann','Othercustomr','ann0@adventure-works.com','U1/CrPqSzwLTtwgBehfpIl7f1LHSFpZw1qnG1sMzFjo=','QhHP+y8=',NEWID(), GETDATE());;
+
+  insert into SalesLT.Address (AddressLine1, City, StateProvince, CountryRegion, PostalCode, rowguid,  ModifiedDate) 
+  values('6388 Lake City Way', 'Burnaby','British Columbia','Canada','V5A 3A6',NEWID(), GETDATE());
+
+  insert into SalesLT.CustomerAddress (CustomerID, AddressID, AddressType, ModifiedDate)
+  values(IDENT_CURRENT('SalesLT.Customer'), IDENT_CURRENT('SalesLT.Address'), 'Home', GETDATE());
+
+commit transaction;
+print 'Transaction committed.';
+
+throw 51000, 'Some kind of error', 1;
+
+end try
+begin catch
+  print 'An error occurred.'
+  if (XACT_STATE()) <> 0
+  begin
+    print 'Transaction in process.'
+    rollback transaction;
+    print 'Transaction rolled back.';
+  end;
+end catch
+```
+
+<img src="img/12.png">
+
