@@ -541,10 +541,6 @@ end;
 
 <img src="img/20.png">
 
-<p>Corrección:</p>
-
-<img src="img/21.png">
-
 <hr>
 
 <h2>RESUMEN</h2>
