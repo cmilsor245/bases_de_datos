@@ -272,5 +272,59 @@ END CATCH;
 <h2>DESCRIPCIÓN DE LA SIMULTANEIDAD</h2>
 
 ```
+Una característica principal de las bases de datos multiusuario es la simultaneidad. La simultaneidad usa el bloqueo con el fin de que los datos sigan siendo coherentes con muchos usuarios que actualizan y leen datos al mismo tiempo. Por ejemplo, debido a los costos de envío, todos nuestros productos tienen un aumento de precio de USD 5. Al mismo tiempo, debido al tipo de moneda, todos los productos tienen una reducción del precio del 3 %. Si estas actualizaciones se producen exactamente al mismo tiempo, el precio final será variable y es probable que haya muchos errores. Mediante el bloqueo, puede asegurarse de que una actualización se completará antes de que comience la otra.
+
+La simultaneidad se produce en el nivel de transacción. Una transacción de escritura puede impedir que otras transacciones actualicen e incluso lean los mismos datos. Igualmente, una transacción de lectura puede bloquear a otros lectores o incluso a algunos escritores. Por esta razón, es importante evitar transacciones excesivamente largas o transacciones que abarquen cantidades excesivas de datos.
+
+Hay muchos niveles de aislamiento de transacción específicos que se pueden usar para definir cómo un sistema de base de datos controla varios usuarios. Para los fines de este módulo, veremos categorías amplias de nivel de aislamiento, bloqueo optimista y bloqueo pesimista.
+```
+
+<h3>SIMULTANEIDAD OPTIMISTA</h3>
 
 ```
+Con el bloqueo optimista, se supone que se ocurrirán pocos conflictos de actualizaciones. Al principio de la transacción, se registra el estado inicial de los datos. Antes de que se confirme la transacción, el estado actual se compara con el estado inicial. Si los estados son iguales, se completa la transacción. Si los estados son diferentes, se revierte la transacción.
+
+Por ejemplo, tiene una tabla que contiene los pedidos de ventas de los últimos años. Estos datos se actualizan con poca frecuencia, pero los informes se ejecutan a menudo. Mediante el bloqueo optimista, las transacciones no se bloquean entre sí y el sistema se ejecuta de manera más eficaz. Desafortunadamente, se encontraron errores en los datos de los últimos años y es necesario realizar actualizaciones. Mientras una transacción actualiza cada fila, al mismo tiempo otra realiza una edición secundaria en una sola fila. Como el estado de los datos cambió mientras se ejecutaba la transacción inicial, se revierte toda la transacción.
+```
+
+<h3>SIMULTANEIDAD PESIMISTA</h3>
+
+```
+Con el bloqueo pesimista, se supone se producen muchas actualizaciones en los datos al mismo tiempo. Mediante el uso de bloqueos, solo puede ocurrir una actualización al mismo tiempo y las lecturas de los datos no se pueden realizar mientras ocurren actualizaciones. Esto puede evitar reversiones de gran tamaño, como las del ejemplo anterior, pero puede hacer que las consultas se bloqueen innecesariamente.
+
+Es importante tener en cuenta la naturaleza de los datos y las consultas que se ejecutan en los datos a la hora de decidir si se debe usar la simultaneidad optimista o pesimista a fin de garantizar un rendimiento óptimo.
+```
+
+<h3>AISLAMIENTO DE INSTANTÁNEA</h3>
+
+```
+Hay cinco niveles de aislamiento distintos en SQL Server, pero para este módulo solo nos centraremos en READ_COMMITTED_SNAPSHOT_OFF y READ_COMMITTED_SNAPSHOT_ON. READ_COMMITTED_SNAPSHOT_OFF es el nivel de aislamiento predeterminado para SQL Server. READ_COMMITTED_SNAPSHOT_ON es el nivel de aislamiento predeterminado para Azure SQL Database.
+
+READ_COMMITTED_SNAPSHOT_OFF bloqueará las filas afectadas hasta el final de la transacción si la consulta usa el nivel de aislamiento de transacción de lectura confirmada. Si bien es posible que se produzcan algunas actualizaciones, como la creación de una fila, esto evitará la mayoría de los conflictos en los datos que se leen o actualizan. Esta es la simultaneidad pesimista.
+
+READ_COMMITTED_SNAPSHOT_ON toma una instantánea de los datos. A continuación, se realizan actualizaciones en esa instantánea, lo que permite que otras conexiones consulten los datos originales. Al final de la transacción, el estado actual de los datos se compara con la instantánea. Si los datos son iguales, se confirma la transacción. Si los datos son distintos, la transacción se revierte.
+
+Para cambiar el nivel de aislamiento a READ_COMMITTED_SNAPSHOT_ON, emita el comando siguiente:
+```
+
+```sql
+ALTER DATABASE *db_name* SET READ_COMMITTED_SNAPSHOT ON;
+```
+
+```
+Para cambiar el nivel de aislamiento a READ_COMMITTED_SNAPSHOT_OFF, emita el comando siguiente:
+```
+
+```sql
+ALTER DATABASE *db_name* SET READ_COMMITTED_SNAPSHOT OFF;
+```
+
+```
+Si se modificó la base de datos para activar la instantánea de lectura confirmada, cualquier transacción que use el nivel de aislamiento de lectura confirmada predeterminada usará el bloqueo optimista.
+```
+
+<hr>
+
+<h2>EJERCICIO</h2>
+
+<h3></h3>
