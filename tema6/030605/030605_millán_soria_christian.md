@@ -229,3 +229,23 @@ Error=50000
 ```
 El número de error se notifica ahora correctamente.
 ```
+
+<h3>CENTRALIZACIÓN DEL CONTROL DE ERRORES</h3>
+
+```
+Otro problema importante con el uso de @@ERROR para el control de errores es que es difícil centralizarlo dentro del código de T-SQL. El control de errores tiende a terminar disperso por todo el código. Sería posible centralizar el control de errores mediante @@ERROR hasta cierto punto, por medio de etiquetas e instrucciones GOTO. Sin embargo, la mayoría de los desarrolladores lo desaprobaría hoy en día al considerarlo una mala práctica en la creación de código.
+```
+
+<h3>CREACIÓN DE ALERTAS DE ERROR</h3>
+
+```
+Con determinadas categorías de errores, los administradores pueden crear alertas de SQL Server, ya que quieren recibir una notificación en cuanto se produzcan. Esto puede aplicarse incluso a los mensajes de error definidos por el usuario. Por ejemplo, es posible que quiera generar una alerta cada vez que se rellene un registro de transacciones. Las alertas se usan normalmente para llamar la atención de los administradores sobre los errores de gravedad alta (por ejemplo, gravedad 19 o superior).
+```
+
+<h3>GENERACIÓN DE ALERTAS</h3>
+
+```
+Se pueden crear alertas para mensajes de error específicos. El servicio de alertas lo que hace es registrarse como un servicio de devolución de llamada con el servicio de registro de eventos. Esto significa que las alertas solo funcionan en los errores registrados.
+
+Hay dos maneras de que un error genere una alerta: puede usar la opción WITH LOG al generar el error o se puede alterar el mensaje para que se registre ejecutando sp_altermessage. La opción WITH LOG solo afecta a la instrucción actual. El uso de sp_altermessage cambia el comportamiento del error en todo el uso futuro. La modificación de errores del sistema mediante sp_altermessage solo es posible desde SQL Server 2005 SP3 o SQL Server 2008 SP1 en adelante.
+```
