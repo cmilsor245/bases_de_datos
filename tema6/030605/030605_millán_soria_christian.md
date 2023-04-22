@@ -576,3 +576,19 @@ end catch;
 <h2>COMPROBACIÓN DE CONOCIMIENTO</h2>
 
 <img src="img/15.png">
+
+<hr>
+
+<h2>RESUMEN</h2>
+
+```
+Un aspecto fundamental en el desarrollo de cualquier aplicación de T-SQL es el modo de controlar los errores. Si se controlan mal, un error puede detener el programa inmediatamente. En este módulo se le ha mostrado cómo controlar y administrar los errores. Ha visto cómo generar errores intencionadamente, configurar alertas para que se activen cuando se produzcan errores y cómo crear un control estructurado de errores complejo.
+
+En este módulo ha aprendido a:
+
+· Generar errores mediante la instrucción RAISERROR.
+· Generar errores mediante la instrucción THROW.
+· Use la variable del sistema @@ERROR.
+· Crear errores personalizados.
+· Crear alertas que se activen cuando se produzcan errores.
+```
