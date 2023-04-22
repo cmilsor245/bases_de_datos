@@ -126,3 +126,84 @@ Para ejecutar varios procedimientos que no necesitan ejecutarlos en paralelo, us
 
 Los procedimientos de inicio deben estar en la base de datos maestra.
 ```
+
+<hr>
+
+<h2>PASE DE PARÁMETROS A PROCEDIMIENTOS ALMACENADOS</h2>
+
+```
+Una de las ventajas de usar procedimientos almacenados es que puede pasarles parámetros en tiempo de ejecución. Los parámetros de entrada se pueden usar para filtrar los resultados de la consulta, como en el predicado de una cláusula WHERE o el valor de un operador TOP. Los parámetros de procedimiento también pueden devolver valores al programa de llamada si el parámetro se marca como OUTPUT. También puede asignar un valor predeterminado a un parámetro.
+```
+
+<h3>PARÁMETROS DE ENTRADA</h3>
+
+```
+Los procedimientos almacenados declaran sus parámetros de entrada por nombre y tipo de datos en el encabezado de la instrucción CREATE PROCEDURE. A continuación, el parámetro se usa como una variable local dentro del cuerpo del procedimiento. Puede declarar y usar más de un parámetro en un procedimiento almacenado. Los parámetros de entrada son el tipo predeterminado de parámetro.
+
+Los nombres de parámetro deben ir precedidos del carácter @ y ser únicos en el ámbito del procedimiento.
+
+Para pasar un parámetro a un procedimiento almacenado, use la sintaxis siguiente:
+```
+
+```sql
+EXEC <schema_name>.<procedure_name> @<parameter_name> = 'VALUE'
+```
+
+```
+Por ejemplo, un procedimiento almacenado denominado ProductsBySupplier en el esquema de productos se ejecutaría con un parámetro denominado supplierid con el código siguiente:
+```
+
+```sql
+EXEC Products.ProductsBySupplier @supplierid = 5
+```
+
+```
+Es un procedimiento recomendado pasar valores de parámetro como pares nombre-valor. Varios parámetros se separan con comas. Por ejemplo, si el parámetro se denomina customerid y el valor que se va a pasar es 5, use el código siguiente:
+```
+
+```sql
+EXEC customers.customerid @customerid=5
+```
+
+```
+También puede pasar parámetros por posición, omitiendo el nombre del parámetro. Sin embargo, los parámetros se deben pasar por nombre o por posición; no se puede mezclar la forma en que se pasan los parámetros al procedimiento. Si los parámetros se pasan por orden, deben estar en el mismo orden en el que aparecen en la instrucción CREATE PROCEDURE.
+
+Puede pasar valores como una constante o como una variable, como:
+```
+
+```sql
+EXEC customers.customerid @CustomerID
+```
+
+```
+Sin embargo, no se puede usar una función para pasar un parámetro. Por ejemplo, el código siguiente generaría un error:
+```
+
+```sql
+EXEC customers.customerid GETDATE()
+```
+
+```
+Compruebe que los parámetros son del tipo de datos correcto. Por ejemplo, si un procedimiento acepta un NVARCHAR, realice el pase en el formato de cadena de caracteres Unicode: N'string'.
+
+Puede ver nombres de parámetros y tipos de datos en Azure Data Studio o SQL Server Management Studio (SSMS). Expanda la lista de objetos de base de datos hasta que vea la carpeta Procedimientos almacenados, debajo de la carpeta Programación.
+```
+
+<img src="img/3.png">
+
+```
+Se muestran los nombres de dos partes de los procedimientos almacenados, junto con una carpeta Parameters que contiene para cada parámetro:
+
+· Nombre del parámetro.
+· Tipo de datos.
+· Una flecha de entrada que indica un parámetro de entrada.
+· Una flecha de salida que indica un parámetro de salida.
+
+Puede consultar una vista de catálogo del sistema como sys.parameters para recuperar definiciones de parámetros junto con el identificador de objeto.
+```
+
+<h3>VALORES PREDETERMINADOS</h3>
+
+```
+
+```
