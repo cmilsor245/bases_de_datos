@@ -544,3 +544,18 @@ end;
 <p>Corrección:</p>
 
 <img src="img/21.png">
+
+<hr>
+
+<h2>RESUMEN</h2>
+
+```
+La programación con Transact-SQL puede ser tan sencilla como crear una serie de instrucciones SELECT, o más compleja mediante la aplicación de lotes, lógica condicional y bucles para controlar el flujo del programa.
+
+En este módulo ha aprendido a:
+
+· Usar los elementos de lenguaje de T-SQL para tareas de programación sencillas.
+· Comprender cómo administra los lotes SQL Server.
+· Declarar y asignar variables y sinónimos.
+· Usar bloques IF y WHILE para controlar el flujo del programa.
+```
