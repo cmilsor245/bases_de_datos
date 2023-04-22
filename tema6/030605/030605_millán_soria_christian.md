@@ -499,5 +499,46 @@ end catch;
 <p><b>2.</b></p>
 
 ```sql
-
+create procedure dbo.GetErrorInfo as
+print 'Error Number: '+CAST(ERROR_NUMBER() as varchar(10));
+print 'Error Message: '+ERROR_MESSAGE();
+print 'Error Severity: '+CAST(ERROR_SEVERITY() as varchar(10));
+print 'Error State: '+CAST(ERROR_STATE() as varchar(10));
+print 'Error Line: '+CAST(ERROR_LINE() as varchar(10));
+print 'Error Proc: '+coalesce(ERROR_PROCEDURE(), 'Not within procedure');
 ```
+
+<img src="img/11.png">
+
+<p><b>4.</b></p>
+
+```sql
+declare @num varchar(20)='0';
+
+begin try
+  print 5./cast(@num as numeric(10,4));
+end try
+begin catch
+  execute dbo.GetErrorInfo;
+end catch;
+```
+
+<img src="img/12.png">
+
+<h3>RETHROW THE EXISTING ERROR BACK TO A CLIENT</h3>
+
+<p><b>1.</b></p>
+
+```sql
+declare @num varchar(20)='0';
+
+begin try
+  print 5./cast(@num as numeric(10,4));
+end try
+begin catch
+  execute dbo.GetErrorInfo; 
+  throw;
+end catch;
+```
+
+<img src="img/13.png">
