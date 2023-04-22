@@ -356,4 +356,133 @@ EXECUTE sp_executesql
 
 <hr>
 
-<h2></h2>
+<h2>CREACIÓN DE FUNCIONES DEFINIDAS POR EL USUARIO</h2>
+
+```
+Las funciones definidas por el usuario (UDF) son similares a los procedimientos almacenados en el sentido de que se almacenan por separado de las tablas en la base de datos. Estas funciones aceptan parámetros, realizan una acción y, luego, devuelven el resultado de la acción como un valor único (un valor escalar) o un conjunto de resultados (con valores de tabla). A continuación, puede usar la función en lugar de una tabla al escribir una instrucción SELECT. Las funciones definidas por el usuario están diseñadas para realizar cálculos y usar el resultado en otra instrucción. Por su parte, los procedimientos almacenados pueden encapsular la función y la instrucción, e incluso modificar datos de la base de datos.
+
+Revisaremos tres tipos de funciones definidas por el usuario. Para obtener más información sobre las distintas funciones, consulte la documentación de referencia de T-SQL.
+```
+
+<h3>FUNCIONES CON VALORES DE TABLA INSERTADAS</h3>
+
+```
+Las funciones con valores de tabla (TVF) insertadas son la función más sencilla creada a partir de una instrucción SELECT y son la opción preferida para el rendimiento.
+
+En el ejemplo siguiente, se crea una función con valores de tabla con un parámetro de entrada para unitprice.
+```
+
+```sql
+CREATE FUNCTION SalesLT.ProductsListPrice(@cost money)  
+RETURNS TABLE  
+AS  
+RETURN  
+    SELECT ProductID, Name, ListPrice  
+    FROM SalesLT.Product  
+    WHERE ListPrice > @cost;
+```
+
+```
+Cuando la función con valores de tabla se ejecuta con un valor para el parámetro, se devuelven todos los productos con un precio unitario superior a este valor.
+
+El código siguiente usa la función con valores de tabla en lugar de una tabla.
+```
+
+```sql
+SELECT Name, ListPrice  
+FROM SalesLT.ProductsListPrice(500);
+```
+
+<h3>FUNCIONES CON VALORES DE TABLA DE VARIAS INSTRUCCIONES</h3>
+
+```
+A diferencia de las TVF insertadas, las funciones con valores de tabla de varias instrucciones (MSTVF) pueden tener más de una instrucción y presentan requisitos de sintaxis diferentes.
+
+Observe que en el código siguiente se usa BEGIN/END además de RETURN:
+```
+
+```sql
+CREATE FUNCTION Sales.mstvf_OrderStatus 
+     ( @CustomerID int )
+RETURNS 
+@Results TABLE 
+     ( CustomerID int, OrderDate datetime )
+AS
+BEGIN
+     INSERT INTO @Results
+     SELECT CustomerID, OrderDate
+     FROM Sales.Customer AS SC 
+     INNER JOIN Sales.SalesOrderHeader AS SOH 
+        ON SC.CustomerID = SOH.CustomerID
+     WHERE Status >= 5
+ RETURN;
+END;
+GO;
+```
+
+```
+Una vez que se haya creado, debe hacer referencia a la MSTVF en lugar de una tabla, igual que en la función insertada anterior. También puede hacer referencia a la salida en la cláusula FROM y combinarla con otras tablas.
+```
+
+```sql
+SELECT *
+FROM Sales.mstvf_OrderStatus(22);
+```
+
+<h3>CONSIDERACIONES DE RENDIMIENTO</h3>
+
+```
+El optimizador de consultas no puede calcular cuántas filas se devolverán para una función con valores de tabla de varias instrucciones, pero sí puede hacerlo en el caso de una función con valores de tabla insertada. Por lo tanto, use una TVF insertada cuando sea posible para mejorar el rendimiento. Si no necesita combinar la MSTVF con otras tablas o si sabe que el resultado solo serán unas pocas filas, el impacto en el rendimiento no es muy importante. Si espera un conjunto de resultados grande y necesita realizar una combinación con otras tablas, considere la posibilidad de usar una tabla temporal para almacenar los resultados y, luego, realizar la combinación con la tabla temporal.
+
+En SQL Server, versiones 2017 y posteriores, Microsoft introdujo características para el procesamiento inteligente de consultas con el fin de mejorar el rendimiento de MSTVF. Vea más detalles sobre las características de procesamiento de consultas inteligentes en la documentación de referencia de T-SQL.
+```
+
+<h3>FUNCIONES ESCALARES DEFINIDAS POR EL USUARIO</h3>
+
+```
+Una función escalar definida por el usuario devuelve solo un valor, a diferencia de las funciones con valores de tabla y, por tanto, suele usarse para instrucciones simples y frecuentes.
+
+Este es un ejemplo para obtener el precio de la lista de productos para un producto específico en un día determinado:
+```
+
+```sql
+CREATE FUNCTION dbo.ufn_GetProductListPrice
+(@ProductID [int], @OrderDate [datetime])
+RETURNS [money] 
+AS 
+BEGIN
+    DECLARE @ListPrice money;
+        SELECT @ListPrice = plph.[ListPrice]
+        FROM [Production].[Product] p 
+        INNER JOIN [Production].[ProductListPriceHistory] plph 
+        ON p.[ProductID] = plph.[ProductID] 
+            AND p.[ProductID] = @ProductID 
+            AND StartDate = @OrderDate
+    RETURN @ListPrice;
+END;
+GO
+```
+
+```
+Para esta función, se deben proporcionar ambos parámetros para obtener el valor. Según cuál sea la función, puede incluirla en la instrucción SELECT en una consulta más compleja.
+```
+
+```sql
+SELECT dbo.ufn_GetProductListPrice (707, '2011-05-31')
+```
+
+<h3>ENLACE DE UNA FUNCIÓN A OBJETOS A LOS QUE SE HACE REFERENCIA</h3>
+
+```
+SCHEMABINDING es opcional al crear la función. Al especificar SCHEMABINDING, enlaza la función a los objetos a los que hace referencia y, luego, los objetos no se pueden modificar si no se modifica también la función. Es necesario modificar o quitar la función para eliminar las dependencias antes de modificar el objeto.
+
+SCHEMABINDING se elimina si se produce alguna de las circunstancias siguientes:
+
+· Se quita la función.
+· Se modifica la función con la instrucción ALTER sin especificar SCHEMABINDING.
+```
+
+<hr>
+
+<h2>EJERCICIO</h2>
+
