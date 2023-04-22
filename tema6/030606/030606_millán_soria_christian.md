@@ -532,3 +532,62 @@ end catch
 
 <img src="img/12.png">
 
+<h3>EXPLORE TRANSACTION CONCURRENCY</h3>
+
+<p><b>4.</b></p>
+
+```sql
+begin transaction;
+
+  insert into SalesLT.Customer (NameStyle, FirstName, LastName, EmailAddress, PasswordHash, PasswordSalt,    rowguid, ModifiedDate) 
+  values(0,  'Yeta','Nothercustomer','yeta0@adventure-works.com','U1/CrPqSzwLTtwgBehfpIl7f1LHSFpZw1qnG1sMzFjo=','QhHP+y8=', NEWID(), GETDATE());
+
+  insert into SalesLT.Address (AddressLine1, City, StateProvince, CountryRegion, PostalCode, rowguid,    ModifiedDate) 
+  values('2067 Park Lane', 'Redmond','Washington','United States','98007', NEWID(), GETDATE());
+
+  insert into SalesLT.CustomerAddress (CustomerID, AddressID, AddressType, rowguid, ModifiedDate)
+  values(IDENT_CURRENT('SalesLT.Customer'), IDENT_CURRENT('SalesLT.Address'), 'Home', NEWID(), GETDATE());
+
+commit transaction;
+```
+
+<img src="img/13.png">
+
+<p><b>5.</b></p>
+
+```sql
+select count(*) from SalesLT.Customer
+```
+
+<img src="img/14.png">
+
+<h3>CHANGE HOW CONCURRENCY IS HANDLED ON A DATABASE</h3>
+
+<p><b>1.</b></p>
+
+```sql
+alter database AdventureWorks set read_committed_snapshot on with rollback immediate
+go
+```
+
+<img src="img/15.png">
+
+<hr>
+
+<h2>COMPROBACIÓN DE CONOCIMIENTO</h2>
+
+<img src="img/16.png">
+
+<hr>
+
+<h2>RESUMEN</h2>
+
+```
+Ahora que completó este módulo, ya sabe qué es una transacción y cómo se compara con los lotes de SQL. Aprendió a construir una transacción y dónde colocar las palabras clave BEGIN TRANSACTION y COMMIT o ROLLBACK TRANSACTION al usar el control estructurado de errores. Ahora que ha completado este módulo, puede hacer lo siguiente:
+
+· Describir transacciones
+· Comparar transacciones y lotes
+· Crear y administrar transacciones
+· Controlar errores en las transacciones
+· Describir la simultaneidad
+```
