@@ -537,4 +537,10 @@ end;
 
 <hr>
 
-<h2></h2>
+<h2>COMPROBACIÓN DE CONOCIMIENTO</h2>
+
+<img src="img/20.png">
+
+<p>Corrección:</p>
+
+<img src="img/21.png">
