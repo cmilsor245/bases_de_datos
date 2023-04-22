@@ -389,7 +389,7 @@ Para opciones adicionales dentro de un bucle WHILE, puede usar las palabras clav
 
 <h3>DECLARE VARIABLES AND RETRIEVE VALUES</h3>
 
-<p>5.</p>
+<p><b>5.</b></p>
 
 ```sql
 declare @num int=5;
@@ -398,7 +398,7 @@ select @num as mynumber;
 
 <img src="img/12.png">
 
-<p>8.</p>
+<p><b>8.</b></p>
 
 ```sql
 declare
@@ -417,7 +417,7 @@ select @num1 + @num2 as totalnum;
 
 <h3>USE VARIABLES WITH BATCHES</h3>
 
-<p>2.</p>
+<p><b>2.</b></p>
 
 ```sql
 declare
@@ -433,8 +433,86 @@ select @empname as employee;
 
 <img src="img/14.png">
 
-<p>6.</p>
+<p><b>5.</b></p>
+
+<p>Cambio el valor de la variable "empid" a 2.</p>
 
 ```sql
+declare
+@empname nvarchar(30),
+@empid int;
+
+set @empid=2;
+
+set @empname=(select FirstName+N' '+LastName from SalesLT.Customer where CustomerID=@empid)
+
 select @empname as employee;
 ```
+
+<img src="img/15.png">
+
+<p><b>6.</b></p>
+
+<p>Sin borrar lo anterior añado "go" antes de la última sentencia.</p>
+
+```sql
+declare
+@empname nvarchar(30),
+@empid int;
+
+set @empid=2;
+
+set @empname=(select FirstName+N' '+LastName from SalesLT.Customer where CustomerID=@empid)
+
+go
+
+select @empname as employee;
+```
+
+<p>Se produce el siguiente error:</p>
+
+<img src="img/16.png">
+
+<hr>
+
+<h3>WRITE BASIC CONDITIONAL LOGIC</h3>
+
+<p><b>2.</b></p>
+
+```sql
+declare 
+@i int=8,
+@result nvarchar(20);
+
+if @i<5
+  set @result=N'Less than 5'
+else if @i<=10
+  set @result=N'Between 5 and 10'
+else if @i>10
+  set @result=N'More than 10'
+else
+  set @result=N'Unknown';
+
+select @result as result;
+```
+
+<img src="img/17.png">
+
+<p><b>5.</b></p>
+
+```sql
+declare 
+@i int=8,
+@result nvarchar(20);
+
+set @result=case
+when @i<5 then N'Less than 5'
+when @i<=10 then N'Between 5 and 10'
+when @i>10 then N'More than 10'
+else N'Unknown'
+end;
+
+select @result as result;
+```
+
+<img src="img/18.png">
