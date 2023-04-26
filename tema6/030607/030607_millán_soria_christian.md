@@ -27,22 +27,36 @@
 
 ```sql
 drop procedure if exists numeros;
-DELIMITER //
+delimiter //
 create procedure numeros()
 begin
-declare i integer; -- Opción alternativa: DECLARE i INTEGER DEFAULT 1;
-set i=1;
-while i<=20 DO
+declare i int default 1;
+while i<=20 do
 select i;
 set i=i+1;
 end while;
 end//
-DELIMITER ;
-```
-
-<p>Y después...</p>
-
-```sql
+delimiter ;
 call numeros();
 ```
 
+<img src="img/1.png">
+
+<p><b>b. Realiza un procedimiento "numeros" que muestre los 20 primeros números enteros pero con la opción "repeat".</b></p>
+
+```sql
+drop procedure if exists numeros;
+delimiter //
+create procedure numeros()
+begin
+declare i int default 1;
+repeat
+select i;
+set i=i+1;
+until i>20 end repeat;
+end//
+delimiter ;
+call numeros();
+```
+
+<img src="img/2.png">
