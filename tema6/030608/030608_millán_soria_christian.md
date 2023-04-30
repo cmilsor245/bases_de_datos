@@ -41,47 +41,103 @@ call nombre_cliente(1);
 <p><b>2. Mostrar el precioVenta y la gama de un producto dado su código.</b></p>
 
 ```sql
-drop procedure if exists 
+drop procedure if exists precio_venta;
+delimiter //
+create procedure ()
+begin
+
+end//
+delimiter ;
+call ();
 ```
 
 <p><b>3. Mostrar toda la información de un pedido dado su código (fechaEsperada, fechaEntrega, fechaPedido, estado y comentarios).</b></p>
 
 ```sql
 drop procedure if exists 
+delimiter //
+create procedure ()
+begin
+
+end//
+delimiter ;
+call ();
 ```
 
 <p><b>4. Realizar una función que me devuelva la suma de pagos que ha realizado un cliente. Pasa el código por parámetro.</b></p>
 
 ```sql
 drop procedure if exists 
+delimiter //
+create procedure ()
+begin
+
+end//
+delimiter ;
+call ();
 ```
 
 <p><b>5. Realizar un método o procedimiento que muestre el total en euros de un pedido. Pasa el código por parámetro.</b></p>
 
 ```sql
 drop procedure if exists 
+delimiter //
+create procedure ()
+begin
+
+end//
+delimiter ;
+call ();
 ```
 
 <p><b>6. Mostrar el nombre de un cliente dado su código. Controla en caso de que no se encuentre, mostrando un mensaje por ejemplo.</b></p>
 
 ```sql
 drop procedure if exists 
+delimiter //
+create procedure ()
+begin
+
+end//
+delimiter ;
+call ();
 ```
 
 <p><b>7. Realizar una función que me devuelva la suma de pagos que ha realizado un cliente. Pasa el código por parámetro. Controla en caso de que no se encuentre, en ese caso devuelve un -1.</b></p>
 
 ```sql
 drop procedure if exists 
+delimiter //
+create procedure ()
+begin
+
+end//
+delimiter ;
+call ();
 ```
 
 <p><b>8. Realizar un método o procedimiento que muestre el total en euros de un pedido. Pasa el código por parámetro. Controla en caso de que no se encuentre, devolviendo un 0. Pasa otro parámetro como límite, si lo supera, se lanza una excepción propia y devuelve un 0.</b></p>
 
 ```sql
 drop procedure if exists 
+delimiter //
+create procedure ()
+begin
+
+end//
+delimiter ;
+call ();
 ```
 
 <p><b>9. Realiza un resumen con informe de las estadísticas de los pedidos realizados por meses y por años.</b></p>
 
 ```sql
 drop procedure if exists 
+delimiter //
+create procedure ()
+begin
+
+end//
+delimiter ;
+call ();
 ```
