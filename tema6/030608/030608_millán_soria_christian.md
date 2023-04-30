@@ -149,14 +149,27 @@ call suma_pago_cliente_controlado(2);
 <p><b>8. Realizar un método o procedimiento que muestre el total en euros de un pedido. Pasa el código por parámetro. Controla en caso de que no se encuentre, devolviendo un 0. Pasa otro parámetro como límite, si lo supera, se lanza una excepción propia y devuelve un 0.</b></p>
 
 ```sql
-drop procedure if exists ;
+drop procedure if exists mostrar_total_pedido;
 delimiter //
-create procedure ()
+create procedure mostrar_total_pedido(in codigo int, in limite decimal(15,2))
 begin
-
-end//
+declare total_pedido decimal(15,2);
+select sum(detalle_pedido.cantidad*producto.precio_venta) into total_pedido
+from pedido
+inner join detalle_pedido on pedido.codigo_pedido=detalle_pedido.codigo_pedido
+inner join producto on detalle_pedido.codigo_producto=producto.codigo_producto
+where pedido.codigo_pedido=codigo;
+if total_pedido is null then
+select 0 as total_en_euros;
+elseif total_pedido>limite then
+signal sqlstate '45000' set message_text='El total en euros del pedido supera el límite máximo permitido.';
+select 0 as total_en_euros;
+else
+select total_pedido as total_en_euros;
+end if;
+end //
 delimiter ;
-call ();
+call mostrar_total_pedido(13, 100);
 ```
 
 <img src="img/8.png">
@@ -166,12 +179,20 @@ call ();
 ```sql
 drop procedure if exists ;
 delimiter //
-create procedure ()
+create procedure estadisticas_pedidos()
 begin
-
-end//
+select 
+year(fecha_pedido) as anio,
+monthname(fecha_pedido) as mes,
+count(*) as cantidad_pedidos,
+sum(d.precio_unidad*d.cantidad) as monto_total
+from pedido p
+join detalle_pedido d on p.codigo_pedido=d.codigo_pedido
+group by year(fecha_pedido), month(fecha_pedido)
+order by anio desc, month(fecha_pedido) desc;
+end //
 delimiter ;
-call ();
+call estadisticas_pedidos();
 ```
 
 <img src="img/9.png">
