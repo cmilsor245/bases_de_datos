@@ -23,4 +23,8 @@
 
 <hr>
 
-<p><b>1. </b></p>
+<p><b>1. Mostrar el nombre de un cliente dado su código.</b></p>
+
+```sql
+
+```
