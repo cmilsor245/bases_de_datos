@@ -26,5 +26,15 @@
 <p><b>1. Mostrar el nombre de un cliente dado su código.</b></p>
 
 ```sql
-
+use jardineria;
+drop procedure if exists nombre_cliente;
+delimiter //
+create procedure nombre_cliente(codigo int)
+begin
+select nombre_cliente, codigo_cliente from cliente where codigo_cliente=codigo;
+end//
+delimiter ;
+call nombre_cliente(1);
 ```
+
+<img src="img/1.png">
