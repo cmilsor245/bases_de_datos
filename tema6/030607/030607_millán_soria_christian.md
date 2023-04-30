@@ -60,3 +60,33 @@ call numeros();
 ```
 
 <img src="img/2.png">
+
+<p><b>c. Explica qué está realizando este código.</b></p>
+
+```sql
+drop procedure if exists numeros;
+delimiter //
+create procedure numeros()
+begin
+declare i integer default 1;
+declare nums varchar(100) default "";
+while i<=20 DO
+set nums=CONCAT(nums, " ", i);
+set i=i+1;
+end while;
+select nums as numeros;
+end//
+delimiter ;
+```
+
+<p>Crea un procedimiento llamado "numeros" que genera una cadena de texto que contiene los números del 1 al 20 separados por un espacio.</p>
+
+<p>El procedimiento comienza eliminando cualquier versión anterior del procedimiento "numeros" si existe. Luego, establece el delimitador en "//" para indicar el final del procedimiento y permitir el uso de múltiples sentencias SQL.</p>
+
+<p>Después, se define una variable i con un valor inicial de 1 y otra variable llamada "nums" que se utilizará para almacenar los números. A continuación, se inicia un bucle WHILE que se ejecutará hasta que i sea mayor que 20.</p>
+
+<p>Dentro del bucle, se concatena el valor actual de i a la variable "nums" utilizando la función CONCAT y se establece el valor de i en i + 1.</p>
+
+<p>Una vez que el bucle se ha completado y se han agregado todos los números a la variable "nums", se selecciona la variable "nums" y se le da un alias de "numeros".</p>
+
+<p>Por último, se restablece el delimitador a su valor predeterminado ";" para indicar el final de la sentencia SQL CREATE PROCEDURE.</p>
