@@ -90,7 +90,7 @@ drop procedure if exists total_euros;
 delimiter //
 create procedure total_euros(codigo int)
 begin
-
+select 
 end//
 delimiter ;
 call total_euros();
@@ -101,14 +101,18 @@ call total_euros();
 <p><b>6. Mostrar el nombre de un cliente dado su código. Controla en caso de que no se encuentre, mostrando un mensaje por ejemplo.</b></p>
 
 ```sql
-drop procedure if exists ;
+drop procedure if exists nombre_cliente_controlado;
 delimiter //
-create procedure ()
+create procedure nombre_cliente_controlado(codigo int)
 begin
-
-end//
+if not exists(select 1 from cliente where codigo_cliente=codigo) then
+select 'Error: El cliente no existe.' as mensaje;
+else
+select nombre_cliente from cliente where codigo_cliente=codigo;
+end if;
+end //
 delimiter ;
-call ();
+call nombre_cliente_controlado(2);
 ```
 
 <img src="img/6.png">
