@@ -71,14 +71,19 @@ call info_pedido(1);
 <p><b>4. Realizar una función que me devuelva la suma de pagos que ha realizado un cliente. Pasa el código por parámetro.</b></p>
 
 ```sql
-drop procedure if exists suma_pagos_cliente;
+drop procedure if exists suma_pago_cliente_controlado;
 delimiter //
-create procedure suma_pago_cliente(codigo int)
+create procedure suma_pago_cliente_controlado(codigo int)
 begin
-select sum(total) from pago inner join cliente on pago.codigo_cliente=cliente.codigo_cliente where codigo_cliente=codigo;
-end//
+declare suma_total decimal(10,2);
+select sum(total) into suma_total
+from pago
+inner join cliente on pago.codigo_cliente=cliente.codigo_cliente
+where cliente.codigo_cliente=codigo;
+select coalesce(suma_total, -1) as total_pagos;
+end //
 delimiter ;
-call suma_pago_cliente(1);
+call suma_pago_cliente_controlado(1);
 ```
 
 <img src="img/4.png">
@@ -120,14 +125,23 @@ call nombre_cliente_controlado(2);
 <p><b>7. Realizar una función que me devuelva la suma de pagos que ha realizado un cliente. Pasa el código por parámetro. Controla en caso de que no se encuentre, en ese caso devuelve un -1.</b></p>
 
 ```sql
-drop procedure if exists ;
+drop procedure if exists suma_pago_cliente_controlado;
 delimiter //
-create procedure ()
+create procedure suma_pago_cliente_controlado(codigo int)
 begin
-
-end//
+declare suma_total decimal(10,2);
+select sum(total) into suma_total
+from pago
+inner join cliente on pago.codigo_cliente=cliente.codigo_cliente
+where cliente.codigo_cliente=codigo;
+if suma_total is null then
+select -1 as total_pagos;
+else
+select suma_total as total_pagos;
+end if;
+end //
 delimiter ;
-call ();
+call suma_pago_cliente_controlado(2);
 ```
 
 <img src="img/7.png">
