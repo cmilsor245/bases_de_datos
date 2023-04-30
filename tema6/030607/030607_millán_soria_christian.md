@@ -184,3 +184,87 @@ call impares();
 <p>Finalmente, se selecciona la variable "impar" y se le da un alias de "numeros_impares" como resultado de la ejecución del procedimiento.</p>
 
 <img src="img/6.png">
+
+<p><b>3. Crear un procedimiento llamado "generar_cuentas" que, dado un número "n" y su nombre de dominio, permita obtener n cuentas del tipo "usu_1@dominio", usu_2@dominio", etc. Se deberá comprobar que el dominio no esté vacío y el número n sea entero positivo. Ejemplo de llamada: call generar_cuentas(3, "ies.org");</b></p>
+
+<p><b>a. Opción de "while".</b></p>
+
+```sql
+drop procedure if exists generar_cuentas;
+delimiter //
+create procedure generar_cuentas(n integer, dominio varchar(50))
+begin
+declare i integer default 0;
+if(n>0) then
+if(dominio is not null and CHAR_LENGTH(dominio)>0) then
+while(i<n) DO
+set i=i+1;
+select concat('usu_', i, '@', dominio) as email;
+end while;
+else
+signal sqlstate '45000' set message_text='El dominio no debe ser vacío';
+end if;
+else
+signal sqlstate '45000' set message_text='N debe ser un valor positivo';
+end if;
+end//
+delimiter ;
+call generar_cuentas(3, "ies.org");
+```
+
+<img src="img/7.png">
+
+<p><b>Opción de "repeat".</b></p>
+
+```sql
+drop procedure if exists generar_cuentas;
+delimiter //
+create procedure generar_cuentas(n integer, dominio varchar(50))
+begin
+declare i integer default 0;
+if(n>0) then
+if(dominio is not null and char_length(dominio)>0) then
+repeat
+set i=i+1;
+select concat('usu_', i, '@', dominio) AS email;
+until i=n end repeat;
+else
+signal sqlstate '45000' set message_text='El dominio no debe ser vacío';
+end if;
+else
+signal sqlstate '45000' set message_text='N debe ser un valor positivo';
+end if;
+end//
+delimiter ;
+call generar_cuentas(13, 'gmail.com');
+```
+
+<img src="img/8.png">
+
+<p><b>4. Realiza un procedimiento "nimpares" que, dado un parámetro "n", muestre los n primeros números impares en el siguiente formato: 1, 3, 5, 7, ...</b></p>
+
+```sql
+drop procedure if exists nimpares;
+delimiter //
+create procedure nimpares(n int)
+begin
+declare i int default 1;
+declare contador int default 0;
+declare impares varchar(255) default "";
+while contador<n do
+if i%2=1 then
+if contador>0 then
+set impares=concat(impares, ", ");
+End if;
+set impares=concat(impares, i);
+set contador=contador + 1;
+end if;
+set i=i+1;
+end while;
+select impares as numeros_impares;
+end//
+delimiter ;
+call nimpares(13);
+```
+
+<img src="img/9.png">
