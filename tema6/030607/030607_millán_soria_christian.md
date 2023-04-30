@@ -85,8 +85,102 @@ delimiter ;
 
 <p>Después, se define una variable i con un valor inicial de 1 y otra variable llamada "nums" que se utilizará para almacenar los números. A continuación, se inicia un bucle WHILE que se ejecutará hasta que i sea mayor que 20.</p>
 
-<p>Dentro del bucle, se concatena el valor actual de i a la variable "nums" utilizando la función CONCAT y se establece el valor de i en i + 1.</p>
+<p>Dentro del bucle, se concatena el valor actual de i a la variable "nums" utilizando la función "concat" y se establece el valor de i en i+1.</p>
 
 <p>Una vez que el bucle se ha completado y se han agregado todos los números a la variable "nums", se selecciona la variable "nums" y se le da un alias de "numeros".</p>
 
-<p>Por último, se restablece el delimitador a su valor predeterminado ";" para indicar el final de la sentencia SQL CREATE PROCEDURE.</p>
+<p>Por último, se restablece el delimitador a su valor predeterminado ";" para indicar el final de la sentencia "sql create procedure".</p>
+
+<img src="img/3.png">
+
+<p><b>2.</b></p>
+
+<p><b>a. Opción de "repeat".</b></p>
+
+```sql
+drop procedure if exists impares;
+delimiter //
+create procedure impares()
+begin
+declare i integer; -- opción alternativa: declare i integer default 0;
+set i=0;
+repeat
+set i=i+1;
+if mod(i,2)<>0 then
+select i;
+end if;
+until i>=20
+end repeat;
+end//
+delimiter ;
+```
+
+```sql
+call impares();
+```
+
+<img src="img/4.png">
+
+<p><b>b. Opción de "while".</b></p>
+
+```sql
+drop procedure if exists impares;
+delimiter //
+create procedure impares()
+begin
+declare i integer default 1;
+declare count integer default 0;
+while count<10 do
+if mod(i, 2)<>0 then
+select i;
+set count=count+1;
+end if;
+set i=i+1;
+end while;
+end//
+delimiter ;
+call impares();
+```
+
+<img src="img/5.png">
+
+<p><b>c. Usando cadena. Explica el siguiente código:</b></p>
+
+```sql
+drop procedure if exists impares;
+delimiter //
+create procedure impares()
+begin
+declare i integer;
+declare impar varchar(100) default "";
+set i=1;
+while i<=20 do
+if mod(i,2)< 0 then
+set impar=concat(impar," ",i);
+end if;
+set i=i+1;
+end while;
+select impar as numeros_impares;
+end//
+delimiter ;
+```
+
+```sql
+call impares();
+```
+
+<p>Crea un procedimiento llamado "impares" que utiliza una cadena de texto para almacenar los números impares del 1 al 20 y luego muestra esta cadena como resultado.</p>
+
+<p>Primero, se elimina cualquier versión anterior del procedimiento "impares" si existe y se establece el delimitador en "//" para permitir el uso de múltiples sentencias SQL.</p>
+
+<p>Luego, se declaran dos variables: i, que se inicializa en 1, y "impar", que se utiliza para almacenar los números impares.</p>
+
+<p>Después, se inicia un bucle "while" que se ejecutará hasta que i sea mayor que 20.</p>
+
+<p>Dentro del bucle, se verifica si i es un número impar utilizando la función MOD. Si es impar, se agrega a la cadena "impar" utilizando la función "concat" para concatenar el número al final de la cadena.</p>
+
+<p>Después, se incrementa el valor de i en 1 y se continúa con la siguiente iteración del bucle "while".</p>
+
+<p>Finalmente, se selecciona la variable "impar" y se le da un alias de "numeros_impares" como resultado de la ejecución del procedimiento.</p>
+
+<img src="img/6.png">
