@@ -23,3 +23,34 @@
 
 <hr>
 
+<p><b>Crear en cada una de las tablas un disparador que registre los movimientos en la tabla para cada una de las siguientes circunstancias:</b></p>
+
+<li><b>Antes de un INSERT.</b></li>
+
+<li><b>Antes de un UPDATE.</b></li>
+
+<li><b>Antes de un DELETE.</b></li>
+
+<p><b>Para ello, se deberá insertar, actualizar y borrar datos para demostrar su correcto funcionamiento.</b></p>
+
+<p><b>Además, para cada una de las preguntas se deberá hacer lo siguiente (siempre que sea posible):</b></p>
+
+<li><b>Crear una vista.</b></li>
+
+<li><b>Crear un procedimiento.</b></li>
+
+<li><b>Crear una función.</b></li>
+
+<p><b>*Utilizar cursores y bucles siempre que sea posible.</b></p>
+
+<hr>
+
+<h2>BLOQUE 1</h2>
+
+<p><b>1. Hallar, por orden alfabético, los nombres de los departamentos cuyo director lo es en funciones y no en propiedad.</b></p>
+
+```sql
+
+```
+
+<img src="img/1.png">
