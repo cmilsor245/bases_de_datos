@@ -33,6 +33,43 @@
 
 <p><b>Para ello, se deberá insertar, actualizar y borrar datos para demostrar su correcto funcionamiento.</b></p>
 
+<p>Creo una tabla secundaria para cada una de las tablas de la base de datos, donde se almacenarán los movimientos de su tabla correspondiente.</p>
+
+```sql
+create table `tcentr_triggers`(
+  `id` int not null auto_increment,
+  `tipo` varchar(45) null,
+  `fecha` datetime null default current_timestamp,
+  primary key (`id`)
+);
+
+/******************************************************/
+
+create table `tdepto_triggers`(
+  `id` int not null auto_increment,
+  `tipo` varchar(45) null,
+  `fecha` datetime null default current_timestamp,
+  primary key (`id`)
+);
+
+/******************************************************/
+
+create table `temple_triggers`(
+  `id` int not null auto_increment,
+  `tipo` varchar(45) null,
+  `fecha` datetime null default current_timestamp,
+  primary key (`id`)
+);
+```
+
+<img src="img/1.png">
+
+<p>Ahora creo los triggers de cada tipo para cada tabla.</p>
+
+```sql
+
+```
+
 <p><b>Además, para cada una de las preguntas se deberá hacer lo siguiente (siempre que sea posible):</b></p>
 
 <li><b>Crear una vista.</b></li>
@@ -53,4 +90,4 @@
 
 ```
 
-<img src="img/1.png">
+<img src="img/2.png">
