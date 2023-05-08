@@ -67,8 +67,72 @@ create table `temple_triggers`(
 <p>Ahora creo los triggers de cada tipo para cada tabla.</p>
 
 ```sql
+delimiter //
+create trigger registro1_tcentr after insert on tcentr
+for each row
+  begin
+    insert into tcentr_triggers(tipo) value('after insert');
+  end//
+delimiter ;
 
+/*********************************************************************/
+
+delimiter //
+create trigger registro2_tcentr before insert on tcentr
+for each row
+  begin
+    insert into tcentr_triggers(tipo) value('before insert');
+  end//
+delimiter ;
+
+/*********************************************************************/
+
+delimiter //
+create trigger registro3_tcentr after update on tcentr
+for each row
+  begin
+    insert into tcentr_triggers(tipo) value('after update');
+  end//
+delimiter ;
+
+/*********************************************************************/
+
+delimiter //
+create trigger registro4_tcentr before update on tcentr
+for each row
+  begin
+    insert into tcentr_triggers(tipo) value('before update');
+  end//
+delimiter ;
+
+/*********************************************************************/
+
+delimiter //
+create trigger registro5_tcentr after delete on tcentr
+for each row
+  begin
+    insert into tcentr_triggers(tipo) value('after delete');
+  end//
+delimiter ;
+
+/*********************************************************************/
+
+delimiter //
+create trigger registro3_tcentr before delete on tcentr
+for each row
+  begin
+    insert into tcentr_triggers(tipo) value('before delete');
+  end//
+delimiter ;
+
+/*********************************************************************/
+
+-- igual para las tablas "tdepto" y "temple"...
 ```
+
+<p>Prueba de comportamiento correcto:</p>
+
+
 
 <p><b>Además, para cada una de las preguntas se deberá hacer lo siguiente (siempre que sea posible):</b></p>
 
