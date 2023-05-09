@@ -457,6 +457,8 @@ select * from empresa.ej7b1;
 call empresa.procedure_ej7b1();
 ```
 
+<img src="img/25.png">
+
 <p><b>7.1. En una campaña de ayuda familiar se ha decidido dar a los empleados una paga extra de 30 euros por hijo a partir del tercero inclusive. Obtener por orden alfabético para estos empleados: nombre y salario total que van a cobrar incluyendo esta paga extra. Para el resto de los empleados se debe mostrar el nombre y el salario que reciben siempre. Hacer este ejercicio de dos formas diferentes: con el operador "union" y con la expresión "case".</b></p>
 
 ```sql
@@ -520,6 +522,8 @@ delimiter ;
 call empresa.procedure_ej71b1();
 ```
 
+<img src="img/26.png">
+
 ```sql
 create view ej72b1 as
 select nomem, case when numhi>2 then salar+30*(numhi-2) else salar end as nuevo_salario from temple order by nomem;
@@ -529,6 +533,44 @@ select nomem, case when numhi>2 then salar+30*(numhi-2) else salar end as nuevo_
 select * from empresa.ej72b1;
 ```
 <img src="img/13.png">
+
+```sql
+delimiter //
+create procedure procedure_ej72b1()
+begin
+  declare nombre_empleado varchar(50);
+  declare salario_actual float;
+  declare horas_extras int;
+  declare nuevo_salario float;
+
+  declare cur_empleados cursor for select nomem, salar, numhi from temple;
+
+  open cur_empleados;
+
+  fetch cur_empleados into nombre_empleado, salario_actual, horas_extras;
+
+  while (select count(*)) do
+    if horas_extras>2 then
+      set nuevo_salario=salario_actual+(30*(horas_extras-2));
+    else
+      set nuevo_salario=salario_actual;
+    end if;
+
+    select nombre_empleado, nuevo_salario;
+
+    fetch cur_empleados into nombre_empleado, salario_actual, horas_extras;
+  end while;
+
+  close cur_empleados;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej72b1();
+```
+
+<img src="img/27.png">
 
 <p><b>8. Hallar por orden alfabético los nombres de los empleados tales que, si se les da una gratificación de 60 euros por hijo, el total de esta gratificación no supera a la décima parte de su salario.</b></p>
 
@@ -543,6 +585,47 @@ select * from empresa.ej8b1;
 
 <img src="img/14.png">
 
+```sql
+delimiter //
+create procedure procedure_ej8b1()
+begin
+  declare nom_empleado varchar(50);
+  declare sal_empleado int;
+  declare num_horas int;
+
+  declare cur_empleados cursor for select nomem, salar, numhi from temple;
+
+  create temporary table tmp_nombres(
+    nom_empleado varchar(50)
+  );
+
+  open cur_empleados;
+
+  fetch cur_empleados into nom_empleado, sal_empleado, num_horas;
+
+  while (select count(*)>0) do
+    if (60 * num_horas<=sal_empleado/10) then
+      insert into tmp_nombres values(nom_empleado);
+    end if;
+
+    fetch cur_empleados into nom_empleado, sal_empleado, num_horas;
+  end while;
+
+  close cur_empleados;
+
+  select nom_empleado from tmp_nombres order by 1;
+
+  drop temporary table if exists tmp_nombres;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej8b1();
+```
+
+<img src="img/28.png">
+
 <p><b>9. Obtener para los departamentos con un presupuesto superior a 5000 euros, su nombre junto con el nombre del centro donde está ubicado.</b></p>
 
 ```sql
@@ -555,6 +638,12 @@ select * from empresa.ej91b1;
 ```
 
 <img src="img/15.png">
+
+```sql
+
+```
+
+<img src="img/29.png">
 
 ```sql
 create view ej92b1 as
