@@ -214,4 +214,95 @@ select ifnull(comis, 0), nomem, salar from temple where numhi>1 order by 1, 2;
 select * from empresa.ej4b1;
 ```
 
-<img src="img/8.png">
+<img src="img/8.png">ç
+
+<p><b>5. Obtener salario y nombre de los empleados con dos hijos por orden decreciente de salario y por orden alfabético dentro del salario.</b></p>
+
+```sql
+create view ej5b1 as
+select salar, nomem from temple where numhi=2 order by 1 desc, 2;
+
+/******************************/
+
+select * from empresa.ej5b1;
+```
+
+<img src="img/9.png">
+
+<p><b>6. Obtener el nombre de los empleados cuya comisión es superior o igual al 50% de su salario, por orden alfabético.</b></p>
+
+```sql
+create view ej6b1 as
+select nomem from temple where comis>=salar*0.5 order by 1;
+
+/******************************/
+
+select * from empresa.ej6b1;
+```
+
+<img src="img/10.png">
+
+<p><b>7. En una campaña de ayuda familiar se ha decidido dar a los empleados una paga extra de 30 euros por hijo a partir del tercero inclusive. Obtener por orden alfabético para estos empleados: nombre y salario total que van a cobrar incluyendo esta paga extra.</b></p>
+
+```sql
+create view ej7b1 as
+select nomem, salar+30*(numhi-2) from temple where numhi>2 order by 1;
+
+/******************************/
+
+select * from empresa.ej7b1;
+```
+
+<img src="img/11.png">
+
+<p><b>7.1. En una campaña de ayuda familiar se ha decidido dar a los empleados una paga extra de 30 euros por hijo a partir del tercero inclusive. Obtener por orden alfabético para estos empleados: nombre y salario total que van a cobrar incluyendo esta paga extra. Para el resto de los empleados se debe mostrar el nombre y el salario que reciben siempre. Hacer este ejercicio de dos formas diferentes: con el operador "union" y con la expresión "case".</b></p>
+
+```sql
+create view ej71b1 as
+
+
+/******************************/
+
+select * from empresa.ej71b1;
+```
+
+<img src="img/12.png">
+
+<p><b></b></p>
+
+```sql
+create view ejb1 as
+
+
+/******************************/
+
+select * from empresa.ejb1;
+```
+
+<img src="img/13.png">
+
+<p><b></b></p>
+
+```sql
+create view ejb1 as
+
+
+/******************************/
+
+select * from empresa.ejb1;
+```
+
+<img src="img/14.png">
+
+<p><b></b></p>
+
+```sql
+create view ejb1 as
+
+
+/******************************/
+
+select * from empresa.ejb1;
+```
+
+<img src="img/15.png">
