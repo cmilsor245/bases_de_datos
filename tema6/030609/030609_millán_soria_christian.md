@@ -763,7 +763,31 @@ select * from empresa.ej3b2;
 <img src="img/37.png">
 
 ```sql
+drop procedure if exists procedure_ej3b2;
+delimiter //
+create procedure procedure_ej3b2()
+begin
+  select count(distinct nomde)as 'Nº de departamentos', round(sum(presu)/count(distinct nomde), 2) as 'Presupuesto anual medio' from tdepto;
+end //
+delimiter ;
 
+/******************************/
+
+call empresa.procedure_ej3b2();
 ```
 
 <img src="img/38.png">
+
+<p><b>4. Hallar la masa salarial anual (salario más comisión) de la empresa (se suponen 14 pagas anuales).</b></p>
+
+```sql
+
+```
+
+<img src="img/39.png">
+
+```sql
+
+```
+
+<img src="img/40.png">
