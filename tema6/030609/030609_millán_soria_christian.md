@@ -688,4 +688,62 @@ call empresa.procedure_ej102b1();
 
 <h2>BLOQUE 2</h2>
 
-<p><b>1. </b></p>
+<p><b>1. Hallar el nombre de los empleados que no tienen comisión, clasificados de manera que aparezcan primero aquellos nombres que son más cortos.</b></p>
+
+```sql
+drop view if exists ej1b2;
+create view ej1b2 as
+select nomem as 'Empleados sin comisión' from temple where comis is null order by length(nomem), 1;
+
+/******************************/
+
+select * from empresa.ej1b2;
+```
+
+<img src="img/33.png">
+
+```sql
+drop procedure procedure_ej1b2;
+delimiter //
+create procedure procedure_ej1b2()
+begin
+  select nomem as 'Empleados sin comisión' from temple where comis is null order by length(nomem), 1;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej1b2();
+```
+
+<img src="img/34.png">
+
+<p><b>2. Hallar, por orden alfabético, los nombres de los empleados suprimiendo las dos últimas letras.</b></p>
+
+```sql
+drop view ej2b2;
+create view ej2b2 as
+select substring(nomem, 1, length(nomem)-2) as 'Nombre recortado' from temple order by 1;
+
+/******************************/
+
+select * from empresa.ej2b2;
+```
+
+<img src="img/35.png">
+
+```sql
+drop procedure procedure_ej2b2;
+delimiter //
+create procedure procedure_ej2b2()
+begin
+  select substring(nomem, 1, length(nomem)-2) as 'Nombre recortado' from temple order by 1;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej2b2();
+```
+
+<img src="img/36.png">
