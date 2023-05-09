@@ -703,7 +703,7 @@ select * from empresa.ej1b2;
 <img src="img/33.png">
 
 ```sql
-drop procedure procedure_ej1b2;
+drop procedure if exists procedure_ej1b2;
 delimiter //
 create procedure procedure_ej1b2()
 begin
@@ -721,7 +721,7 @@ call empresa.procedure_ej1b2();
 <p><b>2. Hallar, por orden alfabético, los nombres de los empleados suprimiendo las dos últimas letras.</b></p>
 
 ```sql
-drop view ej2b2;
+drop view if exists ej2b2;
 create view ej2b2 as
 select substring(nomem, 1, length(nomem)-2) as 'Nombre recortado' from temple order by 1;
 
@@ -733,7 +733,7 @@ select * from empresa.ej2b2;
 <img src="img/35.png">
 
 ```sql
-drop procedure procedure_ej2b2;
+drop procedure if exists procedure_ej2b2;
 delimiter //
 create procedure procedure_ej2b2()
 begin
@@ -747,3 +747,23 @@ call empresa.procedure_ej2b2();
 ```
 
 <img src="img/36.png">
+
+<p><b>3. Hallar cuántos departamentos hay y el presupuesto anual medio de ellos.</b></p>
+
+```sql
+drop view if exists ej3b2;
+create view ej3b2 as
+select count(distinct nomde)as 'Nº de departamentos', round(sum(presu)/count(distinct nomde), 2) as 'Presupuesto anual medio' from tdepto;
+
+/******************************/
+
+select * from empresa.ej3b2;
+```
+
+<img src="img/37.png">
+
+```sql
+
+```
+
+<img src="img/38.png">
