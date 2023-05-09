@@ -167,7 +167,51 @@ delete from tcentr where numce=40;
 <p><b>1. Hallar, por orden alfabético, los nombres de los departamentos cuyo director lo es en funciones y no en propiedad.</b></p>
 
 ```sql
+create view ej1b1 as 
+select nomde from tdepto where tidir='f' order by 1;
 
+/******************************/
+
+select * from empresa.ej1b1;
 ```
 
 <img src="img/5.png">
+
+<p><b>2. Obtener un listín telefónico de los empleados del departamento 121, incluyendo nombre del empleado, número del empleado y extensión telefónica. Por orden alfabético descendente.</b></p>
+
+```sql
+create view ej2b1 as
+select nomem, numem, extel from temple where numde=121 order by 1 desc;
+
+/******************************/
+
+select * from empresa.ej2b1;
+```
+
+<img src="img/6.png">
+
+<p><b>3. Obtener por orden creciente una relación de todos los números de extensiones telefónicas de los empleados. Elimina las repeticiones.</b></p>
+
+```sql
+create view ej3b1 as
+select distinct extel from temple order by 1;
+
+/******************************/
+
+select * from empresa.ej3b1;
+```
+
+<img src="img/7.png">
+
+<p><b>4. Hallar la comisión, nombre y salario de los empleados con más de un hijo, clasificados por comisión, y dentro de la comisión por orden alfabético. El listado debe incluir también los empleados con más de un hijo aunque no tengan comisión.</b></p>
+
+```sql
+create view ej4b1 as
+select ifnull(comis, 0), nomem, salar from temple where numhi>1 order by 1, 2;
+
+/******************************/
+
+select * from empresa.ej4b1;
+```
+
+<img src="img/8.png">
