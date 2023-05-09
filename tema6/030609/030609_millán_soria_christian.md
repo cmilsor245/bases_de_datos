@@ -813,7 +813,11 @@ call empresa.procedure_ej4b2();
 ```sql
 drop view if exists ej5b2;
 create view ej5b2 as
+select nomem as 'Nombre', masa as 'Masa salarial' from(select nomem, salar as 'masa' from temple union select nomem, comis as 'masa' from temple) as temp_salarios group by nomem;
 
+/******************************/
+
+select * from empresa.ej5b2;
 ```
 
 <img src="img/41.png">
@@ -826,6 +830,10 @@ begin
   
 end //
 delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej5b2();
 ```
 
 <img src="img/42.png">
@@ -836,6 +844,10 @@ delimiter ;
 drop view if exists ej51b2;
 create view ej51b2 as
 
+
+/******************************/
+
+select * from empresa.ej51b2;
 ```
 
 <img src="img/43.png">
@@ -848,6 +860,10 @@ begin
   
 end //
 delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej51b2();
 ```
 
 <img src="img/44.png">
@@ -858,6 +874,10 @@ delimiter ;
 drop view if exists ej52b2;
 create view ej52b2 as
 
+
+/******************************/
+
+select * from empresa.ej52b2;
 ```
 
 <img src="img/45.png">
@@ -870,6 +890,10 @@ begin
   
 end //
 delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej52b2();
 ```
 
 <img src="img/46.png">
@@ -880,6 +904,10 @@ delimiter ;
 drop view if exists ej53b2;
 create view ej53b2 as
 
+
+/******************************/
+
+select * from empresa.ej53b2;
 ```
 
 <img src="img/47.png">
@@ -892,6 +920,10 @@ begin
   
 end //
 delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej53b2();
 ```
 
 <img src="img/48.png">
