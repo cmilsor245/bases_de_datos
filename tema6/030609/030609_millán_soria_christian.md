@@ -781,13 +781,117 @@ call empresa.procedure_ej3b2();
 <p><b>4. Hallar la masa salarial anual (salario más comisión) de la empresa (se suponen 14 pagas anuales).</b></p>
 
 ```sql
+drop view if exists ej4b2;
+create view ej4b2 as
+select sum((salar+comis)*14) as 'Masa salarial' from temple;
 
+/******************************/
+
+select * from empresa.ej4b2;
 ```
 
 <img src="img/39.png">
 
 ```sql
+drop procedure if exists procedure_ej4b2;
+delimiter //
+create procedure procedure_ej4b2()
+begin
+  select sum((salar+comis)*14) as 'Masa salarial' from temple;
+end //
+delimiter ;
 
+/******************************/
+
+call empresa.procedure_ej4b2();
 ```
 
 <img src="img/40.png">
+
+<p><b>5. Hallar la masa salarial anual (salario más comisión) de cada empleado (se suponen 14 pagas anuales). Hacer el ejercicio de diferentes maneras: con el operador "union", con la función "ifnull", con la función "if" y con la expresión "case".</b></p>
+
+```sql
+drop view if exists ej5b2;
+create view ej5b2 as
+
+```
+
+<img src="img/41.png">
+
+```sql
+drop procedure if exists procedure_ej5b2;
+delimiter //
+create procedure_ej5b2()
+begin
+  
+end //
+delimiter ;
+```
+
+<img src="img/42.png">
+
+<p>"ifnull":</p>
+
+```sql
+drop view if exists ej51b2;
+create view ej51b2 as
+
+```
+
+<img src="img/43.png">
+
+```sql
+drop procedure if exists procedure_ej51b2;
+delimiter //
+create procedure_ej51b2()
+begin
+  
+end //
+delimiter ;
+```
+
+<img src="img/44.png">
+
+<p>"if":</p>
+
+```sql
+drop view if exists ej52b2;
+create view ej52b2 as
+
+```
+
+<img src="img/45.png">
+
+```sql
+drop procedure if exists procedure_ej52b2;
+delimiter //
+create procedure_ej52b2()
+begin
+  
+end //
+delimiter ;
+```
+
+<img src="img/46.png">
+
+<p>"case":</p>
+
+```sql
+drop view if exists ej53b2;
+create view ej53b2 as
+
+```
+
+<img src="img/47.png">
+
+```sql
+drop procedure if exists procedure_ej53b2;
+delimiter //
+create procedure_ej53b2()
+begin
+  
+end //
+delimiter ;
+```
+
+<img src="img/48.png">
