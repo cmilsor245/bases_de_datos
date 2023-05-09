@@ -118,7 +118,7 @@ delimiter ;
 /*********************************************************************/
 
 delimiter //
-create trigger registro3_tcentr before delete on tcentr
+create trigger registro6_tcentr before delete on tcentr
 for each row
   begin
     insert into tcentr_triggers(tipo) value('before delete');
@@ -132,7 +132,23 @@ delimiter ;
 
 <p>Prueba de comportamiento correcto:</p>
 
+```sql
+insert into tcentr values(30, 'test', 'test');
+```
 
+<img src="img/2.png">
+
+```sql
+update tcentr set numce=40 where numce=30;
+```
+
+<img src="img/3.png">
+
+```sql
+delete from tcentr where numce=40;
+```
+
+<img src="img/4.png">
 
 <p><b>Además, para cada una de las preguntas se deberá hacer lo siguiente (siempre que sea posible):</b></p>
 
@@ -154,4 +170,4 @@ delimiter ;
 
 ```
 
-<img src="img/2.png">
+<img src="img/5.png">
