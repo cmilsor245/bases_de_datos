@@ -177,6 +177,21 @@ select * from empresa.ej1b1;
 
 <img src="img/5.png">
 
+```sql
+delimiter //
+create procedure procedure_ej1b1()
+begin
+  select nomde from tdepto where tidir='f' order by 1;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej1b1();
+```
+
+<img src="img/19.png">
+
 <p><b>2. Obtener un listín telefónico de los empleados del departamento 121, incluyendo nombre del empleado, número del empleado y extensión telefónica. Por orden alfabético descendente.</b></p>
 
 ```sql
@@ -189,6 +204,21 @@ select * from empresa.ej2b1;
 ```
 
 <img src="img/6.png">
+
+```sql
+delimiter //
+create procedure procedure_ej2b1(in numde_param int)
+begin
+  select nomem, numem, extel from temple where numde=numde_param order by nomem desc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej2b1(121);
+```
+
+<img src="img/20.png">
 
 <p><b>3. Obtener por orden creciente una relación de todos los números de extensiones telefónicas de los empleados. Elimina las repeticiones.</b></p>
 
@@ -203,6 +233,58 @@ select * from empresa.ej3b1;
 
 <img src="img/7.png">
 
+```sql
+delimiter //
+create procedure procedure_ej3b1()
+begin
+  declare extel_value varchar(255);
+  declare done int default false;
+
+  declare temple_cursor cursor for select extel from temple;
+
+  declare extel_cursor cursor for select distinct extel from temple order by 1;
+
+  create temporary table if not exists unique_extel (extel_value varchar(255));
+
+  open temple_cursor;
+
+  repeat
+    fetch temple_cursor into extel_value;
+
+    if not exists(select * from unique_extel where extel_value=extel_value) then
+      insert into unique_extel values(extel_value);
+    end if;
+
+    if(extel_value is null) then
+      set done=true;
+    end if;
+  until done end repeat;
+
+  close temple_cursor;
+
+  open extel_cursor;
+
+  repeat
+    fetch extel_cursor into extel_value;
+
+    if(extel_value is not null) then
+      select extel_value;
+    end if;
+  until extel_value is null end repeat;
+
+  close extel_cursor;
+
+  drop table if exists unique_extel;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej3b1();
+```
+
+<img src="img/21.png">
+
 <p><b>4. Hallar la comisión, nombre y salario de los empleados con más de un hijo, clasificados por comisión, y dentro de la comisión por orden alfabético. El listado debe incluir también los empleados con más de un hijo aunque no tengan comisión.</b></p>
 
 ```sql
@@ -214,7 +296,44 @@ select ifnull(comis, 0), nomem, salar from temple where numhi>1 order by 1, 2;
 select * from empresa.ej4b1;
 ```
 
-<img src="img/8.png">ç
+<img src="img/8.png">
+
+```sql
+delimiter //
+create procedure procedure_ej4b1()
+begin
+  declare finalizado int default false;
+  declare comision decimal(10, 2);
+  declare nombre_empleado varchar(50);
+  declare salario decimal(10, 2);
+
+  declare cursor_datos_temple cursor for 
+    select ifnull(comis, 0), nomem, salar 
+    from temple 
+    where numhi>1 
+    order by 1, 2;
+
+  declare continue handler for not found set finalizado = true;
+
+  open cursor_datos_temple;
+
+  while not finalizado do
+    fetch cursor_datos_temple into comision, nombre_empleado, salario;
+    if not finalizado then
+      select comision, nombre_empleado, salario;
+    end if;
+  end while;
+
+  close cursor_datos_temple;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej4b1();
+```
+
+<img src="img/22.png">
 
 <p><b>5. Obtener salario y nombre de los empleados con dos hijos por orden decreciente de salario y por orden alfabético dentro del salario.</b></p>
 
