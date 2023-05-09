@@ -629,6 +629,7 @@ call empresa.procedure_ej92b1();
 <p><b>10. Para los empleados del departamento de Nóminas, obtener el nombre, salario y número de hijos. Hacer el ejercicio de dos formas: utilizando un producto cartesiano y con la cláusula "join".</b></p>
 
 ```sql
+drop view of exists ej101b1;
 create view ej101b1 as
 select e.nomem, e.salar, e.numhi from temple e, tdepto d  where e.numde=d.numde and d.nomde='nominas';
 
@@ -640,6 +641,23 @@ select * from empresa.ej101b1;
 <img src="img/17.png">
 
 ```sql
+drop procedure if exists procedure_ej10b1;
+delimiter //
+create procedure procedure_ej101b1()
+begin
+  select e.nomem, e.salar, e.numhi from temple e, tdepto d  where e.numde=d.numde and d.nomde='nominas';
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej101b1();
+```
+
+<img src="img/31.png">
+
+```sql
+drop view if exists ej102b1;
 create view ej102b1 as
 select e.nomem, e.salar, e.numhi from temple e join tdepto d on e.numde=d.numde where d.nomde='nominas';
 
@@ -649,6 +667,22 @@ select * from empresa.ej102b1;
 ```
 
 <img src="img/18.png">
+
+```sql
+drop procedure if exists procedure_ej102b1;
+delimiter //
+create procedure procedure_ej102b1()
+begin
+  select e.nomem, e.salar, e.numhi from temple e join tdepto d on e.numde=d.numde where d.nomde='nominas';
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej102b1();
+```
+
+<img src="img/32.png">
 
 <hr>
 
