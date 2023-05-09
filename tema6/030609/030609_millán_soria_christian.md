@@ -259,7 +259,7 @@ select * from empresa.ej7b1;
 
 ```sql
 create view ej71b1 as
-
+select nomem, salar+30*(numhi-2) from temple where numhi>2 union select nomem, salar from temple where numhi<=2 order by 1;
 
 /******************************/
 
@@ -268,41 +268,62 @@ select * from empresa.ej71b1;
 
 <img src="img/12.png">
 
-<p><b></b></p>
-
 ```sql
-create view ejb1 as
-
+create view ej72b1 as
+select nomem, case when numhi>2 then salar+30*(numhi-2) else salar end as nuevo_salario from temple order by nomem;
 
 /******************************/
 
-select * from empresa.ejb1;
+select * from empresa.ej72b1;
 ```
-
 <img src="img/13.png">
 
-<p><b></b></p>
+<p><b>8. Hallar por orden alfabético los nombres de los empleados tales que, si se les da una gratificación de 60 euros por hijo, el total de esta gratificación no supera a la décima parte de su salario.</b></p>
 
 ```sql
-create view ejb1 as
-
+create view ej8b1 as
+select nomem from temple where 60*numhi<=salar/10 order by 1;
 
 /******************************/
 
-select * from empresa.ejb1;
+select * from empresa.ej8b1;
 ```
 
 <img src="img/14.png">
 
+<p><b>9. Obtener para los departamentos con un presupuesto superior a 5000 euros, su nombre junto con el nombre del centro donde está ubicado.</b></p>
+
+```sql
+create view ej91b1 as
+select d.nomde, c.nomce from tcentr c, tdepto d where c.numce=d.numce and d.presu>5000;
+
+/******************************/
+
+select * from empresa.ej91b1;
+```
+
+<img src="img/15.png">
+
+```sql
+create view ej92b1 as
+select nomde, nomce from tcentr c join tdepto d on(c.numce=d.numce) where presu>5000 union select nomde, nomce from otra_tabla t where t.presu>5000;
+
+/******************************/
+
+select * from empresa.ej92b1;
+```
+
+<img src="img/16.png">
+
 <p><b></b></p>
 
 ```sql
-create view ejb1 as
+create view ej10b1 as
 
 
 /******************************/
 
-select * from empresa.ejb1;
+select * from empresa.ej10b1;
 ```
 
-<img src="img/15.png">
+<img src="img/17.png">
