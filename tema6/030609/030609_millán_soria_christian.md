@@ -348,6 +348,42 @@ select * from empresa.ej5b1;
 
 <img src="img/9.png">
 
+```sql
+delimiter //
+create procedure procedure_ej5b1()
+begin
+  declare salario decimal(10,2);
+  declare nombre_empleado varchar(50);
+  declare var_count int;
+
+  declare cur_datos cursor for
+    select salar, nomem
+    from temple
+    where numhi=2
+    order by salar desc, nomem;
+
+  select count(*) into var_count from temple where numhi=2;
+
+  open cur_datos;
+  fetch cur_datos into salario, nombre_empleado;
+
+  while var_count>0 do
+    select salario, nombre_empleado;
+    fetch cur_datos into salario, nombre_empleado;
+    set var_count=var_count-1;
+  end while;
+
+  close cur_datos;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej5b1();
+```
+
+<img src="img/23.png">
+
 <p><b>6. Obtener el nombre de los empleados cuya comisión es superior o igual al 50% de su salario, por orden alfabético.</b></p>
 
 ```sql
@@ -361,6 +397,45 @@ select * from empresa.ej6b1;
 
 <img src="img/10.png">
 
+```sql
+delimiter //
+create procedure procedure_ej6b1()
+begin
+  declare nomem_var varchar(50);
+  declare salar_var decimal(10,2);
+  declare comis_var decimal(10,2);
+
+  declare temple_cursor cursor for select nomem, salar, comis from temple;
+
+  create temporary table if not exists temple_reporte_tabla (
+    nomem varchar(50)
+  );
+
+  open temple_cursor;
+  fetch temple_cursor into nomem_var, salar_var, comis_var;
+
+  while (nomem_var is not null) do
+    if(comis_va>=(salar_var * 0.5)) then
+      insert into temple_reporte_tabla (nomem) values (nomem_var);
+    end if;
+    fetch temple_cursor into nomem_var, salar_var, comis_var;
+  end while;
+
+  close temple_cursor;
+
+  select nomem from temple_reporte_tabla order by nomem;
+
+  drop temporary table temple_reporte_tabla;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej6b1();
+```
+
+<img src="img/24.png">
+
 <p><b>7. En una campaña de ayuda familiar se ha decidido dar a los empleados una paga extra de 30 euros por hijo a partir del tercero inclusive. Obtener por orden alfabético para estos empleados: nombre y salario total que van a cobrar incluyendo esta paga extra.</b></p>
 
 ```sql
@@ -373,6 +448,35 @@ select * from empresa.ej7b1;
 ```
 
 <img src="img/11.png">
+
+```sql
+delimiter //
+create procedure procedure_ej7b1()
+begin
+  declare nombre_empleado varchar(50);
+  declare salario_aumentado decimal(10,2);
+
+  declare cur_emp cursor for select nomem, salar, numhi from temple where numhi>2 order by 1;
+
+  open cur_emp;
+  fetch cur_emp into nombre_empleado, salario_aumentado, num_horas;
+
+  while(SQLSTATE='00000') do
+    set salario_aumentado=salario_aumentado+(30*(num_horas-2));
+
+    select nombre_empleado, salario_aumentado;
+
+    fetch cur_emp into nombre_empleado, salario_aumentado, num_horas;
+  end while;
+
+  close cur_emp;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej7b1();
+```
 
 <p><b>7.1. En una campaña de ayuda familiar se ha decidido dar a los empleados una paga extra de 30 euros por hijo a partir del tercero inclusive. Obtener por orden alfabético para estos empleados: nombre y salario total que van a cobrar incluyendo esta paga extra. Para el resto de los empleados se debe mostrar el nombre y el salario que reciben siempre. Hacer este ejercicio de dos formas diferentes: con el operador "union" y con la expresión "case".</b></p>
 
