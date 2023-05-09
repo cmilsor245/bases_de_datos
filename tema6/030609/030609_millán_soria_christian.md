@@ -323,7 +323,7 @@ select * from empresa.ej92b1;
 
 ```sql
 create view ej101b1 as
-
+select e.nomem, e.salar, e.numhi from temple e, tdepto d  where e.numde=d.numde and d.nomde='nominas';
 
 /******************************/
 
@@ -334,7 +334,7 @@ select * from empresa.ej101b1;
 
 ```sql
 create view ej102b1 as
-
+select e.nomem, e.salar, e.numhi from temple e join tdepto d on e.numde=d.numde where d.nomde='nominas';
 
 /******************************/
 
@@ -342,3 +342,9 @@ select * from empresa.ej102b1;
 ```
 
 <img src="img/18.png">
+
+<hr>
+
+<h2>BLOQUE 2</h2>
+
+<p><b>1. </b></p>
