@@ -306,7 +306,11 @@ select * from empresa.ej91b1;
 
 ```sql
 create view ej92b1 as
-select nomde, nomce from tcentr c join tdepto d on(c.numce=d.numce) where presu>5000 union select nomde, nomce from otra_tabla t where t.presu>5000;
+select d.nomde, c.nomce  from tcentr c, tdepto d  where c.numce=d.numce and d.presu>5000
+
+union
+
+select d.nomde, c.nomce from tcentr c join tdepto d on c.numce=d.numce  where d.presu>5000 and c.nomce not in (select c.nomce from tcentr c, tdepto d where c.numce=d.numce and d.presu>5000)
 
 /******************************/
 
@@ -315,15 +319,26 @@ select * from empresa.ej92b1;
 
 <img src="img/16.png">
 
-<p><b></b></p>
+<p><b>10. Para los empleados del departamento de Nóminas, obtener el nombre, salario y número de hijos. Hacer el ejercicio de dos formas: utilizando un producto cartesiano y con la cláusula "join".</b></p>
 
 ```sql
-create view ej10b1 as
+create view ej101b1 as
 
 
 /******************************/
 
-select * from empresa.ej10b1;
+select * from empresa.ej101b1;
 ```
 
 <img src="img/17.png">
+
+```sql
+create view ej102b1 as
+
+
+/******************************/
+
+select * from empresa.ej102b1;
+```
+
+<img src="img/18.png">
