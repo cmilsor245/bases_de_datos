@@ -450,28 +450,7 @@ select * from empresa.ej7b1;
 <img src="img/11.png">
 
 ```sql
-delimiter //
-create procedure procedure_ej7b1()
-begin
-  declare nombre_empleado varchar(50);
-  declare salario_aumentado decimal(10,2);
 
-  declare cur_emp cursor for select nomem, salar, numhi from temple where numhi>2 order by 1;
-
-  open cur_emp;
-  fetch cur_emp into nombre_empleado, salario_aumentado, num_horas;
-
-  while(SQLSTATE='00000') do
-    set salario_aumentado=salario_aumentado+(30*(num_horas-2));
-
-    select nombre_empleado, salario_aumentado;
-
-    fetch cur_emp into nombre_empleado, salario_aumentado, num_horas;
-  end while;
-
-  close cur_emp;
-end //
-delimiter ;
 
 /******************************/
 
@@ -490,6 +469,56 @@ select * from empresa.ej71b1;
 ```
 
 <img src="img/12.png">
+
+```sql
+delimiter //
+create procedure procedure_ej71b1()
+begin
+  declare nom_em varchar(50);
+  declare salario decimal(10,2);
+  declare num_em int;
+
+  declare cur_empleados cursor for select nomem, salar, numhi from temple;
+
+  declare continue handler for not found set @fin=1;
+
+  set @fin=0;
+
+  create temporary table empleados_temp(
+    nom_empleado varchar(50),
+    salario_nuevo decimal(10,2)
+  );
+
+  open cur_empleados;
+
+  fetch cur_empleados into nom_em, salario, num_em;
+
+  while(@fin=0) do
+    if(num_em>2) then
+      set salario=salario+(30*(num_em-2));
+    end if;
+
+    insert into empleados_temp (nom_empleado, salario_nuevo)
+    values (nom_em, salario);
+    
+    fetch cur_empleados into nom_em, salario, num_em;
+  end while;
+
+  close cur_empleados;
+
+  select nom_empleado, salario_nuevo
+  from empleados_temp
+  where salario_nuevo is not null
+  order by 1;
+
+  drop temporary table if exists empleados_temp;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej71b1();
+```
 
 ```sql
 create view ej72b1 as
