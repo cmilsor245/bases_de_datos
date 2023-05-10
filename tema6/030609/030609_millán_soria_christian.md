@@ -1840,4 +1840,104 @@ call empresa.procedure_ej8b4();
 
 <p><b>*Los ejercicios 9, 10 y 11 son los mismos que los del bloque 3, pero ahora debemos utilizar bien las cláusulas "right" y "left" en el "join" para obtener un resultado válido en todos los casos.</b></p>
 
-<p><b>9. </b></p>
+<p><b>9. Obtener el nombre de cada departamento, junto con el nombre del centro al que pertenece.</b></p>
+
+```sql
+drop view if exists ej9b4;
+create view ej9b4 as
+select tdepto.nomde, tcentr.nomce from tdepto left join tcentr on tdepto.numce=tcentr.numce;
+
+/******************************/
+
+select * from empresa.ej9b4;
+```
+
+<img src="img/106.png">
+
+```sql
+drop procedure if exists procedure_ej9b4;
+delimiter //
+create procedure procedure_ej9b4()
+begin
+  select tdepto.nomde, tcentr.nomce from tdepto left join tcentr on tdepto.numce=tcentr.numce;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej9b4();
+```
+
+<img src="img/107.png">
+
+<p><b>10. Obtener el nombre de cada empleado, el número y el nombre del departamento al que pertenece y el nombre del correspondiente centro.</b></p>
+
+```sql
+drop view if exists ej10b4;
+create view ej10b4 as
+select
+  temple.nomem as empleado,
+  temple.numem as numero_empleado,
+  tdepto.nomde as departamento,
+  tdepto.numde as numero_departamento,
+  tcentr.nomce as centro
+from temple left join tdepto on temple.numde=tdepto.numde left join tcentr on tdepto.numce=tcentr.numce;
+
+/******************************/
+
+select * from empresa.ej10b4;
+```
+
+<img src="img/108.png">
+
+```sql
+drop procedure if exists procedure_ej10b4;
+delimiter //
+create procedure procedure_ej10b4()
+begin
+  select
+    temple.nomem as empleado,
+    temple.numem as numero_empleado,
+    tdepto.nomde as departamento,
+    tdepto.numde as numero_departamento,
+    tcentr.nomce as centro
+  from temple left join tdepto on temple.numde=tdepto.numde left join tcentr on tdepto.numce=tcentr.numce;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej10b4();
+```
+
+<img src="img/109.png">
+
+<p><b>11. Obtener, para el departamento 110, su nombre, nombre del centro y dirección, junto con el nombre del empleado que sea el director.</b></p>
+
+```sql
+drop view if exists ej11b4;
+create view ej11b4 as
+select d.nomde, c.nomce, c.señas, e.nomem from tdepto d join tcentr c on d.numce=c.numce left join temple e on d.direc=e.numem where d.numde=110;
+
+/******************************/
+
+select * from empresa.ej11b4;
+```
+
+<img src="img/110.png">
+
+```sql
+drop procedure if exists procedure_ej11b4;
+delimiter //
+create procedure procedure_ej11b4(in numde_intr int)
+begin
+  select d.nomde, c.nomce, c.señas, e.nomem from tdepto d join tcentr c on d.numce=c.numce left join temple e on d.direc=e.numem where d.numde=numde_intr;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej11b4(110);
+```
+
+<img src="img/111.png">
