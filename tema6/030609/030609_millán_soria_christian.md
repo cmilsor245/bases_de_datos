@@ -1195,7 +1195,7 @@ values(4, 'Fernando Ramirez Velez', '1989-02-28', '2015-01-01', 3, 4000.00, 500.
 ```sql
 drop view if exists ej6b3;
 create view ej6b3 as
-select nomem from temple where nomem like '%o' and substring_index(nomem, ' ', -1) like '%ez' and char_length(substring_index(nomem, ' ', 1))>=3 order by nomem asc;
+select nomem from temple where substring_index(nomem,' ', -1) like '%o' and substring_index(nomem,' ', 1) like '%ez%' and char_length(substring_index(nomem,' ', 1))>=3 order by nomem asc;
 
 /******************************/
 
@@ -1209,7 +1209,7 @@ drop procedure if exists procedure_ej6b3;
 delimiter //
 create procedure procedure_ej6b3()
 begin
-  select nomem from temple where nomem like '%o' and substring_index(nomem, ' ', -1) like '%ez' and char_length(substring_index(nomem, ' ', 1))>=3 order by nomem asc;
+  select nomem from temple where substring_index(nomem,' ', -1) like '%o' and substring_index(nomem,' ', 1) like '%ez%' and char_length(substring_index(nomem,' ', 1))>=3 order by nomem asc;
 end //
 delimiter ;
 
