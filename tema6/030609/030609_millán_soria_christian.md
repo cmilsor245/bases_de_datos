@@ -1685,3 +1685,125 @@ call empresa.procedure_ej62b4();
 ```
 
 <img src="img/95.png">
+
+<p><b>7. Hallar, por orden alfabético, los nombres de los departamentos que dependen de los que tienen un presupuesto inferior a 10000 euros. Realizar la consulta de cuatro formas distintas: con predicado "in", con predicado "any", con producto cartesiano y con "join".</b></p>
+
+<p>"in":</p>
+
+```sql
+drop view if exists ej71b4;
+create view ej71b4 as
+
+
+/******************************/
+
+select * from empresa.ej71b4;
+```
+
+<img src="img/96.png">
+
+```sql
+drop procedure if exists ej71b4;
+delimiter //
+create procedure procedure_ej71b4()
+begin
+  
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej71b4();
+```
+
+<img src="img/97.png">
+
+<p>"any":</p>
+
+```sql
+drop view if exists ej72b4;
+create view ej72b4 as
+
+
+/******************************/
+
+select * from empresa.ej72b4;
+```
+
+<img src="img/98.png">
+
+```sql
+drop procedure if exists ej72b4;
+delimiter //
+create procedure procedure_ej72b4()
+begin
+  
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej72b4();
+```
+
+<img src="img/99.png">
+
+<p>Producto cartesiano:</p>
+
+```sql
+drop view if exists ej73b4;
+create view ej73b4 as
+
+
+/******************************/
+
+select * from empresa.ej73b4;
+```
+
+<img src="img/100.png">
+
+```sql
+drop procedure if exists ej73b4;
+delimiter //
+create procedure procedure_ej73b4()
+begin
+  
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej73b4();
+```
+
+<img src="img/101.png">
+
+<p>"join":</p>
+
+```sql
+drop view if exists ej74b4;
+create view ej74b4 as
+
+
+/******************************/
+
+select * from empresa.ej74b4;
+```
+
+<img src="img/102.png">
+
+```sql
+drop procedure if exists ej74b4;
+delimiter //
+create procedure procedure_ej74b4()
+begin
+  
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej74b4();
+```
+
+<img src="img/103.png">
