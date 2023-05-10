@@ -1311,3 +1311,33 @@ call empresa.procedure_ej81b3(110);
 ```
 
 <img src="img/72.png">
+
+<p><b>8.b. Obtener, por orden alfabético, los nombres de los departamentos que tienen algún empleado con comisión.</b></p>
+
+```sql
+drop view if exists ej82b3;
+create view ej82b3 as
+select distinct tdepto.nomde from tdepto join temple on temple.numde=tdepto.numde where temple.comis is not null order by tdepto.nomde asc;
+
+/******************************/
+
+select * from empresa.ej82b3;
+```
+
+<img src="img/73.png">
+
+```sql
+drop procedure if exists procedure_ej82b3;
+delimiter //
+create procedure procedure_ej82b3()
+begin
+  select distinct tdepto.nomde from tdepto join temple on temple.numde=tdepto.numde where temple.comis is not null order by tdepto.nomde asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej82b3();
+```
+
+<img src="img/74.png">
