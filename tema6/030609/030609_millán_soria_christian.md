@@ -1081,3 +1081,33 @@ call empresa.procedure_ej2b3(121);
 ```
 
 <img src="img/58.png">
+
+<p><b>3. Obtener, por orden alfabético, los nombres y los salarios de los empleados cuyo salario es inferior a tres veces la comisión más baja existente distinta de null.</b></p>
+
+```sql
+drop view if exists ej3b3;
+create view ej3b3 as
+select nomem, salar from temple where comis is not null and salar<(select min(comis)*3 from temple where comis is not null)order by nomem asc;
+
+/******************************/
+
+select * from empresa.ej3b3;
+```
+
+<img src="img/59.png">
+
+```sql
+drop procedure if exists procedure_ej3b3;
+delimiter //
+create procedure procedure_ej3b3()
+begin
+  select nomem, salar from temple where comis is not null and salar<(select min(comis)*3 from temple where comis is not null)order by nomem asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej3b3();
+```
+
+<img src="img/60.png">
