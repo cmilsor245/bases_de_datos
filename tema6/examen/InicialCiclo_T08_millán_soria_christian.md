@@ -299,7 +299,37 @@ select porcentaje_limite_credito(1) as porcentaje_limite_credito;
 <p><b>8. Calcula cuántos pagos hemos necesitado para superar el 50% de la facturación total, si comenzamos por los de menor importe.</b></p>
 
 ```sql
+delimiter //
+create function pagos_para_50_por_ciento()
+returns int
+begin
+  declare total_facturacion numeric(15,2);
+  declare facturacion_acumulada numeric(15,2);
+  declare cantidad_pagos int default 0;
+  declare porcentaje_acumulado float default 0;
+  declare pago_actual numeric(15,2);
+  declare cursor_pagos cursor for select total from pago order by total asc;
 
+  open cursor_pagos;
+    select sum(total) into total_facturacion from pago;
+    set facturacion_acumulada=0;
+    fetch next from cursor_pagos into pago_actual;
+
+    while facturacion_acumulada<(total_facturacion/2) and porcentaje_acumulado<50 do
+      set facturacion_acumulada=facturacion_acumulada+pago_actual;
+      set porcentaje_acumulado=(facturacion_acumulada/total_facturacion)*100;
+      set cantidad_pagos=cantidad_pagos+1;
+      fetch next from cursor_pagos into pago_actual;
+    end while;
+  close cursor_pagos;
+
+  return cantidad_pagos;
+end //
+delimiter ;
+
+/**********************************************/
+
+select pagos_para_50_por_ciento();-- no me funciona (error en "total_facturacion, no he conseguido arreglarlo)
 ```
 
 <img src="img/18.png">
