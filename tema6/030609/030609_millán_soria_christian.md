@@ -1371,3 +1371,45 @@ call empresa.procedure_ej9b3();
 ```
 
 <img src="img/76.png">
+
+<p><b>10. Obtener el nombre de cada empleado, el número y el nombre del departamento al que pertenece y el nombre del correspondiente centro.</b></p>
+
+```sql
+drop view if exists ej10b3;
+create view ej10b3 as
+select
+  temple.nomem as empleado, 
+  temple.numem as numero_empleado, 
+  tdepto.nomde as departamento, 
+  tdepto.numde as numero_departamento, 
+  tcentr.nomce as centro 
+from temple join tdepto on temple.numde=tdepto.numde join tcentr on tdepto.numce=tcentr.numce;
+
+/******************************/
+
+select * from empresa.ej10b3;
+```
+
+<img src="img/77.png">
+
+```sql
+drop procedure if exists procedure_ej10b3;
+delimiter //
+create procedure procedure_ej10b3()
+begin
+  select
+    temple.nomem as empleado, 
+    temple.numem as numero_empleado, 
+    tdepto.nomde as departamento, 
+    tdepto.numde as numero_departamento, 
+    tcentr.nomce as centro 
+  from temple join tdepto on temple.numde=tdepto.numde join tcentr on tdepto.numce=tcentr.numce;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej10b3();
+```
+
+<img src="img/78.png">
