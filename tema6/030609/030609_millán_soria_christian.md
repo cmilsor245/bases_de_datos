@@ -1026,8 +1026,8 @@ call empresa.procedure_ej7b2();
 
 ```sql
 drop view if exists ej1b3;
-create vie ej1b3 as
-
+create view ej1b3 as
+select nomem from temple where salar>(select salar/2 from temple where numem=180) order by nomem asc;
 
 /******************************/
 
@@ -1039,15 +1039,45 @@ select * from empresa.ej1b3;
 ```sql
 drop procedure if exists procedure_ej1b3;
 delimiter //
-create procedure procedure_ej1b3()
+create procedure procedure_ej1b3(in numem_intr int)
 begin
-  
+  select nomem from temple where salar>(select salar/2 from temple where numem=numem_intr) order by nomem asc;
 end //
 delimiter ;
 
 /******************************/
 
-call empresa.procedure_ej1b3();
+call empresa.procedure_ej1b3(180);
 ```
 
 <img src="img/56.png">
+
+<p><b>2. Obtener, por orden alfabético, los nombres de los empleados cuyos salarios superen dos veces al mínimo salario de los empleados del departamento 121.</b></p>
+
+```sql
+drop view if exists ej2b3;
+create view ej2b3 as
+select e.nomem from temple e inner join tdepto d on e.numde=d.numde where d.numde=121 and e.salar>(2*(select min(salar) from temple where numde=121)) order by e.nomem asc;
+
+/******************************/
+
+select * from empresa.ej2b3;
+```
+
+<img src="img/57.png">
+
+```sql
+drop procedure if exists procedure_ej2b3;
+delimiter //
+create procedure procedure_ej2b3(in numde_intr int)
+begin
+  select e.nomem from temple e inner join tdepto d on e.numde=d.numde where d.numde=numde_intr and e.salar>(2*(select min(salar) from temple where numde=numde_intr)) order by e.nomem asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej2b3(121);
+```
+
+<img src="img/58.png">
