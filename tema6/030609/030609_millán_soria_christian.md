@@ -1413,3 +1413,33 @@ call empresa.procedure_ej10b3();
 ```
 
 <img src="img/78.png">
+
+<p><b>11. Obtener, para el departamento 110, su nombre, nombre del centro y dirección, junto con el nombre del empleado que sea el director.</b></p>
+
+```sql
+drop view if exists ej11b3;
+create view ej11b3 as
+select d.nomde, c.nomce, c.señas, e.nomem from tdepto d join tcentr c on d.numce=c.numce join temple e on d.direc=e.numem where d.numde=110;
+
+/******************************/
+
+select * from empresa.ej11b3;
+```
+
+<img src="img/79.png">
+
+```sql
+drop procedure if exists procedure_ej11b3;
+delimiter //
+create procedure procedure_ej11b3(in numde_intr int)
+begin
+  select d.nomde, c.nomce, c.señas, e.nomem from tdepto d join tcentr c on d.numce=c.numce join temple e on d.direc=e.numem where d.numde=numde_intr;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej11b3(110);
+```
+
+<img src="img/80.png">
