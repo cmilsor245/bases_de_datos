@@ -1837,3 +1837,7 @@ call empresa.procedure_ej8b4();
 ```
 
 <img src="img/105.png">
+
+<p><b>*Los ejercicios 9, 10 y 11 son los mismos que los del bloque 3, pero ahora debemos utilizar bien las cláusulas "right" y "left" en el "join" para obtener un resultado válido en todos los casos.</b></p>
+
+<p><b>9. </b></p>
