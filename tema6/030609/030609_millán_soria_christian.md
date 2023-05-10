@@ -1145,3 +1145,33 @@ call empresa.procedure_ej4b3();
 ```
 
 <img src="img/62.png">
+
+<p><b>5. Obtener, por orden alfabético, los nombres de los empleados cuyo primer apellido es "Mora" o empieza por "Mora".</b></p>
+
+```sql
+drop view if exists ej5b3;
+create view ej5b3 as
+select nomem from temple where nomem like 'mora%' or nomem like '% mora%' order by nomem asc;
+
+/******************************/
+
+select * from empresa.ej5b3;
+```
+
+<img src="img/63.png">
+
+```sql
+drop procedure if exists procedure_ej5b3;
+delimiter //
+create procedure procedure_ej5b3()
+begin
+  select nomem from temple where nomem like 'mora%' or nomem like '% mora%' order by nomem asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej5b3();
+```
+
+<img src="img/64.png">
