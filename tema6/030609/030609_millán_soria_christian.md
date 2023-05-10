@@ -1220,4 +1220,64 @@ call empresa.procedure_ej6b3();
 
 <img src="img/66.png">
 
-<p><b></b></p>
+<p><b>7. Obtener, utilizando el predicado "in", por orden alfabético, los nombres de los empleados del departamento 111 cuyo salario es igual a alguno de los salarios del departamento 112. ¿Cómo lo obtendrías con el predicado "any"?</b></p>
+
+<p>"in":</p>
+
+```sql
+drop view if exists ej7b3;
+create view ej7b3 as
+select nomem from temple where numde=111 and salar in(select salar from temple where numde=112) order by nomem asc;
+
+/******************************/
+
+select * from empresa.ej7b3;
+```
+
+<img src="img/67.png">
+
+```sql
+drop procedure if exists procedure_ej7b3;
+delimiter //
+create procedure procedure_ej7b3()
+begin
+  select nomem from temple where numde=111 and salar in(select salar from temple where numde=112) order by nomem asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej7b3();
+```
+
+<img src="img/68.png">
+
+<p>"any":</p>
+
+```sql
+drop view if exists ej71b3;
+create view ej71b3 as
+select nomem from temple where numde=111 and salar=any(select salar from temple where numde = 112) order by nomem asc;
+
+/******************************/
+
+select * from empresa.ej71b3;
+```
+
+<img src="img/69.png">
+
+```sql
+drop procedure if exists procedure_ej71b3;
+delimiter //
+create procedure procedure_ej71b3()
+begin
+  select nomem from temple where numde=111 and salar=any(select salar from temple where numde = 112) order by nomem asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej71b3();
+```
+
+<img src="img/70.png">
