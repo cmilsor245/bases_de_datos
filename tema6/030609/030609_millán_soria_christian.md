@@ -1175,3 +1175,49 @@ call empresa.procedure_ej5b3();
 ```
 
 <img src="img/64.png">
+
+<p><b>6. Obtener, por orden alfabético, los nombres de los empleados cuyo primer apellido termina en "ez" y su nombre de pila termina en "o" y tiene al menos tres letras.</b></p>
+
+```sql
+insert into temple (numem, nomem, fecna, fecin, numhi, salar, comis, extel, numde) 
+values(1, 'Diego Perez Rodriguez', '1990-01-01', '2019-01-01', 2, 2500.00, NULL, '1234', 1);
+
+insert into temple (numem, nomem, fecna, fecin, numhi, salar, comis, extel, numde) 
+values(2, 'Hugo Sanchez Martinez', '1995-05-12', '2020-01-01', 1, 3000.00, 200.00, '5678', 2);
+
+insert into temple (numem, nomem, fecna, fecin, numhi, salar, comis, extel, numde) 
+values(3, 'Pedro Jimenez Perez', '1993-07-20', '2018-01-01', 0, 2000.00, NULL, '4321', 2);
+
+insert into temple (numem, nomem, fecna, fecin, numhi, salar, comis, extel, numde) 
+values(4, 'Fernando Ramirez Velez', '1989-02-28', '2015-01-01', 3, 4000.00, 500.00, '8765', 3);
+```
+
+```sql
+drop view if exists ej6b3;
+create view ej6b3 as
+select nomem from temple where nomem like '%o' and substring_index(nomem, ' ', -1) like '%ez' and char_length(substring_index(nomem, ' ', 1))>=3 order by nomem asc;
+
+/******************************/
+
+select * from empresa.ej6b3;
+```
+
+<img src="img/65.png">
+
+```sql
+drop procedure if exists procedure_ej6b3;
+delimiter //
+create procedure procedure_ej6b3()
+begin
+  select nomem from temple where nomem like '%o' and substring_index(nomem, ' ', -1) like '%ez' and char_length(substring_index(nomem, ' ', 1))>=3 order by nomem asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej6b3();
+```
+
+<img src="img/66.png">
+
+<p><b></b></p>
