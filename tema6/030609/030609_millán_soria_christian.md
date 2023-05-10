@@ -1111,3 +1111,27 @@ call empresa.procedure_ej3b3();
 ```
 
 <img src="img/60.png">
+
+<p><b>4. Obtener, utilizando el predicado "between", por orden alfabético, los nombres y los salarios de los empleados con hijos cuyo salario dividido por su número de hijos cumpla una, o ambas, de las dos condiciones siguientes:</b></p>
+
+<li><b>Que sea inferior a 1200 euros.</b></li>
+
+<li><b>Que sea superior al doble de su comisión.</b></li>
+
+```sql
+drop view if exists ej4b3;
+create view ej4b3 as
+select nomem, salar from temple where numhi>0 and salar/numhi between 0 and 1200 or salar/numhi>comis*2 order by nomem asc;
+
+/******************************/
+
+select * from empresa.ej4b3;
+```
+
+<img src="img/61.png">
+
+```sql
+
+```
+
+<img src="img/62.png">
