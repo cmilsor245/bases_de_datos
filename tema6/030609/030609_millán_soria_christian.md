@@ -1131,7 +1131,17 @@ select * from empresa.ej4b3;
 <img src="img/61.png">
 
 ```sql
+drop procedure if exists procedure_ej4b3;
+delimiter //
+create procedure procedure_ej4b3()
+begin
+  select nomem, salar from temple where numhi>0 and salar/numhi between 0 and 1200 or salar/numhi>comis*2 order by nomem asc;
+end //
+delimiter ;
 
+/******************************/
+
+call empresa.procedure_ej4b3();
 ```
 
 <img src="img/62.png">
