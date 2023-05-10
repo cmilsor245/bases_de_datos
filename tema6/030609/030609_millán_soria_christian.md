@@ -825,9 +825,9 @@ select * from empresa.ej5b2;
 ```sql
 drop procedure if exists procedure_ej5b2;
 delimiter //
-create procedure_ej5b2()
+create procedure procedure_ej5b2()
 begin
-  
+  select nomem as 'Nombre', masa as 'Masa salarial' from(select nomem, salar as 'masa' from temple union select nomem, comis as 'masa' from temple) as temp_salarios group by nomem;
 end //
 delimiter ;
 
@@ -843,7 +843,7 @@ call empresa.procedure_ej5b2();
 ```sql
 drop view if exists ej51b2;
 create view ej51b2 as
-
+select nomem as 'Nombre', (salar+ifnull(comis, 0)*14) as 'Masa salarial' from temple order by 1;
 
 /******************************/
 
@@ -855,9 +855,9 @@ select * from empresa.ej51b2;
 ```sql
 drop procedure if exists procedure_ej51b2;
 delimiter //
-create procedure_ej51b2()
+create procedure procedure_ej51b2()
 begin
-  
+  select nomem as 'Nombre', (salar+ifnull(comis, 0)*14) as 'Masa salarial' from temple order by 1;
 end //
 delimiter ;
 
@@ -873,7 +873,7 @@ call empresa.procedure_ej51b2();
 ```sql
 drop view if exists ej52b2;
 create view ej52b2 as
-
+select nomem as 'Nombre', (salar+if(comis is null, 0, comis))*14 as 'Masa salarial' from temple order by 1;
 
 /******************************/
 
@@ -885,9 +885,9 @@ select * from empresa.ej52b2;
 ```sql
 drop procedure if exists procedure_ej52b2;
 delimiter //
-create procedure_ej52b2()
+create procedure procedure_ej52b2()
 begin
-  
+  select nomem as 'Nombre', (salar+if(comis is null, 0, comis))*14 as 'Masa salarial' from temple order by 1;
 end //
 delimiter ;
 
@@ -903,7 +903,7 @@ call empresa.procedure_ej52b2();
 ```sql
 drop view if exists ej53b2;
 create view ej53b2 as
-
+select nomem as 'Nombre', case when comis is null then salar*14 else(salar+comis)*14 end as 'Masa salarial' from temple order by 1;
 
 /******************************/
 
@@ -915,9 +915,9 @@ select * from empresa.ej53b2;
 ```sql
 drop procedure if exists procedure_ej53b2;
 delimiter //
-create procedure_ej53b2()
+create procedure procedure_ej53b2()
 begin
-  
+  select nomem as 'Nombre', case when comis is null then salar*14 else(salar+comis)*14 end as 'Masa salarial' from temple order by 1;
 end //
 delimiter ;
 
@@ -927,3 +927,93 @@ call empresa.procedure_ej53b2();
 ```
 
 <img src="img/48.png">
+
+<p><b>6. Hallar cuántos empleados han ingresado en el año actual. Utiliza la función "year".</b></p>
+
+```sql
+drop view if exists ej6b2;
+create view ej6b2 as
+select count(distinct nomem) as 'Nº de empleados este año' from temple where year(fecin)=2022;
+
+/******************************/
+
+select * from empresa.ej6b2;
+```
+
+<img src="img/49.png">
+
+```sql
+drop procedure if exists procedure_ej6b2;
+delimiter //
+create procedure procedure_ej6b2()
+begin
+  select count(distinct nomem) as 'Nº de empleados este año' from temple where year(fecin)=2022;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej6b2();
+```
+
+<img src="img/50.png">
+
+<p>También se puede obtener el año actual según la fecha del sistema donde se ejecuta la base de datos, en este caso mi propio ordenador, por lo que la fecha actual es 2023. El resultado es este:</p>
+
+```sql
+drop view if exists ej61b2;
+create view ej61b2 as
+select count(distinct nomem) as 'Nº de empleados este año' from temple where year(fecin)=year(now());
+
+/******************************/
+
+select * from empresa.ej61b2;
+```
+
+<img src="img/51.png">
+
+```sql
+drop procedure if exists procedure_ej61b2;
+delimiter //
+create procedure procedure_ej61b2()
+begin
+  select count(distinct nomem) as 'Nº de empleados este año' from temple where year(fecin)=year(now());
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej61b2();
+```
+
+<img src="img/52.png">
+
+<p><b>7. Hallar la diferencia entre el salario más alto y el salario más bajo.</b></p>
+
+```sql
+drop view if exists ej7b2;
+create view ej7b2 as
+select max(salar)-min(salar) as 'Diferencia' from temple;
+
+/******************************/
+
+select * from empresa.ej7b2;
+```
+
+<img src="img/53.png">
+
+```sql
+drop procedure if exists procedure_ej7b2;
+delimiter //
+create procedure procedure_ej7b2()
+begin
+  select max(salar)-min(salar) as 'Diferencia' from temple;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej7b2();
+```
+
+<img src="img/54.png">
