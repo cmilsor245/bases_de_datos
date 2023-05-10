@@ -1281,3 +1281,33 @@ call empresa.procedure_ej71b3();
 ```
 
 <img src="img/70.png">
+
+<p><b>8.a. Obtener, por orden alfabético, los nombres y comisiones de los empleados del departamento 110 si hay en él algún empleado que tenga comisión.</b></p>
+
+```sql
+drop view if exists ej81b3;
+create view ej81b3 as
+select nomem, comis from temple where numde=110 and comis is not null order by nomem asc;
+
+/******************************/
+
+select * from empresa.ej81b3;
+```
+
+<img src="img/71.png">
+
+```sql
+drop procedure if exists procedure_ej81b3;
+delimiter //
+create procedure procedure_ej81b3(in numde_intr int)
+begin
+  select nomem, comis from temple where numde=numde_intr and comis is not null order by nomem asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej81b3(110);
+```
+
+<img src="img/72.png">
