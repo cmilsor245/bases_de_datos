@@ -1593,3 +1593,95 @@ call empresa.procedure_ej4b4();
 ```
 
 <img src="img/89.png">
+
+<p><b>5. Hallar el máximo valor de la suma de los salarios de los departamentos. Queremos obtener el número de departamentos ("numde") y la suma de sus salarios, pero del departamento cuya suma de salarios es la mayor de todas.</b></p>
+
+```sql
+drop view if exists ej5b4;
+create view ej5b4 as
+select numde, sum(salar) as suma_salarios from temple where numde=(select numde from temple group by numde order by sum(salar) desc limit 1) group by numde;
+
+/******************************/
+
+select * from empresa.ej5b4;
+```
+
+<img src="img/90.png">
+
+```sql
+drop procedure if exists procedure_ej5b4;
+delimiter //
+create procedure procedure_ej5b4()
+begin
+  select numde, sum(salar) as suma_salarios from temple where numde=(select numde from temple group by numde order by sum(salar) desc limit 1) group by numde;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej5b4();
+```
+
+<img src="img/91.png">
+
+<p><b>6. Para cada departamento con presupuesto inferior a 10000 euros, hallar el nombre del centro donde está ubicado y el máximo salario de sus empleados, sólo si este excede 1500 euros. Clasificar alfabéticamente por nombre de departamento. Hacer el ejercicio de dos maneras, con producto cartesiano y con "join".</b></p>
+
+<p>Producto cartesiano:</p>
+
+```sql
+drop view if exists ej61b4;
+create view ej61b4 as
+select tc.nomce, td.nomde, max(te.salar) from tcentr tc, tdepto td, temple te where tc.numce=td.numce and td.numde=te.numde and td.presu<10000 and te.salar>1500 group by tc.nomce, td.nomde order by td.nomde asc;
+
+/******************************/
+
+select * from empresa.ej61b4;
+```
+
+<img src="img/92.png">
+
+```sql
+drop procedure if exists procedure_ej61b4;
+delimiter //
+create procedure procedure_ej61b4()
+begin
+  select tc.nomce, td.nomde, max(te.salar) from tcentr tc, tdepto td, temple te where tc.numce=td.numce and td.numde=te.numde and td.presu<10000 and te.salar>1500 group by tc.nomce, td.nomde order by td.nomde asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej61b4();
+```
+
+<img src="img/93.png">
+
+<p>"join":</p>
+
+```sql
+drop view if exists ej62b4;
+create view ej62b4 as
+select tc.nomce, td.nomde, max(te.salar) from tcentr tc join tdepto td on tc.numce=td.numce join temple te on td.numde=te.numde where td.presu<10000 and te.salar>1500 group by tc.nomce, td.nomde order by td.nomde asc;
+
+/******************************/
+
+select * from empresa.ej62b4;
+```
+
+<img src="img/94.png">
+
+```sql
+drop procedure if exists procedure_ej62b4;
+delimiter //
+create procedure procedure_ej62b4()
+begin
+  select tc.nomce, td.nomde, max(te.salar) from tcentr tc join tdepto td on tc.numce=td.numce join temple te on td.numde=te.numde where td.presu<10000 and te.salar>1500 group by tc.nomce, td.nomde order by td.nomde asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej62b4();
+```
+
+<img src="img/95.png">
