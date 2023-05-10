@@ -1807,3 +1807,33 @@ call empresa.procedure_ej74b4();
 ```
 
 <img src="img/103.png">
+
+<p><b>8. Obtener, por orden alfabético, los nombres de los departamentos cuyo presupuesto es inferior al 10% de la suma de los salarios anuales (14 pagas) de sus empleados.</b></p>
+
+```sql
+drop view if exists ej8b4;
+create view ej8b4 as
+select tdepto.nomde from tdepto inner join(select numde, sum(salar*14) as sum_salar from temple group by numde) as salarios on tdepto.numde=salarios.numde where tdepto.presu<salarios.sum_salar*0.1 order by tdepto.nomde asc;
+
+/******************************/
+
+select * from empresa.ej8b4;
+```
+
+<img src="img/104.png">
+
+```sql
+drop procedure if exists procedure_ej8b4;
+delimiter //
+create procedure procedure_ej8b4()
+begin
+  select tdepto.nomde from tdepto inner join(select numde, sum(salar*14) as sum_salar from temple group by numde) as salarios on tdepto.numde=salarios.numde where tdepto.presu<salarios.sum_salar*0.1 order by tdepto.nomde asc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej8b4();
+```
+
+<img src="img/105.png">
