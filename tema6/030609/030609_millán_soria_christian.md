@@ -1448,4 +1448,58 @@ call empresa.procedure_ej11b3(110);
 
 <h2>BLOQUE 4</h2>
 
-<p><b>1. </b></p>
+<p><b>1. Hallar, por departamentos, la edad en años cumplidos del empleado más mayor, así como la edad media del mismo (el empleado debe tener comisión). Ordenar el resultado por edades.</b></p>
+
+```sql
+drop view if exists ej1b4;
+create view ej1b4 as
+select
+  tdepto.nomde,
+  max(datediff(current_date, temple.fecna)/365) as edad_mas_viejo,
+  avg(datediff(current_date, temple.fecna)/365) as edad_media
+from tdepto join temple on tdepto.numde=temple.numde where temple.comis is not null group by tdepto.nomde order by edad_mas_viejo desc;
+
+/******************************/
+
+select * from empresa.ej1b4;
+```
+
+<img src="img/81.png">
+
+<p>Alternativa (creo que más correcta) para que los números salgan redondeados:</p>
+
+```sql
+drop view if exists ej102b4;
+create view ej102b4 as
+select
+  tdepto.nomde,
+  round(max(datediff(current_date, temple.fecna)/365),0) as edad_mas_viejo,
+  round(avg(datediff(current_date, temple.fecna)/365),0) as edad_media
+from tdepto join temple on tdepto.numde=temple.numde where temple.comis is not null group by tdepto.nomde order by edad_mas_viejo desc;
+
+/******************************/
+
+select * from empresa.ej102b4;
+```
+
+<img src="img/82.png">
+
+```sql
+drop procedure if exists procedure_ej1b4;
+delimiter //
+create procedure procedure_ej1b4()
+begin
+  select
+    tdepto.nomde, 
+    round(max(datediff(current_date, temple.fecna)/365),0) as edad_mas_viejo, 
+    round(avg(datediff(current_date, temple.fecna)/365),0) as edad_media
+  from tdepto join temple on tdepto.numde=temple.numde where temple.comis is not null group by tdepto.nomde order by edad_mas_viejo desc;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej1b4();
+```
+
+<img src="img/83.png">
