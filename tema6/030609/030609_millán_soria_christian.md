@@ -1941,3 +1941,75 @@ call empresa.procedure_ej11b4(110);
 ```
 
 <img src="img/111.png">
+
+<p><b>12. Utilizando las tablas "tcentr" y "tdepto", plantear un enunciado, de modo que para obtener la correspondiente cosulta sea necesario utilizar la cláusula "right join". Añadir en modo visual las filas necesarias a las tablas para así poder comprobar el resultado. La solución del ejercicio consta de un enunciado y una consulta.</b></p>
+
+<p>Posible enunciado:</p>
+
+<p></p>
+
+<p>Consulta:</p>
+
+```sql
+drop view if exists ej12b4;
+create view ej12b4 as
+
+
+/******************************/
+
+select * from empresa.ej12b4;
+```
+
+<img src="img/112.png">
+
+```sql
+drop procedure if exists procedure_ej12b4;
+delimiter //
+create procedure procedure_ej12b4()
+begin
+  
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej12b4();
+```
+
+<img src="img/113.png">
+
+<p><b>13. Utilizando las tablas "tdepto" y "temple", plantear un enunciado, de modo que para obtener la correspondiente cosulta sea necesario utilizar la cláusula "full join". Añadir en modo visual las filas necesarias a las tablas para así poder comprobar el resultado. La solución del ejercicio consta de un enunciado y una consulta.</b></p>
+
+<p>Posible enunciado:</p>
+
+<p></p>
+
+<p>Consulta:</p>
+
+```sql
+drop view if exists ej13b4;
+create view ej13b4 as
+
+
+/******************************/
+
+select * from empresa.ej13b4;
+```
+
+<img src="img/114.png">
+
+```sql
+drop procedure if exists procedure_ej13b4;
+delimiter //
+create procedure procedure_ej13b4()
+begin
+  
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej13b4();
+```
+
+<img src="img/115.png">
