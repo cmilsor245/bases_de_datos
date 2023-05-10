@@ -1503,3 +1503,33 @@ call empresa.procedure_ej1b4();
 ```
 
 <img src="img/83.png">
+
+<p><b>2. Agrupando por departamento y número de hijos, hallar cuántos empleados hay en cada grupo.</b></p>
+
+```sql
+drop view if exists ej2b4;
+create view ej2b4 as
+select tdepto.nomde, temple.numhi, count(*) as numempleados from temple inner join tdepto on temple.numde=tdepto.numde group by tdepto.nomde, temple.numhi;
+
+/******************************/
+
+select * from empresa.ej2b4;
+```
+
+<img src="img/84.png">
+
+```sql
+drop procedure if exists procedure_ej2b4;
+delimiter //
+create procedure procedure_ej2b4()
+begin
+  select tdepto.nomde, temple.numhi, count(*) as numempleados from temple inner join tdepto on temple.numde=tdepto.numde group by tdepto.nomde, temple.numhi;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej2b4();
+```
+
+<img src="img/85.png">
