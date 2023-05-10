@@ -1693,7 +1693,7 @@ call empresa.procedure_ej62b4();
 ```sql
 drop view if exists ej71b4;
 create view ej71b4 as
-
+select nomde from tdepto where presu<10000 and depde in(select numde from tdepto) order by nomde asc;
 
 /******************************/
 
@@ -1707,7 +1707,7 @@ drop procedure if exists ej71b4;
 delimiter //
 create procedure procedure_ej71b4()
 begin
-  
+  select nomde from tdepto where presu<10000 and depde in(select numde from tdepto) order by nomde asc;
 end //
 delimiter ;
 
@@ -1723,7 +1723,7 @@ call empresa.procedure_ej71b4();
 ```sql
 drop view if exists ej72b4;
 create view ej72b4 as
-
+select nomde from tdepto where presu<10000 and depde=any(select numde from tdepto) order by nomde asc;
 
 /******************************/
 
@@ -1737,7 +1737,7 @@ drop procedure if exists ej72b4;
 delimiter //
 create procedure procedure_ej72b4()
 begin
-  
+  select nomde from tdepto where presu<10000 and depde=any(select numde from tdepto) order by nomde asc;
 end //
 delimiter ;
 
@@ -1753,7 +1753,7 @@ call empresa.procedure_ej72b4();
 ```sql
 drop view if exists ej73b4;
 create view ej73b4 as
-
+select distinct t2.nomde from tdepto t1, tdepto t2 where t1.presu<10000 and t1.numde=t2.depde order by t2.nomde asc;
 
 /******************************/
 
@@ -1767,7 +1767,7 @@ drop procedure if exists ej73b4;
 delimiter //
 create procedure procedure_ej73b4()
 begin
-  
+  select distinct t2.nomde from tdepto t1, tdepto t2 where t1.presu<10000 and t1.numde=t2.depde order by t2.nomde asc;
 end //
 delimiter ;
 
@@ -1783,7 +1783,7 @@ call empresa.procedure_ej73b4();
 ```sql
 drop view if exists ej74b4;
 create view ej74b4 as
-
+select distinct t2.nomde from tdepto t1 join tdepto t2 on t1.numde=t2.depde where t1.presu<10000 order by t2.nomde asc;
 
 /******************************/
 
@@ -1797,7 +1797,7 @@ drop procedure if exists ej74b4;
 delimiter //
 create procedure procedure_ej74b4()
 begin
-  
+  select distinct t2.nomde from tdepto t1 join tdepto t2 on t1.numde=t2.depde where t1.presu<10000 order by t2.nomde asc;
 end //
 delimiter ;
 
