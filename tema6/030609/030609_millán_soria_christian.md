@@ -1017,3 +1017,37 @@ call empresa.procedure_ej7b2();
 ```
 
 <img src="img/54.png">
+
+<hr>
+
+<h2>BLOQUE 3</h2>
+
+<p><b>1. Obtener, por orden alfabético, los nombres de los empleados cuyos salarios superen la mitad del salario del empleado 180.</b></p>
+
+```sql
+drop view if exists ej1b3;
+create vie ej1b3 as
+
+
+/******************************/
+
+select * from empresa.ej1b3;
+```
+
+<img src="img/55.png">
+
+```sql
+drop procedure if exists procedure_ej1b3;
+delimiter //
+create procedure procedure_ej1b3()
+begin
+  
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej1b3();
+```
+
+<img src="img/56.png">
