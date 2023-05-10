@@ -1341,3 +1341,33 @@ call empresa.procedure_ej82b3();
 ```
 
 <img src="img/74.png">
+
+<p><b>9. Obtener el nombre de cada departamento, junto con el nombre del centro al que pertenece.</b></p>
+
+```sql
+drop view if exists ej9b3;
+create view ej9b3 as
+select tdepto.nomde, tcentr.nomce from tdepto join tcentr on tdepto.numce=tcentr.numce;
+
+/******************************/
+
+select * from empresa.ej9b3;
+```
+
+<img src="img/75.png">
+
+```sql
+drop procedure if exists procedure_ej9b3;
+delimiter //
+create procedure procedure_ej9b3()
+begin
+  select tdepto.nomde, tcentr.nomce from tdepto join tcentr on tdepto.numce=tcentr.numce;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej9b3();
+```
+
+<img src="img/76.png">
