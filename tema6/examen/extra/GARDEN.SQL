@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS GARDEN_XXX;
-CREATE DATABASE GARDEN_XXX CHARACTER SET utf8mb4;
-USE GARDEN_XXX;
+DROP DATABASE IF EXISTS GARDEN_CMS;
+CREATE DATABASE GARDEN_CMS CHARACTER SET utf8mb4;
+USE GARDEN_CMS;
 
 CREATE TABLE oficina (
   codigo_oficina VARCHAR(10) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE oficina (
 );
 
 CREATE TABLE empleado (
-  codigo_empleado INTEGER NOT NULL,
+  codigo_empleado_cms INTEGER NOT NULL,
   nombre VARCHAR(50) NOT NULL,
   apellido1 VARCHAR(50) NOT NULL,
   apellido2 VARCHAR(50) DEFAULT NULL,
@@ -24,9 +24,9 @@ CREATE TABLE empleado (
   codigo_oficina VARCHAR(10) NOT NULL,
   codigo_jefe INTEGER DEFAULT NULL,
   puesto VARCHAR(50) DEFAULT NULL,
-  PRIMARY KEY (codigo_empleado),
+  PRIMARY KEY (codigo_empleado_cms),
   FOREIGN KEY (codigo_oficina) REFERENCES oficina (codigo_oficina),
-  FOREIGN KEY (codigo_jefe) REFERENCES empleado (codigo_empleado)
+  FOREIGN KEY (codigo_jefe) REFERENCES empleado (codigo_empleado_cms)
 );
 
 CREATE TABLE gama_producto (
@@ -38,7 +38,7 @@ CREATE TABLE gama_producto (
 );
 
 CREATE TABLE cliente (
-  codigo_cliente INTEGER NOT NULL,
+  codigo_cliente_cms INTEGER NOT NULL,
   nombre_cliente VARCHAR(50) NOT NULL,
   nombre_contacto VARCHAR(30) DEFAULT NULL,
   apellido_contacto VARCHAR(30) DEFAULT NULL,
@@ -52,24 +52,24 @@ CREATE TABLE cliente (
   codigo_postal VARCHAR(10) DEFAULT NULL,
   codigo_empleado_rep_ventas INTEGER DEFAULT NULL,
   limite_credito NUMERIC(15,2) DEFAULT NULL,
-  PRIMARY KEY (codigo_cliente),
-  FOREIGN KEY (codigo_empleado_rep_ventas) REFERENCES empleado (codigo_empleado)
+  PRIMARY KEY (codigo_cliente_cms),
+  FOREIGN KEY (codigo_empleado_rep_ventas) REFERENCES empleado (codigo_empleado_cms)
 );
 
 CREATE TABLE pedido (
-  codigo_pedido INTEGER NOT NULL,
+  codigo_pedido_cms INTEGER NOT NULL,
   fecha_pedido date NOT NULL,
   fecha_esperada date NOT NULL,
   fecha_entrega date DEFAULT NULL,
   estado VARCHAR(15) NOT NULL,
   comentarios TEXT,
-  codigo_cliente INTEGER NOT NULL,
-  PRIMARY KEY (codigo_pedido),
-  FOREIGN KEY (codigo_cliente) REFERENCES cliente (codigo_cliente)
+  codigo_cliente_cms INTEGER NOT NULL,
+  PRIMARY KEY (codigo_pedido_cms),
+  FOREIGN KEY (codigo_cliente_cms) REFERENCES cliente (codigo_cliente_cms)
 );
 
 CREATE TABLE producto (
-  codigo_producto VARCHAR(15) NOT NULL,
+  codigo_producto_cms VARCHAR(15) NOT NULL,
   nombre VARCHAR(70) NOT NULL,
   gama VARCHAR(50) NOT NULL,
   dimensiones VARCHAR(25) NULL,
@@ -78,29 +78,29 @@ CREATE TABLE producto (
   cantidad_en_stock SMALLINT NOT NULL,
   precio_venta NUMERIC(15,2) NOT NULL,
   precio_proveedor NUMERIC(15,2) DEFAULT NULL,
-  PRIMARY KEY (codigo_producto),
+  PRIMARY KEY (codigo_producto_cms),
   FOREIGN KEY (gama) REFERENCES gama_producto (gama)
 );
 
 CREATE TABLE detalle_pedido (
-  codigo_pedido INTEGER NOT NULL,
-  codigo_producto VARCHAR(15) NOT NULL,
+  codigo_pedido_cms INTEGER NOT NULL,
+  codigo_producto_cms VARCHAR(15) NOT NULL,
   cantidad INTEGER NOT NULL,
   precio_unidad NUMERIC(15,2) NOT NULL,
   numero_linea SMALLINT NOT NULL,
-  PRIMARY KEY (codigo_pedido, codigo_producto),
-  FOREIGN KEY (codigo_pedido) REFERENCES pedido (codigo_pedido),
-  FOREIGN KEY (codigo_producto) REFERENCES producto (codigo_producto)
+  PRIMARY KEY (codigo_pedido_cms, codigo_producto_cms),
+  FOREIGN KEY (codigo_pedido_cms) REFERENCES pedido (codigo_pedido_cms),
+  FOREIGN KEY (codigo_producto_cms) REFERENCES producto (codigo_producto_cms)
 );
 
 CREATE TABLE pago (
-  codigo_cliente INTEGER NOT NULL,
+  codigo_cliente_cms INTEGER NOT NULL,
   forma_pago VARCHAR(40) NOT NULL,
   id_transaccion VARCHAR(50) NOT NULL,
   fecha_pago date NOT NULL,
   total NUMERIC(15,2) NOT NULL,
-  PRIMARY KEY (codigo_cliente, id_transaccion),
-  FOREIGN KEY (codigo_cliente) REFERENCES cliente (codigo_cliente)
+  PRIMARY KEY (codigo_cliente_cms, id_transaccion),
+  FOREIGN KEY (codigo_cliente_cms) REFERENCES cliente (codigo_cliente_cms)
 );
 
 -- Datos
