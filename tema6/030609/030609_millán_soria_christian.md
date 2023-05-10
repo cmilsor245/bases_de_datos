@@ -1563,3 +1563,33 @@ call empresa.procedure_ej3b4();
 ```
 
 <img src="img/87.png">
+
+<p><b>4. Para los departamentos cuyo salario medio supera al de la empresa, hallar cuántas extensiones telefónicas tienen. Se debe mostrar el número de departamento ("numde") y el número de extensiones telefónicas distintas que tiene cada uno de ellos.</b></p>
+
+```sql
+drop view if exists ej4b4;
+create view ej4b4 as
+select tdepto.numde, count(distinct temple.extel) as numextensiones from tdepto join temple on tdepto.numde=temple.numde where temple.salar>(select avg(salar) from temple) group by tdepto.numde having avg(temple.salar)>(select avg(salar) from temple);
+
+/******************************/
+
+select * from empresa.ej4b4;
+```
+
+<img src="img/88.png">
+
+```sql
+drop procedure if exists procedure_ej4b4;
+delimiter //
+create procedure procedure_ej4b4()
+begin
+  select tdepto.numde, count(distinct temple.extel) as numextensiones from tdepto join temple on tdepto.numde=temple.numde where temple.salar>(select avg(salar) from temple) group by tdepto.numde having avg(temple.salar)>(select avg(salar) from temple);
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej4b4();
+```
+
+<img src="img/89.png">
