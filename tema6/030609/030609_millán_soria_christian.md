@@ -1533,3 +1533,33 @@ call empresa.procedure_ej2b4();
 ```
 
 <img src="img/85.png">
+
+<p><b>3. Para cada extensión telefónica, hallar cuántos empleados la usan y el salario medio de estos.</b></p>
+
+```sql
+drop view if exists ej3b4;
+create view ej3b4 as
+select extel, count(*) as numempleados, avg(salar) as salariomedio from temple group by extel;
+
+/******************************/
+
+select * from empresa.ej3b4;
+```
+
+<img src="img/86.png">
+
+```sql
+drop procedure if exists procedure_ej3b4;
+delimiter //
+create procedure procedure_ej3b4()
+begin
+  select extel, count(*) as numempleados, avg(salar) as salariomedio from temple group by extel;
+end //
+delimiter ;
+
+/******************************/
+
+call empresa.procedure_ej3b4();
+```
+
+<img src="img/87.png">
